@@ -1,0 +1,37 @@
+@import './components/header/Header.css';
+@import './components/footer/Footer.css';
+@import './components/layout/Layout.css';
+@import './components/trip-card/TripCard.css';
+@import './components/hotel-card/HotelCard.css';
+@import './components/avia-card/AviaCard.css';
+
+@import './pages/home/Home.css';
+@import './pages/trips/Trips.css';
+@import './pages/hotels/Hotels.css';
+@import './pages/avia/Avia.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;  /* займи все пространство-прижимает футер вниз */
+  padding: 40px 20px;
+}
