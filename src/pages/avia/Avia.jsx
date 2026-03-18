@@ -9,23 +9,52 @@
 import Layout from '../../components/layout/Layout';
 import AviaCard from '../../components/avia-card/AviaCard';
 import avias from '../../data/avia';
+import './Avia.css';
 import {useState} from 'react';
 
+const citiesFrom = [
+  { value: '', label: 'вылет' },
+  { value: 'Москва (VKO)', label: 'Москва (VKO)' },
+  { value: 'Москва (SVO)', label: 'Москва (SVO)' },
+  { value: 'Москва (DME)', label: 'Москва (DME)' },
+  { value: 'Санкт-Петербург (LED)', label: 'Санкт-Петербург (LED)' },
+  { value: 'Екатеринбург (SVX)', label: 'Екатеринбург (SVX)' },
+  { value: 'Сочи (AER)', label: 'Сочи (AER)' }
+];
+
+const citiesTo = [
+  { value: '', label: 'прилет' },
+  { value: 'Стамбул (IST)', label: 'Стамбул (IST)' },
+  { value: 'Анталия (AYT)', label: 'Анталия (AYT)' },
+  { value: 'Дубай (DXB)', label: 'Дубай (DXB)' },
+  { value: 'Бангкок (BKK)', label: 'Бангкок (BKK)' },
+  { value: 'Пхукет (HKT)', label: 'Пхукет (HKT)' },
+  { value: 'Тбилиси (TBS)', label: 'Тбилиси (TBS)' },
+  { value: 'Париж (CDG)', label: 'Париж (CDG)' }
+];
+
+const prices = [
+  { value: '', label: 'все цены'},
+  { value: 'asc', label: 'сначала дешевые'},
+  { value: 'desc', label: 'сначала дорогие'}
+]
+
+
 function Avia() {
-  const [chosenCountry1, setCountry1] = useState('');
-  const [chosenCountry2, setCountry2] = useState('');
+  const [chosenCity1, setCity1] = useState('');
+  const [chosenCity2, setCity2] = useState('');
   const [chosenSortPrice, setSortPrice] = useState('');
 
 
   //по странам 1вылет
-  const c1_filtered = chosenCountry1 === ''
+  const c1_filtered = chosenCity1 === ''
   ? avias
-  : avias.filter(avia => avia.from === chosenCountry1);
+  : avias.filter(avia => avia.from === chosenCity1);
 
   //по странам 2вылет
-  const c2_filtered = chosenCountry2 === ''
+  const c2_filtered = chosenCity2 === ''
   ? c1_filtered
-  : c1_filtered.filter(avia => avia.to === chosenCountry2);
+  : c1_filtered.filter(avia => avia.to === chosenCity2);
 
    //по цене
    const p_filtered = [...c2_filtered] 
@@ -40,42 +69,43 @@ function Avia() {
 
   return (
     <Layout>
-      <h1>Авиабилеты</h1>
-      <div style={{ display: 'flex', gap: '20px', margin: '20px 0' }}>
+      <h1 className="avia__title">Авиабилеты</h1>
+      <div className="avia__filters">
         {/* по странам 1 вылет*/}
-        <select value={chosenCountry1} onChange={(e) => setCountry1(e.target.value)}>
-          <option value="">вылет</option>
-          <option value="Москва (VKO)"> Москва (VKO) </option>
-          <option value="Москва (SVO)"> Москва (SVO) </option>
-          <option value="Москва (DME)"> Москва (DME) </option>
-          <option value="Санкт-Петербург (LED)"> Санкт-Петербург (LED) </option>
-          <option value="Екатеринбург (SVX)"> Екатеринбург (SVX) </option>
-          <option value="Сочи (AER)"> Сочи (AER) </option>
+        <select className="avia__select"
+        value={chosenCity1} onChange={(e) => setCity1(e.target.value)}>
+        {citiesFrom.map(city => (<option key={city.value} value={city.value}>
+            {city.label}
+            </option>
+          ))}
         </select>
 
+
         {/* по странам 1 прилет*/}
-        <select value={chosenCountry2} onChange={(e) => setCountry2(e.target.value)}>
-          <option value="">прилет</option>
-          <option value="Стамбул (IST)"> Стамбул (IST) </option>
-          <option value="Анталия (AYT)"> Анталия (AYT) </option>
-          <option value="Дубай (DXB)"> Дубай (DXB) </option>
-          <option value="Бангкок (BKK)"> Бангкок (BKK) </option>
-          <option value="Пхукет (HKT)"> Пхукет (HKT) </option>
-          <option value="Тбилиси (TBS)"> Тбилиси (TBS) </option>
-          <option value="Тбилиси (TBS)"> Тбилиси (TBS) </option>
-          <option value="Париж (CDG)"> Париж (CDG) </option>
+        <select className="avia__select"
+        value={chosenCity2} onChange={(e) => setCity2(e.target.value)}>
+        {citiesTo.map(city => (<option key={city.value} value={city.value}>
+            {city.label}
+            </option>
+          ))}
         </select>
 
         {/* по цене */}
-        <select value={chosenSortPrice} onChange={(e) => setSortPrice(e.target.value)}>
-          <option value="">все цены</option>
-          <option value="asc"> сначала дешевые</option>
-          <option value="desc"> сначала дорогие</option>
+        <select className="avia__select"
+        value={chosenSortPrice} onChange={(e) => setSortPrice(e.target.value)}>
+        {prices.map(price => (<option key={price.value} value={price.value}>
+            {price.label}
+            </option>
+          ))}
         </select>
-
-
       </div>
-      <p>Найдено авиаперелетов: {res.length}</p>
+
+
+      <div className="avia__results">
+        Найдено авиаперелетов:  
+        <span className="avia__count"> {res.length}</span>
+      </div>
+
       {res.map(avia => (
           <AviaCard key={avia.id} avia={avia} />
         ))}
