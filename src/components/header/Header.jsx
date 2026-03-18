@@ -3,14 +3,14 @@ import './Header.css';
 
 function Header() {
   return (
-    <header>
-      <div className="logo">Traveller</div>
+    <header className="header">
+      <div className="header__logo">Traveller</div>
       <nav>
-        <ul>
-          <li><Link to="/">Главная</Link></li>
-          <li><Link to="/trips">Туры</Link></li>
-          <li><Link to="/hotels">Отели</Link></li>
-          <li><Link to="/avia">Авиабилеты</Link></li>
+        <ul className="header__list">
+          <li><Link className="header__link" to="/">Главная</Link></li>
+          <li><Link className="header__link" to="/trips">Туры</Link></li>
+          <li><Link className="header__link" to="/hotels">Отели</Link></li>
+          <li><Link className="header__link" to="/avia">Авиабилеты</Link></li>
         </ul>
       </nav>
     </header>
