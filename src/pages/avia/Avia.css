@@ -1,0 +1,13 @@
+.avia__filters {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.avia__title{
+
+}
+
+.avia__select {
+  margin-right: 10px;
+}
