@@ -1,13 +1,64 @@
-.avia-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px;
-  text-align: center;
+.aviacard {
+  background-color: #ffffff;
+  border: 2px solid #b9bcbe;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 1rem 0;
+  width: 50%;
 }
 
-.avia-card .price {
-  color: #4C9839;
-  font-size: 15px;
+.aviacard__title {
+  display: flex;
+  justify-content: space-between;   
+}
+
+.aviacard__from,
+.aviacard__to {
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: #000000;
+}
+
+.aviacard__timetable {
+  display: flex;
+  justify-content: space-between;   
+  margin: 0.2rem;
+}
+
+.aviacard__departure,
+.aviacard__arrival {
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #0066cc;
+  margin: 0;
+}
+
+.aviacard__duration {
+  text-align: center;
+  color: #4a5568;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.aviacard__airline {
+  color: #718096;
+  margin: 0.25rem 0;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+
+.aviacard__button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.aviacard__button:hover {
+  background-color: #004c99;
 }
