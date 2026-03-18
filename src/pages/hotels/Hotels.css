@@ -1,0 +1,13 @@
+.hotels__filters {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.hotels__title{
+
+}
+
+.hotels__select {
+  margin-right: 10px;
+}
