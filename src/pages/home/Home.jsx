@@ -4,8 +4,10 @@ import './Home.css';
 function Home() {
   return (
     <Layout>
-      <h1>Добро пожаловать в Traveller!</h1>
-      <p>Туры, отели и авиабилеты в одном месте</p>
+      <div className="home">
+        <h1 className="home__title">Добро пожаловать в Traveller!</h1>
+        <p className="home__slogan">Туры, отели и авиабилеты в одном месте</p>
+      </div>
     </Layout>
   );
 }
