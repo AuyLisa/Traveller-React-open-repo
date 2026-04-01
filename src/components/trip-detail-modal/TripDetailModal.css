@@ -1,0 +1,104 @@
+.trip-modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.trip-modal {
+  position: relative;
+  max-width: 32rem;
+  width: 100%;
+  max-height: min(90vh, 40rem);
+  overflow-y: auto;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: #fff;
+  border: 2px solid #b9bcbe;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.trip-modal__close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: #e8e8e8;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.trip-modal__close:hover {
+  background: #d0d0d0;
+}
+
+.trip-modal__title {
+  margin: 0 2.5rem 0.75rem 0;
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.trip-modal__photo {
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 1rem;
+  background-color: #929292;
+  border-radius: 16px;
+}
+
+.trip-modal__list {
+  margin: 0 0 1rem;
+}
+
+.trip-modal__row {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.trip-modal__row:first-of-type {
+  padding-top: 0;
+}
+
+.trip-modal__term {
+  margin: 0;
+  font-weight: 600;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.trip-modal__value {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.trip-modal__price {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.trip-modal__section {
+  margin-top: 0.25rem;
+}
+
+.trip-modal__subtitle {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.trip-modal__text {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}

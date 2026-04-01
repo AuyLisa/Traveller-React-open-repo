@@ -7,6 +7,7 @@
 
 import Layout from '../../components/layout/Layout';
 import TripCard from '../../components/trip-card/TripCard';
+import TripDetailModal from '../../components/trip-detail-modal/TripDetailModal';
 import trips from '../../data/trips'; 
 import './Trips.css';
 import {useState} from 'react';
@@ -42,6 +43,7 @@ function Trips() {
   const [chosenCountry, setCountry] = useState('');
   const [chosenDuration, setDuration] = useState(0);
   const [chosenSortPrice, setSortPrice] = useState('');
+  const [detailTrip, setDetailTrip] = useState(null);
 
 
   //по странам
@@ -102,9 +104,17 @@ function Trips() {
 
     <div className="trips__grid">
         {res.map(trip => (
-          <TripCard key={trip.id} trip={trip} />
+          <TripCard
+            key={trip.id}
+            trip={trip}
+            onDetailsClick={setDetailTrip}
+          />
         ))}
     </div>
+
+    {detailTrip && (
+      <TripDetailModal trip={detailTrip} onClose={() => setDetailTrip(null)} />
+    )}
     </Layout>
   );
 }

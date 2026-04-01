@@ -1,6 +1,6 @@
 import './TripCard.css';
 
-function TripCard( {trip} ) { 
+function TripCard( { trip, onDetailsClick } ) { 
   return (
    <div className="tripcard">
 
@@ -12,7 +12,13 @@ function TripCard( {trip} ) {
         <h3 className="tripcard__title">{trip.title}</h3>
         <p className="tripcard__description">{trip.description}</p>
         <p className="tripcard__price">{trip.price} ₽</p>
-        <button className="tripcard__button">Подробнее</button>
+        <button
+          type="button"
+          className="tripcard__button"
+          onClick={() => onDetailsClick?.(trip)}
+        >
+          Подробнее
+        </button>
     </div>
   </div>
   );
