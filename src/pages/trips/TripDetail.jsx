@@ -52,13 +52,23 @@ function TripDetail() {
 
           <div className="trip-detail__row">
             <dt className="trip-detail__term">Продолжительность</dt>
-            <dd className="trip-detail__value">{trip.duration} ночей</dd>
+            <dd className="trip-detail__value">
+              {trip.duration != null &&
+              trip.duration !== '' &&
+              !Number.isNaN(Number(trip.duration))
+                ? `${trip.duration} ночей`
+                : '—'}
+            </dd>
           </div>
 
           <div className="trip-detail__row">
             <dt className="trip-detail__term">Стоимость</dt>
             <dd className="trip-detail__value trip-detail__price">
-              {trip.price.toLocaleString('ru-RU')} ₽
+              {trip.price != null &&
+              trip.price !== '' &&
+              !Number.isNaN(Number(trip.price))
+                ? `${Number(trip.price).toLocaleString('ru-RU')} ₽`
+                : '—'}
             </dd>
           </div>
         </dl>

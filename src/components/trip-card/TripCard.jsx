@@ -1,20 +1,35 @@
 import { useNavigate } from 'react-router-dom';
 import './TripCard.css';
 
-function TripCard( {trip} ) {
+function formatPrice(value) {
+  if (value == null || value === '') return '—';
+  const n = Number(value);
+  if (Number.isNaN(n)) return '—';
+  return `${n.toLocaleString('ru-RU')} ₽`;
+}
+
+function TripCard({ trip }) {
   const navigate = useNavigate();
+  const title = trip.title ?? 'Тур';
+  const description = trip.description ?? '';
+  const locationParts = [trip.city, trip.country].filter(Boolean);
+  const locationLine = locationParts.length ? locationParts.join(', ') : null;
 
   return (
-   <div className="tripcard">
-
-     <div className="tripcard__image">
-        <span className="tripcard__photo"></span>
+    <article className="tripcard" data-trip-id={trip.id ?? ''}>
+      <div className="tripcard__image">
+        <span className="tripcard__photo" />
       </div>
 
       <div className="tripcard__content">
-        <h3 className="tripcard__title">{trip.title}</h3>
-        <p className="tripcard__description">{trip.description}</p>
-        <p className="tripcard__price">{trip.price} ₽</p>
+        <h3 className="tripcard__title">{title}</h3>
+        {locationLine ? (
+          <p className="tripcard__meta">{locationLine}</p>
+        ) : null}
+        {description ? (
+          <p className="tripcard__description">{description}</p>
+        ) : null}
+        <p className="tripcard__price">{formatPrice(trip.price)}</p>
         <button
           type="button"
           className="tripcard__button"
@@ -22,8 +37,8 @@ function TripCard( {trip} ) {
         >
           Подробнее
         </button>
-    </div>
-  </div>
+      </div>
+    </article>
   );
 }
 

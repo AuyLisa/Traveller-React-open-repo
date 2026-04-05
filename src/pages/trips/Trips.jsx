@@ -1,110 +1,80 @@
-{/* для фильтрации будут 3 параметра
-+1 country
-+2 duration
-+3 price разделится на дешевые и дорогие
-*/}
-
-
+import { useMemo, useState } from 'react';
 import Layout from '../../components/layout/Layout';
 import TripCard from '../../components/trip-card/TripCard';
-import trips from '../../data/trips'; 
+import TripFiltersBar from '../../components/trip-filters/TripFiltersBar';
+import trips from '../../data/trips';
+import { filterTrips, getUniqueCountries } from '../../utils/tripSearchFilter';
+import { DURATION_OPTIONS, PRICE_RANGE_OPTIONS } from './tripFilterOptions';
 import './Trips.css';
-import {useState} from 'react';
 
-
-const countries = [
-  { value: '', label: 'все страны'},
-  { value: 'Турция', label: 'Турция'},
-  { value: 'ОАЭ', label: 'ОАЭ'},
-  { value: 'Египет', label: 'Египет'},
-  { value: 'Таиланд', label: 'Таиланд'},
-  { value: 'Грузия', label: 'Грузия'},
-  { value: 'Мальдивы', label: 'Мальдивы'}
-];
-
-const durations = [
-  { value: '0', label: 'любое количество дней'},
-  { value: '3', label: 'от 3х дней'},
-  { value: '7', label: 'от 7 дней'},
-  { value: '21', label: 'от 21 дня'},
-  { value: '30', label: 'от месяца'},
-  { value: '100', label: 'от 100 дней'}
-];
-
-const prices = [
-  {value: '', label: 'все цены'},
-  {value: "asc", label: 'сначала дешевые'},
-  {value: "desc", label: 'сначала дорогие'}
-]
+const INITIAL_FILTERS = {
+  searchQuery: '',
+  country: '',
+  durationMin: 0,
+  priceRange: 'all',
+};
 
 function Trips() {
+  const [searchQuery, setSearchQuery] = useState(INITIAL_FILTERS.searchQuery);
+  const [country, setCountry] = useState(INITIAL_FILTERS.country);
+  const [durationMin, setDurationMin] = useState(INITIAL_FILTERS.durationMin);
+  const [priceRange, setPriceRange] = useState(INITIAL_FILTERS.priceRange);
 
-  const [chosenCountry, setCountry] = useState('');
-  const [chosenDuration, setDuration] = useState(0);
-  const [chosenSortPrice, setSortPrice] = useState('');
+  const countryOptions = useMemo(() => getUniqueCountries(trips), []);
 
+  const filteredTrips = useMemo(
+    () =>
+      filterTrips(trips, {
+        searchQuery,
+        country,
+        durationMin,
+        priceRange,
+      }),
+    [searchQuery, country, durationMin, priceRange],
+  );
 
-  //по странам
-  const c_filtered = chosenCountry === ''
-  ? trips
-  : trips.filter(trip => trip.country === chosenCountry);
-
-  //по продолжительности
-  const d_filtered = chosenDuration === 0
-  ? c_filtered
-  : c_filtered.filter(trip => trip.duration >= chosenDuration);
-
-   //по цене
-   const p_filtered = [...d_filtered] 
-   if (chosenSortPrice === 'asc') 
-       p_filtered.sort((a, b) => a.price - b.price); 
-   if (chosenSortPrice === 'desc') 
-       p_filtered.sort((a, b) => b.price - a.price); 
-
-  const res = p_filtered;
+  const handleReset = () => {
+    setSearchQuery(INITIAL_FILTERS.searchQuery);
+    setCountry(INITIAL_FILTERS.country);
+    setDurationMin(INITIAL_FILTERS.durationMin);
+    setPriceRange(INITIAL_FILTERS.priceRange);
+  };
 
   return (
     <Layout>
       <h1 className="trips__title">Туры</h1>
-      <div className="trips__filters">
 
-        {/* по странам */}
-        <select className="trips__select"
-        value={chosenCountry} onChange={(e) => setCountry(e.target.value)}>
-          {countries.map(country => (<option key={country.value} value={country.value}> {country.label}
-          </option>
+      <TripFiltersBar
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        country={country}
+        onCountryChange={setCountry}
+        countryOptions={countryOptions}
+        durationMin={durationMin}
+        onDurationChange={setDurationMin}
+        priceRange={priceRange}
+        onPriceRangeChange={setPriceRange}
+        durationOptions={DURATION_OPTIONS}
+        priceRangeOptions={PRICE_RANGE_OPTIONS}
+        onReset={handleReset}
+      />
+
+      <div className="trips__results">
+        Найдено туров:
+        <span className="trips__count"> {filteredTrips.length}</span>
+      </div>
+
+      {filteredTrips.length === 0 ? (
+        <p className="trips__empty" role="status">
+          Ничего не найдено. Попробуйте изменить запрос или сбросить фильтры.
+        </p>
+      ) : (
+        <div className="trips__grid">
+          {filteredTrips.map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
           ))}
-        </select>
-
-        {/* по продолжительности */}
-        <select className="trips__select"
-        value={chosenDuration} onChange={(e) => setDuration(Number(e.target.value))}>
-          {durations.map(duration => (<option key={duration.value} value={duration.value}> {duration.label}
-          </option>
-          ))}
-        </select>
-
-
-        {/* по цене */}
-        <select className="trips__select"
-        value={chosenSortPrice} onChange={(e) => setSortPrice(e.target.value)}>
-        {prices.map(price => (<option key={price.value} value={price.value}> {price.label}
-          </option>
-          ))}
-        </select>
-
-    </div>
-
-    <div className="trips__results">
-        Найдено туров:  
-        <span className="trips__count"> {res.length}</span>
-    </div>
-
-    <div className="trips__grid">
-        {res.map(trip => (
-          <TripCard key={trip.id} trip={trip} />
-        ))}
-    </div>
+        </div>
+      )}
     </Layout>
   );
 }
