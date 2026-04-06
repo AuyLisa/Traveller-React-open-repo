@@ -1,15 +1,10 @@
 import { Link } from 'react-router-dom';
 import Layout from '../../components/layout/Layout';
 import CartSection from '../../components/cart-section/CartSection';
+import { CART_SECTIONS } from '../../constants/cartSections';
 import { useCart } from '../../hooks/useCart';
 import { clearCart, getCartTotal } from '../../utils/cart';
 import './Cart.css';
-
-const CART_SECTIONS = [
-  { type: 'trip', sectionId: 'trips', title: 'Туры' },
-  { type: 'hotel', sectionId: 'hotels', title: 'Отели' },
-  { type: 'flight', sectionId: 'flights', title: 'Авиабилеты' },
-];
 
 function Cart() {
   const cart = useCart();

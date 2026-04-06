@@ -1,0 +1,135 @@
+.passenger-passport {
+  padding: 1rem 0 1.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.passenger-passport:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.passenger-passport__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.passenger-passport__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.passenger-passport__remove {
+  flex-shrink: 0;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  color: #c53030;
+  background: #fff;
+  border: 1px solid #e8a4a4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.passenger-passport__remove:hover:not(:disabled) {
+  background: #fff5f5;
+}
+
+.passenger-passport__remove:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.passenger-passport__section-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin: 0 0 0.65rem;
+}
+
+.passenger-passport__grid {
+  display: grid;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.passenger-passport__grid--triple {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.passenger-passport__grid--half {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .passenger-passport__grid--triple {
+    grid-template-columns: 1fr;
+  }
+
+  .passenger-passport__grid--half {
+    grid-template-columns: 1fr;
+  }
+}
+
+.passenger-passport__field {
+  margin-bottom: 0.75rem;
+}
+
+.passenger-passport__field:last-child {
+  margin-bottom: 0;
+}
+
+.passenger-passport__field--narrow {
+  max-width: 14rem;
+}
+
+.passenger-passport__label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.passenger-passport__req {
+  color: #c53030;
+}
+
+.passenger-passport__input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.passenger-passport__input:focus {
+  outline: none;
+  border-color: #751ae4;
+  box-shadow: 0 0 0 2px rgba(117, 26, 228, 0.12);
+}
+
+.passenger-passport__input--error {
+  border-color: #c53030;
+}
+
+.passenger-passport__input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.passenger-passport__error {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: #c53030;
+}
