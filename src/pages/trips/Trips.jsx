@@ -4,7 +4,6 @@ import TripCard from '../../components/trip-card/TripCard';
 import TripFiltersBar from '../../components/trip-filters/TripFiltersBar';
 import trips from '../../data/trips';
 import { filterTrips, getUniqueCountries } from '../../utils/tripSearchFilter';
-import { DURATION_OPTIONS, PRICE_RANGE_OPTIONS } from './tripFilterOptions';
 import './Trips.css';
 
 const INITIAL_FILTERS = {
@@ -12,6 +11,8 @@ const INITIAL_FILTERS = {
   country: '',
   durationMin: 0,
   priceRange: 'all',
+  priceMin: '',
+  priceMax: '',
 };
 
 function Trips() {
@@ -19,6 +20,8 @@ function Trips() {
   const [country, setCountry] = useState(INITIAL_FILTERS.country);
   const [durationMin, setDurationMin] = useState(INITIAL_FILTERS.durationMin);
   const [priceRange, setPriceRange] = useState(INITIAL_FILTERS.priceRange);
+  const [priceMin, setPriceMin] = useState(INITIAL_FILTERS.priceMin);
+  const [priceMax, setPriceMax] = useState(INITIAL_FILTERS.priceMax);
 
   const countryOptions = useMemo(() => getUniqueCountries(trips), []);
 
@@ -29,8 +32,10 @@ function Trips() {
         country,
         durationMin,
         priceRange,
+        priceMin,
+        priceMax,
       }),
-    [searchQuery, country, durationMin, priceRange],
+    [searchQuery, country, durationMin, priceRange, priceMin, priceMax],
   );
 
   const handleReset = () => {
@@ -38,6 +43,14 @@ function Trips() {
     setCountry(INITIAL_FILTERS.country);
     setDurationMin(INITIAL_FILTERS.durationMin);
     setPriceRange(INITIAL_FILTERS.priceRange);
+    setPriceMin(INITIAL_FILTERS.priceMin);
+    setPriceMax(INITIAL_FILTERS.priceMax);
+  };
+
+  const handlePriceFilterChange = (next) => {
+    setPriceRange(next.priceRange);
+    setPriceMin(next.priceMin);
+    setPriceMax(next.priceMax);
   };
 
   return (
@@ -53,9 +66,9 @@ function Trips() {
         durationMin={durationMin}
         onDurationChange={setDurationMin}
         priceRange={priceRange}
-        onPriceRangeChange={setPriceRange}
-        durationOptions={DURATION_OPTIONS}
-        priceRangeOptions={PRICE_RANGE_OPTIONS}
+        priceMin={priceMin}
+        priceMax={priceMax}
+        onPriceFilterChange={handlePriceFilterChange}
         onReset={handleReset}
       />
 

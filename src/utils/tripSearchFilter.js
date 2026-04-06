@@ -11,9 +11,12 @@ function tripMatchesSearch(trip, rawQuery) {
 }
 
 function tripMatchesCountry(trip, country) {
-  const c = country ?? '';
+  const c = (country ?? '').trim();
   if (!c) return true;
-  return normStr(trip.country) === normStr(c);
+  const hay = normStr(trip.country);
+  if (!hay) return false;
+  const q = normStr(c);
+  return hay.includes(q);
 }
 
 function tripMatchesDuration(trip, minDays) {
@@ -43,9 +46,30 @@ function tripMatchesPriceRange(trip, rangeKey) {
   }
 }
 
+function parseOptionalBound(raw) {
+  if (raw == null || raw === '') return null;
+  const n = Number(String(raw).replace(/\s/g, '').replace(',', '.'));
+  return Number.isFinite(n) ? n : null;
+}
+
+function hasCustomPriceBounds(priceMin, priceMax) {
+  return parseOptionalBound(priceMin) != null || parseOptionalBound(priceMax) != null;
+}
+
+function tripMatchesPriceCustom(trip, priceMin, priceMax) {
+  if (trip.price == null || trip.price === '') return false;
+  const p = Number(trip.price);
+  if (Number.isNaN(p)) return false;
+  const min = parseOptionalBound(priceMin);
+  const max = parseOptionalBound(priceMax);
+  if (min != null && p < min) return false;
+  if (max != null && p > max) return false;
+  return true;
+}
+
 /**
  * @param {object[]} allTrips
- * @param {{ searchQuery?: string, country?: string, durationMin?: number, priceRange?: string }} criteria
+ * @param {{ searchQuery?: string, country?: string, durationMin?: number, priceRange?: string, priceMin?: string, priceMax?: string }} criteria
  */
 export function filterTrips(allTrips, criteria) {
   const {
@@ -53,14 +77,20 @@ export function filterTrips(allTrips, criteria) {
     country = '',
     durationMin = 0,
     priceRange = '',
+    priceMin = '',
+    priceMax = '',
   } = criteria;
+
+  const useCustomPrice = hasCustomPriceBounds(priceMin, priceMax);
 
   return allTrips.filter(
     (trip) =>
       tripMatchesSearch(trip, searchQuery) &&
       tripMatchesCountry(trip, country) &&
       tripMatchesDuration(trip, durationMin) &&
-      tripMatchesPriceRange(trip, priceRange),
+      (useCustomPrice
+        ? tripMatchesPriceCustom(trip, priceMin, priceMax)
+        : tripMatchesPriceRange(trip, priceRange)),
   );
 }
 
