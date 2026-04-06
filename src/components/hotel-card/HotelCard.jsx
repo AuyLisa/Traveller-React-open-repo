@@ -25,7 +25,10 @@ function HotelCard({ hotel }) {
 
         <p className="hotelcard__price"> от {hotel.price} ₽</p>
         <div className="hotelcard__actions">
-          <button type="button" className="hotelcard__button">
+          <button
+            type="button"
+            className="hotelcard__button"
+          >
             Подробнее
           </button>
           <CardCartControls
