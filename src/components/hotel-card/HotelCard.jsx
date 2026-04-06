@@ -10,11 +10,13 @@ function HotelCard( {hotel} ) {
 
       <div className="hotelcard__content">
         <h3 className="hotelcard__title">{hotel.title}</h3>
-        <p className="hotelcard__location">{hotel.location}</p>
+        <p className="hotelcard__location">
+          {[hotel.city, hotel.country].filter(Boolean).join(', ') || '—'}
+        </p>
         <p className="hotelcard__description">{hotel.description}</p>
 
         <div className="hotelcard__rating">
-          <span className="hotelcard__stars"> {hotel.star}⭐ </span>
+          <span className="hotelcard__stars">{hotel.stars != null ? `${hotel.stars}⭐` : '—'}</span>
           <span className="hotelcard__reviews">{hotel.reviews} отзывов</span>
         </div>
 

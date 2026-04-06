@@ -1,13 +1,26 @@
-.avia__filters {
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
+.avia__title {
+  margin-bottom: 0.25rem;
 }
 
-.avia__title{
-
+.avia__results {
+  margin-bottom: 0.5rem;
 }
 
-.avia__select {
-  margin-right: 10px;
+.avia__count {
+  font-weight: 700;
+}
+
+.avia__empty {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 2px dashed #b9bcbe;
+  border-radius: 12px;
+  background: #f7f7f7;
+  color: #444;
+  max-width: 32rem;
+}
+
+/* Вертикальный список — ширина карточек задаётся в AviaCard (width: 50%) */
+.avia__list {
+  margin: 1.5rem 0;
 }

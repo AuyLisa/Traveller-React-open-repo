@@ -1,114 +1,108 @@
-{/* для фильтрации будут 
-1 from
-2 to
-3 price разделится на дешевые и дорогие
-4 airline
-*/}
-
-
+import { useMemo, useState } from 'react';
 import Layout from '../../components/layout/Layout';
 import AviaCard from '../../components/avia-card/AviaCard';
+import AviaFiltersBar from '../../components/avia-filters/AviaFiltersBar';
 import avias from '../../data/avia';
+import {
+  filterAvias,
+  getUniqueAirlines,
+  getUniqueFrom,
+  getUniqueTo,
+} from '../../utils/aviaSearchFilter';
 import './Avia.css';
-import {useState} from 'react';
 
-const citiesFrom = [
-  { value: '', label: 'вылет' },
-  { value: 'Москва (VKO)', label: 'Москва (VKO)' },
-  { value: 'Москва (SVO)', label: 'Москва (SVO)' },
-  { value: 'Москва (DME)', label: 'Москва (DME)' },
-  { value: 'Санкт-Петербург (LED)', label: 'Санкт-Петербург (LED)' },
-  { value: 'Екатеринбург (SVX)', label: 'Екатеринбург (SVX)' },
-  { value: 'Сочи (AER)', label: 'Сочи (AER)' }
-];
-
-const citiesTo = [
-  { value: '', label: 'прилет' },
-  { value: 'Стамбул (IST)', label: 'Стамбул (IST)' },
-  { value: 'Анталия (AYT)', label: 'Анталия (AYT)' },
-  { value: 'Дубай (DXB)', label: 'Дубай (DXB)' },
-  { value: 'Бангкок (BKK)', label: 'Бангкок (BKK)' },
-  { value: 'Пхукет (HKT)', label: 'Пхукет (HKT)' },
-  { value: 'Тбилиси (TBS)', label: 'Тбилиси (TBS)' },
-  { value: 'Париж (CDG)', label: 'Париж (CDG)' }
-];
-
-const prices = [
-  { value: '', label: 'все цены'},
-  { value: 'asc', label: 'сначала дешевые'},
-  { value: 'desc', label: 'сначала дорогие'}
-]
-
+const INITIAL_FILTERS = {
+  searchQuery: '',
+  from: '',
+  to: '',
+  airline: '',
+  priceRange: 'all',
+  priceMin: '',
+  priceMax: '',
+};
 
 function Avia() {
-  const [chosenCity1, setCity1] = useState('');
-  const [chosenCity2, setCity2] = useState('');
-  const [chosenSortPrice, setSortPrice] = useState('');
+  const [searchQuery, setSearchQuery] = useState(INITIAL_FILTERS.searchQuery);
+  const [from, setFrom] = useState(INITIAL_FILTERS.from);
+  const [to, setTo] = useState(INITIAL_FILTERS.to);
+  const [airline, setAirline] = useState(INITIAL_FILTERS.airline);
+  const [priceRange, setPriceRange] = useState(INITIAL_FILTERS.priceRange);
+  const [priceMin, setPriceMin] = useState(INITIAL_FILTERS.priceMin);
+  const [priceMax, setPriceMax] = useState(INITIAL_FILTERS.priceMax);
 
+  const fromOptions = useMemo(() => getUniqueFrom(avias), []);
+  const toOptions = useMemo(() => getUniqueTo(avias), []);
+  const airlineOptions = useMemo(() => getUniqueAirlines(avias), []);
 
-  //по странам 1вылет
-  const c1_filtered = chosenCity1 === ''
-  ? avias
-  : avias.filter(avia => avia.from === chosenCity1);
+  const filteredAvias = useMemo(
+    () =>
+      filterAvias(avias, {
+        searchQuery,
+        from,
+        to,
+        airline,
+        priceRange,
+        priceMin,
+        priceMax,
+      }),
+    [searchQuery, from, to, airline, priceRange, priceMin, priceMax],
+  );
 
-  //по странам 2вылет
-  const c2_filtered = chosenCity2 === ''
-  ? c1_filtered
-  : c1_filtered.filter(avia => avia.to === chosenCity2);
+  const handleReset = () => {
+    setSearchQuery(INITIAL_FILTERS.searchQuery);
+    setFrom(INITIAL_FILTERS.from);
+    setTo(INITIAL_FILTERS.to);
+    setAirline(INITIAL_FILTERS.airline);
+    setPriceRange(INITIAL_FILTERS.priceRange);
+    setPriceMin(INITIAL_FILTERS.priceMin);
+    setPriceMax(INITIAL_FILTERS.priceMax);
+  };
 
-   //по цене
-   const p_filtered = [...c2_filtered] 
-   if (chosenSortPrice === 'asc') 
-       p_filtered.sort((a, b) => a.price - b.price); 
-   if (chosenSortPrice === 'desc') 
-       p_filtered.sort((a, b) => b.price - a.price); 
-
-
-  const res = p_filtered;
-
+  const handlePriceFilterChange = (next) => {
+    setPriceRange(next.priceRange);
+    setPriceMin(next.priceMin);
+    setPriceMax(next.priceMax);
+  };
 
   return (
     <Layout>
       <h1 className="avia__title">Авиабилеты</h1>
-      <div className="avia__filters">
-        {/* по странам 1 вылет*/}
-        <select className="avia__select"
-        value={chosenCity1} onChange={(e) => setCity1(e.target.value)}>
-        {citiesFrom.map(city => (<option key={city.value} value={city.value}>
-            {city.label}
-            </option>
-          ))}
-        </select>
 
-
-        {/* по странам 1 прилет*/}
-        <select className="avia__select"
-        value={chosenCity2} onChange={(e) => setCity2(e.target.value)}>
-        {citiesTo.map(city => (<option key={city.value} value={city.value}>
-            {city.label}
-            </option>
-          ))}
-        </select>
-
-        {/* по цене */}
-        <select className="avia__select"
-        value={chosenSortPrice} onChange={(e) => setSortPrice(e.target.value)}>
-        {prices.map(price => (<option key={price.value} value={price.value}>
-            {price.label}
-            </option>
-          ))}
-        </select>
-      </div>
-
+      <AviaFiltersBar
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        from={from}
+        onFromChange={setFrom}
+        fromOptions={fromOptions}
+        to={to}
+        onToChange={setTo}
+        toOptions={toOptions}
+        airline={airline}
+        onAirlineChange={setAirline}
+        airlineOptions={airlineOptions}
+        priceRange={priceRange}
+        priceMin={priceMin}
+        priceMax={priceMax}
+        onPriceFilterChange={handlePriceFilterChange}
+        onReset={handleReset}
+      />
 
       <div className="avia__results">
-        Найдено авиаперелетов:  
-        <span className="avia__count"> {res.length}</span>
+        Найдено рейсов:
+        <span className="avia__count"> {filteredAvias.length}</span>
       </div>
 
-      {res.map(avia => (
-          <AviaCard key={avia.id} avia={avia} />
-        ))}
+      {filteredAvias.length === 0 ? (
+        <p className="avia__empty" role="status">
+          Ничего не найдено. Попробуйте изменить запрос или сбросить фильтры.
+        </p>
+      ) : (
+        <div className="avia__list">
+          {filteredAvias.map((avia) => (
+            <AviaCard key={avia.id} avia={avia} />
+          ))}
+        </div>
+      )}
     </Layout>
   );
 }

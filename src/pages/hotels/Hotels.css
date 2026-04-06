@@ -1,13 +1,26 @@
-.hotels__filters {
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
+.hotels__title {
+  margin-bottom: 0.25rem;
 }
 
-.hotels__title{
-
+.hotels__results {
+  margin-bottom: 0.5rem;
 }
 
-.hotels__select {
-  margin-right: 10px;
+.hotels__count {
+  font-weight: 700;
+}
+
+.hotels__empty {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 2px dashed #b9bcbe;
+  border-radius: 12px;
+  background: #f7f7f7;
+  color: #444;
+  max-width: 32rem;
+}
+
+/* Вертикальный список на всю ширину — под горизонтальную карточку отеля (flex в HotelCard) */
+.hotels__list {
+  margin: 1.5rem 0;
 }

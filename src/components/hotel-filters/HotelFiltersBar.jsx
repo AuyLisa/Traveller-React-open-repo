@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
-import { DURATION_OPTIONS, PRICE_RANGE_OPTIONS } from '../../pages/trips/tripFilterOptions';
+import { PRICE_RANGE_OPTIONS } from '../../pages/trips/tripFilterOptions';
+import { REVIEW_OPTIONS, STAR_OPTIONS } from '../../pages/hotels/hotelFilterOptions';
 import { formatPriceFilterDisplay, parsePriceFilterInput } from '../../utils/priceFilterInput';
-import './TripFiltersBar.css';
+import '../trip-filters/TripFiltersBar.css';
 
-function TripFiltersBar({
+function HotelFiltersBar({
   searchQuery,
   onSearchChange,
   country,
   onCountryChange,
   countryOptions,
-  durationMin,
-  onDurationChange,
+  starsExact,
+  onStarsExactChange,
+  minReviews,
+  onMinReviewsChange,
   priceRange,
   priceMin,
   priceMax,
@@ -26,17 +29,14 @@ function TripFiltersBar({
   }, [priceRange, priceMin, priceMax]);
 
   const applyPriceFromString = (raw) => {
-    const next = parsePriceFilterInput(raw);
-    onPriceFilterChange(next);
+    onPriceFilterChange(parsePriceFilterInput(raw));
   };
 
   const handlePriceChange = (e) => {
     const v = e.target.value;
     setPriceText(v);
     const presetHit = PRICE_RANGE_OPTIONS.some((o) => o.label === v.trim());
-    if (presetHit) {
-      applyPriceFromString(v);
-    }
+    if (presetHit) applyPriceFromString(v);
   };
 
   const handlePriceBlur = () => {
@@ -45,29 +45,46 @@ function TripFiltersBar({
     setPriceText(formatPriceFilterDisplay(parsed));
   };
 
-  const handleDurationChange = (e) => {
+  const handleStarsChange = (e) => {
     const raw = e.target.value;
     if (raw === '') {
-      onDurationChange(0);
+      onStarsExactChange(0);
       return;
     }
     const digits = raw.replace(/\D/g, '');
     if (digits === '') {
-      onDurationChange(0);
+      onStarsExactChange(0);
+      return;
+    }
+    let n = Number.parseInt(digits, 10);
+    if (Number.isNaN(n)) return;
+    n = Math.min(5, Math.max(0, n));
+    onStarsExactChange(n);
+  };
+
+  const handleReviewsChange = (e) => {
+    const raw = e.target.value;
+    if (raw === '') {
+      onMinReviewsChange(0);
+      return;
+    }
+    const digits = raw.replace(/\D/g, '');
+    if (digits === '') {
+      onMinReviewsChange(0);
       return;
     }
     const n = Number.parseInt(digits, 10);
-    if (!Number.isNaN(n)) onDurationChange(Math.max(0, n));
+    if (!Number.isNaN(n)) onMinReviewsChange(Math.max(0, n));
   };
 
   return (
     <div className="trip-filters">
       <div className="trip-filters__search-block">
-        <label htmlFor="trip-filters-search-input" className="trip-filters__label-text">
+        <label htmlFor="hotel-filters-search-input" className="trip-filters__label-text">
           Поиск
         </label>
         <input
-          id="trip-filters-search-input"
+          id="hotel-filters-search-input"
           type="search"
           className="trip-filters__search"
           placeholder="Название, описание, страна, город…"
@@ -79,20 +96,20 @@ function TripFiltersBar({
 
       <div className="trip-filters__row">
         <div className="trip-filters__field">
-          <label htmlFor="trip-filters-country" className="trip-filters__label-text">
+          <label htmlFor="hotel-filters-country" className="trip-filters__label-text">
             Страна
           </label>
           <input
-            id="trip-filters-country"
+            id="hotel-filters-country"
             type="text"
             className="trip-filters__combo trip-filters__combo--with-list"
-            list="trip-country-suggestions"
+            list="hotel-country-dl"
             placeholder="Все"
             value={country}
             onChange={(e) => onCountryChange(e.target.value)}
             autoComplete="off"
           />
-          <datalist id="trip-country-suggestions">
+          <datalist id="hotel-country-dl">
             {countryOptions.map((name) => (
               <option key={name} value={name} />
             ))}
@@ -100,22 +117,22 @@ function TripFiltersBar({
         </div>
 
         <div className="trip-filters__field">
-          <label htmlFor="trip-filters-duration" className="trip-filters__label-text">
-            Количество ночей
+          <label htmlFor="hotel-filters-stars" className="trip-filters__label-text">
+            Звёзды
           </label>
           <input
-            id="trip-filters-duration"
+            id="hotel-filters-stars"
             type="text"
             className="trip-filters__combo trip-filters__combo--nights trip-filters__combo--with-list"
             inputMode="numeric"
-            list="trip-duration-presets"
-            placeholder="Введите количество ночей"
-            value={durationMin === 0 ? '' : String(durationMin)}
-            onChange={handleDurationChange}
+            list="hotel-stars-dl"
+            placeholder="Введите количество звёзд"
+            value={starsExact === 0 ? '' : String(starsExact)}
+            onChange={handleStarsChange}
             autoComplete="off"
           />
-          <datalist id="trip-duration-presets">
-            {DURATION_OPTIONS.map((opt) => (
+          <datalist id="hotel-stars-dl">
+            {STAR_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
               </option>
@@ -124,21 +141,45 @@ function TripFiltersBar({
         </div>
 
         <div className="trip-filters__field">
-          <label htmlFor="trip-filters-price" className="trip-filters__label-text">
+          <label htmlFor="hotel-filters-reviews" className="trip-filters__label-text">
+            Отзывы
+          </label>
+          <input
+            id="hotel-filters-reviews"
+            type="text"
+            className="trip-filters__combo trip-filters__combo--with-list"
+            inputMode="numeric"
+            list="hotel-reviews-dl"
+            placeholder="Мин. число отзывов"
+            value={minReviews === 0 ? '' : String(minReviews)}
+            onChange={handleReviewsChange}
+            autoComplete="off"
+          />
+          <datalist id="hotel-reviews-dl">
+            {REVIEW_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </datalist>
+        </div>
+
+        <div className="trip-filters__field">
+          <label htmlFor="hotel-filters-price" className="trip-filters__label-text">
             Цена
           </label>
           <input
-            id="trip-filters-price"
+            id="hotel-filters-price"
             type="text"
             className="trip-filters__combo trip-filters__combo--price trip-filters__combo--with-list"
             inputMode="text"
-            list="trip-price-presets"
+            list="hotel-price-dl"
             placeholder="Введите цену"
             value={priceText}
             onChange={handlePriceChange}
             onBlur={handlePriceBlur}
           />
-          <datalist id="trip-price-presets">
+          <datalist id="hotel-price-dl">
             {PRICE_RANGE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.label} />
             ))}
@@ -153,4 +194,4 @@ function TripFiltersBar({
   );
 }
 
-export default TripFiltersBar;
+export default HotelFiltersBar;

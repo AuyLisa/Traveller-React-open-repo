@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
-import { DURATION_OPTIONS, PRICE_RANGE_OPTIONS } from '../../pages/trips/tripFilterOptions';
+import { PRICE_RANGE_OPTIONS } from '../../pages/trips/tripFilterOptions';
 import { formatPriceFilterDisplay, parsePriceFilterInput } from '../../utils/priceFilterInput';
-import './TripFiltersBar.css';
+import '../trip-filters/TripFiltersBar.css';
 
-function TripFiltersBar({
+function AviaFiltersBar({
   searchQuery,
   onSearchChange,
-  country,
-  onCountryChange,
-  countryOptions,
-  durationMin,
-  onDurationChange,
+  from,
+  onFromChange,
+  fromOptions,
+  to,
+  onToChange,
+  toOptions,
+  airline,
+  onAirlineChange,
+  airlineOptions,
   priceRange,
   priceMin,
   priceMax,
@@ -25,17 +29,12 @@ function TripFiltersBar({
     setPriceText(formatPriceFilterDisplay({ priceRange, priceMin, priceMax }));
   }, [priceRange, priceMin, priceMax]);
 
-  const applyPriceFromString = (raw) => {
-    const next = parsePriceFilterInput(raw);
-    onPriceFilterChange(next);
-  };
-
   const handlePriceChange = (e) => {
     const v = e.target.value;
     setPriceText(v);
     const presetHit = PRICE_RANGE_OPTIONS.some((o) => o.label === v.trim());
     if (presetHit) {
-      applyPriceFromString(v);
+      onPriceFilterChange(parsePriceFilterInput(v));
     }
   };
 
@@ -45,32 +44,17 @@ function TripFiltersBar({
     setPriceText(formatPriceFilterDisplay(parsed));
   };
 
-  const handleDurationChange = (e) => {
-    const raw = e.target.value;
-    if (raw === '') {
-      onDurationChange(0);
-      return;
-    }
-    const digits = raw.replace(/\D/g, '');
-    if (digits === '') {
-      onDurationChange(0);
-      return;
-    }
-    const n = Number.parseInt(digits, 10);
-    if (!Number.isNaN(n)) onDurationChange(Math.max(0, n));
-  };
-
   return (
     <div className="trip-filters">
       <div className="trip-filters__search-block">
-        <label htmlFor="trip-filters-search-input" className="trip-filters__label-text">
+        <label htmlFor="avia-filters-search-input" className="trip-filters__label-text">
           Поиск
         </label>
         <input
-          id="trip-filters-search-input"
+          id="avia-filters-search-input"
           type="search"
           className="trip-filters__search"
-          placeholder="Название, описание, страна, город…"
+          placeholder="Откуда, куда, авиакомпания, время…"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           autoComplete="off"
@@ -79,66 +63,84 @@ function TripFiltersBar({
 
       <div className="trip-filters__row">
         <div className="trip-filters__field">
-          <label htmlFor="trip-filters-country" className="trip-filters__label-text">
-            Страна
+          <label htmlFor="avia-filters-from" className="trip-filters__label-text">
+            Откуда
           </label>
           <input
-            id="trip-filters-country"
+            id="avia-filters-from"
             type="text"
             className="trip-filters__combo trip-filters__combo--with-list"
-            list="trip-country-suggestions"
-            placeholder="Все"
-            value={country}
-            onChange={(e) => onCountryChange(e.target.value)}
+            list="avia-from-dl"
+            placeholder="Город вылета"
+            value={from}
+            onChange={(e) => onFromChange(e.target.value)}
             autoComplete="off"
           />
-          <datalist id="trip-country-suggestions">
-            {countryOptions.map((name) => (
+          <datalist id="avia-from-dl">
+            {fromOptions.map((name) => (
               <option key={name} value={name} />
             ))}
           </datalist>
         </div>
 
         <div className="trip-filters__field">
-          <label htmlFor="trip-filters-duration" className="trip-filters__label-text">
-            Количество ночей
+          <label htmlFor="avia-filters-to" className="trip-filters__label-text">
+            Куда
           </label>
           <input
-            id="trip-filters-duration"
+            id="avia-filters-to"
             type="text"
-            className="trip-filters__combo trip-filters__combo--nights trip-filters__combo--with-list"
-            inputMode="numeric"
-            list="trip-duration-presets"
-            placeholder="Введите количество ночей"
-            value={durationMin === 0 ? '' : String(durationMin)}
-            onChange={handleDurationChange}
+            className="trip-filters__combo trip-filters__combo--with-list"
+            list="avia-to-dl"
+            placeholder="Город прилёта"
+            value={to}
+            onChange={(e) => onToChange(e.target.value)}
             autoComplete="off"
           />
-          <datalist id="trip-duration-presets">
-            {DURATION_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
+          <datalist id="avia-to-dl">
+            {toOptions.map((name) => (
+              <option key={name} value={name} />
             ))}
           </datalist>
         </div>
 
         <div className="trip-filters__field">
-          <label htmlFor="trip-filters-price" className="trip-filters__label-text">
+          <label htmlFor="avia-filters-airline" className="trip-filters__label-text">
+            Авиакомпания
+          </label>
+          <input
+            id="avia-filters-airline"
+            type="text"
+            className="trip-filters__combo trip-filters__combo--with-list"
+            list="avia-airline-dl"
+            placeholder="Название перевозчика"
+            value={airline}
+            onChange={(e) => onAirlineChange(e.target.value)}
+            autoComplete="off"
+          />
+          <datalist id="avia-airline-dl">
+            {airlineOptions.map((name) => (
+              <option key={name} value={name} />
+            ))}
+          </datalist>
+        </div>
+
+        <div className="trip-filters__field">
+          <label htmlFor="avia-filters-price" className="trip-filters__label-text">
             Цена
           </label>
           <input
-            id="trip-filters-price"
+            id="avia-filters-price"
             type="text"
             className="trip-filters__combo trip-filters__combo--price trip-filters__combo--with-list"
             inputMode="text"
-            list="trip-price-presets"
+            list="avia-price-dl"
             placeholder="Введите цену"
             value={priceText}
             onChange={handlePriceChange}
             onBlur={handlePriceBlur}
           />
-          <datalist id="trip-price-presets">
+          <datalist id="avia-price-dl">
             {PRICE_RANGE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.label} />
             ))}
@@ -153,4 +155,4 @@ function TripFiltersBar({
   );
 }
 
-export default TripFiltersBar;
+export default AviaFiltersBar;

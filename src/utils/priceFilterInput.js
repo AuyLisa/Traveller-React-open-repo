@@ -14,9 +14,6 @@ function hasCustomBounds(priceMin, priceMax) {
   return parseOptionalBound(priceMin) != null || parseOptionalBound(priceMax) != null;
 }
 
-/**
- * Строка для поля «Цена»: пресет или ручной диапазон / одно число (максимум).
- */
 export function formatPriceFilterDisplay({ priceRange, priceMin, priceMax }) {
   if (hasCustomBounds(priceMin, priceMax)) {
     const m = parseOptionalBound(priceMin);
@@ -33,9 +30,6 @@ export function formatPriceFilterDisplay({ priceRange, priceMin, priceMax }) {
   return opt ? opt.label : '';
 }
 
-/**
- * Разбор поля «Цена» → те же поля, что ожидает filterTrips.
- */
 export function parsePriceFilterInput(text) {
   const t = text.trim();
   if (!t) return { priceRange: 'all', priceMin: '', priceMax: '' };
