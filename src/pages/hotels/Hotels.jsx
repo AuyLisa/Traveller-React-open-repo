@@ -41,6 +41,7 @@ function Hotels() {
     [searchQuery, country, starsExact, minReviews, priceRange, priceMin, priceMax],
   );
 
+<<<<<<< misha/feature/search
   const handleReset = () => {
     setSearchQuery(INITIAL_FILTERS.searchQuery);
     setCountry(INITIAL_FILTERS.country);
@@ -56,6 +57,52 @@ function Hotels() {
     setPriceMin(next.priceMin);
     setPriceMax(next.priceMax);
   };
+=======
+  const [chosenCountry, setCountry] = useState('');
+  const [chosenStars, setStars] = useState(0);
+  //const [chosenOptions, setOptions] = useState([]); // -
+  const [minReviews, setminReviews] = useState(0);
+  const [chosenSortPrice, setSortPrice] = useState('');
+
+
+
+  //по странам
+  const c_filtered = chosenCountry === ''
+  ? hotels
+  : hotels.filter(hotel => hotel.country === chosenCountry);
+
+  //по звездам
+  const s_filtered = chosenStars === 0
+  ? c_filtered  //результат после фильтра по странам
+  : c_filtered.filter(hotel => hotel.stars === chosenStars);
+
+  //по опциям пока -
+  {/*const op_filtered = chosenOptions.length === 0
+  ? s_filtered
+  : s_filtered.filter(hotel=> {
+    return chosenOptions.every(option => hotel.options.includes(option));
+  });
+*/}
+
+  //по числу отзывов
+  const r_filtered = minReviews === 0
+  ? s_filtered 
+  : s_filtered.filter(hotel => hotel.reviews >= minReviews);
+
+
+  //по цене
+  const p_filtered = [...r_filtered] 
+  if (chosenSortPrice === 'asc') 
+      p_filtered.sort((a, b) => a.price - b.price);  //по возр
+  if (chosenSortPrice === 'desc') 
+      p_filtered.sort((a, b) => b.price - a.price);  //по убыв
+
+
+
+  const res = p_filtered;
+
+
+>>>>>>> main
 
   return (
     <Layout>

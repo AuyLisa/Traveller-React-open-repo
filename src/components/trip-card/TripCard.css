@@ -71,3 +71,11 @@
 .tripcard__button:hover {
   background-color: #3d7a2e;
 }
+
+.tripcard__button--cart {
+  background-color: #751ae4;
+}
+
+.tripcard__button--cart:hover {
+  background-color: #5a15b0;
+}

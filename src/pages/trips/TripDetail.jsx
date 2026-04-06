@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
 import Layout from '../../components/layout/Layout';
 import trips from '../../data/trips';
+import CardCartControls from '../../components/card-cart-controls/CardCartControls';
+import { tripToCartPayload } from '../../utils/cartItemBuilders';
 import './TripDetail.css';
 
 function TripDetail() {
@@ -77,6 +79,15 @@ function TripDetail() {
           <h2 className="trip-detail__subtitle">Описание</h2>
           <p className="trip-detail__description">{trip.description}</p>
         </section>
+
+        <div className="trip-detail__actions">
+          <CardCartControls
+            type="trip"
+            itemId={trip.id}
+            payload={tripToCartPayload(trip)}
+            variant="trip-detail"
+          />
+        </div>
       </div>
     </Layout>
   );

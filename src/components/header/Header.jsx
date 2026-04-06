@@ -1,16 +1,30 @@
 import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 import './Header.css';
 
 function Header() {
+  const cart = useCart();
+  const cartCount = cart.reduce((n, item) => n + item.quantity, 0);
+
   return (
     <header className="header">
-      <div className="header__logo">Traveller</div>
+      <Link className="header__logo" to="/">
+        Traveller
+      </Link>
       <nav>
         <ul className="header__list">
           <li><Link className="header__link" to="/">Главная</Link></li>
           <li><Link className="header__link" to="/trips">Туры</Link></li>
           <li><Link className="header__link" to="/hotels">Отели</Link></li>
           <li><Link className="header__link" to="/avia">Авиабилеты</Link></li>
+          <li>
+            <Link className="header__link header__cart" to="/cart">
+              Корзина
+              {cartCount > 0 && (
+                <span className="header__cart-badge">{cartCount}</span>
+              )}
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

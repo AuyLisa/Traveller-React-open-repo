@@ -91,6 +91,35 @@
   padding: 0 0.35rem;
 }
 
+.hotelcard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* Компактный контрол корзины: без растягивания по строке (раньше давали flex: 1 и width: 100% из CardCartControls) */
+.hotelcard__actions .card-cart-controls {
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.hotelcard__actions .card-cart-controls .card-cart-controls__add {
+  width: auto;
+}
+
+.hotelcard__actions .card-cart-controls .card-cart-controls__row {
+  width: auto;
+}
+
+.hotelcard__actions .card-cart-controls .card-cart-controls__qty {
+  flex: 0 0 auto;
+  min-width: 2.75rem;
+  padding: 0 0.35rem;
+}
+
 .hotelcard__button {
   background-color: #751AE4;
   color: white;
@@ -103,4 +132,12 @@
 
 .hotelcard__button:hover {
   background-color: #5a15b0;
+}
+
+.hotelcard__button--cart {
+  background-color: #4c9839;
+}
+
+.hotelcard__button--cart:hover {
+  background-color: #3d7a2e;
 }

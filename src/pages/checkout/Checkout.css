@@ -1,0 +1,78 @@
+.checkout-page {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+.checkout-page__title {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+  color: #1a1a1a;
+}
+
+.checkout-page__back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #751ae4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.checkout-page__back:hover {
+  text-decoration: underline;
+}
+
+.checkout-page__layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .checkout-page__layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.checkout-page__empty {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #bbb;
+  border-radius: 12px;
+}
+
+.checkout-page__empty-text {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.checkout-page__empty-hint {
+  margin: 0 0 1.5rem;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.checkout-page__empty-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.checkout-page__link {
+  color: #751ae4;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #751ae4;
+  border-radius: 8px;
+}
+
+.checkout-page__link:hover {
+  background: #f6f0ff;
+}
