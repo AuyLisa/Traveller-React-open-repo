@@ -66,7 +66,7 @@ function Hotels() {
   //по звездам
   const s_filtered = chosenStars === 0
   ? c_filtered  //результат после фильтра по странам
-  : c_filtered.filter(hotel => hotel.star === chosenStars);
+  : c_filtered.filter(hotel => hotel.stars === chosenStars);
 
   //по опциям пока -
   {/*const op_filtered = chosenOptions.length === 0
@@ -79,7 +79,7 @@ function Hotels() {
   //по числу отзывов
   const r_filtered = minReviews === 0
   ? s_filtered 
-  : s_filtered.filter(hotel => hotel.review >= minReviews);
+  : s_filtered.filter(hotel => hotel.reviews >= minReviews);
 
 
   //по цене

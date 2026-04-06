@@ -9,6 +9,9 @@
 @import './pages/trips/Trips.css';
 @import './pages/hotels/Hotels.css';
 @import './pages/avia/Avia.css';
+@import './pages/cart/Cart.css';
+@import './pages/checkout/Checkout.css';
+@import './components/cart-item/CartItem.css';
 
 * {
   margin: 0;

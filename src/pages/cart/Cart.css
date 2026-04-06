@@ -1,0 +1,122 @@
+.cart-page {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.cart-page__title {
+  font-size: 1.75rem;
+  margin: 0 0 1.5rem;
+  color: #1a1a1a;
+}
+
+.cart-page__empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #bbb;
+  border-radius: 12px;
+}
+
+.cart-page__empty-text {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.cart-page__empty-hint {
+  margin: 0 0 1.5rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.cart-page__empty-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.cart-page__link {
+  color: #751ae4;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #751ae4;
+  border-radius: 8px;
+}
+
+.cart-page__link:hover {
+  background: #f6f0ff;
+}
+
+.cart-page__sections {
+  margin-bottom: 1.5rem;
+}
+
+.cart-page__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.cart-page__clear {
+  padding: 0.65rem 1.1rem;
+  font-size: 0.95rem;
+  border: 1px solid #999;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #444;
+}
+
+.cart-page__clear:hover {
+  background: #f0f0f0;
+}
+
+.cart-page__summary {
+  min-width: 16rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cart-page__total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.cart-page__total-label {
+  font-size: 1rem;
+  color: #555;
+}
+
+.cart-page__total-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cart-page__checkout {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #4c9839;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.cart-page__checkout:hover {
+  background: #3d7a2e;
+}

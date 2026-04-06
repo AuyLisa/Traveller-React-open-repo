@@ -74,3 +74,11 @@
   margin: 0;
   line-height: 1.55;
 }
+
+.trip-detail__actions {
+  margin-top: 1.75rem;
+}
+
+.trip-detail__actions .card-cart-controls {
+  max-width: 22rem;
+}

@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import CardCartControls from '../card-cart-controls/CardCartControls';
+import { tripToCartPayload } from '../../utils/cartItemBuilders';
 import './TripCard.css';
 
 function TripCard( {trip} ) {
@@ -15,13 +17,21 @@ function TripCard( {trip} ) {
         <h3 className="tripcard__title">{trip.title}</h3>
         <p className="tripcard__description">{trip.description}</p>
         <p className="tripcard__price">{trip.price} ₽</p>
-        <button
-          type="button"
-          className="tripcard__button"
-          onClick={() => navigate(`/trips/${trip.id}`)}
-        >
-          Подробнее
-        </button>
+        <div className="tripcard__actions">
+          <button
+            type="button"
+            className="tripcard__button"
+            onClick={() => navigate(`/trips/${trip.id}`)}
+          >
+            Подробнее
+          </button>
+          <CardCartControls
+            type="trip"
+            itemId={trip.id}
+            payload={tripToCartPayload(trip)}
+            variant="trip"
+          />
+        </div>
     </div>
   </div>
   );
