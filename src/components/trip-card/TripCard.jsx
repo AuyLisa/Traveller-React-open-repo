@@ -24,18 +24,12 @@ function TripCard({ trip }) {
       </div>
 
       <div className="tripcard__content">
-<<<<<<< misha/feature/search
         <h3 className="tripcard__title">{title}</h3>
         {locationLine ? <p className="tripcard__meta">{locationLine}</p> : null}
         {description ? (
           <p className="tripcard__description">{description}</p>
         ) : null}
         <p className="tripcard__price">{formatPrice(trip.price)}</p>
-=======
-        <h3 className="tripcard__title">{trip.title}</h3>
-        <p className="tripcard__description">{trip.description}</p>
-        <p className="tripcard__price">{trip.price} ₽</p>
->>>>>>> main
         <div className="tripcard__actions">
           <button
             type="button"
@@ -51,13 +45,8 @@ function TripCard({ trip }) {
             variant="trip"
           />
         </div>
-<<<<<<< misha/feature/search
       </div>
     </article>
-=======
-    </div>
-  </div>
->>>>>>> main
   );
 }
 
