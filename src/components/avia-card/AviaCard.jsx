@@ -1,3 +1,5 @@
+import CardCartControls from '../card-cart-controls/CardCartControls';
+import { flightToCartPayload } from '../../utils/cartItemBuilders';
 import './AviaCard.css';
 
 function AviaCard( {avia} ) {
@@ -16,9 +18,16 @@ function AviaCard( {avia} ) {
 
       <p className="aviacard__duration"> В пути: {avia.duration}</p>
       <p className="aviacard__airline">{avia.airline}</p>
-      {/*<p className="aviacard__price">{avia.price} ₽</p>
-      цены сделать эконом комфорт бизнес*/}
-      <button className="aviacard__button">Подробнее</button>
+      <p className="aviacard__price">от {avia.price.toLocaleString('ru-RU')} ₽</p>
+      <div className="aviacard__actions">
+        <button type="button" className="aviacard__button">Подробнее</button>
+        <CardCartControls
+          type="flight"
+          itemId={avia.id}
+          payload={flightToCartPayload(avia)}
+          variant="avia"
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+.checkout {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.checkout__title {
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.checkout__lead {
+  line-height: 1.55;
+  color: #444;
+  margin: 0 0 1.5rem;
+}
+
+.checkout__back {
+  color: #751ae4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.checkout__back:hover {
+  text-decoration: underline;
+}

@@ -7,6 +7,8 @@ import Trips from './pages/trips/Trips'
 import TripDetail from './pages/trips/TripDetail'
 import Hotels from './pages/hotels/Hotels'
 import Avia from './pages/avia/Avia'
+import Cart from './pages/cart/Cart'
+import Checkout from './pages/checkout/Checkout'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +19,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/trips/:id" element={<TripDetail />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/avia" element={<Avia />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

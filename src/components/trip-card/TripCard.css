@@ -44,6 +44,13 @@
   margin: 0 0 0.9rem 0;    
 }
 
+.tripcard__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
 .tripcard__button {
   background-color: #4C9839;
   color: white;
@@ -52,8 +59,17 @@
   padding: 0.8rem;  
   font-size: 1rem;      
   width: 100%;
+  cursor: pointer;
 }
 
 .tripcard__button:hover {
   background-color: #3d7a2e;
+}
+
+.tripcard__button--cart {
+  background-color: #751ae4;
+}
+
+.tripcard__button--cart:hover {
+  background-color: #5a15b0;
 }
