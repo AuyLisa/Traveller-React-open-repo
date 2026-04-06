@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import CardCartControls from '../card-cart-controls/CardCartControls';
+import { tripToCartPayload } from '../../utils/cartItemBuilders';
 import './TripCard.css';
 
 function formatPrice(value) {
@@ -23,20 +25,26 @@ function TripCard({ trip }) {
 
       <div className="tripcard__content">
         <h3 className="tripcard__title">{title}</h3>
-        {locationLine ? (
-          <p className="tripcard__meta">{locationLine}</p>
-        ) : null}
+        {locationLine ? <p className="tripcard__meta">{locationLine}</p> : null}
         {description ? (
           <p className="tripcard__description">{description}</p>
         ) : null}
         <p className="tripcard__price">{formatPrice(trip.price)}</p>
-        <button
-          type="button"
-          className="tripcard__button"
-          onClick={() => navigate(`/trips/${trip.id}`)}
-        >
-          Подробнее
-        </button>
+        <div className="tripcard__actions">
+          <button
+            type="button"
+            className="tripcard__button"
+            onClick={() => navigate(`/trips/${trip.id}`)}
+          >
+            Подробнее
+          </button>
+          <CardCartControls
+            type="trip"
+            itemId={trip.id}
+            payload={tripToCartPayload(trip)}
+            variant="trip"
+          />
+        </div>
       </div>
     </article>
   );

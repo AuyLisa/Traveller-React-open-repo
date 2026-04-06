@@ -1,11 +1,12 @@
+import CardCartControls from '../card-cart-controls/CardCartControls';
+import { hotelToCartPayload } from '../../utils/cartItemBuilders';
 import './HotelCard.css';
 
-function HotelCard( {hotel} ) {
+function HotelCard({ hotel }) {
   return (
     <div className="hotelcard">
-
       <div className="hotelcard__image">
-        <span className="hotelcard__photo"></span>
+        <span className="hotelcard__photo" />
       </div>
 
       <div className="hotelcard__content">
@@ -16,12 +17,24 @@ function HotelCard( {hotel} ) {
         <p className="hotelcard__description">{hotel.description}</p>
 
         <div className="hotelcard__rating">
-          <span className="hotelcard__stars">{hotel.stars != null ? `${hotel.stars}⭐` : '—'}</span>
+          <span className="hotelcard__stars">
+            {hotel.stars != null ? `${hotel.stars}⭐` : '—'}
+          </span>
           <span className="hotelcard__reviews">{hotel.reviews} отзывов</span>
         </div>
 
         <p className="hotelcard__price"> от {hotel.price} ₽</p>
-        <button className="hotelcard__button">Подробнее</button>
+        <div className="hotelcard__actions">
+          <button type="button" className="hotelcard__button">
+            Подробнее
+          </button>
+          <CardCartControls
+            type="hotel"
+            itemId={hotel.id}
+            payload={hotelToCartPayload(hotel)}
+            variant="hotel"
+          />
+        </div>
       </div>
     </div>
   );

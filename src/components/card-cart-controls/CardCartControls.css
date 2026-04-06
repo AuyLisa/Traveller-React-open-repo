@@ -1,0 +1,132 @@
+.card-cart-controls {
+  width: 100%;
+}
+
+.card-cart-controls__add {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 0.15s ease;
+}
+
+.card-cart-controls__row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 2.75rem;
+  border-radius: inherit;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: #f8f9fa;
+}
+
+.card-cart-controls__step {
+  flex: 0 0 2.75rem;
+  border: none;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.card-cart-controls__step:hover {
+  background: #eef1f4;
+}
+
+.card-cart-controls__step:active {
+  background: #e2e6ea;
+}
+
+.card-cart-controls__qty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  background: #fff;
+  min-width: 2.5rem;
+}
+
+/* trip — как tripcard__button--cart */
+.card-cart-controls--trip .card-cart-controls__add {
+  padding: 0.8rem;
+  border-radius: 16px;
+  background-color: #751ae4;
+}
+
+.card-cart-controls--trip .card-cart-controls__add:hover {
+  background-color: #5a15b0;
+}
+
+.card-cart-controls--trip .card-cart-controls__row {
+  border-radius: 16px;
+}
+
+.card-cart-controls--trip .card-cart-controls__step {
+  color: #5a15b0;
+}
+
+/* hotel — зелёная кнопка как hotelcard__button--cart */
+.card-cart-controls--hotel .card-cart-controls__add {
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  background-color: #4c9839;
+}
+
+.card-cart-controls--hotel .card-cart-controls__add:hover {
+  background-color: #3d7a2e;
+}
+
+.card-cart-controls--hotel .card-cart-controls__row {
+  border-radius: 2rem;
+}
+
+.card-cart-controls--hotel .card-cart-controls__step {
+  color: #2d6a22;
+}
+
+/* avia */
+.card-cart-controls--avia .card-cart-controls__add {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  background-color: #751ae4;
+}
+
+.card-cart-controls--avia .card-cart-controls__add:hover {
+  background-color: #5a15b0;
+}
+
+.card-cart-controls--avia .card-cart-controls__row {
+  border-radius: 8px;
+}
+
+.card-cart-controls--avia .card-cart-controls__step {
+  color: #5a15b0;
+}
+
+/* страница тура — как trip-detail__cart-btn */
+.card-cart-controls--trip-detail .card-cart-controls__add {
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  background: #751ae4;
+}
+
+.card-cart-controls--trip-detail .card-cart-controls__add:hover {
+  background: #5a15b0;
+}
+
+.card-cart-controls--trip-detail .card-cart-controls__row {
+  border-radius: 10px;
+}
+
+.card-cart-controls--trip-detail .card-cart-controls__step {
+  color: #5a15b0;
+}
