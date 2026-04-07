@@ -25,6 +25,8 @@ function Header() {
               )}
             </Link>
           </li>
+          <li><Link className="header__link" to="/registration">Регистрация</Link></li>
+          <li><Link className="header__link" to="/login">Войти</Link></li>
         </ul>
       </nav>
     </header>

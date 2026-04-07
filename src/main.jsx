@@ -9,6 +9,9 @@ import Hotels from './pages/hotels/Hotels'
 import Avia from './pages/avia/Avia'
 import Cart from './pages/cart/Cart'
 import Checkout from './pages/checkout/Checkout'
+import Registration from './pages/registration/Registration'
+import Login from './pages/login/Login'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +24,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/avia" element={<Avia />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
