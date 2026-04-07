@@ -17,7 +17,7 @@ function AviaToolbar({
   maxPrice,
   onMaxPriceChange,
   onReset,
-}) {
+}) { {/* список подсказок генерируется автоматически из данных в .js */}
   const { froms, tos, airlines, durations, pricePoints } = useMemo(
     () => buildAviaFilterOptions(avias),
     [avias]

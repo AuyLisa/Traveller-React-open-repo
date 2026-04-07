@@ -45,10 +45,10 @@ export function buildHotelFilterOptions(hotels) {
   const countries = [...new Set(hotels.map((h) => h.country).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, 'ru')
   );
-  const starOptions = [...new Set(hotels.map((h) => h.stars).filter((n) => Number.isFinite(n)))].sort(
+  const starOptions = [...new Set(hotels.map((h) => h.star).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
-  const reviewPoints = [...new Set(hotels.map((h) => h.reviews).filter((n) => Number.isFinite(n)))].sort(
+  const reviewPoints = [...new Set(hotels.map((h) => h.review).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
   const pricePoints = [...new Set(hotels.map((h) => h.price).filter((n) => Number.isFinite(n)))].sort(
