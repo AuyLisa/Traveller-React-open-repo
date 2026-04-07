@@ -1,110 +1,62 @@
-{/* для фильтрации будут 3 параметра
-+1 country
-+2 duration
-+3 price разделится на дешевые и дорогие
-*/}
-
-
+import { useMemo, useState, useCallback } from 'react';
 import Layout from '../../components/layout/Layout';
 import TripCard from '../../components/trip-card/TripCard';
-import trips from '../../data/trips'; 
+import TripsToolbar from '../../components/trips-toolbar/TripsToolbar';
+import trips from '../../data/trips';
+import { filterTrips } from '../../utils/filterTrips';
 import './Trips.css';
-import {useState} from 'react';
-
-
-const countries = [
-  { value: '', label: 'все страны'},
-  { value: 'Турция', label: 'Турция'},
-  { value: 'ОАЭ', label: 'ОАЭ'},
-  { value: 'Египет', label: 'Египет'},
-  { value: 'Таиланд', label: 'Таиланд'},
-  { value: 'Грузия', label: 'Грузия'},
-  { value: 'Мальдивы', label: 'Мальдивы'}
-];
-
-const durations = [
-  { value: '0', label: 'любое количество дней'},
-  { value: '3', label: 'от 3х дней'},
-  { value: '7', label: 'от 7 дней'},
-  { value: '21', label: 'от 21 дня'},
-  { value: '30', label: 'от месяца'},
-  { value: '100', label: 'от 100 дней'}
-];
-
-const prices = [
-  {value: '', label: 'все цены'},
-  {value: "asc", label: 'сначала дешевые'},
-  {value: "desc", label: 'сначала дорогие'}
-]
 
 function Trips() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [country, setCountry] = useState('');
+  const [nights, setNights] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
 
-  const [chosenCountry, setCountry] = useState('');
-  const [chosenDuration, setDuration] = useState(0);
-  const [chosenSortPrice, setSortPrice] = useState('');
+  const filtered = useMemo(
+    () =>
+      filterTrips(trips, {
+        searchQuery,
+        country,
+        nightsRaw: nights,
+        maxPriceRaw: maxPrice,
+      }),
+    [searchQuery, country, nights, maxPrice]
+  );
 
-
-  //по странам
-  const c_filtered = chosenCountry === ''
-  ? trips
-  : trips.filter(trip => trip.country === chosenCountry);
-
-  //по продолжительности
-  const d_filtered = chosenDuration === 0
-  ? c_filtered
-  : c_filtered.filter(trip => trip.duration >= chosenDuration);
-
-   //по цене
-   const p_filtered = [...d_filtered] 
-   if (chosenSortPrice === 'asc') 
-       p_filtered.sort((a, b) => a.price - b.price); 
-   if (chosenSortPrice === 'desc') 
-       p_filtered.sort((a, b) => b.price - a.price); 
-
-  const res = p_filtered;
+  const handleReset = useCallback(() => {
+    setSearchQuery('');
+    setCountry('');
+    setNights('');
+    setMaxPrice('');
+  }, []);
 
   return (
     <Layout>
       <h1 className="trips__title">Туры</h1>
-      <div className="trips__filters">
+      <TripsToolbar
+        trips={trips}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        country={country}
+        onCountryChange={setCountry}
+        nights={nights}
+        onNightsChange={setNights}
+        maxPrice={maxPrice}
+        onMaxPriceChange={setMaxPrice}
+        onReset={handleReset}
+      />
 
-        {/* по странам */}
-        <select className="trips__select"
-        value={chosenCountry} onChange={(e) => setCountry(e.target.value)}>
-          {countries.map(country => (<option key={country.value} value={country.value}> {country.label}
-          </option>
+      {filtered.length === 0 ? (
+        <p className="trips__empty" role="status">
+          Ничего не найдено. Измените запрос или нажмите «Сбросить».
+        </p>
+      ) : (
+        <div className="trips__grid">
+          {filtered.map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
           ))}
-        </select>
-
-        {/* по продолжительности */}
-        <select className="trips__select"
-        value={chosenDuration} onChange={(e) => setDuration(Number(e.target.value))}>
-          {durations.map(duration => (<option key={duration.value} value={duration.value}> {duration.label}
-          </option>
-          ))}
-        </select>
-
-
-        {/* по цене */}
-        <select className="trips__select"
-        value={chosenSortPrice} onChange={(e) => setSortPrice(e.target.value)}>
-        {prices.map(price => (<option key={price.value} value={price.value}> {price.label}
-          </option>
-          ))}
-        </select>
-
-    </div>
-
-    <div className="trips__results">
-        Найдено туров:  
-        <span className="trips__count"> {res.length}</span>
-    </div>
-
-    <div className="trips__grid">
-        {res.map(trip => (
-          <TripCard key={trip.id} trip={trip} />
-        ))}
-    </div>
+        </div>
+      )}
     </Layout>
   );
 }

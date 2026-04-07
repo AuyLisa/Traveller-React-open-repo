@@ -1,114 +1,68 @@
-{/* для фильтрации будут 
-1 from
-2 to
-3 price разделится на дешевые и дорогие
-4 airline
-*/}
-
-
+import { useMemo, useState, useCallback } from 'react';
 import Layout from '../../components/layout/Layout';
 import AviaCard from '../../components/avia-card/AviaCard';
+import AviaToolbar from '../../components/avia-toolbar/AviaToolbar';
 import avias from '../../data/avia';
+import { filterAvias } from '../../utils/filterAvias';
 import './Avia.css';
-import {useState} from 'react';
-
-const citiesFrom = [
-  { value: '', label: 'вылет' },
-  { value: 'Москва (VKO)', label: 'Москва (VKO)' },
-  { value: 'Москва (SVO)', label: 'Москва (SVO)' },
-  { value: 'Москва (DME)', label: 'Москва (DME)' },
-  { value: 'Санкт-Петербург (LED)', label: 'Санкт-Петербург (LED)' },
-  { value: 'Екатеринбург (SVX)', label: 'Екатеринбург (SVX)' },
-  { value: 'Сочи (AER)', label: 'Сочи (AER)' }
-];
-
-const citiesTo = [
-  { value: '', label: 'прилет' },
-  { value: 'Стамбул (IST)', label: 'Стамбул (IST)' },
-  { value: 'Анталия (AYT)', label: 'Анталия (AYT)' },
-  { value: 'Дубай (DXB)', label: 'Дубай (DXB)' },
-  { value: 'Бангкок (BKK)', label: 'Бангкок (BKK)' },
-  { value: 'Пхукет (HKT)', label: 'Пхукет (HKT)' },
-  { value: 'Тбилиси (TBS)', label: 'Тбилиси (TBS)' },
-  { value: 'Париж (CDG)', label: 'Париж (CDG)' }
-];
-
-const prices = [
-  { value: '', label: 'все цены'},
-  { value: 'asc', label: 'сначала дешевые'},
-  { value: 'desc', label: 'сначала дорогие'}
-]
-
 
 function Avia() {
-  const [chosenCity1, setCity1] = useState('');
-  const [chosenCity2, setCity2] = useState('');
-  const [chosenSortPrice, setSortPrice] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
+  const [airline, setAirline] = useState('');
+  const [duration, setDuration] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
 
+  const filtered = useMemo(
+    () =>
+      filterAvias(avias, {
+        searchQuery,
+        from,
+        to,
+        airline,
+        durationRaw: duration,
+        maxPriceRaw: maxPrice,
+      }),
+    [searchQuery, from, to, airline, duration, maxPrice]
+  );
 
-  //по странам 1вылет
-  const c1_filtered = chosenCity1 === ''
-  ? avias
-  : avias.filter(avia => avia.from === chosenCity1);
-
-  //по странам 2вылет
-  const c2_filtered = chosenCity2 === ''
-  ? c1_filtered
-  : c1_filtered.filter(avia => avia.to === chosenCity2);
-
-   //по цене
-   const p_filtered = [...c2_filtered] 
-   if (chosenSortPrice === 'asc') 
-       p_filtered.sort((a, b) => a.price - b.price); 
-   if (chosenSortPrice === 'desc') 
-       p_filtered.sort((a, b) => b.price - a.price); 
-
-
-  const res = p_filtered;
-
+  const handleReset = useCallback(() => {
+    setSearchQuery('');
+    setFrom('');
+    setTo('');
+    setAirline('');
+    setDuration('');
+    setMaxPrice('');
+  }, []);
 
   return (
     <Layout>
       <h1 className="avia__title">Авиабилеты</h1>
-      <div className="avia__filters">
-        {/* по странам 1 вылет*/}
-        <select className="avia__select"
-        value={chosenCity1} onChange={(e) => setCity1(e.target.value)}>
-        {citiesFrom.map(city => (<option key={city.value} value={city.value}>
-            {city.label}
-            </option>
-          ))}
-        </select>
+      <AviaToolbar
+        avias={avias}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        from={from}
+        onFromChange={setFrom}
+        to={to}
+        onToChange={setTo}
+        airline={airline}
+        onAirlineChange={setAirline}
+        duration={duration}
+        onDurationChange={setDuration}
+        maxPrice={maxPrice}
+        onMaxPriceChange={setMaxPrice}
+        onReset={handleReset}
+      />
 
-
-        {/* по странам 1 прилет*/}
-        <select className="avia__select"
-        value={chosenCity2} onChange={(e) => setCity2(e.target.value)}>
-        {citiesTo.map(city => (<option key={city.value} value={city.value}>
-            {city.label}
-            </option>
-          ))}
-        </select>
-
-        {/* по цене */}
-        <select className="avia__select"
-        value={chosenSortPrice} onChange={(e) => setSortPrice(e.target.value)}>
-        {prices.map(price => (<option key={price.value} value={price.value}>
-            {price.label}
-            </option>
-          ))}
-        </select>
-      </div>
-
-
-      <div className="avia__results">
-        Найдено авиаперелетов:  
-        <span className="avia__count"> {res.length}</span>
-      </div>
-
-      {res.map(avia => (
-          <AviaCard key={avia.id} avia={avia} />
-        ))}
+      {filtered.length === 0 ? (
+        <p className="avia__empty" role="status">
+          Ничего не найдено. Измените запрос или нажмите «Сбросить».
+        </p>
+      ) : (
+        filtered.map((avia) => <AviaCard key={avia.id} avia={avia} />)
+      )}
     </Layout>
   );
 }
