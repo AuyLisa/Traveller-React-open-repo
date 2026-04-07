@@ -1,0 +1,64 @@
+.triptop {
+  border: 2px solid #b9bcbe;
+  border-radius: 16px;         
+  background: white;
+  display: flex;
+  flex-direction: column;              
+  height: 100%;  
+  width: 200px;
+}
+
+.triptop:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.triptop__photo {
+  display: block;
+  width: 100%; 
+  height: 14rem;              
+  background-color: #929292;
+  border-radius: 16px;
+}
+
+.triptop__image {
+  position: relative;
+  width: 100%;
+  padding: 0.45rem;  
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.triptop__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.triptop__country {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.triptop__button {
+  width: 100%;
+  padding: 12px;
+  background: #c5ba1c;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.triptop__button:hover {
+  background: #8d8517;
+}
