@@ -55,7 +55,6 @@
   min-width: 2.5rem;
 }
 
-/* trip — как tripcard__button--cart */
 .card-cart-controls--trip .card-cart-controls__add {
   padding: 0.8rem;
   border-radius: 16px;
@@ -74,7 +73,6 @@
   color: #5a15b0;
 }
 
-/* hotel — зелёная кнопка как hotelcard__button--cart */
 .card-cart-controls--hotel .card-cart-controls__add {
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
@@ -93,7 +91,6 @@
   color: #2d6a22;
 }
 
-/* avia */
 .card-cart-controls--avia .card-cart-controls__add {
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
@@ -112,7 +109,6 @@
   color: #5a15b0;
 }
 
-/* страница тура — как trip-detail__cart-btn */
 .card-cart-controls--trip-detail .card-cart-controls__add {
   padding: 0.85rem 1.5rem;
   border-radius: 10px;

@@ -7,16 +7,6 @@ import {
 } from '../../utils/cart';
 import './CardCartControls.css';
 
-/**
- * Кнопка «Добавить в корзину» или контроль количества (− / число / +).
- * Логика корзины — только через utils/cart.
- *
- * @param {object} props
- * @param {'trip'|'hotel'|'flight'} props.type
- * @param {number} props.itemId
- * @param {object} props.payload — аргумент для addCartItem (type, itemId, title, price, meta)
- * @param {'trip'|'hotel'|'avia'|'trip-detail'} [props.variant]
- */
 function CardCartControls({ type, itemId, payload, variant = 'trip' }) {
   const cart = useCart();
   const qty = getCartItemQuantity(cart, type, itemId);

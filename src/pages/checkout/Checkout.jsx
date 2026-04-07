@@ -9,11 +9,6 @@ import { clearCart } from '../../utils/cart';
 import { addOrder, buildOrderRecord } from '../../utils/orders';
 import './Checkout.css';
 
-/**
- * Оформление всей корзины. При появлении ЛК: проверять авторизацию,
- * подставлять контакты в форму (см. CheckoutForm) и при сохранении заказа
- * добавлять userId в запись заказа на бэкенде.
- */
 function Checkout() {
   const cart = useCart();
   const isEmpty = cart.length === 0;

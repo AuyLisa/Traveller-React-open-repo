@@ -4,10 +4,6 @@ function isValidEmail(value) {
   return EMAIL_RE.test(String(value).trim());
 }
 
-/**
- * Валидация паспортного блока одного пассажира.
- * @returns {Record<string, string>}
- */
 export function validatePassengerPassport(passenger) {
   const p = passenger || {};
   const err = {};
@@ -24,13 +20,6 @@ export function validatePassengerPassport(passenger) {
   return err;
 }
 
-/**
- * @param {object} values
- * @param {object[]} values.passengers
- * @param {string} values.email
- * @param {string} values.phone
- * @returns {{ errors: { email?: string, phone?: string, passengers?: Record<string, string>[] }, isValid: boolean }}
- */
 export function validateCheckoutForm(values) {
   const errors = {};
 

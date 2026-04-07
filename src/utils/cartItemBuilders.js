@@ -1,10 +1,3 @@
-/**
- * Приведение сущностей из trips / hotels / avias к полям для addCartItem.
- *
- * Итоговая позиция в корзине (см. cart.js): id, type, itemId, title, price, quantity, meta.
- * type: 'trip' | 'hotel' | 'flight' (авиа в данных — avias, в корзине — flight).
- */
-
 export function tripToCartPayload(trip) {
   return {
     type: 'trip',

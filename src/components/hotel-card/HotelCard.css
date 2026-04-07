@@ -72,7 +72,6 @@
   margin-top: auto;
 }
 
-/* Компактный контрол корзины: без растягивания по строке (раньше давали flex: 1 и width: 100% из CardCartControls) */
 .hotelcard__actions .card-cart-controls {
   flex: 0 0 auto;
   width: fit-content;

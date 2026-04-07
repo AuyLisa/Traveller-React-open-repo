@@ -6,17 +6,6 @@ const FIELDS = [
   { key: 'patronymic', label: 'Отчество', auto: 'additional-name' },
 ];
 
-/**
- * Блок «Паспортные данные» для одного пассажира.
- * @param {object} props
- * @param {number} props.index — 0-based, для заголовка «Пассажир N»
- * @param {object} props.passenger
- * @param {Record<string, string>} props.errors — ошибки только этого пассажира
- * @param {function} props.onFieldChange — (fieldKey, value) => void
- * @param {boolean} props.showRemove
- * @param {function} props.onRemove
- * @param {boolean} props.disabled
- */
 function PassengerPassportBlock({
   index,
   passenger,

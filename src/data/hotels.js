@@ -1,11 +1,3 @@
-{/* для фильтрации будут 
-+1 country
-+2 stars
-+3 price разделится на дешевые и дорогие
--4 options
-+5=reviews
-*/}
-
 const hotels = [
   {
     id: 1,

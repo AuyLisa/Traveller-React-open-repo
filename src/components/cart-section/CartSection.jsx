@@ -1,14 +1,6 @@
 import CartItem from '../cart-item/CartItem';
 import './CartSection.css';
 
-/**
- * Секция корзины по одному типу позиций. Пустая секция не рендерится.
- *
- * @param {object} props
- * @param {string} props.title — заголовок (на экране)
- * @param {string} props.sectionId — стабильный id для a11y (латиница)
- * @param {object[]} props.items
- */
 function CartSection({ title, sectionId, items }) {
   if (!items.length) return null;
 

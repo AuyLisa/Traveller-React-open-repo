@@ -25,10 +25,6 @@ const EMPTY_FORM = {
   contactPreference: 'any',
 };
 
-/**
- * Форма оформления. При появлении ЛК и авторизации:
- * подставить данные профиля в контакты и пассажиров (см. handleLoadFromProfile).
- */
 function CheckoutForm({ onValidSubmit, isSubmitting }) {
   const [values, setValues] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState({});
@@ -87,13 +83,7 @@ function CheckoutForm({ onValidSubmit, isSubmitting }) {
     });
   };
 
-  /**
-   * Заглушка под ЛК: здесь должны быть проверка авторизации и подстановка данных профиля.
-   * Пока без интеграции — кнопка не меняет форму.
-   */
   const handleLoadFromProfile = () => {
-    // TODO (ЛК): если пользователь не авторизован — показать вход или уведомление;
-    // если авторизован — GET /profile и setValues с данными в passengers[0] и email/phone.
   };
 
   const handleSubmit = (e) => {
