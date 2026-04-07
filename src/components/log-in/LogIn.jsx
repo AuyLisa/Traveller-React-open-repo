@@ -10,20 +10,52 @@ function LogIn() {
     password: ''
   });
 
-//обработчик изменения полей
+  const [error, setError] = useState('');
+
+  //обработчик изменения полей
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value  // обновляем только изменённое поле
     });
+    if (error) setError('');
   };
+
 
   //обработчик отправки формы
   const handleSubmit = (e) => {
-    e.preventDefault();  // не перезагружать страницу чтобы после кнопки регистрация выйти в главный экан
-    console.log('Войти:', formData);
-    navigate('/');
-  };
+    e.preventDefault();  // не перезагружать страницу чтобы после кнопки регистрация выйти в главный экран
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+   
+   
+    // неверно
+    //if (users.some(user => user.email === formData.email)) {
+    //if ((users.some(user => user.password === formData.password))) {
+    
+    const user = users.find(user => 
+    user.email === formData.email && 
+    user.password === formData.password
+    );
+    
+    if (user) {
+      localStorage.setItem('currentUser', JSON.stringify({
+        id: user.id,
+        name: user.name,
+        email: user.email
+      }));
+      navigate('/');
+
+    } else {
+
+      if (users.some(user => user.email === formData.email)) {
+        setError('Неправильный пароль');
+        return;
+      } else {
+        setError('Аккаунт не существует');
+        return;
+  }
+  }
+};
 
   //обработчик отправки на страницу регистрации
   const handleRegistration = (e) => {
@@ -32,6 +64,8 @@ function LogIn() {
   };
   return (
     <form className="log-in" onSubmit={handleSubmit}>
+      {error && <p className="log-in__error">{error}</p>}
+
       <div className="log-in__field">
         <label className="log-in__label">Email</label>
         <input

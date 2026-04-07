@@ -11,19 +11,58 @@ function RegistrationForm() {
     password: ''
   });
 
-//обработчик изменения полей
+
+  // Ошибка если email уже есть
+   const [error, setError] = useState('');
+
+
+  //обработчик изменения полей
   const handleChange = (e) => {
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value  // обновляем только изменённое поле
+      [e.target.name]: e.target.value
     });
+
+  //ошибка очищается, если пользователь начал что-то записывать
+    if (error) setError('');
   };
+
 
   //обработчик отправки формы
   const handleSubmit = (e) => {
-    e.preventDefault();  // не перезагружать страницу чтобы после кнопки регистрация выйти в главный экан
-    console.log('Регистрация:', formData);
-    navigate('/');
+    e.preventDefault();  //отменяет стандартное поведение браузера для события
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    
+    // some() проверяет, есть ли хотя бы один элемент, подходящий под условие
+    if (users.some(user => user.email === formData.email)) {
+      setError('Аккаунт с таким email уже существует');
+      return;
+    }
+
+      const newUser = {
+        id: crypto.randomUUID(),
+        name: formData.name,
+        email: formData.email,
+        password: formData.password, 
+        favorites: { tours: [], hotels: [], flights: [] },
+        bookings: []
+      };
+
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      // Автоматически входим после регистрации
+      localStorage.setItem('currentUser', JSON.stringify({
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email
+    }));
+    
+      navigate('/');
+
+
+
   };
 
   //обработчик отправки на страницу войти
@@ -34,6 +73,8 @@ function RegistrationForm() {
 
   return (
     <form className="registration-form" onSubmit={handleSubmit}>
+      {error && <p className="registration-form__error">{error}</p>}
+
       <div className="registration-form__field">
         <label className="registration-form__label">Имя</label>
         <input
