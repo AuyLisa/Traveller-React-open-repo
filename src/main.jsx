@@ -11,7 +11,10 @@ import Cart from './pages/cart/Cart'
 import Checkout from './pages/checkout/Checkout'
 import Registration from './pages/registration/Registration'
 import Login from './pages/login/Login'
-
+import Profile from './pages/profile/Profile';
+import PersonalData from './pages/profile/PersonalData';
+import Favorites from './pages/profile/Favorites';
+import History from './pages/profile/History';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -24,8 +27,17 @@ createRoot(document.getElementById('root')).render(
         <Route path="/avia" element={<Avia />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
+
+
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/PersonalData" element={<PersonalData />} />
+        <Route path="/profile/Favorites" element={<Favorites />} />
+        <Route path="/profile/History" element={<History />} />
+ 
+ 
       </Routes>
     </BrowserRouter>
   </StrictMode>,

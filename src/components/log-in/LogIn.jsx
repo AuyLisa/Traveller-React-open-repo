@@ -43,7 +43,7 @@ function LogIn() {
         name: user.name,
         email: user.email
       }));
-      navigate('/');
+      navigate('/profile');
 
     } else {
 

@@ -59,7 +59,7 @@ function RegistrationForm() {
         email: newUser.email
     }));
     
-      navigate('/');
+      navigate('/profile');
 
 
 
