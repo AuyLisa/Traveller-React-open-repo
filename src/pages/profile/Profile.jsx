@@ -1,5 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './Profile.css';
 
 
@@ -17,12 +18,14 @@ function Profile() {
         
         <div className="profile__card">
           <h2>Привет, {currentUser.name}!</h2>
-          <p>Email: {currentUser.email}</p>
         </div>
         
         <div className="profile__menu">
           <Link to="/profile/PersonalData" className="profile__menu-item">
             Личные данные
+          </Link>
+          <Link to="/cart" className="profile__menu-item">
+            Корзина
           </Link>
           <Link to="/profile/Favorites" className="profile__menu-item">
             Избранное
