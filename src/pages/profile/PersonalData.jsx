@@ -13,6 +13,7 @@ function PersonalData() {
   }
 
   // Состояния для каждого поля
+  const [phone, setPhone] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
   const [country, setCountry] = useState('');
@@ -32,6 +33,14 @@ function PersonalData() {
 
           <div className="profile__field">
             <strong>Телефон:</strong> 
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
+              placeholder="+7 (XXX) XXX-XX-XX"
+               maxLength={11}
+              className="profile__input"
+            />
           </div>
 
           <div className="profile__field">
