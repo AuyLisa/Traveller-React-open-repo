@@ -18,7 +18,7 @@ function PersonalData() {
   const [age, setAge] = useState('');
   const [country, setCountry] = useState('');
   const [language, setLanguage] = useState('');
-  const [currency, setCurrency] = useState('RUB');
+  const [currency, setCurrency] = useState('');
 
   return (
     <Layout>
