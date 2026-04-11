@@ -15,6 +15,7 @@ import Profile from './pages/profile/Profile';
 import PersonalData from './pages/profile/PersonalData';
 import Favorites from './pages/profile/Favorites';
 import History from './pages/profile/History';
+import About from './pages/about/About';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/trips/:id" element={<TripDetail />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/avia" element={<Avia />} />
+        <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
 
@@ -36,7 +38,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/profile/PersonalData" element={<PersonalData />} />
         <Route path="/profile/Favorites" element={<Favorites />} />
         <Route path="/profile/History" element={<History />} />
- 
  
       </Routes>
     </BrowserRouter>

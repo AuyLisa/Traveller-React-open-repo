@@ -22,6 +22,7 @@ function Header() {
           <li><Link className="header__link" to="/trips">Туры</Link></li>
           <li><Link className="header__link" to="/hotels">Отели</Link></li>
           <li><Link className="header__link" to="/avia">Авиабилеты</Link></li>
+          <li><Link className="header__link" to="/about">О нас</Link></li>
           <li>
             <Link className="header__link header__cart" to="/cart">
               Корзина

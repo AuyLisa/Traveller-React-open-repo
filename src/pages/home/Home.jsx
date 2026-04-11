@@ -1,5 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import TripTop from '../../components/trip-top/TripTop';
+import CardTripCountry from '../../components/card-trip-country/CardTripCountry';
 import './Home.css';
 
 const toptrips = [
@@ -63,14 +64,44 @@ function Home() {
         <p className="home__slogan">Туры, отели и авиабилеты в одном месте</p>
       </div>
 
-      <div className="home__section">
+
+      <section className="home__section">
         <h2 className="home__section-title">Популярные направления</h2>
         <div className="home__grid">
           {toptrips.map(trip => (
             <TripTop key={trip.id} trip={trip} />
           ))}
         </div>
-      </div>
+      </section>
+
+
+      <section className="home__section">
+        <h2 className="home__section-title">Лучшие цены на майские праздники</h2>
+        <div className="home__grid">
+          {toptrips.map(trip => (
+            <CardTripCountry key={trip.id} trip={trip} />
+          ))}
+        </div>
+      </section>
+
+      <section className="home__section">
+        <h2 className="home__section-title">Из Москвы: туры в популярные отели</h2>
+        <div className="home__grid">
+          {toptrips.map(trip => (
+            <TripTop key={trip.id} trip={trip} />
+          ))}
+        </div>
+      </section>
+
+      <section className="home__section">
+        <h2 className="home__section-title">Улететь прямо сейчас из Москвы</h2>
+        <div className="home__grid">
+          {toptrips.map(trip => (
+            <TripTop key={trip.id} trip={trip} />
+          ))}
+        </div>
+      </section>
+
     </Layout>
   );
 }

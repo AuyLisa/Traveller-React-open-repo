@@ -15,6 +15,7 @@
 
 .header__logo:hover {
   opacity: 0.85;
+  color: #9b4eff;
 }
 
 .header__list {
