@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { validateCheckoutForm } from '../../utils/checkoutValidation';
+import { normalizePhoneDigits } from '../../utils/formValidation';
+import {
+  validateCheckoutForm,
+  getBirthDateInputBounds,
+  getIssueDateInputMax,
+} from '../../utils/checkoutValidation';
 import PassengerPassportBlock from './PassengerPassportBlock';
 import './CheckoutForm.css';
 
@@ -105,13 +110,16 @@ function CheckoutForm({ onValidSubmit, isSubmitting }) {
         citizenship: p.citizenship.trim(),
       })),
       email: values.email.trim(),
-      phone: values.phone.trim(),
+      phone: normalizePhoneDigits(values.phone),
       comment: values.comment.trim(),
       contactPreference: values.contactPreference,
     });
   };
 
   const passengerErrorsAt = (i) => errors.passengers?.[i] || {};
+
+  const birthBounds = getBirthDateInputBounds();
+  const issueDateMax = getIssueDateInputMax();
 
   return (
     <form className="checkout-form" onSubmit={handleSubmit} noValidate>
@@ -144,6 +152,10 @@ function CheckoutForm({ onValidSubmit, isSubmitting }) {
             showRemove={values.passengers.length > 1}
             onRemove={() => removePassenger(index)}
             disabled={isSubmitting}
+            birthMin={birthBounds.min}
+            birthMax={birthBounds.max}
+            issueMin={passenger.birthDate || birthBounds.min}
+            issueMax={issueDateMax}
           />
         ))}
       </div>

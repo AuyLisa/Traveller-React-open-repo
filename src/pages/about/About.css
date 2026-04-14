@@ -165,6 +165,27 @@
   margin-bottom: 16px;
 }
 
+.subscribe-block {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.subscribe-form__error {
+  color: #b71c1c;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.subscribe-form__ok {
+  color: #1b5e20;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.subscribe-input--error {
+  outline: 2px solid #c62828;
+}
+
 .subscribe-form {
   display: flex;
   justify-content: center;

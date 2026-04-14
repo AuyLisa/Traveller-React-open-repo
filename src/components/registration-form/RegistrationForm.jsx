@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { validateRegistrationForm } from '../../utils/formValidation';
 import './RegistrationForm.css';
 
 
@@ -11,12 +12,10 @@ function RegistrationForm() {
     password: ''
   });
 
-
-  // Ошибка если email уже есть
    const [error, setError] = useState('');
+   const [fieldErrors, setFieldErrors] = useState({});
 
 
-  //обработчик изменения полей
   const handleChange = (e) => {
 
     setFormData({
@@ -24,27 +23,41 @@ function RegistrationForm() {
       [e.target.name]: e.target.value
     });
 
-  //ошибка очищается, если пользователь начал что-то записывать
     if (error) setError('');
+    const fe = fieldErrors[e.target.name];
+    if (fe) {
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        delete next[e.target.name];
+        return next;
+      });
+    }
   };
 
 
-  //обработчик отправки формы
   const handleSubmit = (e) => {
-    e.preventDefault();  //отменяет стандартное поведение браузера для события
+    e.preventDefault();
+
+    const { errors, isValid } = validateRegistrationForm(formData);
+    if (!isValid) {
+      setFieldErrors(errors);
+      setError('');
+      return;
+    }
+    setFieldErrors({});
+
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     
-    // some() проверяет, есть ли хотя бы один элемент, подходящий под условие
-    if (users.some(user => user.email === formData.email)) {
+    if (users.some(user => user.email === formData.email.trim())) {
       setError('Аккаунт с таким email уже существует');
       return;
     }
 
       const newUser = {
         id: crypto.randomUUID(),
-        name: formData.name,
-        email: formData.email,
-        password: formData.password, 
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        password: formData.password,
         favorites: { tours: [], hotels: [], flights: [] },
         bookings: []
       };
@@ -52,7 +65,6 @@ function RegistrationForm() {
       users.push(newUser);
       localStorage.setItem('users', JSON.stringify(users));
 
-      // Автоматически входим после регистрации
       localStorage.setItem('currentUser', JSON.stringify({
         id: newUser.id,
         name: newUser.name,
@@ -65,50 +77,62 @@ function RegistrationForm() {
 
   };
 
-  //обработчик отправки на страницу войти
   const handleLogin = (e) => {
     e.preventDefault(); 
     navigate('/login');
   };
 
   return (
-    <form className="registration-form" onSubmit={handleSubmit}>
+    <form className="registration-form" onSubmit={handleSubmit} noValidate>
       {error && <p className="registration-form__error">{error}</p>}
 
       <div className="registration-form__field">
-        <label className="registration-form__label">Имя</label>
+        <label className="registration-form__label" htmlFor="registration-name">Имя</label>
         <input
+          id="registration-name"
           type="text"
           name="name"
-          className="registration-form__input"
+          className={`registration-form__input ${fieldErrors.name ? 'registration-form__input--error' : ''}`}
           value={formData.name}
           onChange={handleChange}
-          required
+          autoComplete="name"
         />
+        {fieldErrors.name && (
+          <p className="registration-form__field-error">{fieldErrors.name}</p>
+        )}
       </div>
 
       <div className="registration-form__field">
-        <label className="registration-form__label">Email</label>
+        <label className="registration-form__label" htmlFor="registration-email">Email</label>
         <input
+          id="registration-email"
           type="email"
           name="email"
-          className="registration-form__input"
+          className={`registration-form__input ${fieldErrors.email ? 'registration-form__input--error' : ''}`}
           value={formData.email}
           onChange={handleChange}
-          required
+          autoComplete="email"
         />
+        {fieldErrors.email && (
+          <p className="registration-form__field-error">{fieldErrors.email}</p>
+        )}
       </div>
 
       <div className="registration-form__field">
-        <label className="registration-form__label">Пароль</label>
+        <label className="registration-form__label" htmlFor="registration-password">Пароль</label>
         <input
+          id="registration-password"
           type="password"
           name="password"
-          className="registration-form__input"
+          className={`registration-form__input ${fieldErrors.password ? 'registration-form__input--error' : ''}`}
           value={formData.password}
           onChange={handleChange}
-          required
+          autoComplete="new-password"
+          minLength={6}
         />
+        {fieldErrors.password && (
+          <p className="registration-form__field-error">{fieldErrors.password}</p>
+        )}
       </div>
 
       <button type="submit" className="registration-form__button">

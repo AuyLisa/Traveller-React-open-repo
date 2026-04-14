@@ -1,9 +1,14 @@
-import { normalizeText, parsePositiveInt, parseMaxPrice } from './filterHelpers';
+import {
+  normalizeText,
+  parsePositiveInt,
+  parseStarsFilter,
+  parseMaxPrice,
+} from './filterHelpers';
 
 export function filterHotels(hotels, { searchQuery, country, starsRaw, minReviewsRaw, maxPriceRaw }) {
   const q = normalizeText(searchQuery);
   const countryFilter = String(country ?? '').trim();
-  const stars = parsePositiveInt(starsRaw);
+  const stars = parseStarsFilter(starsRaw);
   const minReviews = parsePositiveInt(minReviewsRaw);
   const maxPrice = parseMaxPrice(maxPriceRaw);
 
