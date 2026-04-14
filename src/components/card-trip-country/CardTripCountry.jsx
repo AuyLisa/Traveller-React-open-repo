@@ -1,5 +1,5 @@
 import './CardTripCountry.css';
-import CityButton from '..city-button/CityButton';
+import CityButton from '../city-button/CityButton.jsx';
 
 function CardTripCountry({ trip }) {
   return (
@@ -18,7 +18,7 @@ function CardTripCountry({ trip }) {
       
       
       <div className="trip-card__buttons">
-        {country.cities.map(city => (
+        {trip?.cities?.map((city) => (
           <CityButton key={city.id} city={city} />
         ))}
       </div>
