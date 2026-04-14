@@ -1,3 +1,7 @@
+import {
+  normalizeRfPassportNumber,
+  normalizeRfPassportSeries,
+} from '../../utils/checkoutValidation';
 import './PassengerPassportBlock.css';
 
 const FIELDS = [
@@ -14,6 +18,10 @@ function PassengerPassportBlock({
   showRemove,
   onRemove,
   disabled,
+  birthMin,
+  birthMax,
+  issueMin,
+  issueMax,
 }) {
   const n = index + 1;
   const err = (key) => errors[key];
@@ -67,6 +75,8 @@ function PassengerPassportBlock({
         <input
           id={`pp-${index}-birthDate`}
           type="date"
+          min={birthMin}
+          max={birthMax}
           className={`passenger-passport__input ${err('birthDate') ? 'passenger-passport__input--error' : ''}`}
           value={passenger.birthDate ?? ''}
           onChange={(e) => onFieldChange('birthDate', e.target.value)}
@@ -86,8 +96,12 @@ function PassengerPassportBlock({
             id={`pp-${index}-passportSeries`}
             className={`passenger-passport__input ${err('passportSeries') ? 'passenger-passport__input--error' : ''}`}
             value={passenger.passportSeries ?? ''}
-            onChange={(e) => onFieldChange('passportSeries', e.target.value)}
+            onChange={(e) =>
+              onFieldChange('passportSeries', normalizeRfPassportSeries(e.target.value))
+            }
             inputMode="numeric"
+            maxLength={4}
+            pattern="[0-9]*"
             autoComplete="off"
             disabled={disabled}
           />
@@ -103,8 +117,12 @@ function PassengerPassportBlock({
             id={`pp-${index}-passportNumber`}
             className={`passenger-passport__input ${err('passportNumber') ? 'passenger-passport__input--error' : ''}`}
             value={passenger.passportNumber ?? ''}
-            onChange={(e) => onFieldChange('passportNumber', e.target.value)}
+            onChange={(e) =>
+              onFieldChange('passportNumber', normalizeRfPassportNumber(e.target.value))
+            }
             inputMode="numeric"
+            maxLength={6}
+            pattern="[0-9]*"
             autoComplete="off"
             disabled={disabled}
           />
@@ -121,6 +139,8 @@ function PassengerPassportBlock({
         <input
           id={`pp-${index}-passportIssueDate`}
           type="date"
+          min={issueMin}
+          max={issueMax}
           className={`passenger-passport__input ${err('passportIssueDate') ? 'passenger-passport__input--error' : ''}`}
           value={passenger.passportIssueDate ?? ''}
           onChange={(e) => onFieldChange('passportIssueDate', e.target.value)}

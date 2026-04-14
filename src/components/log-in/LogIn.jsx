@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { validateLoginForm } from '../../utils/formValidation';
 import './LogIn.css';
 
 
@@ -11,29 +12,39 @@ function LogIn() {
   });
 
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
 
-  //обработчик изменения полей
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value  // обновляем только изменённое поле
+      [e.target.name]: e.target.value
     });
     if (error) setError('');
+    if (fieldErrors[e.target.name]) {
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        delete next[e.target.name];
+        return next;
+      });
+    }
   };
 
 
-  //обработчик отправки формы
   const handleSubmit = (e) => {
-    e.preventDefault();  // не перезагружать страницу чтобы после кнопки регистрация выйти в главный экран
+    e.preventDefault();
+
+    const { errors, isValid } = validateLoginForm(formData);
+    if (!isValid) {
+      setFieldErrors(errors);
+      setError('');
+      return;
+    }
+    setFieldErrors({});
+
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-   
-   
-    // неверно
-    //if (users.some(user => user.email === formData.email)) {
-    //if ((users.some(user => user.password === formData.password))) {
     
-    const user = users.find(user => 
-    user.email === formData.email && 
+    const user = users.find(user =>
+    user.email === formData.email.trim() &&
     user.password === formData.password
     );
     
@@ -46,48 +57,52 @@ function LogIn() {
       navigate('/profile');
 
     } else {
-
-      if (users.some(user => user.email === formData.email)) {
+      if (users.some(user => user.email === formData.email.trim())) {
         setError('Неправильный пароль');
         return;
-      } else {
-        setError('Аккаунт не существует');
-        return;
-  }
-  }
-};
+      }
+      setError('Аккаунт не существует');
+    }
+  };
 
-  //обработчик отправки на страницу регистрации
   const handleRegistration = (e) => {
     e.preventDefault(); 
     navigate('/registration');
   };
   return (
-    <form className="log-in" onSubmit={handleSubmit}>
+    <form className="log-in" onSubmit={handleSubmit} noValidate>
       {error && <p className="log-in__error">{error}</p>}
 
       <div className="log-in__field">
-        <label className="log-in__label">Email</label>
+        <label className="log-in__label" htmlFor="login-email">Email</label>
         <input
+          id="login-email"
           type="email"
           name="email"
-          className="log-in__input"
+          className={`log-in__input ${fieldErrors.email ? 'log-in__input--error' : ''}`}
           value={formData.email}
           onChange={handleChange}
-          required
+          autoComplete="email"
         />
+        {fieldErrors.email && (
+          <p className="log-in__field-error">{fieldErrors.email}</p>
+        )}
       </div>
 
       <div className="log-in__field">
-        <label className="log-in__label">Пароль</label>
+        <label className="log-in__label" htmlFor="login-password">Пароль</label>
         <input
+          id="login-password"
           type="password"
           name="password"
-          className="log-in__input"
+          className={`log-in__input ${fieldErrors.password ? 'log-in__input--error' : ''}`}
           value={formData.password}
           onChange={handleChange}
-          required
+          autoComplete="current-password"
         />
+        {fieldErrors.password && (
+          <p className="log-in__field-error">{fieldErrors.password}</p>
+        )}
       </div>
 
       <button type="submit" className="log-in__button">

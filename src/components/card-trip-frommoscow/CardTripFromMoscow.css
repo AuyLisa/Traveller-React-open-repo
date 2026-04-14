@@ -1,5 +1,7 @@
 .trip-card {
-  width: 250px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 8px;
   height: 100%;
   display: flex;
@@ -39,6 +41,8 @@
   font-size: 14px;
   color: black;
   padding: 4px;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 

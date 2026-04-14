@@ -1,6 +1,7 @@
 import Layout from '../../components/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { normalizePhoneDigits } from '../../utils/formValidation';
 import './Profile.css';
 
 
@@ -36,7 +37,9 @@ function PersonalData() {
             <input
               type="tel"
               value={phone}
-              onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
+              onChange={(e) =>
+                setPhone(normalizePhoneDigits(e.target.value).slice(0, 11))
+              }
               placeholder="+7 (XXX) XXX-XX-XX"
                maxLength={11}
               className="profile__input"

@@ -1,7 +1,30 @@
+import { useState } from 'react';
 import Layout from '../../components/layout/Layout';
+import { validateSubscribeEmail } from '../../utils/formValidation';
 import './About.css';
 
 function About() {
+  const [subscribeEmail, setSubscribeEmail] = useState('');
+  const [subscribeError, setSubscribeError] = useState('');
+  const [subscribeOk, setSubscribeOk] = useState(false);
+  const [consentPd, setConsentPd] = useState(false);
+
+  function handleSubscribe(e) {
+    e.preventDefault();
+    setSubscribeOk(false);
+    const { error, isValid } = validateSubscribeEmail(subscribeEmail);
+    if (!isValid) {
+      setSubscribeError(error);
+      return;
+    }
+    if (!consentPd) {
+      setSubscribeError('Необходимо согласие на обработку персональных данных');
+      return;
+    }
+    setSubscribeError('');
+    setSubscribeOk(true);
+  }
+
   return (
     <Layout>
       <div className="about-page">
@@ -103,26 +126,48 @@ function About() {
         <div className="about-page__subscribe">
           <h3>Тур в подарок!</h3>
           <p>Подпишитесь на рассылку и участвуйте в розыгрыше тура на двоих</p>
-          <form className="subscribe-form">
-            <input 
-              type="email" 
-              placeholder="Ваш email"
-              required
-              className="subscribe-input"
-            />
-            <button type="submit" className="subscribe-btn">Подписаться</button>
-          </form>
+          <form className="subscribe-block" onSubmit={handleSubscribe} noValidate>
+            {subscribeError && (
+              <p className="subscribe-form__error" role="alert">
+                {subscribeError}
+              </p>
+            )}
+            {subscribeOk && (
+              <p className="subscribe-form__ok">Спасибо за подписку! Проверьте почту.</p>
+            )}
+            <div className="subscribe-form">
+              <input
+                type="email"
+                name="subscribe-email"
+                placeholder="Ваш email"
+                inputMode="email"
+                autoComplete="email"
+                value={subscribeEmail}
+                onChange={(e) => {
+                  setSubscribeEmail(e.target.value);
+                  if (subscribeError) setSubscribeError('');
+                  if (subscribeOk) setSubscribeOk(false);
+                }}
+                className={`subscribe-input ${subscribeError ? 'subscribe-input--error' : ''}`}
+              />
+              <button type="submit" className="subscribe-btn">Подписаться</button>
+            </div>
 
-          <div className="checkbox-group">
-            <label>
-              <input type="checkbox" required/> 
-              Я согласен на обработку персональных данных
-            </label>
-            <label>
-              <input type="checkbox" /> 
-              Я согласен на получение рекламных рассылок
-            </label>
-          </div>
+            <div className="checkbox-group">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={consentPd}
+                  onChange={(e) => setConsentPd(e.target.checked)}
+                />
+                Я согласен на обработку персональных данных
+              </label>
+              <label>
+                <input type="checkbox" />
+                Я согласен на получение рекламных рассылок
+              </label>
+            </div>
+          </form>
           
           {/* Соцсети */}
           <div className="social-links">
