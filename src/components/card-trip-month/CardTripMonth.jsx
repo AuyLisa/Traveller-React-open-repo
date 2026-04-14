@@ -1,7 +1,7 @@
-import './CardTripCountry.css';
+import './CardTripMonth.css';
 import CityButton from '../city-button/CityButton.jsx';
 
-function CardTripCountry({ trip }) {
+function CardTripMonth({ trip }) {
   return (
     <div className="trip-card">
       <div className="trip-card__image">
@@ -16,6 +16,7 @@ function CardTripCountry({ trip }) {
 
       <span className="trip-card__description">{trip.description}</span>
       
+      
       <div className="trip-card__buttons">
         {trip?.cities?.map((city) => (
           <CityButton key={city.id} city={city} />
@@ -25,4 +26,4 @@ function CardTripCountry({ trip }) {
   );
 }
 
-export default CardTripCountry;
+export default CardTripMonth;

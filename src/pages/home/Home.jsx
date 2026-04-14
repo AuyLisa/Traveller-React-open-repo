@@ -1,60 +1,21 @@
 import Layout from '../../components/layout/Layout';
 import TripTop from '../../components/trip-top/TripTop';
 import CardTripCountry from '../../components/card-trip-country/CardTripCountry';
+import CardTripFromMoscow from '../../components/card-trip-frommoscow/CardTripFromMoscow';
+import CardTripToHotel from '../../components/card-trip-tohotel/CardTripToHotel';
+
+
 import './Home.css';
 
-const toptrips = [
-  {
-    id: 1,
-    image: "/images/home-trips/turkey.jpg",
-    country: "Туры в Турцию",
-    description: "Аланья, Анталья, Белек, Бодрум, Кемер, Маримарис",
-    price: "45 125",
+import toptrips from '../../data/toptrips';  
 
-  },
-  {
-    id: 2,
-    image: "/images/home-trips/egypt.jpg",
-    country: "Туры в Египет",
-    description: "Дахаб, Марса-Эль-Алам / Эль-Кусейр, Хургада, Шарм-эль-Шейх, Эль Гуна",
-    price: "89 300",
-  },
-  {
-    id: 3,
-    image: "/images/home-trips/thailand.jpg",
-    country: "Туры в Таиланд",
-    description: "Пхукет, Самуи, Паттайя, Бангкок, о. Ко Панган",
-    price: "94 832",
-  },
-  {
-    id: 4,
-    image: "/images/home-trips/uae.jpg",
-    country: "Туры в ОАЭ",
-    description: "Абу Даби / Аль Айн, Дубай, Фуджейра, Шарджа",
-    price: "91 387",
-  },
-    {
-    id: 5,
-    image: "/images/home-trips/russia.jpg",
-    country: "Туры в по России",
-    description: "Геленджик, Калининградская обл., Краснодарский край, Санкт-Петербург, Сочи",
-    price: "5 869"
-  },
-    {
-    id: 6,
-    image: "/images/home-trips/maldives.jpg",
-    country: "Туры на Мальдивы",
-    description: "Мале Атоллы, Северный Мале Атолл, Южный Мале Атолл, Ари Атолл",
-    price: "131 318"
-  },
-    {
-    id: 7,
-    image: "/images/home-trips/sri-lanka.jpg",
-    country: "Туры на Шри-Ланку",
-    description: "Хиккадува, Бентота, Негомбо, Ваддува, Унаватуна",
-    price: "125 583"
-  }
-];
+
+import tripcardsdata from '../../data/home-trip-countries';  
+import homeTripCardTurkeyData from '../../data/home-trip-turkey';  
+import fromMoscowData from '../../data/home-trip-frommoscow';  
+import hotels from '../../data/home-trip-tohotels';  
+
+
 
 function Home() {
   return (
@@ -78,26 +39,36 @@ function Home() {
       <section className="home__section">
         <h2 className="home__section-title">Лучшие цены на майские праздники</h2>
         <div className="home__grid">
-          {toptrips.map(trip => (
+          {tripcardsdata.map(trip => (
             <CardTripCountry key={trip.id} trip={trip} />
           ))}
         </div>
       </section>
 
       <section className="home__section">
-        <h2 className="home__section-title">Из Москвы: туры в популярные отели</h2>
+        <h2 className="home__section-title">Раннее бронирование туров в Турцию</h2>
         <div className="home__grid">
-          {toptrips.map(trip => (
-            <TripTop key={trip.id} trip={trip} />
+          {homeTripCardTurkeyData.map(trip => (
+            <CardTripCountry key={trip.id} trip={trip} />
+          ))}
+        </div>
+      </section>
+
+
+      <section className="home__section">
+        <h2 className="home__section-title">Улететь прямо сейчас из Москвы</h2>
+        <div className="home__grid">
+          {fromMoscowData.map(trip => (
+            <CardTripFromMoscow key={trip.id} trip={trip} />
           ))}
         </div>
       </section>
 
       <section className="home__section">
-        <h2 className="home__section-title">Улететь прямо сейчас из Москвы</h2>
+        <h2 className="home__section-title">Посмотрите туры в эти отели</h2>
         <div className="home__grid">
-          {toptrips.map(trip => (
-            <TripTop key={trip.id} trip={trip} />
+          {hotels.map(hotel => (
+            <CardTripToHotel key={hotel.id} hotel={hotel} />
           ))}
         </div>
       </section>

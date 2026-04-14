@@ -1,0 +1,12 @@
+import { Link } from 'react-router-dom';
+import './CountryButton.css';
+
+function CountryButton({ country }) {
+  return (
+    <Link to={`/trip/${country.id}`} className="trip-card__button">
+      <span className="trip-card-button__city">{country.name}</span>
+    </Link>
+  );
+}
+
+export default CountryButton;

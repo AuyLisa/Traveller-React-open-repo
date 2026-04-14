@@ -1,6 +1,5 @@
 .trip-card {
-  width: 250px;
-  padding: 8px;
+  width: 400px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,25 +25,8 @@
   top: 12px;
   left: 12px;
   color: black;
-  background-color: white;
-  padding: 4px 4px;
-  border-radius: 4px 4px 0 0;
   font-size: 14px;
-  font-weight: 500;
 }
-
-.trip-card__pricee {
-  position: absolute;
-  top: 34px;
-  left: 12px;
-  color: black;
-  background-color: white;
-  padding: 4px 4px;
-  border-radius: 0 4px 4px 4px;
-  font-size: 14px;
-  font-weight: 510;
-}
-
 
 .trip-card__description {
   font-size: 14px;
@@ -56,6 +38,6 @@
 .trip-card__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 7px;
+  gap: 10px;
   margin-top: 7px;
 }
