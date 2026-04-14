@@ -1,0 +1,25 @@
+.trip-card__button {
+  width: 100%;
+  padding: 5px;
+  background: #909090;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;   
+  margin-top: auto;
+}
+
+.trip-card__button:hover {
+  background: #545454;
+}
+
+
+.trip-card__city {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.trip-card__price {
+  font-size: 11px;
+  font-weight: normal;
+}
