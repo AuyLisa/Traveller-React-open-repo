@@ -1,5 +1,4 @@
 import './CardTripCountry.css';
-import CityButton from '..city-button/CityButton';
 
 function CardTripCountry({ trip }) {
   return (
@@ -13,16 +12,8 @@ function CardTripCountry({ trip }) {
         />
         <span className="trip-card__country">{trip.country}</span>
       </div>
-
-      <span className="trip-card__description">7-8 ночей, 2 взрослых</span>
-      
-      
-      <div className="trip-card__buttons">
-        {country.cities.map(city => (
-          <CityButton key={city.id} city={city} />
-        ))}
-      </div>
-
+      <span className="trip-card__description">{trip.description.toLocaleString()}</span>
+      <button className="trip-card__button">от {trip.price.toLocaleString()} ₽</button>
     </div>
   );
 }
