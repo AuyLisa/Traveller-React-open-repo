@@ -33,17 +33,6 @@
   font-weight: 500;
 }
 
-.trip-card__pricee {
-  position: absolute;
-  top: 34px;
-  left: 12px;
-  color: black;
-  background-color: white;
-  padding: 4px 4px;
-  border-radius: 0 4px 4px 4px;
-  font-size: 14px;
-  font-weight: 510;
-}
 
 
 .trip-card__description {

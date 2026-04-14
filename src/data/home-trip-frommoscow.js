@@ -1,4 +1,4 @@
-export const homeTripCardfromMoscowData = [
+export const fromMoscowData = [
   {
     id: 1,
     name: "Тропические курорты",
@@ -102,4 +102,4 @@ export const homeTripCardfromMoscowData = [
   },
 ]
 
-export default homeTripCardfromMoscowData;
+export default fromMoscowData;

@@ -60,7 +60,7 @@ export const homeTripCardTurkeyData = [
   },
 
   {
-    id: 4,
+    id: 5,
     name: "Август",
     price: 69489,
     image: "/images/home-turkey/august.jpg",
@@ -75,7 +75,7 @@ export const homeTripCardTurkeyData = [
   },
 
   {
-    id: 5,
+    id: 6,
     name: "Сентябрь",
     price: 68324,
     image: "/images/home-turkey/september.jpg",
@@ -90,7 +90,7 @@ export const homeTripCardTurkeyData = [
   },
 
   {
-    id: 6,
+    id: 7,
     name: "Октябрь",
     price: 62324,
     image: "/images/home-turkey/october.jpg",

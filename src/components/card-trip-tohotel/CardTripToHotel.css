@@ -33,29 +33,29 @@
   font-weight: 500;
 }
 
-.trip-card__pricee {
+.trip-card__points {
   position: absolute;
-  top: 34px;
-  left: 12px;
+  top: 12px;
+  right: 12px;
   color: black;
-  background-color: white;
+  background-color: rgb(93, 210, 51);
   padding: 4px 4px;
-  border-radius: 0 4px 4px 4px;
+  border-radius: 4px 4px 0 0;
   font-size: 14px;
-  font-weight: 510;
+  font-weight: 500;
 }
 
 
-.trip-card__description {
-  font-size: 14px;
-  color: black;
+.trip-card__hotelname {
   padding: 4px;
+  font-size: 14px;
+  font-weight: 700;
+
 }
 
+.trip-card__hotelplace {
+  padding: 4px;
+  font-size: 11px;
+  font-weight: 500;
 
-.trip-card__buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 7px;
-  margin-top: 7px;
 }
