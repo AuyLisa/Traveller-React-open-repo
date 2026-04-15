@@ -57,22 +57,22 @@ export const hotels = [
     id: 6,
     country: "Вьетнам",
     points: 9.1,
-    image: "/images/home-hotels/vinpearl.jpg",
-    name: "Vinpearl Nha Trang Resort",
+    image: "/images/home-hotels/nha-tang.jpg",
+    name: "Nha Trang Marriott Resort & Spa, Hon Tre Island",
     place: "Нячанг, Вьетнам",
-    price: 224677,
-    period: "28 апр - 5 мая, 7 ночей на 2-х"
+    price: 205677,
+    period: "28 апр - 4 мая, 6 ночей на 2-х"
   },
 
   {
     id: 7,
-    country: "Вьетнам",
-    points: 9.1,
-    image: "/images/home-hotels/vinpearl.jpg",
-    name: "Vinpearl Nha Trang Resort",
-    place: "Нячанг, Вьетнам",
-    price: 224677,
-    period: "28 апр - 5 мая, 7 ночей на 2-х"
+    country: "Китай",
+    points: 9.5,
+    image: "/images/home-hotels/sanya-yalong.jpg",
+    name: "Yalong Bay Villas & Spa",
+    place: "о.Хайнань, Китай",
+    price: 167978,
+    period: "1 мая - 8 мая, 7 ночей на 2-х"
   },
 ]
 
