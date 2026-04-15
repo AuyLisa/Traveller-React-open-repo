@@ -60,7 +60,7 @@ export const fromMoscowData = [
   {
     id: 5,
     name: "Средиземное море",
-    image: "/images/home-frommoscow/sea.jpg",
+    image: "/images/home-frommoscow/sea.jpeg",
     countries: [
       { id: 501, name: "Турция" },
       { id: 502, name: "Греция (с пересадкой)"},

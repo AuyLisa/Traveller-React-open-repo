@@ -70,7 +70,7 @@ export const hotels = [
     points: 9.5,
     image: "/images/home-hotels/sanya-yalong.jpg",
     name: "Yalong Bay Villas & Spa",
-    place: "о.Хайнань, Китай",
+    place: "о. Хайнань, Китай",
     price: 167978,
     period: "1 мая - 8 мая, 7 ночей на 2-х"
   },
