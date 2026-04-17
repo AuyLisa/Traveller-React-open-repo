@@ -30,7 +30,10 @@ function Home() {
         <h2 className="home__section-title">Популярные направления</h2>
         <div className="home__grid">
           {toptrips.map(trip => (
-            <TripTop key={trip.id} trip={trip} />
+            <TripTop 
+             key={trip.id} //невидимый-Для React оптимизации-перерисовывает не все, а только поменявшуюся карточку
+             id={trip.id} //видимый-Для логики (удалить, купить, открыть)
+             trip={trip} />  //Все данные тура (страна, цена, фото)
           ))}
         </div>
       </section>
@@ -40,7 +43,10 @@ function Home() {
         <h2 className="home__section-title">Лучшие цены на майские праздники</h2>
         <div className="home__grid">
           {tripcardsdata.map(trip => (
-            <CardTripCountry key={trip.id} trip={trip} />
+            <CardTripCountry
+             key={trip.id}
+             id={trip.id}
+             trip={trip} />
           ))}
         </div>
       </section>
@@ -49,7 +55,10 @@ function Home() {
         <h2 className="home__section-title">Раннее бронирование туров в Турцию</h2>
         <div className="home__grid">
           {homeTripCardTurkeyData.map(trip => (
-            <CardTripCountry key={trip.id} trip={trip} />
+            <CardTripCountry
+             key={trip.id}
+             id={trip.id}
+             trip={trip} />
           ))}
         </div>
       </section>
@@ -59,7 +68,10 @@ function Home() {
         <h2 className="home__section-title">Улететь прямо сейчас из Москвы</h2>
         <div className="home__grid">
           {fromMoscowData.map(trip => (
-            <CardTripFromMoscow key={trip.id} trip={trip} />
+            <CardTripFromMoscow
+             key={trip.id}
+             id={trip.id}
+             trip={trip} />
           ))}
         </div>
       </section>
@@ -68,7 +80,10 @@ function Home() {
         <h2 className="home__section-title">Посмотрите туры в эти отели</h2>
         <div className="home__grid">
           {hotels.map(hotel => (
-            <CardTripToHotel key={hotel.id} hotel={hotel} />
+            <CardTripToHotel
+             key={hotel.id}
+             id={hotel.id}
+             hotel={hotel} />
           ))}
         </div>
       </section>

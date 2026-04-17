@@ -56,7 +56,11 @@ function Hotels() {
           Ничего не найдено. Измените запрос или нажмите «Сбросить».
         </p>
       ) : (
-        filtered.map((hotel) => <HotelCard key={hotel.id} hotel={hotel} />)
+        filtered.map((hotel) => 
+        <HotelCard
+         key={hotel.id}
+         id={hotel.id}
+         hotel={hotel} />)
       )}
     </Layout>
   );

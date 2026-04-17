@@ -3,8 +3,7 @@ import CardCartControls from '../card-cart-controls/CardCartControls';
 import { tripToCartPayload } from '../../utils/cartItemBuilders';
 import './TripCard.css';
 
-function TripCard( {trip} ) {
-  const navigate = useNavigate();
+function TripCard( {trip, id} ) {
 
   return (
    <div className="tripcard">
@@ -16,18 +15,19 @@ function TripCard( {trip} ) {
       <div className="tripcard__content">
         <h3 className="tripcard__title">{trip.title}</h3>
         <p className="tripcard__description">{trip.description}</p>
+        <p className="tripcard__stars">отель {'⭐'.repeat(trip.stars)}</p>
         <p className="tripcard__price">{trip.price} ₽</p>
         <div className="tripcard__actions">
           <button
             type="button"
             className="tripcard__button"
-            onClick={() => navigate(`/trips/${trip.id}`)}
+            onClick={() => navigate(`/trips/${id}`)}
           >
             Подробнее
           </button>
           <CardCartControls
             type="trip"
-            itemId={trip.id}
+            itemId={id}
             payload={tripToCartPayload(trip)}
             variant="trip"
           />

@@ -1,48 +1,34 @@
-{/* для фильтрации будут 3 параметра
-+1 country
-+2 duration
-+3 price разделится на дешевые и дорогие
-
-
-отели в
-1 Турция +
-2 ОАЭ +
-3 Египет +
-4 Таиланд +
-5 Грузия +
-6 Мальдивы +
-
-*/}
-
-
 const trips = [
   // ТУРЦИЯ 
   {
     id: 1,
     title: 'Тур в Анталию "Солнечный берег"',
-    description: '7 ночей, завтраки, отель 4*, пляж рядом',
+    description: '7 ночей, завтраки, пляж рядом',
     country: 'Турция',
     city: 'Анталия',
     duration: 7,
-    price: 48500
+    price: 48500,
+    stars: 4
   },
   {
     id: 2,
     title: 'Тур в Анталию "Все включено"',
-    description: '10 ночей, ультра все включено, отель 5*, спа',
+    description: '10 ночей, ультра все включено, спа',
     country: 'Турция',
     city: 'Анталия',
     duration: 10,
-    price: 78500
+    price: 78500,
+    stars: 5
   },
   {
     id: 3,
     title: 'Тур в Кемер "Лес и море"',
-    description: '14 ночей, все включено, отель 4*, анимация',
+    description: '14 ночей, все включено, анимация',
     country: 'Турция',
     city: 'Кемер',
     duration: 14,
-    price: 89500
+    price: 89500,
+    stars: 4
   },
   {
     id: 4,
@@ -51,7 +37,8 @@ const trips = [
     country: 'Турция',
     city: 'Белек',
     duration: 21,
-    price: 135000
+    price: 135000,
+    stars: 5
   },
   {
     id: 5,
@@ -60,52 +47,58 @@ const trips = [
     country: 'Турция',
     city: 'Стамбул',
     duration: 5,
-    price: 32500
+    price: 32500,
+    stars: 3
   },
   {
     id: 6,
     title: 'Тур в Аланью "Клеопатра"',
-    description: '10 ночей, завтрак+ужин, отель 3*, пляж рядом',
+    description: '10 ночей, завтрак+ужин, пляж рядом',
     country: 'Турция',
     city: 'Аланья',
     duration: 10,
-    price: 42500
+    price: 42500,
+    stars: 3
   },
   {
     id: 7,
     title: 'Тур в Бодрум "Яхтенная марина"',
-    description: '7 ночей, полупансион, отель 5*, ночная жизнь',
+    description: '7 ночей, полупансион, ночная жизнь',
     country: 'Турция',
     city: 'Бодрум',
     duration: 7,
-    price: 68500
+    price: 68500,
+    stars: 5
   },
   {
     id: 8,
     title: 'Тур в Мармарис "Бухта ветров"',
-    description: '12 ночей, все включено, отель 4*, аквапарк',
+    description: '12 ночей, все включено, аквапарк',
     country: 'Турция',
     city: 'Мармарис',
     duration: 12,
-    price: 72500
+    price: 72500,
+    stars: 4
   },
   {
     id: 9,
     title: 'Тур в Сиде "Древний город"',
-    description: '14 ночей, все включено, отель 5*, руины рядом',
+    description: '14 ночей, все включено, руины рядом',
     country: 'Турция',
     city: 'Сиде',
     duration: 14,
-    price: 89500
+    price: 89500,
+    stars: 5
   },
   {
     id: 10,
     title: 'Тур в Фетхие "Лагуна"',
-    description: '8 ночей, завтраки, отель 3*, параглайдинг',
+    description: '8 ночей, завтраки, параглайдинг',
     country: 'Турция',
     city: 'Фетхие',
     duration: 8,
-    price: 45500
+    price: 45500,
+    stars: 3
   },
   {
     id: 11,
@@ -114,7 +107,8 @@ const trips = [
     country: 'Турция',
     city: 'Каппадокия',
     duration: 4,
-    price: 38500
+    price: 38500,
+    stars: 4
   },
   {
     id: 12,
@@ -123,34 +117,38 @@ const trips = [
     country: 'Турция',
     city: 'Памуккале',
     duration: 5,
-    price: 28500
+    price: 28500,
+    stars: 4
   },
   {
     id: 13,
     title: 'Тур в Лара "Песчаные пляжи"',
-    description: '10 ночей, ультра все включено, отель 5*, аквапарк',
+    description: '10 ночей, ультра все включено, аквапарк',
     country: 'Турция',
     city: 'Лара',
     duration: 10,
-    price: 82500
+    price: 82500,
+    stars: 5
   },
   {
     id: 14,
     title: 'Тур в Кушадасы "Эгейское море"',
-    description: '9 ночей, все включено, отель 4*, экскурсия в Эфес',
+    description: '9 ночей, все включено, экскурсия в Эфес',
     country: 'Турция',
     city: 'Кушадасы',
     duration: 9,
-    price: 52500
+    price: 52500,
+    stars: 4
   },
   {
     id: 15,
     title: 'Тур в Чешме "Ветреный берег"',
-    description: '7 ночей, завтраки, отель 3*, виндсерфинг',
+    description: '7 ночей, завтраки, виндсерфинг',
     country: 'Турция',
     city: 'Чешме',
     duration: 7,
-    price: 39500
+    price: 39500,
+    stars: 3
   },
   {
     id: 16,
@@ -159,7 +157,8 @@ const trips = [
     country: 'Турция',
     city: 'Стамбул/Анталия',
     duration: 13,
-    price: 92500
+    price: 92500,
+    stars: 4
   },
   {
     id: 17,
@@ -168,25 +167,28 @@ const trips = [
     country: 'Турция',
     city: 'Белек',
     duration: 14,
-    price: 112000
+    price: 112000,
+    stars: 5
   },
   {
     id: 18,
     title: 'Тур в Анталию "Молодежный"',
-    description: '5 ночей, завтраки, отель 3*, клубы рядом',
+    description: '5 ночей, завтраки, клубы рядом',
     country: 'Турция',
     city: 'Анталия',
     duration: 5,
-    price: 22500
+    price: 22500,
+    stars: 3
   },
   {
     id: 19,
     title: 'Тур в Кемер "Горы и море"',
-    description: '11 ночей, все включено, отель 4*, экскурсии в горы',
+    description: '11 ночей, все включено, экскурсии в горы',
     country: 'Турция',
     city: 'Кемер',
     duration: 11,
-    price: 69500
+    price: 69500,
+    stars: 4
   },
   {
     id: 20,
@@ -195,36 +197,40 @@ const trips = [
     country: 'Турция',
     city: 'Тур по стране',
     duration: 21,
-    price: 158000
+    price: 158000,
+    stars: 5
   },
 
   // ОАЭ
   {
     id: 21,
     title: 'Тур в Дубай "Город будущего"',
-    description: '7 ночей, завтраки, отель 4*, экскурсия на Бурдж-Халифа',
+    description: '7 ночей, завтраки, экскурсия на Бурдж-Халифа',
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 7,
-    price: 78500
+    price: 78500,
+    stars: 4
   },
   {
     id: 22,
     title: 'Тур в Дубай "Пальмовая роща"',
-    description: '10 ночей, полупансион, отель 5* на Пальме, пляж',
+    description: '10 ночей, полупансион, отель на Пальме, пляж',
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 10,
-    price: 125000
+    price: 125000,
+    stars: 5
   },
   {
     id: 23,
     title: 'Тур в Абу-Даби "Люкс"',
-    description: '14 ночей, люкс, отель Emirates Palace, частный пляж',
+    description: '14 ночей, люкс, частный пляж',
     country: 'ОАЭ',
     city: 'Абу-Даби',
     duration: 14,
-    price: 189000
+    price: 189000,
+    stars: 5
   },
   {
     id: 24,
@@ -233,34 +239,38 @@ const trips = [
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 5,
-    price: 52500
+    price: 52500,
+    stars: 4
   },
   {
     id: 25,
     title: 'Тур в Шарджу "Семейный"',
-    description: '8 ночей, все включено, отель 4*, детский клуб',
+    description: '8 ночей, все включено, детский клуб',
     country: 'ОАЭ',
     city: 'Шарджа',
     duration: 8,
-    price: 48500
+    price: 48500,
+    stars: 4
   },
   {
     id: 26,
     title: 'Тур в Фуджейру "Океан и горы"',
-    description: '7 ночей, завтраки, отель 5*, дайвинг',
+    description: '7 ночей, завтраки, дайвинг',
     country: 'ОАЭ',
     city: 'Фуджейра',
     duration: 7,
-    price: 62500
+    price: 62500,
+    stars: 5
   },
   {
     id: 27,
     title: 'Тур в Рас-эль-Хайму "Приключения"',
-    description: '6 ночей, полупансион, отель 4*, сафари в пустыне',
+    description: '6 ночей, полупансион, сафари в пустыне',
     country: 'ОАЭ',
     city: 'Рас-эль-Хайма',
     duration: 6,
-    price: 52800
+    price: 52800,
+    stars: 4
   },
   {
     id: 28,
@@ -269,25 +279,28 @@ const trips = [
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 5,
-    price: 158000
+    price: 158000,
+    stars: 5
   },
   {
     id: 29,
     title: 'Тур в Абу-Даби "Формула-1"',
-    description: '4 ночи, билет на гонки, отель 5*, трансфер',
+    description: '4 ночи, билет на гонки, трансфер',
     country: 'ОАЭ',
     city: 'Абу-Даби',
     duration: 4,
-    price: 142000
+    price: 142000,
+    stars: 5
   },
   {
     id: 30,
     title: 'Тур в Дубай "Спа-курорт"',
-    description: '10 ночей, спа-пакет, отель 5*, йога',
+    description: '10 ночей, спа-пакет, йога',
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 10,
-    price: 112000
+    price: 112000,
+    stars: 5
   },
   {
     id: 31,
@@ -296,7 +309,8 @@ const trips = [
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 7,
-    price: 68500
+    price: 68500,
+    stars: 4
   },
   {
     id: 32,
@@ -305,7 +319,8 @@ const trips = [
     country: 'ОАЭ',
     city: 'Абу-Даби',
     duration: 5,
-    price: 59800
+    price: 59800,
+    stars: 4
   },
   {
     id: 33,
@@ -314,7 +329,8 @@ const trips = [
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 6,
-    price: 89500
+    price: 89500,
+    stars: 4
   },
   {
     id: 34,
@@ -323,16 +339,18 @@ const trips = [
     country: 'ОАЭ',
     city: 'Шарджа',
     duration: 5,
-    price: 32800
+    price: 32800,
+    stars: 3
   },
   {
     id: 35,
     title: 'Тур в Аджман "Бюджетный"',
-    description: '10 ночей, завтраки, отель 3*, пляж',
+    description: '10 ночей, завтраки, пляж',
     country: 'ОАЭ',
     city: 'Аджман',
     duration: 10,
-    price: 39800
+    price: 39800,
+    stars: 3
   },
   {
     id: 36,
@@ -341,16 +359,18 @@ const trips = [
     country: 'ОАЭ',
     city: 'Эль-Айн',
     duration: 8,
-    price: 98500
+    price: 98500,
+    stars: 5
   },
   {
     id: 37,
     title: 'Тур в Дубай "Водный мир"',
-    description: '7 ночей, Aquaventure билет, отель 4*',
+    description: '7 ночей, Aquaventure билет',
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 7,
-    price: 72500
+    price: 72500,
+    stars: 4
   },
   {
     id: 38,
@@ -359,45 +379,50 @@ const trips = [
     country: 'ОАЭ',
     city: 'Абу-Даби',
     duration: 6,
-    price: 89500
+    price: 89500,
+    stars: 5
   },
   {
     id: 39,
     title: 'Тур в ОАЭ "Зимний"',
-    description: '14 ночей, все включено, отель 5*, идеальная погода',
+    description: '14 ночей, все включено, идеальная погода',
     country: 'ОАЭ',
     city: 'Дубай',
     duration: 14,
-    price: 158000
+    price: 158000,
+    stars: 5
   },
   {
     id: 40,
     title: 'Тур в ОАЭ "Премиум"',
-    description: '10 ночей, отель 5*, бизнес-класс перелет, трансферы',
+    description: '10 ночей, бизнес-класс перелет, трансферы',
     country: 'ОАЭ',
     city: 'Дубай/Абу-Даби',
     duration: 10,
-    price: 245000
+    price: 245000,
+    stars: 5
   },
 
   // ЕГИПЕТ
   {
     id: 41,
     title: 'Тур в Шарм-эль-Шейх "Коралловый риф"',
-    description: '7 ночей, все включено, отель 4*, дайвинг',
+    description: '7 ночей, все включено, дайвинг',
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     duration: 7,
-    price: 52800
+    price: 52800,
+    stars: 4
   },
   {
     id: 42,
     title: 'Тур в Хургаду "Макади Бэй"',
-    description: '10 ночей, ультра все включено, отель 5*, аквапарк',
+    description: '10 ночей, ультра все включено, аквапарк',
     country: 'Египет',
     city: 'Хургада',
     duration: 10,
-    price: 72500
+    price: 72500,
+    stars: 5
   },
   {
     id: 43,
@@ -406,7 +431,8 @@ const trips = [
     country: 'Египет',
     city: 'Каир/Хургада',
     duration: 12,
-    price: 68500
+    price: 68500,
+    stars: 4
   },
   {
     id: 44,
@@ -415,25 +441,28 @@ const trips = [
     country: 'Египет',
     city: 'Дахаб',
     duration: 14,
-    price: 48500
+    price: 48500,
+    stars: 3
   },
   {
     id: 45,
     title: 'Тур в Марса-Алам "Дюгони"',
-    description: '8 ночей, полупансион, отель 4*, экскурсия к дюгоням',
+    description: '8 ночей, полупансион, экскурсия к дюгоням',
     country: 'Египет',
     city: 'Марса-Алам',
     duration: 8,
-    price: 62500
+    price: 62500,
+    stars: 4
   },
   {
     id: 46,
     title: 'Тур в Эль-Гуну "Венеция Египта"',
-    description: '10 ночей, все включено, отель 5*, каналы',
+    description: '10 ночей, все включено, каналы',
     country: 'Египет',
     city: 'Эль-Гуна',
     duration: 10,
-    price: 89500
+    price: 89500,
+    stars: 5
   },
   {
     id: 47,
@@ -442,16 +471,18 @@ const trips = [
     country: 'Египет',
     city: 'Луксор',
     duration: 4,
-    price: 28500
+    price: 28500,
+    stars: 3
   },
   {
     id: 48,
     title: 'Тур в Табу "Синай"',
-    description: '7 ночей, полупансион, отель 3*, горы и море',
+    description: '7 ночей, полупансион, горы и море',
     country: 'Египет',
     city: 'Таба',
     duration: 7,
-    price: 35800
+    price: 35800,
+    stars: 3
   },
   {
     id: 49,
@@ -460,7 +491,8 @@ const trips = [
     country: 'Египет',
     city: 'Сома-Бэй',
     duration: 10,
-    price: 78500
+    price: 78500,
+    stars: 5
   },
   {
     id: 50,
@@ -469,16 +501,18 @@ const trips = [
     country: 'Египет',
     city: 'Сафага',
     duration: 8,
-    price: 39500
+    price: 39500,
+    stars: 3
   },
   {
     id: 51,
     title: 'Тур в Шарм-эль-Шейх "Наама Бэй"',
-    description: '7 ночей, все включено, отель 4*, ночная жизнь',
+    description: '7 ночей, все включено, ночная жизнь',
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     duration: 7,
-    price: 58500
+    price: 58500,
+    stars: 4
   },
   {
     id: 52,
@@ -487,7 +521,8 @@ const trips = [
     country: 'Египет',
     city: 'Хургада',
     duration: 12,
-    price: 82500
+    price: 82500,
+    stars: 5
   },
   {
     id: 53,
@@ -496,7 +531,8 @@ const trips = [
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     duration: 5,
-    price: 49500
+    price: 49500,
+    stars: 4
   },
   {
     id: 54,
@@ -505,7 +541,8 @@ const trips = [
     country: 'Египет',
     city: 'Александрия',
     duration: 4,
-    price: 19800
+    price: 19800,
+    stars: 3
   },
   {
     id: 55,
@@ -514,34 +551,38 @@ const trips = [
     country: 'Египет',
     city: 'Асуан',
     duration: 5,
-    price: 42500
+    price: 42500,
+    stars: 4
   },
   {
     id: 56,
     title: 'Тур в Нувейбу "Уединение"',
-    description: '10 ночей, завтраки, отель 3*, тишина',
+    description: '10 ночей, завтраки, тишина',
     country: 'Египет',
     city: 'Нувейба',
     duration: 10,
-    price: 32500
+    price: 32500,
+    stars: 3
   },
   {
     id: 57,
     title: 'Тур в Египет "Все включено максимум"',
-    description: '14 ночей, отель 5*, аквапарк, спа, анимация',
+    description: '14 ночей, аквапарк, спа, анимация',
     country: 'Египет',
     city: 'Хургада',
     duration: 14,
-    price: 112000
+    price: 112000,
+    stars: 5
   },
   {
     id: 58,
     title: 'Тур в Шарм-эль-Шейх "Романтический"',
-    description: '7 ночей, отель 5*, ужины на пляже, спа',
+    description: '7 ночей, ужины на пляже, спа',
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     duration: 7,
-    price: 68500
+    price: 68500,
+    stars: 5
   },
   {
     id: 59,
@@ -550,7 +591,8 @@ const trips = [
     country: 'Египет',
     city: 'Хургада/Каир/Луксор',
     duration: 10,
-    price: 72500
+    price: 72500,
+    stars: 4
   },
   {
     id: 60,
@@ -559,18 +601,20 @@ const trips = [
     country: 'Египет',
     city: 'Марса-Алам',
     duration: 8,
-    price: 55800
+    price: 55800,
+    stars: 4
   },
 
   // ТАИЛАНД
   {
     id: 61,
     title: 'Тур в Пхукет "Андаманское море"',
-    description: '7 ночей, завтраки, отель 4*, экскурсия на Пхи-Пхи',
+    description: '7 ночей, завтраки, экскурсия на Пхи-Пхи',
     country: 'Таиланд',
     city: 'Пхукет',
     duration: 7,
-    price: 78500
+    price: 78500,
+    stars: 4
   },
   {
     id: 62,
@@ -579,25 +623,28 @@ const trips = [
     country: 'Таиланд',
     city: 'Бангкок',
     duration: 5,
-    price: 42500
+    price: 42500,
+    stars: 4
   },
   {
     id: 63,
     title: 'Тур на Самуи "Кокосовый остров"',
-    description: '10 ночей, полупансион, отель 5*, виллы',
+    description: '10 ночей, полупансион, виллы',
     country: 'Таиланд',
     city: 'Самуи',
     duration: 10,
-    price: 112000
+    price: 112000,
+    stars: 5
   },
   {
     id: 64,
     title: 'Тур в Паттайю "Веселье"',
-    description: '7 ночей, завтраки, отель 3*, ночная жизнь',
+    description: '7 ночей, завтраки, ночная жизнь',
     country: 'Таиланд',
     city: 'Паттайя',
     duration: 7,
-    price: 45800
+    price: 45800,
+    stars: 3
   },
   {
     id: 65,
@@ -606,7 +653,8 @@ const trips = [
     country: 'Таиланд',
     city: 'Краби',
     duration: 8,
-    price: 62500
+    price: 62500,
+    stars: 4
   },
   {
     id: 66,
@@ -615,7 +663,8 @@ const trips = [
     country: 'Таиланд',
     city: 'Чиангмай',
     duration: 6,
-    price: 48500
+    price: 48500,
+    stars: 4
   },
   {
     id: 67,
@@ -624,25 +673,28 @@ const trips = [
     country: 'Таиланд',
     city: 'Пхи-Пхи',
     duration: 5,
-    price: 68500
+    price: 68500,
+    stars: 4
   },
   {
     id: 68,
     title: 'Тур в Хуахин "Королевский берег"',
-    description: '7 ночей, завтраки, отель 4*, гольф',
+    description: '7 ночей, завтраки, гольф',
     country: 'Таиланд',
     city: 'Хуахин',
     duration: 7,
-    price: 52500
+    price: 52500,
+    stars: 4
   },
   {
     id: 69,
     title: 'Тур на Ланту "Безлюдный рай"',
-    description: '10 ночей, завтраки, отель 4*, пляжи',
+    description: '10 ночей, завтраки, пляжи',
     country: 'Таиланд',
     city: 'Ланта',
     duration: 10,
-    price: 59500
+    price: 59500,
+    stars: 4
   },
   {
     id: 70,
@@ -651,16 +703,18 @@ const trips = [
     country: 'Таиланд',
     city: 'Тао',
     duration: 8,
-    price: 55800
+    price: 55800,
+    stars: 4
   },
   {
     id: 71,
     title: 'Тур в Пхукет "Патонг Бич"',
-    description: '9 ночей, полупансион, отель 4*, клубы рядом',
+    description: '9 ночей, полупансион, клубы рядом',
     country: 'Таиланд',
     city: 'Пхукет',
     duration: 9,
-    price: 72800
+    price: 72800,
+    stars: 4
   },
   {
     id: 72,
@@ -669,16 +723,18 @@ const trips = [
     country: 'Таиланд',
     city: 'Бангкок/Паттайя',
     duration: 10,
-    price: 68500
+    price: 68500,
+    stars: 4
   },
   {
     id: 73,
     title: 'Тур на Самуи "Чавенг Бич"',
-    description: '7 ночей, все включено, отель 5*, ночная жизнь',
+    description: '7 ночей, все включено, ночная жизнь',
     country: 'Таиланд',
     city: 'Самуи',
     duration: 7,
-    price: 89500
+    price: 89500,
+    stars: 5
   },
   {
     id: 74,
@@ -687,7 +743,8 @@ const trips = [
     country: 'Таиланд',
     city: 'Пханган',
     duration: 5,
-    price: 38500
+    price: 38500,
+    stars: 3
   },
   {
     id: 75,
@@ -696,16 +753,18 @@ const trips = [
     country: 'Таиланд',
     city: 'Чианграй',
     duration: 4,
-    price: 29800
+    price: 29800,
+    stars: 4
   },
   {
     id: 76,
     title: 'Тур в Краби "Ката Бич"',
-    description: '8 ночей, полупансион, отель 4*, серфинг',
+    description: '8 ночей, полупансион, серфинг',
     country: 'Таиланд',
     city: 'Краби',
     duration: 8,
-    price: 62500
+    price: 62500,
+    stars: 4
   },
   {
     id: 77,
@@ -714,7 +773,8 @@ const trips = [
     country: 'Таиланд',
     city: 'Чанг',
     duration: 7,
-    price: 45800
+    price: 45800,
+    stars: 4
   },
   {
     id: 78,
@@ -723,25 +783,28 @@ const trips = [
     country: 'Таиланд',
     city: 'Аюттхая',
     duration: 3,
-    price: 18500
+    price: 18500,
+    stars: 3
   },
   {
     id: 79,
     title: 'Тур в Пхукет "Спа-отдых"',
-    description: '10 ночей, спа-пакет, отель 5*, йога, здоровое питание',
+    description: '10 ночей, спа-пакет, йога, здоровое питание',
     country: 'Таиланд',
     city: 'Пхукет',
     duration: 10,
-    price: 112000
+    price: 112000,
+    stars: 5
   },
   {
     id: 80,
     title: 'Тур в Таиланд "Премиум"',
-    description: '14 ночей, бизнес-класс, отели 5*, полный пансион',
+    description: '14 ночей, бизнес-класс, полный пансион',
     country: 'Таиланд',
     city: 'Бангкок/Пхукет/Самуи',
     duration: 14,
-    price: 235000
+    price: 235000,
+    stars: 5
   },
 
   // ГРУЗИЯ
@@ -752,16 +815,18 @@ const trips = [
     country: 'Грузия',
     city: 'Тбилиси',
     duration: 5,
-    price: 38500
+    price: 38500,
+    stars: 4
   },
   {
     id: 82,
     title: 'Тур в Батуми "Черное море"',
-    description: '7 ночей, завтраки, отель 4*, пляж',
+    description: '7 ночей, завтраки, пляж',
     country: 'Грузия',
     city: 'Батуми',
     duration: 7,
-    price: 42500
+    price: 42500,
+    stars: 4
   },
   {
     id: 83,
@@ -770,7 +835,8 @@ const trips = [
     country: 'Грузия',
     city: 'Казбеги',
     duration: 4,
-    price: 28500
+    price: 28500,
+    stars: 3
   },
   {
     id: 84,
@@ -779,7 +845,8 @@ const trips = [
     country: 'Грузия',
     city: 'Кахетия',
     duration: 6,
-    price: 39800
+    price: 39800,
+    stars: 4
   },
   {
     id: 85,
@@ -788,7 +855,8 @@ const trips = [
     country: 'Грузия',
     city: 'Кутаиси',
     duration: 5,
-    price: 28500
+    price: 28500,
+    stars: 3
   },
   {
     id: 86,
@@ -797,7 +865,8 @@ const trips = [
     country: 'Грузия',
     city: 'Местиа',
     duration: 7,
-    price: 45800
+    price: 45800,
+    stars: 3
   },
   {
     id: 87,
@@ -806,7 +875,8 @@ const trips = [
     country: 'Грузия',
     city: 'Боржоми',
     duration: 5,
-    price: 32500
+    price: 32500,
+    stars: 4
   },
   {
     id: 88,
@@ -815,7 +885,8 @@ const trips = [
     country: 'Грузия',
     city: 'Сигнахи',
     duration: 4,
-    price: 22500
+    price: 22500,
+    stars: 3
   },
   {
     id: 89,
@@ -824,7 +895,8 @@ const trips = [
     country: 'Грузия',
     city: 'Тбилиси/Кахетия',
     duration: 7,
-    price: 52500
+    price: 52500,
+    stars: 4
   },
   {
     id: 90,
@@ -833,7 +905,8 @@ const trips = [
     country: 'Грузия',
     city: 'Бакуриани',
     duration: 6,
-    price: 39800
+    price: 39800,
+    stars: 3
   },
   {
     id: 91,
@@ -842,7 +915,8 @@ const trips = [
     country: 'Грузия',
     city: 'Вардзия',
     duration: 3,
-    price: 18500
+    price: 18500,
+    stars: 3
   },
   {
     id: 92,
@@ -851,25 +925,28 @@ const trips = [
     country: 'Грузия',
     city: 'Телави',
     duration: 5,
-    price: 29500
+    price: 29500,
+    stars: 3
   },
   {
     id: 93,
     title: 'Тур в Гонио "Крепость и море"',
-    description: '7 ночей, полупансион, отель 4*, пляж, древняя крепость',
+    description: '7 ночей, полупансион, пляж, древняя крепость',
     country: 'Грузия',
     city: 'Гонио',
     duration: 7,
-    price: 38500
+    price: 38500,
+    stars: 4
   },
   {
     id: 94,
     title: 'Тур в Кобулети "Бюджетный"',
-    description: '10 ночей, завтраки, отель 3*, пляж',
+    description: '10 ночей, завтраки, пляж',
     country: 'Грузия',
     city: 'Кобулети',
     duration: 10,
-    price: 28500
+    price: 28500,
+    stars: 3
   },
   {
     id: 95,
@@ -878,7 +955,8 @@ const trips = [
     country: 'Грузия',
     city: 'Степанцминда',
     duration: 5,
-    price: 32500
+    price: 32500,
+    stars: 3
   },
   {
     id: 96,
@@ -887,16 +965,18 @@ const trips = [
     country: 'Грузия',
     city: 'Тур по стране',
     duration: 10,
-    price: 78500
+    price: 78500,
+    stars: 4
   },
   {
     id: 97,
     title: 'Тур в Уреки "Магнетические пески"',
-    description: '8 ночей, завтраки, отель 4*, лечебные пески',
+    description: '8 ночей, завтраки, лечебные пески',
     country: 'Грузия',
     city: 'Уреки',
     duration: 8,
-    price: 35800
+    price: 35800,
+    stars: 3
   },
   {
     id: 98,
@@ -905,7 +985,8 @@ const trips = [
     country: 'Грузия',
     city: 'Тбилиси/Кахетия',
     duration: 7,
-    price: 62500
+    price: 62500,
+    stars: 5
   },
   {
     id: 99,
@@ -914,7 +995,8 @@ const trips = [
     country: 'Грузия',
     city: 'Тбилиси',
     duration: 3,
-    price: 18500
+    price: 18500,
+    stars: 3
   },
   {
     id: 100,
@@ -923,7 +1005,8 @@ const trips = [
     country: 'Грузия',
     city: 'Казбеги/Сванетия',
     duration: 8,
-    price: 68500
+    price: 68500,
+    stars: 4
   },
 
   // МАЛЬДИВЫ
@@ -934,7 +1017,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 7,
-    price: 185000
+    price: 185000,
+    stars: 5
   },
   {
     id: 102,
@@ -943,7 +1027,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Северный Мале',
     duration: 10,
-    price: 285000
+    price: 285000,
+    stars: 5
   },
   {
     id: 103,
@@ -952,7 +1037,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Южный Ари',
     duration: 8,
-    price: 158000
+    price: 158000,
+    stars: 4
   },
   {
     id: 104,
@@ -961,7 +1047,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Баа',
     duration: 12,
-    price: 225000
+    price: 225000,
+    stars: 5
   },
   {
     id: 105,
@@ -970,7 +1057,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 14,
-    price: 395000
+    price: 395000,
+    stars: 5
   },
   {
     id: 106,
@@ -979,7 +1067,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 7,
-    price: 128000
+    price: 128000,
+    stars: 4
   },
   {
     id: 107,
@@ -988,7 +1077,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Баа',
     duration: 8,
-    price: 145000
+    price: 145000,
+    stars: 5
   },
   {
     id: 108,
@@ -997,7 +1087,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 5,
-    price: 58500
+    price: 58500,
+    stars: 3
   },
   {
     id: 109,
@@ -1006,7 +1097,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Южный Ари',
     duration: 10,
-    price: 195000
+    price: 195000,
+    stars: 5
   },
   {
     id: 110,
@@ -1015,7 +1107,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Южный Ари',
     duration: 7,
-    price: 168000
+    price: 168000,
+    stars: 5
   },
   {
     id: 111,
@@ -1024,7 +1117,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 10,
-    price: 485000
+    price: 485000,
+    stars: 5
   },
   {
     id: 112,
@@ -1033,7 +1127,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Северный Мале',
     duration: 7,
-    price: 198000
+    price: 198000,
+    stars: 5
   },
   {
     id: 113,
@@ -1042,7 +1137,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Баа',
     duration: 9,
-    price: 138000
+    price: 138000,
+    stars: 4
   },
   {
     id: 114,
@@ -1051,7 +1147,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 6,
-    price: 98500
+    price: 98500,
+    stars: 4
   },
   {
     id: 115,
@@ -1060,7 +1157,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Южный Ари',
     duration: 8,
-    price: 175000
+    price: 175000,
+    stars: 5
   },
   {
     id: 116,
@@ -1069,7 +1167,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Баа',
     duration: 10,
-    price: 148000
+    price: 148000,
+    stars: 4
   },
   {
     id: 117,
@@ -1078,7 +1177,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Мале',
     duration: 8,
-    price: 198000
+    price: 198000,
+    stars: 5
   },
   {
     id: 118,
@@ -1087,7 +1187,8 @@ const trips = [
     country: 'Мальдивы',
     city: 'Северный Мале',
     duration: 10,
-    price: 325000
+    price: 325000,
+    stars: 5
   },
   {
     id: 119,
@@ -1096,16 +1197,18 @@ const trips = [
     country: 'Мальдивы',
     city: 'Баа',
     duration: 7,
-    price: 188000
+    price: 188000,
+    stars: 5
   },
   {
     id: 120,
     title: 'Тур на Мальдивы "Премиум-класс"',
-    description: '14 ночей, бизнес-класс, отель 5*, все включено, гид 24/7',
+    description: '14 ночей, бизнес-класс, все включено, гид 24/7',
     country: 'Мальдивы',
     city: 'Мале/Южный Ари',
     duration: 14,
-    price: 495000
+    price: 495000,
+    stars: 5
   }
 ];
 

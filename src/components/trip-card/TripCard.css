@@ -38,6 +38,10 @@
   flex: 1;                   
 }
 
+.tripcard__stars {
+  
+}
+
 .tripcard__price {
   font-size: 1.5rem;          
   font-weight: bold;

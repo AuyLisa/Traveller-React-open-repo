@@ -53,7 +53,10 @@ function Trips() {
       ) : (
         <div className="trips__grid">
           {filtered.map((trip) => (
-            <TripCard key={trip.id} trip={trip} />
+            <TripCard
+             key={trip.id}
+             id={trip.id}
+             trip={trip} />
           ))}
         </div>
       )}

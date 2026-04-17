@@ -2,7 +2,7 @@ import CardCartControls from '../card-cart-controls/CardCartControls';
 import { hotelToCartPayload } from '../../utils/cartItemBuilders';
 import './HotelCard.css';
 
-function HotelCard( {hotel} ) {
+function HotelCard( {hotel, id} ) {
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');
 
   return (
@@ -13,13 +13,12 @@ function HotelCard( {hotel} ) {
       </div>
 
       <div className="hotelcard__content">
-        <h3 className="hotelcard__title">{hotel.title}</h3>
+        <h3 className="hotelcard__title">{hotel.title} {'⭐'.repeat(hotel.star)}</h3>
         <p className="hotelcard__location">{locationLabel}</p>
         <p className="hotelcard__description">{hotel.description}</p>
 
         <div className="hotelcard__rating">
-          <span className="hotelcard__stars"> {hotel.stars}⭐ </span>
-          <span className="hotelcard__reviews">{hotel.reviews} отзывов</span>
+          <p className="hotelcard__reviews">{hotel.review} отзывов</p>
         </div>
 
         <p className="hotelcard__price"> от {hotel.price} ₽</p>
@@ -27,7 +26,7 @@ function HotelCard( {hotel} ) {
           <button type="button" className="hotelcard__button">Подробнее</button>
           <CardCartControls
             type="hotel"
-            itemId={hotel.id}
+            itemId={id}
             payload={hotelToCartPayload(hotel)}
             variant="hotel"
           />
