@@ -1,0 +1,52 @@
+.avia-classes {
+  flex: 1; 
+  display: flex;
+  gap: 12px;
+}
+
+.avia-class-card {
+  flex: 1;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-top: 4px solid #4CAF50;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.avia-class-card:hover {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.125rem);
+}
+
+.avia-class-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;       
+  margin-bottom: 0.75rem; 
+}
+
+.avia-class-card__name {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.avia-class-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;         
+  font-size: 1rem;    
+}
+
+.class-card__seats {
+}
+
+.avia-class-card__price {
+  font-size: 1.2rem;    
+  font-weight: 700;    
+
+  margin-bottom: 0;
+}

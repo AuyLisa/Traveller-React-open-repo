@@ -4,3 +4,16 @@
   color: #555;
   font-size: 0.95rem;
 }
+
+.avia__flights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avia__row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+

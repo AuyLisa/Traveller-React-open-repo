@@ -2,6 +2,7 @@ import { useMemo, useState, useCallback } from 'react';
 import Layout from '../../components/layout/Layout';
 import AviaCard from '../../components/avia-card/AviaCard';
 import AviaToolbar from '../../components/avia-toolbar/AviaToolbar';
+import AviaClasses from '../../components/avia-classes/AviaClasses';
 import avias from '../../data/avia';
 import { filterAvias } from '../../utils/filterAvias';
 import './Avia.css';
@@ -61,7 +62,29 @@ function Avia() {
           Ничего не найдено. Измените запрос или нажмите «Сбросить».
         </p>
       ) : (
-        filtered.map((avia) => <AviaCard key={avia.id} avia={avia} />)
+        <>
+          <div className="avia__results">
+            Найдено авиаперелетов:
+            <span className="avia__count"> {filtered.length}</span>
+          </div>
+  
+          <div className="avia__flights">
+            {filtered.map(avia => (
+            <div className="avia__row">
+              <AviaCard 
+              key={avia.id}
+              id={avia.id}
+              avia={avia} />
+
+              <AviaClasses
+                key={avia.id}
+                id={avia.id}
+                price={avia.price}
+                duration={avia.duration}/>
+            </div>
+            ))}
+          </div>
+        </>
       )}
     </Layout>
   );

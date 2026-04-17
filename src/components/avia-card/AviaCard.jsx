@@ -2,7 +2,7 @@ import CardCartControls from '../card-cart-controls/CardCartControls';
 import { flightToCartPayload } from '../../utils/cartItemBuilders';
 import './AviaCard.css';
 
-function AviaCard( {avia} ) {
+function AviaCard( {avia, id} ) {
   return (
     <div className="aviacard">
 
@@ -23,7 +23,7 @@ function AviaCard( {avia} ) {
         <button type="button" className="aviacard__button">Подробнее</button>
         <CardCartControls
           type="flight"
-          itemId={avia.id}
+          itemId={id}
           payload={flightToCartPayload(avia)}
           variant="avia"
         />
