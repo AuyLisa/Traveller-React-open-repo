@@ -19,8 +19,8 @@ export function filterHotels(hotels, { searchQuery, country, starsRaw, minReview
         hotel.description,
         hotel.country,
         hotel.city,
-        String(hotel.stars ?? ''),
-        String(hotel.reviews ?? ''),
+        String(hotel.star ?? ''),
+        String(hotel.review ?? ''),
         String(hotel.price ?? ''),
       ].map(normalizeText);
       if (!chunks.some((chunk) => chunk.includes(q))) return false;
@@ -31,11 +31,11 @@ export function filterHotels(hotels, { searchQuery, country, starsRaw, minReview
     }
 
     if (stars !== null) {
-      if (Number(hotel.stars) !== stars) return false;
+      if (Number(hotel.star) !== stars) return false;
     }
 
     if (minReviews !== null) {
-      if (Number(hotel.reviews) < minReviews) return false;
+      if (Number(hotel.review) < minReviews) return false;
     }
 
     if (maxPrice !== null) {
