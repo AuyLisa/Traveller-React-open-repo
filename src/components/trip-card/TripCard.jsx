@@ -3,8 +3,9 @@ import CardCartControls from '../card-cart-controls/CardCartControls';
 import { tripToCartPayload } from '../../utils/cartItemBuilders';
 import './TripCard.css';
 
-function TripCard( {trip, id} ) {
-
+function TripCard( {tripId, trip} ) {
+  const navigate = useNavigate();
+  
   return (
    <div className="tripcard">
 
@@ -21,13 +22,13 @@ function TripCard( {trip, id} ) {
           <button
             type="button"
             className="tripcard__button"
-            onClick={() => navigate(`/trips/${id}`)}
+            onClick={() => navigate(`/trips/${tripId}`)}
           >
             Подробнее
           </button>
           <CardCartControls
             type="trip"
-            itemId={id}
+            itemId={tripId}
             payload={tripToCartPayload(trip)}
             variant="trip"
           />

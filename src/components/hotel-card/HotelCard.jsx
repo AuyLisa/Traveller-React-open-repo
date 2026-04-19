@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import CardCartControls from '../card-cart-controls/CardCartControls';
 import { hotelToCartPayload } from '../../utils/cartItemBuilders';
 import './HotelCard.css';
 
-function HotelCard( {hotel, id} ) {
+function HotelCard( { hotelId, hotel} ) {
+  const navigate = useNavigate();
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');
 
   return (
@@ -21,12 +23,13 @@ function HotelCard( {hotel, id} ) {
           <p className="hotelcard__reviews">{hotel.review} отзывов</p>
         </div>
 
+
         <p className="hotelcard__price"> от {hotel.price} ₽</p>
         <div className="hotelcard__actions">
           <button type="button" className="hotelcard__button">Подробнее</button>
           <CardCartControls
             type="hotel"
-            itemId={id}
+            itemId={hotelId}
             payload={hotelToCartPayload(hotel)}
             variant="hotel"
           />

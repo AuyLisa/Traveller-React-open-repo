@@ -32,12 +32,11 @@ function Home() {
           {toptrips.map(trip => (
             <TripTop 
              key={trip.id} //невидимый-Для React оптимизации-перерисовывает не все, а только поменявшуюся карточку
-             id={trip.id} //видимый-Для логики (удалить, купить, открыть)
+             tripId={trip.id} //видимый-Для логики (удалить, купить, открыть)
              trip={trip} />  //Все данные тура (страна, цена, фото)
           ))}
         </div>
       </section>
-
 
       <section className="home__section">
         <h2 className="home__section-title">Лучшие цены на майские праздники</h2>
@@ -45,7 +44,7 @@ function Home() {
           {tripcardsdata.map(trip => (
             <CardTripCountry
              key={trip.id}
-             id={trip.id}
+             tripId={trip.id}
              trip={trip} />
           ))}
         </div>
@@ -57,7 +56,7 @@ function Home() {
           {homeTripCardTurkeyData.map(trip => (
             <CardTripCountry
              key={trip.id}
-             id={trip.id}
+             tripId={trip.id}
              trip={trip} />
           ))}
         </div>
@@ -70,7 +69,7 @@ function Home() {
           {fromMoscowData.map(trip => (
             <CardTripFromMoscow
              key={trip.id}
-             id={trip.id}
+             tripId={trip.id}
              trip={trip} />
           ))}
         </div>
@@ -82,7 +81,7 @@ function Home() {
           {hotels.map(hotel => (
             <CardTripToHotel
              key={hotel.id}
-             id={hotel.id}
+             tripId={hotel.id}
              hotel={hotel} />
           ))}
         </div>

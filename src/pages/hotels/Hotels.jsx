@@ -59,7 +59,7 @@ function Hotels() {
         filtered.map((hotel) => 
         <HotelCard
          key={hotel.id}
-         id={hotel.id}
+         hotelId={hotel.id}
          hotel={hotel} />)
       )}
     </Layout>

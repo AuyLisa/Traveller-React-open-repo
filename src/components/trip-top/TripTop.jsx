@@ -1,6 +1,6 @@
 import './TripTop.css';
 
-function TripTop({ trip, id }) {
+function TripTop({ tripId, trip }) {
   return (
     <div className="triptop">
       

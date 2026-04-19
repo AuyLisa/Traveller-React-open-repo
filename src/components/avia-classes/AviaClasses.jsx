@@ -1,6 +1,6 @@
 import './AviaClasses.css';
 
-function AviaClasses({ id, price, duration }) {
+function AviaClasses({ aviaClassesId, price, duration }) {
   const classes = [
     {
       id: 'economy',

@@ -55,7 +55,7 @@ function Trips() {
           {filtered.map((trip) => (
             <TripCard
              key={trip.id}
-             id={trip.id}
+             tripId={trip.id}
              trip={trip} />
           ))}
         </div>

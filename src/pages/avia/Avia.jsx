@@ -70,15 +70,13 @@ function Avia() {
   
           <div className="avia__flights">
             {filtered.map(avia => (
-            <div className="avia__row">
+            <div className="avia__row" key={avia.id}>
               <AviaCard 
-              key={avia.id}
-              id={avia.id}
-              avia={avia} />
+               aviaCardId={avia.id}
+               avia={avia} />
 
               <AviaClasses
-                key={avia.id}
-                id={avia.id}
+                aviaClassesId={avia.id}
                 price={avia.price}
                 duration={avia.duration}/>
             </div>

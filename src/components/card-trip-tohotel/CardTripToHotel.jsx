@@ -1,7 +1,7 @@
 import './CardTripToHotel.css';
 import HotelButton from '../hotel-button/HotelButton.jsx';
 
-function CardTripToHotel({ hotel, id }) {
+function CardTripToHotel({ tripId, hotel}) {
   return (
     <div className="trip-card">
       <div className="trip-card__image">
@@ -19,9 +19,9 @@ function CardTripToHotel({ hotel, id }) {
 
 
       <HotelButton
-       key={id}
-       id={id}
-       hotel={hotel} />
+        key={tripId}
+        hotelId={tripId}
+        hotel={hotel} />
 
     </div>
   );
