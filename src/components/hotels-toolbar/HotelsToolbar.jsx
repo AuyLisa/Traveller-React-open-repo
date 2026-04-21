@@ -1,6 +1,11 @@
 import { useMemo } from 'react';
 import { buildHotelFilterOptions } from '../../utils/filterHotels';
+import DownSelect from '../down-select/DownSelect';
 import '../trips-toolbar/TripsToolbar.css';
+
+function starsEmoji(n) {
+  return '⭐'.repeat(Math.min(5, Math.max(1, Number(n))));
+}
 
 function HotelsToolbar({
   hotels,
@@ -8,17 +13,26 @@ function HotelsToolbar({
   onSearchChange,
   country,
   onCountryChange,
-  star,
-  onStarsChange,
+  selectedStars,
+  onStarToggle,
   minReviews,
+  maxReviews,
   onMinReviewsChange,
+  onMaxReviewsChange,
+  minPrice,
   maxPrice,
+  onMinPriceChange,
   onMaxPriceChange,
   onReset,
 }) {
-  const { countries, starOptions, reviewPoints, pricePoints } = useMemo(
-    () => buildHotelFilterOptions(hotels),
-    [hotels]
+  const { countries, starOptions } = useMemo(() => buildHotelFilterOptions(hotels), [hotels]);
+
+  const countrySelectOptions = useMemo(
+    () => [
+      { value: '', label: 'Все страны' },
+      ...countries.map((c) => ({ value: c, label: c })),
+    ],
+    [countries]
   );
 
   return (
@@ -43,90 +57,112 @@ function HotelsToolbar({
           <label className="trips-toolbar__label" htmlFor="hotels-toolbar-country">
             Страна
           </label>
-          <input
+          <DownSelect
             id="hotels-toolbar-country"
             className="trips-toolbar__input"
-            type="text"
-            list="hotels-toolbar-country-list"
             value={country}
-            onChange={(e) => onCountryChange(e.target.value)}
-            placeholder="Страна"
-            autoComplete="off"
+            onChange={onCountryChange}
+            options={countrySelectOptions}
           />
-          <datalist id="hotels-toolbar-country-list">
-            {countries.map((c) => (
-              <option key={c} value={c} />
-            ))}
-          </datalist>
         </div>
 
-
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="hotels-toolbar-stars">
+        <div className="trips-toolbar__field trips-toolbar__field--stars">
+          <span className="trips-toolbar__label" id="hotels-toolbar-stars-legend">
             Звёзды
-          </label>
-          <input
-            id="hotels-toolbar-stars"
-            className="trips-toolbar__input trips-toolbar__input--numeric"
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            list="hotels-toolbar-stars-list"
-            value={star}
-            onChange={(e) => onStarsChange(e.target.value.replace(/\D/g, ''))}
-            placeholder="Количество звёзд"
-            autoComplete="off"
-          />
-          <datalist id="hotels-toolbar-stars-list">
+          </span>
+          <div
+            className="trips-toolbar__checkbox-group"
+            role="group"
+            aria-labelledby="hotels-toolbar-stars-legend"
+          >
             {starOptions.map((n) => (
-              <option key={n} value={String(n)} />
+              <label key={n} className="trips-toolbar__checkbox-label">
+                <input
+                  type="checkbox"
+                  className="trips-toolbar__checkbox"
+                  checked={selectedStars.includes(n)}
+                  onChange={() => onStarToggle(n)}
+                />
+                <span className="trips-toolbar__checkbox-text" title={`${n} звёзд`}>
+                  {starsEmoji(n)}
+                </span>
+              </label>
             ))}
-          </datalist>
+          </div>
         </div>
 
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="hotels-toolbar-reviews">
-            Отзывы (мин.)
-          </label>
-          <input
-            id="hotels-toolbar-reviews"
-            className="trips-toolbar__input trips-toolbar__input--numeric"
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            list="hotels-toolbar-reviews-list"
-            value={minReviews}
-            onChange={(e) => onMinReviewsChange(e.target.value.replace(/\D/g, ''))}
-            placeholder="Минимум отзывов"
-            autoComplete="off"
-          />
-          <datalist id="hotels-toolbar-reviews-list">
-            {reviewPoints.map((n) => (
-              <option key={n} value={String(n)} />
-            ))}
-          </datalist>
+        <div className="trips-toolbar__field trips-toolbar__field--range">
+          <span className="trips-toolbar__label" id="hotels-toolbar-reviews-legend">
+            Количество отзывов
+          </span>
+          <div
+            className="trips-toolbar__range"
+            role="group"
+            aria-labelledby="hotels-toolbar-reviews-legend"
+          >
+            <input
+              className="trips-toolbar__input trips-toolbar__input--numeric"
+              type="number"
+              min="0"
+              inputMode="numeric"
+              value={minReviews}
+              onChange={(e) => onMinReviewsChange(e.target.value)}
+              placeholder="от"
+              autoComplete="off"
+              aria-label="Количество отзывов от"
+            />
+            <span className="trips-toolbar__range-sep" aria-hidden="true">
+              —
+            </span>
+            <input
+              className="trips-toolbar__input trips-toolbar__input--numeric"
+              type="number"
+              min="0"
+              inputMode="numeric"
+              value={maxReviews}
+              onChange={(e) => onMaxReviewsChange(e.target.value)}
+              placeholder="до"
+              autoComplete="off"
+              aria-label="Количество отзывов до"
+            />
+          </div>
         </div>
 
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="hotels-toolbar-price">
-            Цена
-          </label>
-          <input
-            id="hotels-toolbar-price"
-            className="trips-toolbar__input trips-toolbar__input--numeric"
-            type="text"
-            inputMode="numeric"
-            list="hotels-toolbar-price-list"
-            value={maxPrice}
-            onChange={(e) => onMaxPriceChange(e.target.value.replace(/[^\d\s]/g, ''))}
-            placeholder="Макс. стоимость, ₽"
-            autoComplete="off"
-          />
-          <datalist id="hotels-toolbar-price-list">
-            {pricePoints.map((p) => (
-              <option key={p} value={String(p)} />
-            ))}
-          </datalist>
+        <div className="trips-toolbar__field trips-toolbar__field--range">
+          <span className="trips-toolbar__label" id="hotels-toolbar-price-legend">
+            Цена, ₽
+          </span>
+          <div
+            className="trips-toolbar__range"
+            role="group"
+            aria-labelledby="hotels-toolbar-price-legend"
+          >
+            <input
+              className="trips-toolbar__input trips-toolbar__input--numeric"
+              type="number"
+              min="0"
+              inputMode="numeric"
+              value={minPrice}
+              onChange={(e) => onMinPriceChange(e.target.value)}
+              placeholder="от"
+              autoComplete="off"
+              aria-label="Цена от, ₽"
+            />
+            <span className="trips-toolbar__range-sep" aria-hidden="true">
+              —
+            </span>
+            <input
+              className="trips-toolbar__input trips-toolbar__input--numeric"
+              type="number"
+              min="0"
+              inputMode="numeric"
+              value={maxPrice}
+              onChange={(e) => onMaxPriceChange(e.target.value)}
+              placeholder="до"
+              autoComplete="off"
+              aria-label="Цена до, ₽"
+            />
+          </div>
         </div>
 
         <div className="trips-toolbar__actions">

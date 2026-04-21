@@ -1,4 +1,5 @@
 import Layout from '../../components/layout/Layout';
+import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
 import TripTop from '../../components/trip-top/TripTop';
 import CardTripCountry from '../../components/card-trip-country/CardTripCountry';
 import CardTripFromMoscow from '../../components/card-trip-frommoscow/CardTripFromMoscow';
@@ -23,6 +24,9 @@ function Home() {
       <div className="home">
         <h1 className="home__title">Добро пожаловать в Traveller!</h1>
         <p className="home__slogan">Туры, отели и авиабилеты в одном месте</p>
+        <div className="home__search-switch">
+          <SearchSectionSwitch />
+        </div>
       </div>
 
 

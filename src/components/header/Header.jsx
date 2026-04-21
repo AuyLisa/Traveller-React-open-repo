@@ -19,9 +19,6 @@ function Header() {
       <nav>
         <ul className="header__list">
           <li><Link className="header__link" to="/">Главная</Link></li>
-          <li><Link className="header__link" to="/trips">Туры</Link></li>
-          <li><Link className="header__link" to="/hotels">Отели</Link></li>
-          <li><Link className="header__link" to="/avia">Авиабилеты</Link></li>
           <li><Link className="header__link" to="/about">О нас</Link></li>
           <li>
             <Link className="header__link header__cart" to="/cart">

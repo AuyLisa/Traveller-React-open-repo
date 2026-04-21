@@ -1,16 +1,31 @@
-import {
-  normalizeText,
-  parsePositiveInt,
-  parseStarsFilter,
-  parseMaxPrice,
-} from './filterHelpers';
+import { normalizeText, parsePositiveInt, parsePriceBound } from './filterHelpers';
 
-export function filterHotels(hotels, { searchQuery, country, starsRaw, minReviewsRaw, maxPriceRaw }) {
+export function filterHotels(
+  hotels,
+  {
+    searchQuery,
+    country,
+    selectedStars,
+    minReviewsRaw,
+    maxReviewsRaw,
+    minPriceRaw,
+    maxPriceRaw,
+  }
+) {
   const q = normalizeText(searchQuery);
   const countryFilter = String(country ?? '').trim();
-  const stars = parseStarsFilter(starsRaw);
+  const starSet =
+    Array.isArray(selectedStars) && selectedStars.length > 0
+      ? new Set(
+          selectedStars
+            .map((n) => Number(n))
+            .filter((n) => Number.isFinite(n) && n >= 1 && n <= 5)
+        )
+      : null;
   const minReviews = parsePositiveInt(minReviewsRaw);
-  const maxPrice = parseMaxPrice(maxPriceRaw);
+  const maxReviews = parsePositiveInt(maxReviewsRaw);
+  const minPrice = parsePriceBound(minPriceRaw);
+  const maxPrice = parsePriceBound(maxPriceRaw);
 
   return hotels.filter((hotel) => {
     if (q) {
@@ -30,17 +45,17 @@ export function filterHotels(hotels, { searchQuery, country, starsRaw, minReview
       if (normalizeText(hotel.country) !== normalizeText(countryFilter)) return false;
     }
 
-    if (stars !== null) {
-      if (Number(hotel.star) !== stars) return false;
+    if (starSet !== null) {
+      if (!starSet.has(Number(hotel.star))) return false;
     }
 
-    if (minReviews !== null) {
-      if (Number(hotel.review) < minReviews) return false;
-    }
+    const rev = Number(hotel.review);
+    if (minReviews !== null && rev < minReviews) return false;
+    if (maxReviews !== null && rev > maxReviews) return false;
 
-    if (maxPrice !== null) {
-      if (Number(hotel.price) > maxPrice) return false;
-    }
+    const price = Number(hotel.price);
+    if (minPrice !== null && price < minPrice) return false;
+    if (maxPrice !== null && price > maxPrice) return false;
 
     return true;
   });
@@ -53,11 +68,5 @@ export function buildHotelFilterOptions(hotels) {
   const starOptions = [...new Set(hotels.map((h) => h.star).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
-  const reviewPoints = [...new Set(hotels.map((h) => h.review).filter((n) => Number.isFinite(n)))].sort(
-    (a, b) => a - b
-  );
-  const pricePoints = [...new Set(hotels.map((h) => h.price).filter((n) => Number.isFinite(n)))].sort(
-    (a, b) => a - b
-  );
-  return { countries, starOptions, reviewPoints, pricePoints };
+  return { countries, starOptions };
 }

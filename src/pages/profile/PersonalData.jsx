@@ -2,6 +2,7 @@ import Layout from '../../components/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { normalizePhoneDigits } from '../../utils/formValidation';
+import DownSelect from '../../components/down-select/DownSelect';
 import './Profile.css';
 
 const GENDER_OPTIONS = [
@@ -90,83 +91,78 @@ function PersonalData() {
 {/* Пол (выпадающий список) */}
           <div className="profile__field">
             <strong>Пол:</strong>
-            <select 
-              value={gender} 
-              onChange={(e) => setGender(e.target.value)}
+            <DownSelect
+              id="profile-gender"
               className="profile__select"
-            >
-            {GENDER_OPTIONS.map(option => (
-              <option key={option.value} value={option.label}>
-                {option.label}
-              </option>
-            ))}
-            </select>
+              value={gender}
+              onChange={setGender}
+              options={GENDER_OPTIONS.map((o) => ({
+                value: o.label,
+                label: o.label,
+              }))}
+            />
           </div>
 
 
 {/* Возраст (выпадающий список) */}
           <div className="profile__field">
             <strong>Возраст:</strong>
-            <select 
-              value={age} 
-              onChange={(e) => setAge(e.target.value)}
+            <DownSelect
+              id="profile-age"
               className="profile__select"
-            >
-            {AGE_OPTIONS.map(option => (
-                <option key={option.value} value={option.label}>
-                  {option.label}
-                </option>
-            ))}
-            </select>
+              value={age}
+              onChange={setAge}
+              options={AGE_OPTIONS.map((o) => ({
+                value: o.label,
+                label: o.label,
+              }))}
+            />
           </div>
 
 
 {/* Страна (выпадающий список) */}
           <div className="profile__field">
             <strong>Страна:</strong>
-            <select 
-              value={country} 
-              onChange={(e) => setCountry(e.target.value)}
+            <DownSelect
+              id="profile-country"
               className="profile__select"
-            >
-            {COUNTRY_OPTIONS.map(option => (
-              <option key={option.value} value={option.label}>
-                {option.label}
-              </option>
-            ))}
-            </select>
+              value={country}
+              onChange={setCountry}
+              options={COUNTRY_OPTIONS.map((o) => ({
+                value: o.label,
+                label: o.label,
+              }))}
+            />
           </div>
           
 {/* Язык(выпадающий список) */}
           <div className="profile__field">
             <strong>Язык:</strong>
-            <select 
-              value={language} 
-              onChange={(e) => setLanguage(e.target.value)}
+            <DownSelect
+              id="profile-language"
               className="profile__select"
-            >
-            {LANGUAGE_OPTIONS.map(option => (
-              <option key={option.value} value={option.label}>
-                {option.label}
-              </option>
-            ))}
-            </select>
+              value={language}
+              onChange={setLanguage}
+              options={LANGUAGE_OPTIONS.map((o) => ({
+                value: o.label,
+                label: o.label,
+              }))}
+            />
           </div>
 
 {/* Валюта (выпадающий список) */}
           <div className="profile__field">
             <strong>Валюта:</strong>
-            <select 
-              value={currency} 
-              onChange={(e) => setCurrency(e.target.value)}
+            <DownSelect
+              id="profile-currency"
               className="profile__select"
-            >
-            {CURRENCY_OPTIONS.map(option => (
-              <option key={option.value} value={option.label}>
-                {option.label}
-              </option>
-            ))}
-            </select>
+              value={currency}
+              onChange={setCurrency}
+              options={CURRENCY_OPTIONS.map((o) => ({
+                value: o.label,
+                label: o.label,
+              }))}
+            />
           </div>
   
         </div>
