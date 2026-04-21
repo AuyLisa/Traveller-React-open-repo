@@ -6,6 +6,7 @@ import {
   getIssueDateInputMax,
 } from '../../utils/checkoutValidation';
 import PassengerPassportBlock from './PassengerPassportBlock';
+import DownSelect from '../down-select/DownSelect';
 import './CheckoutForm.css';
 
 function createEmptyPassenger() {
@@ -213,18 +214,22 @@ function CheckoutForm({ onValidSubmit, isSubmitting }) {
         <label className="checkout-form__label" htmlFor="checkout-contactPreference">
           Удобный способ связи
         </label>
-        <select
+        <DownSelect
           id="checkout-contactPreference"
-          name="contactPreference"
           className="checkout-form__select"
           value={values.contactPreference}
-          onChange={handleContactChange}
+          onChange={(v) =>
+            handleContactChange({
+              target: { name: 'contactPreference', value: v },
+            })
+          }
           disabled={isSubmitting}
-        >
-          <option value="any">Email или телефон</option>
-          <option value="email">Только email</option>
-          <option value="phone">Только телефон</option>
-        </select>
+          options={[
+            { value: 'any', label: 'Email или телефон' },
+            { value: 'email', label: 'Только email' },
+            { value: 'phone', label: 'Только телефон' },
+          ]}
+        />
       </div>
 
       <div className="checkout-form__field">

@@ -1,5 +1,6 @@
 import { useMemo, useState, useCallback } from 'react';
 import Layout from '../../components/layout/Layout';
+import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
 import AviaCard from '../../components/avia-card/AviaCard';
 import AviaToolbar from '../../components/avia-toolbar/AviaToolbar';
 import AviaClasses from '../../components/avia-classes/AviaClasses';
@@ -12,7 +13,9 @@ function Avia() {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [airline, setAirline] = useState('');
-  const [duration, setDuration] = useState('');
+  const [durationMinHours, setDurationMinHours] = useState('');
+  const [durationMaxHours, setDurationMaxHours] = useState('');
+  const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
 
   const filtered = useMemo(
@@ -22,10 +25,12 @@ function Avia() {
         from,
         to,
         airline,
-        durationRaw: duration,
+        durationMinHoursRaw: durationMinHours,
+        durationMaxHoursRaw: durationMaxHours,
+        minPriceRaw: minPrice,
         maxPriceRaw: maxPrice,
       }),
-    [searchQuery, from, to, airline, duration, maxPrice]
+    [searchQuery, from, to, airline, durationMinHours, durationMaxHours, minPrice, maxPrice]
   );
 
   const handleReset = useCallback(() => {
@@ -33,13 +38,18 @@ function Avia() {
     setFrom('');
     setTo('');
     setAirline('');
-    setDuration('');
+    setDurationMinHours('');
+    setDurationMaxHours('');
+    setMinPrice('');
     setMaxPrice('');
   }, []);
 
   return (
     <Layout>
       <h1 className="avia__title">Авиабилеты</h1>
+      <div className="search-switch-row">
+        <SearchSectionSwitch />
+      </div>
       <AviaToolbar
         avias={avias}
         searchQuery={searchQuery}
@@ -50,9 +60,13 @@ function Avia() {
         onToChange={setTo}
         airline={airline}
         onAirlineChange={setAirline}
-        duration={duration}
-        onDurationChange={setDuration}
+        durationMinHours={durationMinHours}
+        durationMaxHours={durationMaxHours}
+        onDurationMinChange={setDurationMinHours}
+        onDurationMaxChange={setDurationMaxHours}
+        minPrice={minPrice}
         maxPrice={maxPrice}
+        onMinPriceChange={setMinPrice}
         onMaxPriceChange={setMaxPrice}
         onReset={handleReset}
       />
@@ -67,19 +81,14 @@ function Avia() {
             Найдено авиаперелетов:
             <span className="avia__count"> {filtered.length}</span>
           </div>
-  
-          <div className="avia__flights">
-            {filtered.map(avia => (
-            <div className="avia__row" key={avia.id}>
-              <AviaCard 
-               aviaCardId={avia.id}
-               avia={avia} />
 
-              <AviaClasses
-                aviaClassesId={avia.id}
-                price={avia.price}
-                duration={avia.duration}/>
-            </div>
+          <div className="avia__flights">
+            {filtered.map((avia) => (
+              <div className="avia__row" key={avia.id}>
+                <AviaCard aviaCardId={avia.id} avia={avia} />
+
+                <AviaClasses aviaClassesId={avia.id} price={avia.price} duration={avia.duration} />
+              </div>
             ))}
           </div>
         </>

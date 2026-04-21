@@ -1,0 +1,20 @@
+/* Единые стили строки «Найдено …» на страницах туров, отелей, авиа */
+.trips__results,
+.hotels__results,
+.avia__results {
+  margin: 0 0 0.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.trips__count,
+.hotels__count,
+.avia__count {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 600;
+  color: inherit;
+}

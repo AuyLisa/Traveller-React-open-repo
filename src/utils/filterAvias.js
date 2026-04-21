@@ -1,14 +1,39 @@
-import { normalizeText, parseMaxPrice } from './filterHelpers';
+import { normalizeText, parsePriceBound, parseHoursToMinutes } from './filterHelpers';
 
-function matchesTextFilter(haystack, needle) {
+function matchesExactFilter(haystack, needle) {
   const n = normalizeText(needle);
   if (!n) return true;
-  return normalizeText(haystack).includes(n);
+  return normalizeText(haystack) === n;
 }
 
-export function filterAvias(avias, { searchQuery, from, to, airline, durationRaw, maxPriceRaw }) {
+/** Парсит строки вида «3ч 30мин» в минуты */
+function parseAviaDurationToMinutes(str) {
+  const s = String(str ?? '').trim();
+  const m = s.match(/(\d+)\s*ч\s*(\d+)\s*мин/i);
+  if (m) return Number(m[1]) * 60 + Number(m[2]);
+  const m2 = s.match(/(\d+)\s*ч/i);
+  if (m2) return Number(m2[1]) * 60;
+  return null;
+}
+
+export function filterAvias(
+  avias,
+  {
+    searchQuery,
+    from,
+    to,
+    airline,
+    durationMinHoursRaw,
+    durationMaxHoursRaw,
+    minPriceRaw,
+    maxPriceRaw,
+  }
+) {
   const q = normalizeText(searchQuery);
-  const maxPrice = parseMaxPrice(maxPriceRaw);
+  const minPrice = parsePriceBound(minPriceRaw);
+  const maxPrice = parsePriceBound(maxPriceRaw);
+  const durMin = parseHoursToMinutes(durationMinHoursRaw);
+  const durMax = parseHoursToMinutes(durationMaxHoursRaw);
 
   return avias.filter((a) => {
     if (q) {
@@ -24,14 +49,18 @@ export function filterAvias(avias, { searchQuery, from, to, airline, durationRaw
       if (!chunks.some((chunk) => chunk.includes(q))) return false;
     }
 
-    if (!matchesTextFilter(a.from, from)) return false;
-    if (!matchesTextFilter(a.to, to)) return false;
-    if (!matchesTextFilter(a.airline, airline)) return false;
-    if (!matchesTextFilter(a.duration, durationRaw)) return false;
+    if (!matchesExactFilter(a.from, from)) return false;
+    if (!matchesExactFilter(a.to, to)) return false;
+    if (!matchesExactFilter(a.airline, airline)) return false;
 
-    if (maxPrice !== null) {
-      if (Number(a.price) > maxPrice) return false;
-    }
+    const flightMin = parseAviaDurationToMinutes(a.duration);
+    if (flightMin === null) return false;
+    if (durMin !== null && flightMin < durMin) return false;
+    if (durMax !== null && flightMin > durMax) return false;
+
+    const price = Number(a.price);
+    if (minPrice !== null && price < minPrice) return false;
+    if (maxPrice !== null && price > maxPrice) return false;
 
     return true;
   });
@@ -47,11 +76,5 @@ export function buildAviaFilterOptions(avias) {
   const airlines = [...new Set(avias.map((x) => x.airline).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, 'ru')
   );
-  const durations = [...new Set(avias.map((x) => x.duration).filter(Boolean))].sort((a, b) =>
-    a.localeCompare(b, 'ru')
-  );
-  const pricePoints = [...new Set(avias.map((x) => x.price).filter((n) => Number.isFinite(n)))].sort(
-    (a, b) => a - b
-  );
-  return { froms, tos, airlines, durations, pricePoints };
+  return { froms, tos, airlines };
 }

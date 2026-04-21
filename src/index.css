@@ -1,5 +1,6 @@
 @import './components/header/Header.css';
 @import './components/footer/Footer.css';
+@import './styles/search-results.css';
 @import './components/layout/Layout.css';
 @import './components/trip-card/TripCard.css';
 @import './components/hotel-card/HotelCard.css';
@@ -37,4 +38,8 @@ body {
 main {
   flex: 1;
   padding: 40px 20px;
+}
+
+.search-switch-row {
+  margin: 0.75rem 0 1rem 0;
 }
