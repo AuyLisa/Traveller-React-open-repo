@@ -4,6 +4,7 @@ function TripTop({ tripId, trip }) {
   return (
     <div className="triptop">
       
+      
       <div className="triptop__image">
         <img 
           src={trip.image} 

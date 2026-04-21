@@ -2,6 +2,7 @@ import './CardTripCountry.css';
 import CityButton from '../city-button/CityButton.jsx';
 
 function CardTripCountry({ tripId, trip }) {
+  
   return (
     <div className="trip-card">
       <div className="trip-card__image">
