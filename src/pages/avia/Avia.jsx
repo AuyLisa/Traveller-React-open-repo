@@ -1,5 +1,6 @@
 import { useMemo, useState, useCallback } from 'react';
 import Layout from '../../components/layout/Layout';
+import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
 import AviaCard from '../../components/avia-card/AviaCard';
 import AviaToolbar from '../../components/avia-toolbar/AviaToolbar';
 import AviaClasses from '../../components/avia-classes/AviaClasses';
@@ -40,6 +41,9 @@ function Avia() {
   return (
     <Layout>
       <h1 className="avia__title">Авиабилеты</h1>
+      <div className="search-switch-row">
+        <SearchSectionSwitch />
+      </div>
       <AviaToolbar
         avias={avias}
         searchQuery={searchQuery}

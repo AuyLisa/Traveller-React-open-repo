@@ -1,0 +1,39 @@
+.section-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.section-switch__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.2;
+}
+
+.section-switch__group {
+  display: inline-flex;
+  border: 1px solid #b9bcbe;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.section-switch__tab {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.section-switch__tab + .section-switch__tab {
+  border-left: 1px solid #b9bcbe;
+}
+
+.section-switch__tab--active {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+

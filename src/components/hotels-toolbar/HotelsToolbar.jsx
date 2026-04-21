@@ -8,7 +8,7 @@ function HotelsToolbar({
   onSearchChange,
   country,
   onCountryChange,
-  star,
+  stars,
   onStarsChange,
   minReviews,
   onMinReviewsChange,
@@ -72,7 +72,7 @@ function HotelsToolbar({
             inputMode="numeric"
             pattern="[0-9]*"
             list="hotels-toolbar-stars-list"
-            value={star}
+            value={stars}
             onChange={(e) => onStarsChange(e.target.value.replace(/\D/g, ''))}
             placeholder="Количество звёзд"
             autoComplete="off"

@@ -26,11 +26,11 @@ function Cart() {
               <Link className="cart-page__link" to="/trips">
                 Туры
               </Link>
-              <Link className="cart-page__link" to="/hotels">
-                Отели
-              </Link>
               <Link className="cart-page__link" to="/avia">
                 Авиабилеты
+              </Link>
+              <Link className="cart-page__link" to="/hotels">
+                Отели
               </Link>
             </div>
           </div>

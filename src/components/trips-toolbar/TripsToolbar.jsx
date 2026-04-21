@@ -8,13 +8,17 @@ function TripsToolbar({
   onSearchChange,
   country,
   onCountryChange,
+  stars,
+  onStarsChange,
   nights,
   onNightsChange,
   maxPrice,
   onMaxPriceChange,
+  sort,
+  onSortChange,
   onReset,
 }) {
-  const { countries, nights: nightOptions, pricePoints } = useMemo(
+  const { countries, stars: starOptions, nights: nightOptions, pricePoints } = useMemo(
     () => buildTripFilterOptions(trips),
     [trips]
   );
@@ -41,44 +45,57 @@ function TripsToolbar({
           <label className="trips-toolbar__label" htmlFor="trips-toolbar-country">
             Страна
           </label>
-          <input
+          <select
             id="trips-toolbar-country"
             className="trips-toolbar__input"
-            type="text"
-            list="trips-toolbar-country-list"
             value={country}
             onChange={(e) => onCountryChange(e.target.value)}
-            placeholder="Страна"
-            autoComplete="off"
-          />
-          <datalist id="trips-toolbar-country-list">
+          >
+            <option value="">Все страны</option>
             {countries.map((c) => (
-              <option key={c} value={c} />
+              <option key={c} value={c}>
+                {c}
+              </option>
             ))}
-          </datalist>
+          </select>
+        </div>
+
+        <div className="trips-toolbar__field">
+          <label className="trips-toolbar__label" htmlFor="trips-toolbar-stars">
+            Категория
+          </label>
+          <select
+            id="trips-toolbar-stars"
+            className="trips-toolbar__input"
+            value={stars}
+            onChange={(e) => onStarsChange(e.target.value)}
+          >
+            <option value="">Любая категория</option>
+            {starOptions.map((n) => (
+              <option key={n} value={String(n)}>
+                {n}*
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="trips-toolbar__field">
           <label className="trips-toolbar__label" htmlFor="trips-toolbar-nights">
             Количество ночей
           </label>
-          <input
+          <select
             id="trips-toolbar-nights"
-            className="trips-toolbar__input trips-toolbar__input--numeric"
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            list="trips-toolbar-nights-list"
+            className="trips-toolbar__input"
             value={nights}
-            onChange={(e) => onNightsChange(e.target.value.replace(/\D/g, ''))}
-            placeholder="Введите количество ночей"
-            autoComplete="off"
-          />
-          <datalist id="trips-toolbar-nights-list">
+            onChange={(e) => onNightsChange(e.target.value)}
+          >
+            <option value="">Любая длительность</option>
             {nightOptions.map((n) => (
-              <option key={n} value={String(n)} />
+              <option key={n} value={String(n)}>
+                {n}
+              </option>
             ))}
-          </datalist>
+          </select>
         </div>
 
         <div className="trips-toolbar__field">
@@ -101,6 +118,25 @@ function TripsToolbar({
               <option key={p} value={String(p)} />
             ))}
           </datalist>
+        </div>
+
+        <div className="trips-toolbar__field">
+          <label className="trips-toolbar__label" htmlFor="trips-toolbar-sort">
+            Сортировка
+          </label>
+          <select
+            id="trips-toolbar-sort"
+            className="trips-toolbar__input"
+            value={sort}
+            onChange={(e) => onSortChange(e.target.value)}
+          >
+            <option value="">Без сортировки</option>
+            <option value="price_asc">Сначала дешевле</option>
+            <option value="price_desc">Сначала дороже</option>
+            <option value="nights_asc">Ночей меньше</option>
+            <option value="nights_desc">Ночей больше</option>
+            <option value="stars_desc">Категория выше</option>
+          </select>
         </div>
 
         <div className="trips-toolbar__actions">

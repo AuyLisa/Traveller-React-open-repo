@@ -1,5 +1,6 @@
 import { useMemo, useState, useCallback } from 'react';
 import Layout from '../../components/layout/Layout';
+import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
 import HotelCard from '../../components/hotel-card/HotelCard';
 import HotelsToolbar from '../../components/hotels-toolbar/HotelsToolbar';
 import hotels from '../../data/hotels';
@@ -36,6 +37,9 @@ function Hotels() {
   return (
     <Layout>
       <h1 className="hotels__title">Отели</h1>
+      <div className="search-switch-row">
+        <SearchSectionSwitch />
+      </div>
       <HotelsToolbar
         hotels={hotels}
         searchQuery={searchQuery}

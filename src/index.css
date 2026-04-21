@@ -38,3 +38,7 @@ main {
   flex: 1;
   padding: 40px 20px;
 }
+
+.search-switch-row {
+  margin: 0.75rem 0 1rem 0;
+}
