@@ -21,9 +21,14 @@
   min-width: 0;
 }
 
-.home__section-title {
-  margin-bottom: 1rem;
+.home__section-header {
+
 }
+
+
+.home__section-title {
+}
+
 
 .home__grid {
   display: grid;
