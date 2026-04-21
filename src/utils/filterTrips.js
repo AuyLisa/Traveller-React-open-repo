@@ -1,7 +1,7 @@
 import {
   normalizeText,
   parseStrictPositiveInt,
-  parseMaxPrice,
+  parsePriceBound,
 } from './filterHelpers';
 
 function applySort(trips, sort) {
@@ -30,12 +30,19 @@ function applySort(trips, sort) {
   }
 }
 
-export function filterTrips(trips, { searchQuery, country, starsRaw, nightsRaw, maxPriceRaw, sort }) {
+export function filterTrips(
+  trips,
+  { searchQuery, country, selectedStars, nightsRaw, minPriceRaw, maxPriceRaw, sort }
+) {
   const q = normalizeText(searchQuery);
   const countryFilter = String(country ?? '').trim();
-  const stars = parseStrictPositiveInt(starsRaw);
+  const starSet =
+    Array.isArray(selectedStars) && selectedStars.length > 0
+      ? new Set(selectedStars.map((n) => Number(n)).filter((n) => Number.isFinite(n) && n >= 1))
+      : null;
   const nights = parseStrictPositiveInt(nightsRaw);
-  const maxPrice = parseMaxPrice(maxPriceRaw);
+  const minPrice = parsePriceBound(minPriceRaw);
+  const maxPrice = parsePriceBound(maxPriceRaw);
 
   const filtered = trips.filter((trip) => {
     if (q) {
@@ -55,17 +62,17 @@ export function filterTrips(trips, { searchQuery, country, starsRaw, nightsRaw, 
       }
     }
 
-    if (stars !== null) {
-      if (Number(trip.stars) !== stars) return false;
+    if (starSet !== null) {
+      if (!starSet.has(Number(trip.stars))) return false;
     }
 
     if (nights !== null) {
       if (Number(trip.duration) !== nights) return false;
     }
 
-    if (maxPrice !== null) {
-      if (Number(trip.price) > maxPrice) return false;
-    }
+    const price = Number(trip.price);
+    if (minPrice !== null && price < minPrice) return false;
+    if (maxPrice !== null && price > maxPrice) return false;
 
     return true;
   });
@@ -83,8 +90,5 @@ export function buildTripFilterOptions(trips) {
   const nights = [...new Set(trips.map((t) => t.duration).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
-  const pricePoints = [...new Set(trips.map((t) => t.price).filter((n) => Number.isFinite(n)))].sort(
-    (a, b) => a - b
-  );
-  return { countries, stars, nights, pricePoints };
+  return { countries, stars, nights };
 }

@@ -127,6 +127,10 @@
   color: #1a1a1a;
 }
 
+button.checkout-form__select {
+  font-family: inherit;
+}
+
 .checkout-form__input:focus,
 .checkout-form__select:focus,
 .checkout-form__textarea:focus {

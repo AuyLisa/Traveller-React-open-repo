@@ -30,11 +30,27 @@ export function parseStarsFilter(raw) {
 
 const MAX_FILTER_PRICE = 1_000_000_000;
 
-export function parseMaxPrice(raw) {
+/** Граница цены (от / до): пусто = фильтр не задан */
+export function parsePriceBound(raw) {
   const t = String(raw ?? '').replace(/\s/g, '').trim();
   if (!t) return null;
   const n = Number.parseInt(t, 10);
   if (!Number.isFinite(n) || n < 0) return null;
   if (n > MAX_FILTER_PRICE) return null;
   return n;
+}
+
+/** @deprecated используйте parsePriceBound */
+export function parseMaxPrice(raw) {
+  return parsePriceBound(raw);
+}
+
+/** Часы (в т.ч. дробные) → минуты для диапазона длительности авиа */
+export function parseHoursToMinutes(raw) {
+  const t = String(raw ?? '').trim();
+  if (!t) return null;
+  const n = Number.parseFloat(t.replace(',', '.'));
+  if (!Number.isFinite(n) || n < 0) return null;
+  if (n > 48) return null;
+  return Math.round(n * 60);
 }

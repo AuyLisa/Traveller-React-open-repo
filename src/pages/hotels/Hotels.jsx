@@ -10,27 +10,40 @@ import './Hotels.css';
 function Hotels() {
   const [searchQuery, setSearchQuery] = useState('');
   const [country, setCountry] = useState('');
-  const [stars, setStars] = useState('');
+  const [selectedStars, setSelectedStars] = useState([]);
   const [minReviews, setMinReviews] = useState('');
+  const [maxReviews, setMaxReviews] = useState('');
+  const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+
+  const handleStarToggle = useCallback((n) => {
+    setSelectedStars((prev) => {
+      if (prev.includes(n)) return prev.filter((x) => x !== n);
+      return [...prev, n].sort((a, b) => a - b);
+    });
+  }, []);
 
   const filtered = useMemo(
     () =>
       filterHotels(hotels, {
         searchQuery,
         country,
-        starsRaw: stars,
+        selectedStars,
         minReviewsRaw: minReviews,
+        maxReviewsRaw: maxReviews,
+        minPriceRaw: minPrice,
         maxPriceRaw: maxPrice,
       }),
-    [searchQuery, country, stars, minReviews, maxPrice]
+    [searchQuery, country, selectedStars, minReviews, maxReviews, minPrice, maxPrice]
   );
 
   const handleReset = useCallback(() => {
     setSearchQuery('');
     setCountry('');
-    setStars('');
+    setSelectedStars([]);
     setMinReviews('');
+    setMaxReviews('');
+    setMinPrice('');
     setMaxPrice('');
   }, []);
 
@@ -46,11 +59,15 @@ function Hotels() {
         onSearchChange={setSearchQuery}
         country={country}
         onCountryChange={setCountry}
-        stars={stars}
-        onStarsChange={setStars}
+        selectedStars={selectedStars}
+        onStarToggle={handleStarToggle}
         minReviews={minReviews}
+        maxReviews={maxReviews}
         onMinReviewsChange={setMinReviews}
+        onMaxReviewsChange={setMaxReviews}
+        minPrice={minPrice}
         maxPrice={maxPrice}
+        onMinPriceChange={setMinPrice}
         onMaxPriceChange={setMaxPrice}
         onReset={handleReset}
       />
@@ -60,11 +77,15 @@ function Hotels() {
           Ничего не найдено. Измените запрос или нажмите «Сбросить».
         </p>
       ) : (
-        filtered.map((hotel) => 
-        <HotelCard
-         key={hotel.id}
-         hotelId={hotel.id}
-         hotel={hotel} />)
+        <>
+          <div className="hotels__results">
+            Найдено отелей:
+            <span className="hotels__count"> {filtered.length}</span>
+          </div>
+          {filtered.map((hotel) => (
+            <HotelCard key={hotel.id} hotelId={hotel.id} hotel={hotel} />
+          ))}
+        </>
       )}
     </Layout>
   );

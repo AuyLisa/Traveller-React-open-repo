@@ -33,6 +33,17 @@
   color: #555;
 }
 
+.profile__field .down-select {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 12rem;
+  max-width: min(22rem, calc(100% - 5rem));
+}
+
+.profile__select {
+  font-family: inherit;
+}
+
 .profile__menu {
   display: flex;
   flex-direction: column;

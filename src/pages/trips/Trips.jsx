@@ -10,29 +10,39 @@ import './Trips.css';
 function Trips() {
   const [searchQuery, setSearchQuery] = useState('');
   const [country, setCountry] = useState('');
-  const [stars, setStars] = useState('');
+  const [selectedStars, setSelectedStars] = useState([]);
   const [nights, setNights] = useState('');
+  const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [sort, setSort] = useState('');
+
+  const handleStarToggle = useCallback((n) => {
+    setSelectedStars((prev) => {
+      if (prev.includes(n)) return prev.filter((x) => x !== n);
+      return [...prev, n].sort((a, b) => a - b);
+    });
+  }, []);
 
   const filtered = useMemo(
     () =>
       filterTrips(trips, {
         searchQuery,
         country,
-        starsRaw: stars,
+        selectedStars,
         nightsRaw: nights,
+        minPriceRaw: minPrice,
         maxPriceRaw: maxPrice,
         sort,
       }),
-    [searchQuery, country, stars, nights, maxPrice, sort]
+    [searchQuery, country, selectedStars, nights, minPrice, maxPrice, sort]
   );
 
   const handleReset = useCallback(() => {
     setSearchQuery('');
     setCountry('');
-    setStars('');
+    setSelectedStars([]);
     setNights('');
+    setMinPrice('');
     setMaxPrice('');
     setSort('');
   }, []);
@@ -49,11 +59,13 @@ function Trips() {
         onSearchChange={setSearchQuery}
         country={country}
         onCountryChange={setCountry}
-        stars={stars}
-        onStarsChange={setStars}
+        selectedStars={selectedStars}
+        onStarToggle={handleStarToggle}
         nights={nights}
         onNightsChange={setNights}
+        minPrice={minPrice}
         maxPrice={maxPrice}
+        onMinPriceChange={setMinPrice}
         onMaxPriceChange={setMaxPrice}
         sort={sort}
         onSortChange={setSort}
@@ -65,14 +77,17 @@ function Trips() {
           Ничего не найдено. Измените запрос или нажмите «Сбросить».
         </p>
       ) : (
-        <div className="trips__grid">
-          {filtered.map((trip) => (
-            <TripCard
-             key={trip.id}
-             tripId={trip.id}
-             trip={trip} />
-          ))}
-        </div>
+        <>
+          <div className="trips__results">
+            Найдено туров:
+            <span className="trips__count"> {filtered.length}</span>
+          </div>
+          <div className="trips__grid">
+            {filtered.map((trip) => (
+              <TripCard key={trip.id} tripId={trip.id} trip={trip} />
+            ))}
+          </div>
+        </>
       )}
     </Layout>
   );

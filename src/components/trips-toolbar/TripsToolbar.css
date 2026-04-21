@@ -16,7 +16,8 @@
 .trips-toolbar__filters {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  /* flex-end смещал низкие колонки вниз — подписи полей оказывались на разной высоте */
+  align-items: flex-start;
   gap: 0.75rem 1rem;
 }
 
@@ -28,6 +29,68 @@
   min-width: 10.5rem;
   flex: 1 1 10.5rem;
   max-width: 14rem;
+}
+
+.trips-toolbar__field--stars {
+  /* ширина по содержимому чекбоксов, без лишнего растягивания */
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  /* больше воздуха между подписью и чекбоксами */
+  gap: 0.65rem;
+}
+
+.trips-toolbar__field--range {
+  min-width: 12.5rem;
+  max-width: 16rem;
+}
+
+.trips-toolbar__checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.trips-toolbar__checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.trips-toolbar__checkbox {
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: #3a6ea5;
+}
+
+.trips-toolbar__checkbox-text {
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.trips-toolbar__range {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.trips-toolbar__range .trips-toolbar__input {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.trips-toolbar__range-sep {
+  color: #888;
+  flex: 0 0 auto;
+  font-size: 0.9rem;
 }
 
 .trips-toolbar__label {
@@ -49,6 +112,10 @@
   background: #fff;
   appearance: none;
   -webkit-appearance: none;
+}
+
+button.trips-toolbar__input {
+  font-family: inherit;
 }
 
 .trips-toolbar__input[list]::-webkit-calendar-picker-indicator,
