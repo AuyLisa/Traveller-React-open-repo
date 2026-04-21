@@ -140,7 +140,7 @@ function RegistrationForm() {
       </button>
 
       <p className="registration-form__login-link">
-        Уже есть аккаунт? <a href="/login" onClick={handleLogin}> Войти</a>
+        Уже есть аккаунт? <a href="/login" onClick={handleLogin}>Войти</a>
       </p>
     </form>
   );
