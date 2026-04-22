@@ -1,10 +1,10 @@
 import Layout from '../../components/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
 import './Profile.css';
+import { useUser } from '../../context/UserContext';
 
-
-function Favorites() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+function History() {
+  const { currentUser } = useUser();
   
   if (!currentUser) {
     return <Navigate to="/login" />;
@@ -27,4 +27,4 @@ function Favorites() {
   );
 }
 
-export default Favorites;
+export default History;

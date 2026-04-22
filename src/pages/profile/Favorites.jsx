@@ -1,10 +1,10 @@
 import Layout from '../../components/layout/Layout';
 import './Profile.css';
 import { Navigate, Link } from 'react-router-dom';
-
+import { useUser } from '../../context/UserContext';
 
 function Favorites() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+  const { currentUser } = useUser();
   
   if (!currentUser) {
     return <Navigate to="/login" />;

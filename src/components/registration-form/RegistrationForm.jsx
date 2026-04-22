@@ -1,23 +1,23 @@
+import { useUser } from '../../context/UserContext';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateRegistrationForm } from '../../utils/formValidation';
 import './RegistrationForm.css';
 
-
 function RegistrationForm() {
+  const { register } = useUser(); //берем функцию из контекста
   const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: ''
   });
 
-   const [error, setError] = useState('');
-   const [fieldErrors, setFieldErrors] = useState({});
-
+  const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const handleChange = (e) => {
-
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -33,7 +33,6 @@ function RegistrationForm() {
       });
     }
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,28 +52,26 @@ function RegistrationForm() {
       return;
     }
 
-      const newUser = {
-        id: crypto.randomUUID(),
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        password: formData.password,
-        favorites: { tours: [], hotels: [], flights: [] },
-        bookings: []
-      };
+    const newUser = {
+      id: crypto.randomUUID(),
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      password: formData.password,
+      favorites: { tours: [], hotels: [], flights: [] },
+      bookings: []
+    };
 
-      users.push(newUser);
-      localStorage.setItem('users', JSON.stringify(users));
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
 
-      localStorage.setItem('currentUser', JSON.stringify({
-        id: newUser.id,
-        name: newUser.name,
-        email: newUser.email
-    }));
-    
-      navigate('/profile');
+    // вызываем функцию из контекста
+    register({
+      id: newUser.id,
+      name: newUser.name,
+      email: newUser.email
+    });
 
-
-
+    navigate('/profile');
   };
 
   const handleLogin = (e) => {

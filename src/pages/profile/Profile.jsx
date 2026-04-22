@@ -1,12 +1,13 @@
 import Layout from '../../components/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
+import { useUser } from '../../context/UserContext'; 
 import { useState, useEffect } from 'react';
 import './Profile.css';
 
 
 function Profile() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
-  
+  const { currentUser } = useUser();
+
   if (!currentUser) {
     return <Navigate to="/login" />;
   }
