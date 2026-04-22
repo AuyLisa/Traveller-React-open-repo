@@ -1,4 +1,5 @@
 import { StrictMode } from 'react'
+import { UserProvider } from './context/UserContext';
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
@@ -19,27 +20,30 @@ import About from './pages/about/About';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/trips" element={<Trips />} />
-        <Route path="/trips/:id" element={<TripDetail />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/avia" element={<Avia />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+     <UserProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/trips" element={<Trips />} />
+            <Route path="/trips/:id" element={<TripDetail />} />
+            <Route path="/hotels" element={<Hotels />} />
+            <Route path="/avia" element={<Avia />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
 
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/login" element={<Login />} />
 
 
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/PersonalData" element={<PersonalData />} />
-        <Route path="/profile/Favorites" element={<Favorites />} />
-        <Route path="/profile/History" element={<History />} />
- 
-      </Routes>
-    </BrowserRouter>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/PersonalData" element={<PersonalData />} />
+            <Route path="/profile/Favorites" element={<Favorites />} />
+            <Route path="/profile/History" element={<History />} />
+        
+          </Routes>
+        </BrowserRouter>
+    
+    </UserProvider>
   </StrictMode>,
 )

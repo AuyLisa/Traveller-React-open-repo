@@ -1,12 +1,15 @@
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 import './LogOut.css';
 
 function LogOut() {
   const navigate = useNavigate();
   
+  //юерем функцию из контекста
+  const { logout } = useUser();
+
   const handleLogout = () => {
-    // Удаляем текущего пользователя из localStorage
-    localStorage.removeItem('currentUser');
+    logout();
     navigate('/');
   };
   

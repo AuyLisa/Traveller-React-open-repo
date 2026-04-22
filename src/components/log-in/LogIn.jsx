@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateLoginForm } from '../../utils/formValidation';
+import { useUser } from '../../context/UserContext'; 
 import './LogIn.css';
 
 
 function LogIn() {
   const navigate = useNavigate();
+  const { login } = useUser(); 
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -49,13 +52,13 @@ function LogIn() {
     );
     
     if (user) {
-      localStorage.setItem('currentUser', JSON.stringify({
+      // используем контекст
+      login({
         id: user.id,
         name: user.name,
         email: user.email
-      }));
-      navigate('/profile');
-
+      });
+        navigate('/profile');
     } else {
       if (users.some(user => user.email === formData.email.trim())) {
         setError('Неправильный пароль');
@@ -64,6 +67,7 @@ function LogIn() {
       setError('Аккаунт не существует');
     }
   };
+
 
   const handleRegistration = (e) => {
     e.preventDefault(); 

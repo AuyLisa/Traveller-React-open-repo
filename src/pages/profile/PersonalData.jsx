@@ -1,3 +1,4 @@
+import { useUser } from '../../context/UserContext';
 import Layout from '../../components/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -45,19 +46,26 @@ const CURRENCY_OPTIONS = [
 
 function PersonalData() {
   
-  const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+  //берем данные из контекста
+  const { currentUser, userProfile, updateProfile } = useUser();
   
   if (!currentUser) {
     return <Navigate to="/login" />;
   }
 
-  // Состояния для каждого поля
-  const [phone, setPhone] = useState('');
-  const [gender, setGender] = useState('');
-  const [age, setAge] = useState('');
-  const [country, setCountry] = useState('');
-  const [language, setLanguage] = useState('');
-  const [currency, setCurrency] = useState('');
+  // Состояния для каждого поля (теперь с сохранением в контекст)
+  const [phone, setPhone] = useState(userProfile.phone || '');
+  const [gender, setGender] = useState(userProfile.gender || '');
+  const [age, setAge] = useState(userProfile.age || '');
+  const [country, setCountry] = useState(userProfile.country || '');
+  const [language, setLanguage] = useState(userProfile.language || '');
+  const [currency, setCurrency] = useState(userProfile.currency || 'RUB');
+
+  // Сохраняем изменения в контекст при их обновлении
+  useEffect(() => {
+    updateProfile({ phone, gender, age, country, language, currency });
+  }, [phone, gender, age, country, language, currency]);
+
 
   return (
     <Layout>
