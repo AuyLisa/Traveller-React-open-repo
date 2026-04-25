@@ -1,7 +1,7 @@
-import Layout from '../../components/layout/Layout';
+import Layout from '@ui/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
 import './Profile.css';
-import { useUser } from '../../context/UserContext';
+import { useUser } from '@context/UserContext';
 
 function History() {
   const { currentUser } = useUser();

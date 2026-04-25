@@ -1,0 +1,137 @@
+
+
+components/
+
+├──common/      # для любого пользователя
+    ├──ui +          #самые маленькие
+        ├──arrows            
+            │──Arrows.jsx
+            │──Arrows.css
+        ├──header
+            │──Header.jsx
+            │──Header.css
+        ├──layout
+            │──Layout.jsx
+            │──Layout.css
+        ├──footer
+            │──Footer.jsx
+            │──Footer.css
+        ├──search-section-switch
+            │──SearchSectionSwitch.jsx
+            │──SearchSectionSwitch.css
+
+    │── home +       #все для главной страницы
+        ├──trip-top             карточка тура для секции1  Популярные направления  
+            │──TripTop.jsx
+            │──TripTop.css
+        ├──card-trip-country    карточка тура для секции2  Лучшие цены на майские праздники
+            │──CardTripCountry.jsx
+            │──CardTripCountry.css
+        ├──card-trip-month      карточка тура для секции3  Раннее бронирование туров в Турцию
+            │──CardTripMonth.jsx
+            │──CardTripMonth.css
+        ├──card-trip-frommoscow карточка тура для секции4  Улететь прямо сейчас из Москвы
+            │──CardTripFromMoscow.jsx
+            │──CardTripFromMoscow.css
+        ├──card-trip-tohotel    карточка тура для секции5  Туры в эти отели
+            │──CardTripToHotel.jsx
+            │──CardTripToHotel.css
+
+        ├──city-button          кнопка переход по городу
+            │──CityButton.jsx
+            │──CityButton.css
+        ├──country-button       кнопка переход по стране
+            │──CountryButton.jsx
+            │──CountryButton.css
+        ├──hotel-button         кнопка переход по отелю
+            │──HotelButton.jsx
+            │──HotelButton.css
+
+    │── trips +        #все для страницы туров
+        ├──trip-card          # карточка тура
+            │──TripCard.jsx
+            │──TripCard.css
+        ├──trips-toolbar      # фильтры для туров
+            │──TripsToolbar.jsx
+            │──TripsToolbar.css
+
+    │── avias +         #все для страницы авиабилетов
+        ├──avia-card         # карточка авиабилета
+            │──AviaCard.jsx
+            │──AviaCard.css
+        ├──avia-classes      # три класса эконом комфорт бизнес
+            │──AviaClasses.jsx
+            │──AviaClasses.css
+        ├──avia-toolbar      # фильтры для авиабилетов
+            │──AviaToolbar.jsx
+            │──AviaToolbar.css
+
+
+
+
+    │── hotels  +         #все для страницы отелей
+        ├──hotel-card     # карточка отеля
+            │──HotelCard.jsx
+            │──HotelCard.css
+        ├──hotels-toolbar    # фильтры для отелей
+            ├──HotelsToolbar.jsx
+            ├──HotelsToolbar.css
+
+
+
+
+    │── cart  +         #все для страницы корзины
+        ├──card-cart-controls
+            │──CardCartControls.jsx
+            │──CardCartControls.css
+        ├──cart-item
+            │──CartItem.jsx
+            │──CardItem.css
+        ├──cart-section
+            │──CartSection.jsx
+            │──CartSection.css
+
+
+    │── checkout +
+        ├──checkout-form 
+            │──CheckoutForm.jsx
+            │──CheckoutForm.css
+            │──PassengerPassportBlock.jsx
+            │──PassengerPassportBlock.css
+        ├──checkout-order-summary
+            │──CheckoutOrderSummary.jsx
+            │──CheckoutOrderSummary.css
+        ├──checkout-success
+            │──CheckoutSuccess.jsx
+            │──CheckoutSuccess.css
+
+    │── down-select +
+        │──DownSelect.jsx
+        │──DownSelect.css
+
+
+
+
+├── public/           # только неавторизованный пользователь
+   │── account
+        ├──log-in     # есть аккаунт- вход
+            │──LogIn.jsx
+            │──LogIn.css
+        ├──registration-form    # нет аккаунта- регистрация
+            │──RegistrationForm.jsx
+            │──RegistrationForm.css
+
+
+├── private/          # только авторизованный пользователь
+    │── account
+        ├──log-out    # выход из аккаунта
+            │──LogOut.jsx
+            │──LogOut.css
+
+├──structure_of_components.txt
+
+
+
+    
+
+

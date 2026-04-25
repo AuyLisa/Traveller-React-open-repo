@@ -1,8 +1,13 @@
 import { Link, useParams } from 'react-router-dom';
-import Layout from '../../components/layout/Layout';
-import trips from '../../data/trips';
-import CardCartControls from '../../components/card-cart-controls/CardCartControls';
-import { tripToCartPayload } from '../../utils/cartItemBuilders';
+
+//components
+import Layout from '@ui/layout/Layout';
+import CardCartControls from '@cart/card-cart-controls/CardCartControls';
+
+//data
+import trips from '@data/trips/trips';
+
+import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripDetail.css';
 
 function TripDetail() {

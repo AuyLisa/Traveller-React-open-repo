@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Layout from '../../components/layout/Layout';
-import { validateSubscribeEmail } from '../../utils/formValidation';
+import Layout from '@ui/layout/Layout';
+import { validateSubscribeEmail } from '@utils/formValidation';
 import './About.css';
+
 
 function About() {
   const [subscribeEmail, setSubscribeEmail] = useState('');

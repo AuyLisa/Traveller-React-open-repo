@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../../components/layout/Layout';
-import CheckoutForm from '../../components/checkout-form/CheckoutForm';
-import CheckoutOrderSummary from '../../components/checkout-order-summary/CheckoutOrderSummary';
-import CheckoutSuccess from '../../components/checkout-success/CheckoutSuccess';
-import { useCart } from '../../hooks/useCart';
-import { clearCart } from '../../utils/cart';
-import { addOrder, buildOrderRecord } from '../../utils/orders';
+
+//components
+import Layout from '@ui/layout/Layout';
+import CheckoutForm from '@checkout/checkout-form/CheckoutForm';
+import CheckoutOrderSummary from '@checkout/checkout-order-summary/CheckoutOrderSummary';
+import CheckoutSuccess from '@checkout/checkout-success/CheckoutSuccess';
+
+import { useCart } from '@hooks/useCart';
+import { clearCart } from '@utils/cart';
+import { addOrder, buildOrderRecord } from '@utils/orders';
 import './Checkout.css';
 
 function Checkout() {

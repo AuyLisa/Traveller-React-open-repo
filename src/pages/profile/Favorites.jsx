@@ -1,7 +1,7 @@
-import Layout from '../../components/layout/Layout';
+import Layout from '@ui/layout/Layout';
 import './Profile.css';
 import { Navigate, Link } from 'react-router-dom';
-import { useUser } from '../../context/UserContext';
+import { useUser } from '@context/UserContext';
 
 function Favorites() {
   const { currentUser } = useUser();

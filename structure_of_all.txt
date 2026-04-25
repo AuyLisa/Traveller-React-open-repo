@@ -1,0 +1,59 @@
+├── node_modules/
+├── public/
+
+    ├── images/
+        ├── home-frommoscow/
+            ├── asia.jpg
+            ├── katar.jpg
+            ├── kirgizia.jpg
+            ├── sea.jpg
+            ├── skiing.jpg
+            ├── tropic_island.jpg
+            ├── tropic_rest.jpg
+
+        ├── home-hotels/
+            ├── amwaj.jpg
+            ├── nha-tang.jpg
+            ├── palm-beach.jpg
+            ├── sanya-yalong.jpg
+            ├── shrewood.jpg
+            ├── spice-hotel.jpg
+            ├── vinpearl.jpg
+
+        ├── home-trips/
+            ├── abhazia.jpg
+            ├── china.jpg
+            ├── egypt.jpg
+            ├── maldives.jpg
+            ├── russia.jpg
+            ├── sri-lanka.jpg
+            ├── thailand.jpg
+            ├── turkey.jpg
+            ├── uae.jpg
+            ├── vietnam.jpg
+
+        ├── home-turkey/
+            ├── april.jpg
+            ├── may.jpg
+            ├── june.jpg
+            ├── july.jpg
+            ├── august.jpg
+            ├── september.jpg
+            ├── october.jpg
+
+    ├── color-choice.txt
+    ├── favicon.svg
+    ├── icons.svg
+
+
+
+├── src/...
+        
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── structure_of_all.txt
+├── vite.config.js

@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
-import Layout from '../../components/layout/Layout';
-import CartSection from '../../components/cart-section/CartSection';
-import { CART_SECTIONS } from '../../constants/cartSections';
-import { useCart } from '../../hooks/useCart';
-import { clearCart, getCartTotal } from '../../utils/cart';
+
+//components
+import Layout from '@ui/layout/Layout';
+import CartSection from '@cart/cart-section/CartSection';
+
+
+import { CART_SECTIONS } from '@constants/cartSections';
+import { useCart } from '@hooks/useCart';
+import { clearCart, getCartTotal } from '@utils/cart';
 import './Cart.css';
 
 function Cart() {

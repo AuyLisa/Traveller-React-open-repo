@@ -1,6 +1,6 @@
-import Layout from '../../components/layout/Layout';
+import Layout from '@ui/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
-import { useUser } from '../../context/UserContext'; 
+import { useUser } from '@context/UserContext'; 
 import { useState, useEffect } from 'react';
 import './Profile.css';
 

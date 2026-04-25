@@ -1,10 +1,10 @@
 import { useMemo, useState, useCallback } from 'react';
-import Layout from '../../components/layout/Layout';
-import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
-import TripCard from '../../components/trip-card/TripCard';
-import TripsToolbar from '../../components/trips-toolbar/TripsToolbar';
-import trips from '../../data/trips';
-import { filterTrips } from '../../utils/filterTrips';
+import Layout from '@ui/layout/Layout';
+import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
+import TripCard from '@trips/trip-card/TripCard';
+import TripsToolbar from '@trips/trips-toolbar/TripsToolbar';
+import trips from '@data/trips/trips';
+import { filterTrips } from '@utils/filterTrips';
 import './Trips.css';
 
 function Trips() {

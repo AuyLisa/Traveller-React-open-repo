@@ -1,5 +1,5 @@
-import Layout from '../../components/layout/Layout';
-import RegistrationForm from '../../components/registration-form/RegistrationForm';
+import Layout from '@ui/layout/Layout';
+import RegistrationForm from '@public/account/registration-form/RegistrationForm';
 import './Registration.css';
 
 

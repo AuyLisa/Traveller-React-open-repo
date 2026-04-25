@@ -1,0 +1,96 @@
+
+src/
+
+├──components/  
+    ├──common +        
+    │── private +  
+    │── public + 
+    │── structure_of_components.txt + 
+
+│──constants +      
+    ├──cartSections.js   
+
+│──context +
+    ├──UserContext.jsx
+
+
+
+│── data +
+    │──recommend
+        │──home-trip-countries.js
+        │──home-trip-frommoscow.js
+        │──home-trip-tohotels.js
+        │──home-trip-turkey.js
+        │──toptrips.js
+    │── trips
+        │──trips.js
+    ├──avias
+        │──avia.js
+    ├──hotels
+        │──hotels.js
+
+
+├── hooks/           
+   │── useCart.js
+
+
+├── pages/
+    │── about
+        ├──About.css
+        │──About.jsx
+    │── avia
+        ├──Avia.css
+        │──Avia.jsx
+    │── cart
+        ├──Cart.css
+        │──Cart.jsx
+    │── checkout
+        ├──Checkout.css
+        │──Checkout.jsx
+    │── home
+        ├──Home.css
+        │──Home.jsx
+    │── hotels
+        ├──Hotels.css
+        │──Hotels.jsx
+    │── login
+        ├──Login.css
+        │──Login.jsx
+    │── profile
+        ├──Favorites.jsx
+        │──History.jsx
+        ├──PersonalData.jsx
+        │──Profile.css
+        ├──Profile.jsx
+    │── registration
+        ├──Registration.css
+        │──Registration.jsx
+    │── trips
+        ├──TripDetail.css
+        │──TripDetail.jsx
+        ├──Trips.css
+        │──Trips.jsx
+            
+
+├── styles/
+    │── search-results.css
+
+├── utils/
+    │── cart.js
+    │── cartItemBuilders.js
+    │── cartItemMeta.js
+    │── checkoutValidation.js
+    │── filterAvias.js 
+    │── filterHelpers.js
+    │── filterHotels.js 
+    │── filterTrips.js
+    │── formValidation.js 
+    │── orders.js
+
+├── index.css
+├── main.jsx
+├── structure_of_src.txt
+
+    
+
+

@@ -1,9 +1,9 @@
-import { useUser } from '../../context/UserContext';
-import Layout from '../../components/layout/Layout';
+import { useUser } from '@context/UserContext';
+import Layout from '@ui/layout/Layout';
 import { Navigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { normalizePhoneDigits } from '../../utils/formValidation';
-import DownSelect from '../../components/down-select/DownSelect';
+import { normalizePhoneDigits } from '@utils/formValidation';
+import DownSelect from '@down-select/DownSelect';
 import './Profile.css';
 
 const GENDER_OPTIONS = [

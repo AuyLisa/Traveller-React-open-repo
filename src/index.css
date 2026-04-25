@@ -1,18 +1,18 @@
-@import './components/header/Header.css';
-@import './components/footer/Footer.css';
+@import '@ui/header/Header.css';
+@import '@ui/footer/Footer.css';
 @import './styles/search-results.css';
-@import './components/layout/Layout.css';
-@import './components/trip-card/TripCard.css';
-@import './components/hotel-card/HotelCard.css';
-@import './components/avia-card/AviaCard.css';
+@import '@ui/layout/Layout.css';
+@import '@trips/trip-card/TripCard.css';
+@import '@hotels/hotel-card/HotelCard.css';
+@import '@avias/avia-card/AviaCard.css';
 
-@import './pages/home/Home.css';
-@import './pages/trips/Trips.css';
-@import './pages/hotels/Hotels.css';
-@import './pages/avia/Avia.css';
-@import './pages/cart/Cart.css';
-@import './pages/checkout/Checkout.css';
-@import './components/cart-item/CartItem.css';
+@import '@pages/home/Home.css';
+@import '@pages/trips/Trips.css';
+@import '@pages/hotels/Hotels.css';
+@import '@pages/avia/Avia.css';
+@import '@pages/cart/Cart.css';
+@import '@pages/checkout/Checkout.css';
+@import '@cart/cart-item/CartItem.css';
 
 * {
   margin: 0;

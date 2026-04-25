@@ -1,11 +1,16 @@
 import { useMemo, useState, useCallback } from 'react';
-import Layout from '../../components/layout/Layout';
-import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
-import AviaCard from '../../components/avia-card/AviaCard';
-import AviaToolbar from '../../components/avia-toolbar/AviaToolbar';
-import AviaClasses from '../../components/avia-classes/AviaClasses';
-import avias from '../../data/avia';
-import { filterAvias } from '../../utils/filterAvias';
+
+//components
+import Layout from '@ui/layout/Layout';
+import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
+import AviaCard from '@avias/avia-card/AviaCard';
+import AviaToolbar from '@avias/avia-toolbar/AviaToolbar';
+import AviaClasses from '@avias/avia-classes/AviaClasses';
+
+//data
+import avias from '@data/avias/avia';
+
+import { filterAvias } from '@utils/filterAvias';
 import './Avia.css';
 
 function Avia() {

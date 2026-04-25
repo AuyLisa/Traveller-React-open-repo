@@ -1,10 +1,16 @@
 import { useMemo, useState, useCallback } from 'react';
-import Layout from '../../components/layout/Layout';
-import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
-import HotelCard from '../../components/hotel-card/HotelCard';
-import HotelsToolbar from '../../components/hotels-toolbar/HotelsToolbar';
-import hotels from '../../data/hotels';
-import { filterHotels } from '../../utils/filterHotels';
+
+//components
+import Layout from '@ui/layout/Layout';
+import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
+import HotelCard from '@hotels/hotel-card/HotelCard';
+import HotelsToolbar from '@hotels/hotels-toolbar/HotelsToolbar';
+
+//data
+import hotels from '@data/hotels/hotels';
+
+
+import { filterHotels } from '@utils/filterHotels';
 import './Hotels.css';
 
 function Hotels() {

@@ -1,5 +1,5 @@
-import Layout from '../../components/layout/Layout';
-import LogIn from '../../components/log-in/LogIn';
+import Layout from '@ui/layout/Layout';
+import LogIn from '@public/account/log-in/LogIn';
 import './Login.css';
 
 

@@ -2,20 +2,20 @@ import {useState} from 'react';
 import './Home.css';
 
 //components
-import Layout from '../../components/layout/Layout';
-import SearchSectionSwitch from '../../components/search-section-switch/SearchSectionSwitch';
-import TripTop from '../../components/trip-top/TripTop';
-import CardTripCountry from '../../components/card-trip-country/CardTripCountry';
-import CardTripFromMoscow from '../../components/card-trip-frommoscow/CardTripFromMoscow';
-import CardTripToHotel from '../../components/card-trip-tohotel/CardTripToHotel';
-import Arrows from '../../components/arrows/Arrows'; 
+import Layout from '@ui/layout/Layout';
+import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
+import TripTop from '@home/trip-top/TripTop';
+import CardTripCountry from '@home/card-trip-country/CardTripCountry';
+import CardTripFromMoscow from '@home/card-trip-frommoscow/CardTripFromMoscow';
+import CardTripToHotel from '@home/card-trip-tohotel/CardTripToHotel';
+import Arrows from '@ui/arrows/Arrows'; 
 
 //data
-import fromMoscowData from '../../data/home-trip-frommoscow';  
-import hotels from '../../data/home-trip-tohotels';  
-import toptrips from '../../data/toptrips';  
-import tripcardsdata from '../../data/home-trip-countries'; 
-import homeTripCardTurkeyData from '../../data/home-trip-turkey';   
+import fromMoscowData from '@data/recommend/home-trip-frommoscow';  
+import hotels from '@data/recommend/home-trip-tohotels';  
+import toptrips from '@data/recommend/toptrips';  
+import tripcardsdata from '@data/recommend/home-trip-countries'; 
+import homeTripCardTurkeyData from '@data/recommend/home-trip-turkey';   
 
 
 
