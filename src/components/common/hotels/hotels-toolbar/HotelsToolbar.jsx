@@ -1,7 +1,8 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { buildHotelFilterOptions } from '@utils/filterHotels';
 import DownSelect from '@down-select/DownSelect';
 import './HotelsToolbar.css';
+
 
 function starsEmoji(n) {
   return '⭐'.repeat(Math.min(5, Math.max(1, Number(n))));
@@ -13,6 +14,8 @@ function HotelsToolbar({
   onSearchChange,
   country,
   onCountryChange,
+  city,
+  onCityChange,
   selectedStars,
   onStarToggle,
   minReviews,
@@ -25,7 +28,32 @@ function HotelsToolbar({
   onMaxPriceChange,
   onReset,
 }) {
-  const { countries, starOptions } = useMemo(() => buildHotelFilterOptions(hotels), [hotels]);
+  const { countries, cities: allCities, starOptions } = useMemo(
+    () => buildHotelFilterOptions(hotels),
+    [hotels]
+  );
+
+  const availableCities = useMemo(() => {
+    const selectedCountry = String(country ?? '').trim();
+    if (!selectedCountry) return allCities;
+
+    const cities = [
+      ...new Set(
+        hotels
+          .filter((h) => String(h.country ?? '').trim() === selectedCountry)
+          .map((h) => h.city)
+          .filter(Boolean)
+      ),
+    ].sort((a, b) => a.localeCompare(b, 'ru'));
+
+    return cities;
+  }, [allCities, hotels, country]);
+
+  useEffect(() => {
+    const selectedCity = String(city ?? '').trim();
+    if (!selectedCity) return;
+    if (!availableCities.includes(selectedCity)) onCityChange('');
+  }, [city, availableCities, onCityChange]);
 
   const countrySelectOptions = useMemo(
     () => [
@@ -33,6 +61,14 @@ function HotelsToolbar({
       ...countries.map((c) => ({ value: c, label: c })),
     ],
     [countries]
+  );
+
+  const citySelectOptions = useMemo(
+    () => [
+      { value: '', label: 'Все города' },
+      ...availableCities.map((c) => ({ value: c, label: c })),
+    ],
+    [availableCities]
   );
 
   return (
@@ -63,6 +99,19 @@ function HotelsToolbar({
             value={country}
             onChange={onCountryChange}
             options={countrySelectOptions}
+          />
+        </div>
+
+        <div className="trips-toolbar__field">
+          <label className="trips-toolbar__label" htmlFor="hotels-toolbar-city">
+            Город
+          </label>
+          <DownSelect
+            id="hotels-toolbar-city"
+            className="trips-toolbar__input"
+            value={city}
+            onChange={onCityChange}
+            options={citySelectOptions}
           />
         </div>
 

@@ -13,9 +13,12 @@ import hotels from '@data/hotels/hotels';
 import { filterHotels } from '@utils/filterHotels';
 import './Hotels.css';
 
+
+
 function Hotels() {
   const [searchQuery, setSearchQuery] = useState('');
   const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
   const [selectedStars, setSelectedStars] = useState([]);
   const [minReviews, setMinReviews] = useState('');
   const [maxReviews, setMaxReviews] = useState('');
@@ -34,18 +37,20 @@ function Hotels() {
       filterHotels(hotels, {
         searchQuery,
         country,
+        city,
         selectedStars,
         minReviewsRaw: minReviews,
         maxReviewsRaw: maxReviews,
         minPriceRaw: minPrice,
         maxPriceRaw: maxPrice,
       }),
-    [searchQuery, country, selectedStars, minReviews, maxReviews, minPrice, maxPrice]
+    [searchQuery, country, city, selectedStars, minReviews, maxReviews, minPrice, maxPrice]
   );
 
   const handleReset = useCallback(() => {
     setSearchQuery('');
     setCountry('');
+    setCity('');
     setSelectedStars([]);
     setMinReviews('');
     setMaxReviews('');
@@ -65,6 +70,8 @@ function Hotels() {
         onSearchChange={setSearchQuery}
         country={country}
         onCountryChange={setCountry}
+        city={city}
+        onCityChange={setCity}
         selectedStars={selectedStars}
         onStarToggle={handleStarToggle}
         minReviews={minReviews}

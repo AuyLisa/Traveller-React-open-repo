@@ -32,10 +32,11 @@ function applySort(trips, sort) {
 
 export function filterTrips(
   trips,
-  { searchQuery, country, selectedStars, nightsRaw, minPriceRaw, maxPriceRaw, sort }
+  { searchQuery, country, city, selectedStars, nightsRaw, minPriceRaw, maxPriceRaw, sort }
 ) {
   const q = normalizeText(searchQuery);
   const countryFilter = String(country ?? '').trim();
+  const cityFilter = String(city ?? '').trim();
   const starSet =
     Array.isArray(selectedStars) && selectedStars.length > 0
       ? new Set(selectedStars.map((n) => Number(n)).filter((n) => Number.isFinite(n) && n >= 1))
@@ -62,6 +63,12 @@ export function filterTrips(
       }
     }
 
+    if (cityFilter) {
+      if (normalizeText(trip.city) !== normalizeText(cityFilter)) {
+        return false;
+      }
+    }
+
     if (starSet !== null) {
       if (!starSet.has(Number(trip.stars))) return false;
     }
@@ -84,11 +91,14 @@ export function buildTripFilterOptions(trips) {
   const countries = [...new Set(trips.map((t) => t.country).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, 'ru')
   );
+  const cities = [...new Set(trips.map((t) => t.city).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b, 'ru')
+  );
   const stars = [...new Set(trips.map((t) => t.stars).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
   const nights = [...new Set(trips.map((t) => t.duration).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
-  return { countries, stars, nights };
+  return { countries, cities, stars, nights };
 }

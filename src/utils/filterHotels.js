@@ -5,6 +5,7 @@ export function filterHotels(
   {
     searchQuery,
     country,
+    city,
     selectedStars,
     minReviewsRaw,
     maxReviewsRaw,
@@ -14,6 +15,7 @@ export function filterHotels(
 ) {
   const q = normalizeText(searchQuery);
   const countryFilter = String(country ?? '').trim();
+  const cityFilter = String(city ?? '').trim();
   const starSet =
     Array.isArray(selectedStars) && selectedStars.length > 0
       ? new Set(
@@ -45,6 +47,10 @@ export function filterHotels(
       if (normalizeText(hotel.country) !== normalizeText(countryFilter)) return false;
     }
 
+    if (cityFilter) {
+      if (normalizeText(hotel.city) !== normalizeText(cityFilter)) return false;
+    }
+
     if (starSet !== null) {
       if (!starSet.has(Number(hotel.star))) return false;
     }
@@ -65,8 +71,11 @@ export function buildHotelFilterOptions(hotels) {
   const countries = [...new Set(hotels.map((h) => h.country).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, 'ru')
   );
+  const cities = [...new Set(hotels.map((h) => h.city).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b, 'ru')
+  );
   const starOptions = [...new Set(hotels.map((h) => h.star).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
   );
-  return { countries, starOptions };
+  return { countries, cities, starOptions };
 }
