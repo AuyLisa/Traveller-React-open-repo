@@ -10,6 +10,7 @@ import './Trips.css';
 function Trips() {
   const [searchQuery, setSearchQuery] = useState('');
   const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
   const [selectedStars, setSelectedStars] = useState([]);
   const [nights, setNights] = useState('');
   const [minPrice, setMinPrice] = useState('');
@@ -28,18 +29,20 @@ function Trips() {
       filterTrips(trips, {
         searchQuery,
         country,
+        city,
         selectedStars,
         nightsRaw: nights,
         minPriceRaw: minPrice,
         maxPriceRaw: maxPrice,
         sort,
       }),
-    [searchQuery, country, selectedStars, nights, minPrice, maxPrice, sort]
+    [searchQuery, country, city, selectedStars, nights, minPrice, maxPrice, sort]
   );
 
   const handleReset = useCallback(() => {
     setSearchQuery('');
     setCountry('');
+    setCity('');
     setSelectedStars([]);
     setNights('');
     setMinPrice('');
@@ -59,6 +62,8 @@ function Trips() {
         onSearchChange={setSearchQuery}
         country={country}
         onCountryChange={setCountry}
+        city={city}
+        onCityChange={setCity}
         selectedStars={selectedStars}
         onStarToggle={handleStarToggle}
         nights={nights}
