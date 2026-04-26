@@ -9,7 +9,7 @@
 
 .hotelcard__image {
   width: 300px;
-  height: 235px;
+  height: 250px;
   position: relative;
 }
 
@@ -52,7 +52,8 @@
 }
 
 .hotelcard__stars,
-.hotelcard__reviews
+.hotelcard__reviews,
+.hotelcard__duration
  {
   font-size: 0.9rem;          
 }

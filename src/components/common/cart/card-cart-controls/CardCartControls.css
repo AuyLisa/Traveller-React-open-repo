@@ -60,69 +60,79 @@
   border-radius: 16px;
   background-color: #751ae4;
 }
-
 .card-cart-controls--trip .card-cart-controls__add:hover {
   background-color: #5a15b0;
 }
-
 .card-cart-controls--trip .card-cart-controls__row {
   border-radius: 16px;
 }
-
 .card-cart-controls--trip .card-cart-controls__step {
   color: #5a15b0;
 }
+
 
 .card-cart-controls--hotel .card-cart-controls__add {
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   background-color: #4c9839;
 }
-
 .card-cart-controls--hotel .card-cart-controls__add:hover {
   background-color: #3d7a2e;
 }
-
 .card-cart-controls--hotel .card-cart-controls__row {
   border-radius: 2rem;
 }
-
 .card-cart-controls--hotel .card-cart-controls__step {
   color: #2d6a22;
 }
+
 
 .card-cart-controls--avia .card-cart-controls__add {
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   background-color: #751ae4;
 }
-
 .card-cart-controls--avia .card-cart-controls__add:hover {
   background-color: #5a15b0;
 }
-
 .card-cart-controls--avia .card-cart-controls__row {
   border-radius: 8px;
 }
-
 .card-cart-controls--avia .card-cart-controls__step {
   color: #5a15b0;
 }
+
+
+
 
 .card-cart-controls--trip-detail .card-cart-controls__add {
   padding: 0.85rem 1.5rem;
   border-radius: 10px;
   background: #751ae4;
 }
-
 .card-cart-controls--trip-detail .card-cart-controls__add:hover {
   background: #5a15b0;
 }
-
 .card-cart-controls--trip-detail .card-cart-controls__row {
   border-radius: 10px;
 }
-
 .card-cart-controls--trip-detail .card-cart-controls__step {
+  color: #5a15b0;
+}
+
+
+
+.card-cart-controls--hotel-detail .card-cart-controls__add {
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  background: #751ae4;
+}
+.card-cart-controls--hotel-detail .card-cart-controls__add:hover {
+  background: #5a15b0;
+}
+.card-cart-controls--hotel-detail .card-cart-controls__row {
+  border-radius: 10px;
+}
+.card-cart-controls--hotel-detail .card-cart-controls__step {
   color: #5a15b0;
 }

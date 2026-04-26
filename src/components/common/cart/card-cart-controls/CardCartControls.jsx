@@ -7,6 +7,7 @@ import {
 } from '@utils/cart';
 import './CardCartControls.css';
 
+
 function CardCartControls({ type, itemId, payload, variant = 'trip' }) {
   const cart = useCart();
   const qty = getCartItemQuantity(cart, type, itemId);
