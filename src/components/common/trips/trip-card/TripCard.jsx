@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 //components
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
+import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg файл в react компонент*/}
+import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
+
 
 import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripCard.css';
@@ -11,6 +14,16 @@ import './TripCard.css';
 
 function TripCard( {tripId, trip} ) {
   const navigate = useNavigate();
+
+  // Состояние для сердечка
+  const [isLiked, setIsLiked] = useState(false);
+
+  // Функция для переключения лайка
+  const handleLikeClick = () => {
+    // TODO: позже добавим проверку на авторизацию
+    setIsLiked(!isLiked);
+  };
+
 
   //логика карусель фотографий
   const images = trip.images;
@@ -38,7 +51,17 @@ function TripCard( {tripId, trip} ) {
 
   return (
    <div className="tripcard">
+      {/* Кнопка сердечка */}
+      <button 
+        className={`tripcard__like ${isLiked ? 'tripcard__like--active' : ''}`}
+        onClick={handleLikeClick}
+        aria-label={isLiked ? 'Убрать из избранного' : 'Добавить в избранное'}
+      >
+        {isLiked ? <HeartLiked /> : <HeartNoAction />}
+      </button>
 
+
+      {/* Галерея фотографий */}
       <div className="tripcard__image">
         <img 
           src={currentImage.src} 
