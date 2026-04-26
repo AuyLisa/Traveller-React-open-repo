@@ -7,6 +7,7 @@ import ImageArrows from '@ui/image-arrows/ImageArrows';
 import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg файл в react компонент*/}
 import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
 import HeartLike from '@ui/heart-like/HeartLike';
+import ImageDots from '@ui/image-dots/ImageDots';
 
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
@@ -101,12 +102,20 @@ function HotelCard( { hotelId, hotel} ) {
           {/* стрелки появляются если 2+ фото*/}
           {/* стрелки крепятся к hotelcard__photo*/}
           {images.length > 1 && (
+          <>
             <ImageArrows
               onPrev={handlePrev1}
               onNext={handleNext1}
               isPrevDisabled={index === 0}
               isNextDisabled={index === lastIndex}
             />
+
+            <ImageDots
+              total={images.length}
+              current={index}
+              onDotClick={(dotIndex) => setIndex(dotIndex)}
+            />
+          </>
           )}
         </div>
       </div>

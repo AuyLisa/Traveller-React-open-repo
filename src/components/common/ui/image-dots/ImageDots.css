@@ -1,0 +1,31 @@
+.image-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+  padding: 0.4rem 0.8rem;
+}
+
+.image-dots__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.image-dots__dot:hover {
+  background-color: rgba(151, 0, 251, 0.9);
+  transform: scale(1.2);
+}
+
+.image-dots__dot--active {
+  border-radius: 0.5rem;
+  background-color: rgb(151, 0, 251);
+}

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
 import HeartLike from '@ui/heart-like/HeartLike';
+import ImageDots from '@ui/image-dots/ImageDots';
 
 import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripCard.css';
@@ -56,12 +57,20 @@ function TripCard( {tripId, trip} ) {
           {/* стрелки появляются если 2+ фото*/}
           {/* стрелки крепятся к tripcard__photo*/}
           {images.length > 1 && (
+           <>
             <ImageArrows
               onPrev={handlePrev1}
               onNext={handleNext1}
               isPrevDisabled={index === 0}
               isNextDisabled={index === lastIndex}
             />
+
+           <ImageDots
+              total={images.length}
+              current={index}
+              onDotClick={(dotIndex) => setIndex(dotIndex)}
+            />
+          </>
           )}
         </div>
       </div>
