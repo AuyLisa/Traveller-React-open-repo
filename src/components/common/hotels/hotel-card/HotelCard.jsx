@@ -8,6 +8,7 @@ import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg ф
 import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
 import HeartLike from '@ui/heart-like/HeartLike';
 import ImageDots from '@ui/image-dots/ImageDots';
+import HotelAmenities from '@hotels/hotel-amenities/HotelAmenities';
 
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
@@ -46,6 +47,16 @@ function getReviewsText(count) {
   return 'отзывов';
 }
 
+// Функция для ограничения количества опций (максимум 6)
+function limitOptions(options, maxCount = 5) {
+  if (!options) return {};
+  
+  const entries = Object.entries(options).filter(([_, value]) => value === true);
+  const limitedEntries = entries.slice(0, maxCount);
+  
+  // Возвращаем объект только с первыми maxCount опциями
+  return Object.fromEntries(limitedEntries);
+}
 
 
 function HotelCard( { hotelId, hotel} ) {
@@ -85,6 +96,7 @@ function HotelCard( { hotelId, hotel} ) {
   //index=1 
   //currentImage = images[1] = { id: 102, src: "фото2.jpg", alt: "..." }
 
+  const limitedOptions = limitOptions(hotel.options, 5);
 
   return (
     <div className="hotelcard">
@@ -125,6 +137,10 @@ function HotelCard( { hotelId, hotel} ) {
         <p className="hotelcard__location">{locationLabel}</p>
         <p className="hotelcard__description">{hotel.description}</p>
 
+        
+        {/* Передаём ограниченные опции (только 6) */}
+        <HotelAmenities options={limitedOptions} />
+     
         <div className="hotelcard__rating">
           <p className="hotelcard__duration">{hotel.duration} {getNightsText(hotel.duration)}</p>
           <p className="hotelcard__reviews">{hotel.review} {getReviewsText(hotel.review)}</p>
