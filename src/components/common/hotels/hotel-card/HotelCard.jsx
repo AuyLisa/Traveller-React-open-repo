@@ -8,6 +8,8 @@ import ImageArrows from '@ui/image-arrows/ImageArrows';
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelCard.css';
 
+
+
 function HotelCard( { hotelId, hotel} ) {
   const navigate = useNavigate();
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');
@@ -35,7 +37,6 @@ function HotelCard( { hotelId, hotel} ) {
   //currentImage = images[1] = { id: 102, src: "фото2.jpg", alt: "..." }
 
 
-
   return (
     <div className="hotelcard">
 
@@ -43,7 +44,7 @@ function HotelCard( { hotelId, hotel} ) {
         <img 
           src={currentImage.src} 
           alt={hotel.title}
-          className="hotelcard__image"
+          className="hotelcard__photo"
         />
         {/* стрелки появляются если 2+ фото*/}
         {images.length > 1 && (

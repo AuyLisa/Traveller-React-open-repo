@@ -1,9 +1,14 @@
 import { useMemo, useState, useCallback } from 'react';
+
+//components
 import Layout from '@ui/layout/Layout';
 import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
 import TripCard from '@trips/trip-card/TripCard';
 import TripsToolbar from '@trips/trips-toolbar/TripsToolbar';
+
+//data
 import trips from '@data/trips/trips';
+
 import { filterTrips } from '@utils/filterTrips';
 import './Trips.css';
 
