@@ -1,0 +1,37 @@
+.hotelcard__image-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  pointer-events: none;
+}
+
+
+.hotelcard__image-arrow {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.hotelcard__image-arrow:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.hotelcard__image-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

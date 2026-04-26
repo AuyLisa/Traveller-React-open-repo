@@ -1,5 +1,10 @@
+import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+
+//components
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
+import ImageArrows from '@ui/image-arrows/ImageArrows';
+
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelCard.css';
 
@@ -7,11 +12,48 @@ function HotelCard( { hotelId, hotel} ) {
   const navigate = useNavigate();
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');
 
+  //логика карусель фотографий
+  const images = hotel.images;
+  const [index, setIndex] = useState(0);
+  const lastIndex = images.length - 1;
+
+  //клик на ❯
+  function handleNext1() {
+    setIndex(prev => Math.min(prev + 1, lastIndex));
+  }
+
+  //клик на ❮
+  function handlePrev1() {
+    setIndex(prev => Math.max(prev - 1, 0));
+  }
+
+  // Текущее фото для показа
+  const currentImage = images[index];
+  // index=0
+  //currentImage = images[0] = { id: 101, src: "фото1.jpg", alt: "..." }
+  //index=1 
+  //currentImage = images[1] = { id: 102, src: "фото2.jpg", alt: "..." }
+
+
+
   return (
     <div className="hotelcard">
 
       <div className="hotelcard__image">
-        <span className="hotelcard__photo"></span>
+        <img 
+          src={currentImage.src} 
+          alt={hotel.title}
+          className="hotelcard__image"
+        />
+        {/* стрелки появляются если 2+ фото*/}
+        {images.length > 1 && (
+          <ImageArrows
+            onPrev={handlePrev1}
+            onNext={handleNext1}
+            isPrevDisabled={index === 0}
+            isNextDisabled={index === lastIndex}
+          />
+        )}
       </div>
 
       <div className="hotelcard__content">

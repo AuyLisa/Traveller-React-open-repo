@@ -19,6 +19,7 @@ import homeTripCardTurkeyData from '@data/recommend/home-trip-turkey';
 
 
 
+
 function Home() {
  const cardsPerView = 5;
 
@@ -29,12 +30,12 @@ function Home() {
   const totalCards1 = toptrips.length;
   const lastStartIndex1 = Math.max(0, totalCards1 - cardsPerView);
 
-  //клик на ❮
+  //клик на ❯
   function handleNext1() {
     setStartIndex1(prev => Math.min(prev + 1, lastStartIndex1));
   }
 
-  //клик на ❯
+  //клик на ❮
   function handlePrev1() {
     setStartIndex1(prev => Math.max(prev - 1, 0));
   }
@@ -51,12 +52,12 @@ function Home() {
   const totalCards2 = tripcardsdata.length;
   const lastStartIndex2 = Math.max(0, totalCards2 - cardsPerView);
 
-  //клик на ❮
+  //клик на ❯
   function handleNext2() {
     setStartIndex2(prev => Math.min(prev + 1, lastStartIndex2));
   }
 
-  //клик на ❯
+  //клик на ❮
   function handlePrev2() {
     setStartIndex2(prev => Math.max(prev - 1, 0));
   }
@@ -73,12 +74,12 @@ function Home() {
   const totalCards3 = homeTripCardTurkeyData.length;
   const lastStartIndex3 = Math.max(0, totalCards3 - cardsPerView);
 
-  //клик на ❮
+  //клик на ❯
   function handleNext3() {
     setStartIndex3(prev => Math.min(prev + 1, lastStartIndex3));
   }
 
-  //клик на ❯
+  //клик на ❮
   function handlePrev3() {
     setStartIndex3(prev => Math.max(prev - 1, 0));
   }
@@ -94,12 +95,12 @@ function Home() {
   const totalCards4 = fromMoscowData.length;
   const lastStartIndex4 = Math.max(0, totalCards4 - cardsPerView);
 
-  //клик на ❮
+  //клик на ❯
   function handleNext4() {
     setStartIndex4(prev => Math.min(prev + 1, lastStartIndex4));
   }
 
-  //клик на ❯
+  //клик на ❮
   function handlePrev4() {
     setStartIndex4(prev => Math.max(prev - 1, 0));
   }
@@ -115,12 +116,12 @@ function Home() {
   const totalCards5 = hotels.length;
   const lastStartIndex5 = Math.max(0, totalCards5 - cardsPerView);
 
-  //клик на ❮
+  //клик на ❯
   function handleNext5() {
     setStartIndex5(prev => Math.min(prev + 1, lastStartIndex5));
   }
 
-  //клик на ❯
+  //клик на ❮
   function handlePrev5() {
     setStartIndex5(prev => Math.max(prev - 1, 0));
   }
