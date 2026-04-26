@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 //components
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
+import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg файл в react компонент*/}
+import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
+
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelCard.css';
@@ -47,6 +50,17 @@ function HotelCard( { hotelId, hotel} ) {
   const navigate = useNavigate();
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');
 
+  
+  // Состояние для сердечка
+  const [isLiked, setIsLiked] = useState(false);
+
+  // Функция для переключения лайка
+  const handleLikeClick = () => {
+    // TODO: позже добавим проверку на авторизацию
+    setIsLiked(!isLiked);
+  };
+
+
   //логика карусель фотографий
   const images = hotel.images;
   const [index, setIndex] = useState(0);
@@ -72,6 +86,15 @@ function HotelCard( { hotelId, hotel} ) {
 
   return (
     <div className="hotelcard">
+      {/* Кнопка сердечка */}
+      <button 
+        className={`hotelcard__like ${isLiked ? 'hotelcard__like--active' : ''}`}
+        onClick={handleLikeClick}
+        aria-label={isLiked ? 'Убрать из избранного' : 'Добавить в избранное'}
+      >
+        {isLiked ? <HeartLiked /> : <HeartNoAction />}
+      </button>
+
 
       <div className="hotelcard__image">
         <img 

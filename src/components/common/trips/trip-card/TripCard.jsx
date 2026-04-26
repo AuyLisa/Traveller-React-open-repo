@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom';
 //components
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
-import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg файл в react компонент*/}
-import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
-
+import HeartLike from '@ui/heart-like/HeartLike';
 
 import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripCard.css';
@@ -15,14 +13,6 @@ import './TripCard.css';
 function TripCard( {tripId, trip} ) {
   const navigate = useNavigate();
 
-  // Состояние для сердечка
-  const [isLiked, setIsLiked] = useState(false);
-
-  // Функция для переключения лайка
-  const handleLikeClick = () => {
-    // TODO: позже добавим проверку на авторизацию
-    setIsLiked(!isLiked);
-  };
 
 
   //логика карусель фотографий
@@ -51,33 +41,31 @@ function TripCard( {tripId, trip} ) {
 
   return (
    <div className="tripcard">
-      {/* Кнопка сердечка */}
-      <button 
-        className={`tripcard__like ${isLiked ? 'tripcard__like--active' : ''}`}
-        onClick={handleLikeClick}
-        aria-label={isLiked ? 'Убрать из избранного' : 'Добавить в избранное'}
-      >
-        {isLiked ? <HeartLiked /> : <HeartNoAction />}
-      </button>
-
-
-      {/* Галерея фотографий */}
       <div className="tripcard__image">
-        <img 
-          src={currentImage.src} 
-          alt={trip.title}
-          className="tripcard__photo"
-        />
-        {/* стрелки появляются если 2+ фото*/}
-        {images.length > 1 && (
-          <ImageArrows
-            onPrev={handlePrev1}
-            onNext={handleNext1}
-            isPrevDisabled={index === 0}
-            isNextDisabled={index === lastIndex}
+        <div className="tripcard__photo">
+        
+          {/* Кнопка сердечка крепится к tripcard_photo*/}
+          <HeartLike onToggle={(liked) => console.log('Лайк:', liked)} />
+
+
+          {/* Галерея фотографий */}
+          <img 
+            src={currentImage.src} 
+            alt={trip.title}
           />
-        )}
+          {/* стрелки появляются если 2+ фото*/}
+          {/* стрелки крепятся к tripcard_photo*/}
+          {images.length > 1 && (
+            <ImageArrows
+              onPrev={handlePrev1}
+              onNext={handleNext1}
+              isPrevDisabled={index === 0}
+              isNextDisabled={index === lastIndex}
+            />
+          )}
+        </div>
       </div>
+   
 
 
 

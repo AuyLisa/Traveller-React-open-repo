@@ -1,0 +1,26 @@
+
+.heart__like {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 10;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.heart__like:hover {
+  transform: scale(1.1);
+}
+
+.heart__like svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: block;
+  border-radius: 50%;
+  border: none;
+}
+

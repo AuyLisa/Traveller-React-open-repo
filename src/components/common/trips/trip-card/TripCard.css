@@ -1,58 +1,39 @@
 .tripcard {
-  position: relative;
   border: 2px solid #b9bcbe;
   border-radius: 16px;         
   background: white;
   display: flex;
   flex-direction: column;              
-  height: 100%;     
+  height: 100%;
+  height: 100%;    
+  overflow: hidden;
 }
-
-.tripcard__like {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 10;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: none;
-  width: 2.4rem;
-  height: 2.4rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tripcard__like:hover {
-  transform: scale(1.1);
-}
-
-.tripcard__like svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: block;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  border: none;
-}
-
-
 
 
 .tripcard__image {
   width: 100%;
-  height: 235px;
-  padding: 0.75rem; 
-  position: relative;     
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .tripcard__photo {
   display: block;
   width: 100%; 
-  height: 14rem;              
+  min-height: 4rem; 
+  aspect-ratio: 4 / 3;          
   background-color: #929292;
-  border-radius: 16px;      
+  border-radius: 16px;   
+  position: relative;  
+  overflow: hidden;   
 }
+
+.tripcard__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 
 
