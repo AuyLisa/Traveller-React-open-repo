@@ -17,10 +17,11 @@
   text-decoration: underline;
 }
 
-.hotel-detail__title {
+.hotel-detail__mainparts {
   font-size: 1.75rem;
   font-weight: bold;
   margin: 0 0 1rem;
+  color: rgb(0, 0, 0);
 }
 
 .hotel-detail__photo {
@@ -63,7 +64,7 @@
 }
 
 .hotel-detail__section {
-  margin-top: 0.5rem;
+  margin-top: 2rem;
 }
 
 .hotel-detail__subtitle {
@@ -75,6 +76,52 @@
   margin: 0;
   line-height: 1.55;
 }
+
+
+.space {
+  margin-top: 8rem;
+}
+
+.hotel-detail__section-selects {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.hotel-detail__select-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.hotel-detail__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hotel-detail__select {
+  max-width: 300px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.hotel-detail__select:hover {
+  border-color: #751AE4;
+}
+
+.hotel-detail__select:focus {
+  outline: none;
+  border-color: #751AE4;
+  box-shadow: 0 0 0 2px rgba(117, 26, 228, 0.1);
+}
+
+
 
 .hotel-detail__actions {
   margin-top: 1.75rem;

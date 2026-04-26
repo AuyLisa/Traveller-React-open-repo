@@ -1,17 +1,25 @@
+import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link, useParams } from 'react-router-dom';
 
 //components
 import Layout from '@ui/layout/Layout';
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import HotelAmenities from '@hotels/hotel-amenities/HotelAmenities';
+import HotelCard from '@hotels/hotel-card/HotelCard';
 
 //data
 import hotels from '@data/hotels/hotels';
+import { MEAL_OPTIONS, ROOM_SIZE_OPTIONS } from '@constants/hotelRoomOptions';
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelDetail.css';
 
 function HotelDetail() {
+
+  const [selectedMeal, setSelectedMeal] = useState(MEAL_OPTIONS[0].value);
+  const [selectedSize, setSelectedSize] = useState(ROOM_SIZE_OPTIONS[0].value);
+
   const { id } = useParams();
   const hotelId = Number(id);
   const hotel = hotels.find((h) => h.id === hotelId);
@@ -36,7 +44,7 @@ function HotelDetail() {
           ← К списку отелей
         </Link>
 
-        <h1 className="hotel-detail__title">{hotel.title}</h1>
+        <h1 className="hotel-detail__mainparts">{hotel.title}</h1>
 
         <div className="hotel-detail__photo" aria-hidden="true" />
 
@@ -90,6 +98,63 @@ function HotelDetail() {
             variant="hotel-detail"
           />
         </div>
+
+        <section className="hotel-detail__section">
+          <h2 className="hotel-detail__subtitle">Цена за 2 взрослых, вылет на 10.05, на 7 ночей</h2>
+          {/*фильтры колво чел  дата вылета  колво детей*/}
+          {/*карусель по дате и цене*/}
+        </section>
+
+
+
+
+        <section className="hotel-detail__section space">
+          <h2 className="hotel-detail__mainparts">Выбор номера</h2>
+
+          <section className="hotel-detail__section-selects">
+            {/*выпадающий список питание*/}
+            <div className="hotel-detail__select-group">
+              <label className="hotel-detail__label">Питание</label>
+              <select 
+                className="hotel-detail__select"
+                value={selectedMeal}
+                onChange={(e) => setSelectedMeal(e.target.value)}
+              >
+                {MEAL_OPTIONS.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/*выпадающий список размер номера*/}
+            <div className="hotel-detail__select-group">
+              <label className="hotel-detail__label">Размер номера</label>
+              <select 
+                className="hotel-detail__select"
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
+              >
+                {ROOM_SIZE_OPTIONS.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+
+          </section>
+
+
+    
+        
+        
+        </section>
+
+
+
       </div>
     </Layout>
   );
