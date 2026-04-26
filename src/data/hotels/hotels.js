@@ -15,12 +15,18 @@
 */}
 
 
-
 const hotels = [
   // ТУРЦИЯ
   {
     id: 1,
     title: 'Отель Sun Paradise',
+    images: [
+      { id: 101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Анталия',
     price: 55000,
@@ -32,6 +38,13 @@ const hotels = [
   {
     id: 2,
     title: 'Отель Mediterranean Pearl',
+    images: [
+      { id: 201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Анталия',
     price: 42000,
@@ -43,6 +56,13 @@ const hotels = [
   {
     id: 3,
     title: 'Отель Blue Lagoon',
+    images: [
+      { id: 301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Анталия',
     price: 38000,
@@ -54,6 +74,13 @@ const hotels = [
   {
     id: 4,
     title: 'Отель Istanbul View',
+    images: [
+      { id: 401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Стамбул',
     price: 28500,
@@ -65,6 +92,13 @@ const hotels = [
   {
     id: 5,
     title: 'Отель Bosphorus Dream',
+    images: [
+      { id: 501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Стамбул',
     price: 32500,
@@ -76,6 +110,13 @@ const hotels = [
   {
     id: 6,
     title: 'Отель Alanya Beach',
+    images: [
+      { id: 601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Аланья',
     price: 34500,
@@ -87,6 +128,13 @@ const hotels = [
   {
     id: 7,
     title: 'Отель Cleopatra Resort',
+    images: [
+      { id: 701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Аланья',
     price: 39500,
@@ -98,6 +146,13 @@ const hotels = [
   {
     id: 8,
     title: 'Отель Bodrum Marina',
+    images: [
+      { id: 801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Бодрум',
     price: 48500,
@@ -109,6 +164,13 @@ const hotels = [
   {
     id: 9,
     title: 'Отель Marmaris Breeze',
+    images: [
+      { id: 901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Мармарис',
     price: 36500,
@@ -120,6 +182,13 @@ const hotels = [
   {
     id: 10,
     title: 'Отель Fethiye Bay',
+    images: [
+      { id: 1001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Фетхие',
     price: 41500,
@@ -131,6 +200,13 @@ const hotels = [
   {
     id: 11,
     title: 'Отель Side Sun',
+    images: [
+      { id: 1101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Сиде',
     price: 37500,
@@ -142,6 +218,13 @@ const hotels = [
   {
     id: 12,
     title: 'Отель Kemer Forest',
+    images: [
+      { id: 1201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Кемер',
     price: 32800,
@@ -153,6 +236,13 @@ const hotels = [
   {
     id: 13,
     title: 'Отель Cappadocia Cave',
+    images: [
+      { id: 1301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Каппадокия',
     price: 29800,
@@ -164,6 +254,13 @@ const hotels = [
   {
     id: 14,
     title: 'Отель Belek Golf',
+    images: [
+      { id: 1401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Белек',
     price: 62500,
@@ -175,6 +272,13 @@ const hotels = [
   {
     id: 15,
     title: 'Отель Lara Beach',
+    images: [
+      { id: 1501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Лара',
     price: 58800,
@@ -186,6 +290,13 @@ const hotels = [
   {
     id: 16,
     title: 'Отель Pamukkale Thermal',
+    images: [
+      { id: 1601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Памуккале',
     price: 18500,
@@ -197,6 +308,13 @@ const hotels = [
   {
     id: 17,
     title: 'Отель Kusadasi Bay',
+    images: [
+      { id: 1701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Кушадасы',
     price: 31200,
@@ -208,6 +326,13 @@ const hotels = [
   {
     id: 18,
     title: 'Отель Istanbul Sultanahmet',
+    images: [
+      { id: 1801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Стамбул',
     price: 26800,
@@ -219,6 +344,13 @@ const hotels = [
   {
     id: 19,
     title: 'Отель Antalya Old Town',
+    images: [
+      { id: 1901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 1902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 1903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 1904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 1905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Анталия',
     price: 22500,
@@ -230,6 +362,13 @@ const hotels = [
   {
     id: 20,
     title: 'Отель Green Canyon',
+    images: [
+      { id: 2001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Турция',
     city: 'Анталия',
     price: 35200,
@@ -243,6 +382,13 @@ const hotels = [
   {
     id: 21,
     title: 'Отель Dubai Palace',
+    images: [
+      { id: 2101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 105000,
@@ -254,6 +400,13 @@ const hotels = [
   {
     id: 22,
     title: 'Отель Burj View',
+    images: [
+      { id: 2201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 125000,
@@ -265,6 +418,13 @@ const hotels = [
   {
     id: 23,
     title: 'Отель Palm Jumeirah',
+    images: [
+      { id: 2301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 158000,
@@ -276,6 +436,13 @@ const hotels = [
   {
     id: 24,
     title: 'Отель Desert Rose',
+    images: [
+      { id: 2401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 48500,
@@ -287,6 +454,13 @@ const hotels = [
   {
     id: 25,
     title: 'Отель Abu Dhabi Grand',
+    images: [
+      { id: 2501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Абу-Даби',
     price: 118000,
@@ -298,6 +472,13 @@ const hotels = [
   {
     id: 26,
     title: 'Отель Yas Island',
+    images: [
+      { id: 2601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Абу-Даби',
     price: 98500,
@@ -309,6 +490,13 @@ const hotels = [
   {
     id: 27,
     title: 'Отель Sharjah Beach',
+    images: [
+      { id: 2701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Шарджа',
     price: 42500,
@@ -320,6 +508,13 @@ const hotels = [
   {
     id: 28,
     title: 'Отель Fujairah Resort',
+    images: [
+      { id: 2801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Фуджейра',
     price: 56800,
@@ -331,6 +526,13 @@ const hotels = [
   {
     id: 29,
     title: 'Отель Ras Al Khaimah',
+    images: [
+      { id: 2901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 2902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 2903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 2904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 2905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Рас-эль-Хайма',
     price: 45200,
@@ -342,6 +544,13 @@ const hotels = [
   {
     id: 30,
     title: 'Отель Dubai Creek',
+    images: [
+      { id: 3001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 62500,
@@ -353,6 +562,13 @@ const hotels = [
   {
     id: 31,
     title: 'Отель Jumeirah Beach',
+    images: [
+      { id: 3101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 142000,
@@ -364,6 +580,13 @@ const hotels = [
   {
     id: 32,
     title: 'Отель Marina View',
+    images: [
+      { id: 3201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 78500,
@@ -375,6 +598,13 @@ const hotels = [
   {
     id: 33,
     title: 'Отель Al Ain Oasis',
+    images: [
+      { id: 3301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Эль-Айн',
     price: 32500,
@@ -386,6 +616,13 @@ const hotels = [
   {
     id: 34,
     title: 'Отель Abu Dhabi Corniche',
+    images: [
+      { id: 3401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Абу-Даби',
     price: 88500,
@@ -397,6 +634,13 @@ const hotels = [
   {
     id: 35,
     title: 'Отель Dubai Silicon Oasis',
+    images: [
+      { id: 3501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 38500,
@@ -408,6 +652,13 @@ const hotels = [
   {
     id: 36,
     title: 'Отель Sharjah Heritage',
+    images: [
+      { id: 3601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Шарджа',
     price: 29800,
@@ -419,6 +670,13 @@ const hotels = [
   {
     id: 37,
     title: 'Отель Umm Al Quwain',
+    images: [
+      { id: 3701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Умм-эль-Кайвайн',
     price: 26800,
@@ -430,6 +688,13 @@ const hotels = [
   {
     id: 38,
     title: 'Отель Ajman Beach',
+    images: [
+      { id: 3801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Аджман',
     price: 42500,
@@ -441,6 +706,13 @@ const hotels = [
   {
     id: 39,
     title: 'Отель Dubai International',
+    images: [
+      { id: 3901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 3902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 3903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 3904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 3905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Дубай',
     price: 32800,
@@ -452,6 +724,13 @@ const hotels = [
   {
     id: 40,
     title: 'Отель Emirates Palace',
+    images: [
+      { id: 4001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'ОАЭ',
     city: 'Абу-Даби',
     price: 185000,
@@ -465,6 +744,13 @@ const hotels = [
   {
     id: 41,
     title: 'Отель Star Beach',
+    images: [
+      { id: 4101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     price: 65000,
@@ -476,6 +762,13 @@ const hotels = [
   {
     id: 42,
     title: 'Отель Red Sea Paradise',
+    images: [
+      { id: 4201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Хургада',
     price: 48500,
@@ -487,6 +780,13 @@ const hotels = [
   {
     id: 43,
     title: 'Отель Coral Beach',
+    images: [
+      { id: 4301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     price: 52800,
@@ -498,6 +798,13 @@ const hotels = [
   {
     id: 44,
     title: 'Отель Makadi Bay',
+    images: [
+      { id: 4401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Хургада',
     price: 56200,
@@ -509,6 +816,13 @@ const hotels = [
   {
     id: 45,
     title: 'Отель Sahl Hasheesh',
+    images: [
+      { id: 4501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Хургада',
     price: 59800,
@@ -520,6 +834,13 @@ const hotels = [
   {
     id: 46,
     title: 'Отель Naama Bay',
+    images: [
+      { id: 4601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     price: 44500,
@@ -531,6 +852,13 @@ const hotels = [
   {
     id: 47,
     title: 'Отель Dahab Reef',
+    images: [
+      { id: 4701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Дахаб',
     price: 28500,
@@ -542,6 +870,13 @@ const hotels = [
   {
     id: 48,
     title: 'Отель Luxor Nile',
+    images: [
+      { id: 4801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Луксор',
     price: 32500,
@@ -553,6 +888,13 @@ const hotels = [
   {
     id: 49,
     title: 'Отель Cairo Pyramids',
+    images: [
+      { id: 4901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 4902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 4903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 4904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 4905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Каир',
     price: 36800,
@@ -564,6 +906,13 @@ const hotels = [
   {
     id: 50,
     title: 'Отель El Gouna',
+    images: [
+      { id: 5001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Эль-Гуна',
     price: 68500,
@@ -575,6 +924,13 @@ const hotels = [
   {
     id: 51,
     title: 'Отель Taba Heights',
+    images: [
+      { id: 5101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Таба',
     price: 45800,
@@ -586,6 +942,13 @@ const hotels = [
   {
     id: 52,
     title: 'Отель Marsa Alam',
+    images: [
+      { id: 5201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Марса-Алам',
     price: 62500,
@@ -597,6 +960,13 @@ const hotels = [
   {
     id: 53,
     title: 'Отель Safaga Beach',
+    images: [
+      { id: 5301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Сафага',
     price: 32500,
@@ -608,6 +978,13 @@ const hotels = [
   {
     id: 54,
     title: 'Отель Sharm Maya Bay',
+    images: [
+      { id: 5401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     price: 52800,
@@ -619,6 +996,13 @@ const hotels = [
   {
     id: 55,
     title: 'Отель Hurghada Downtown',
+    images: [
+      { id: 5501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Хургада',
     price: 25800,
@@ -630,6 +1014,13 @@ const hotels = [
   {
     id: 56,
     title: 'Отель Ras Mohammed',
+    images: [
+      { id: 5601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Шарм-эль-Шейх',
     price: 71800,
@@ -641,6 +1032,13 @@ const hotels = [
   {
     id: 57,
     title: 'Отель Aswan Nile',
+    images: [
+      { id: 5701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Асуан',
     price: 28500,
@@ -652,6 +1050,13 @@ const hotels = [
   {
     id: 58,
     title: 'Отель Alexandria Corniche',
+    images: [
+      { id: 5801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Александрия',
     price: 19800,
@@ -663,6 +1068,13 @@ const hotels = [
   {
     id: 59,
     title: 'Отель Soma Bay',
+    images: [
+      { id: 5901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 5902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 5903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 5904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 5905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Сома-Бей',
     price: 69500,
@@ -674,6 +1086,13 @@ const hotels = [
   {
     id: 60,
     title: 'Отель Nuweiba Pearl',
+    images: [
+      { id: 6001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Египет',
     city: 'Нувейба',
     price: 24800,
@@ -687,6 +1106,13 @@ const hotels = [
   {
     id: 61,
     title: 'Отель Thai Bay',
+    images: [
+      { id: 6101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Пхукет',
     price: 110000,
@@ -698,6 +1124,13 @@ const hotels = [
   {
     id: 62,
     title: 'Отель Bangkok Royal',
+    images: [
+      { id: 6201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Бангкок',
     price: 48500,
@@ -709,6 +1142,13 @@ const hotels = [
   {
     id: 63,
     title: 'Отель Koh Samui Paradise',
+    images: [
+      { id: 6301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Самуи',
     price: 98500,
@@ -720,6 +1160,13 @@ const hotels = [
   {
     id: 64,
     title: 'Отель Pattaya Beach',
+    images: [
+      { id: 6401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Паттайя',
     price: 42500,
@@ -731,6 +1178,13 @@ const hotels = [
   {
     id: 65,
     title: 'Отель Krabi Rock',
+    images: [
+      { id: 6501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Краби',
     price: 62800,
@@ -742,6 +1196,13 @@ const hotels = [
   {
     id: 66,
     title: 'Отель Chiang Mai Garden',
+    images: [
+      { id: 6601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Чиангмай',
     price: 28500,
@@ -753,6 +1214,13 @@ const hotels = [
   {
     id: 67,
     title: 'Отель Koh Phi Phi',
+    images: [
+      { id: 6701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Пхи-Пхи',
     price: 78500,
@@ -764,6 +1232,13 @@ const hotels = [
   {
     id: 68,
     title: 'Отель Hua Hin',
+    images: [
+      { id: 6801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Хуахин',
     price: 35800,
@@ -775,6 +1250,13 @@ const hotels = [
   {
     id: 69,
     title: 'Отель Phuket Old Town',
+    images: [
+      { id: 6901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 6902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 6903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 6904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 6905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Пхукет',
     price: 32500,
@@ -786,6 +1268,13 @@ const hotels = [
   {
     id: 70,
     title: 'Отель Koh Lanta',
+    images: [
+      { id: 7001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Ланта',
     price: 45200,
@@ -797,6 +1286,13 @@ const hotels = [
   {
     id: 71,
     title: 'Отель Railay Beach',
+    images: [
+      { id: 7101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Краби',
     price: 68800,
@@ -808,6 +1304,13 @@ const hotels = [
   {
     id: 72,
     title: 'Отель Koh Tao',
+    images: [
+      { id: 7201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Тао',
     price: 32500,
@@ -819,6 +1322,13 @@ const hotels = [
   {
     id: 73,
     title: 'Отель Bangkok Riverside',
+    images: [
+      { id: 7301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Бангкок',
     price: 62500,
@@ -830,6 +1340,13 @@ const hotels = [
   {
     id: 74,
     title: 'Отель Koh Phangan',
+    images: [
+      { id: 7401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Пханган',
     price: 29800,
@@ -841,6 +1358,13 @@ const hotels = [
   {
     id: 75,
     title: 'Отель Chiang Rai',
+    images: [
+      { id: 7501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Чианграй',
     price: 21500,
@@ -852,6 +1376,13 @@ const hotels = [
   {
     id: 76,
     title: 'Отель Phuket Kata',
+    images: [
+      { id: 7601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Пхукет',
     price: 52500,
@@ -863,6 +1394,13 @@ const hotels = [
   {
     id: 77,
     title: 'Отель Koh Chang',
+    images: [
+      { id: 7701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Чанг',
     price: 35800,
@@ -874,6 +1412,13 @@ const hotels = [
   {
     id: 78,
     title: 'Отель Pattaya Jomtien',
+    images: [
+      { id: 7801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Паттайя',
     price: 28500,
@@ -885,6 +1430,13 @@ const hotels = [
   {
     id: 79,
     title: 'Отель Koh Samui Chaweng',
+    images: [
+      { id: 7901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 7902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 7903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 7904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 7905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Самуи',
     price: 78500,
@@ -896,6 +1448,13 @@ const hotels = [
   {
     id: 80,
     title: 'Отель Ayutthaya Heritage',
+    images: [
+      { id: 8001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Таиланд',
     city: 'Аюттхая',
     price: 18500,
@@ -909,6 +1468,13 @@ const hotels = [
   {
     id: 81,
     title: 'Отель Tbilisi Old Town',
+    images: [
+      { id: 8101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Тбилиси',
     price: 45000,
@@ -920,6 +1486,13 @@ const hotels = [
   {
     id: 82,
     title: 'Отель Batumi Sea',
+    images: [
+      { id: 8201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Батуми',
     price: 38500,
@@ -931,6 +1504,13 @@ const hotels = [
   {
     id: 83,
     title: 'Отель Kazbegi View',
+    images: [
+      { id: 8301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Казбеги',
     price: 32800,
@@ -942,6 +1522,13 @@ const hotels = [
   {
     id: 84,
     title: 'Отель Kutaisi Garden',
+    images: [
+      { id: 8401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Кутаиси',
     price: 18500,
@@ -953,6 +1540,13 @@ const hotels = [
   {
     id: 85,
     title: 'Отель Sighnaghi Love',
+    images: [
+      { id: 8501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Сигнахи',
     price: 22500,
@@ -964,6 +1558,13 @@ const hotels = [
   {
     id: 86,
     title: 'Отель Mestia Mountain',
+    images: [
+      { id: 8601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Местиа',
     price: 19800,
@@ -975,6 +1576,13 @@ const hotels = [
   {
     id: 87,
     title: 'Отель Borjomi Spa',
+    images: [
+      { id: 8701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Боржоми',
     price: 26800,
@@ -986,6 +1594,13 @@ const hotels = [
   {
     id: 88,
     title: 'Отель Kakheti Wine',
+    images: [
+      { id: 8801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Кахетия',
     price: 21500,
@@ -997,6 +1612,13 @@ const hotels = [
   {
     id: 89,
     title: 'Отель Ushguli Towers',
+    images: [
+      { id: 8901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 8902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 8903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 8904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 8905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Ушгули',
     price: 15800,
@@ -1008,6 +1630,13 @@ const hotels = [
   {
     id: 90,
     title: 'Отель Gagra Beach',
+    images: [
+      { id: 9001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Гагра',
     price: 14800,
@@ -1019,6 +1648,13 @@ const hotels = [
   {
     id: 91,
     title: 'Отель Tbilisi Mtatsminda',
+    images: [
+      { id: 9101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Тбилиси',
     price: 38800,
@@ -1030,6 +1666,13 @@ const hotels = [
   {
     id: 92,
     title: 'Отель Batumi Green',
+    images: [
+      { id: 9201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Батуми',
     price: 29800,
@@ -1041,6 +1684,13 @@ const hotels = [
   {
     id: 93,
     title: 'Отель Vardzia Cave',
+    images: [
+      { id: 9301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Вардзия',
     price: 12800,
@@ -1052,6 +1702,13 @@ const hotels = [
   {
     id: 94,
     title: 'Отель Bakuriani Snow',
+    images: [
+      { id: 9401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Бакуриани',
     price: 22500,
@@ -1063,6 +1720,13 @@ const hotels = [
   {
     id: 95,
     title: 'Отель Telavi Terrace',
+    images: [
+      { id: 9501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Телави',
     price: 19800,
@@ -1074,6 +1738,13 @@ const hotels = [
   {
     id: 96,
     title: 'Отель Stepantsminda',
+    images: [
+      { id: 9601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Степанцминда',
     price: 25800,
@@ -1085,6 +1756,13 @@ const hotels = [
   {
     id: 97,
     title: 'Отель Gonio Fortress',
+    images: [
+      { id: 9701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Гонио',
     price: 26500,
@@ -1096,6 +1774,13 @@ const hotels = [
   {
     id: 98,
     title: 'Отель Tbilisi Rustaveli',
+    images: [
+      { id: 9801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Тбилиси',
     price: 35800,
@@ -1107,6 +1792,13 @@ const hotels = [
   {
     id: 99,
     title: 'Отель Kvareli Lake',
+    images: [
+      { id: 9901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 9902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 9903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 9904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 9905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Кварели',
     price: 23800,
@@ -1118,6 +1810,13 @@ const hotels = [
   {
     id: 100,
     title: 'Отель Kobuleti Beach',
+    images: [
+      { id: 10001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Грузия',
     city: 'Кобулети',
     price: 18500,
@@ -1131,6 +1830,13 @@ const hotels = [
   {
     id: 101,
     title: 'Отель Maldives Paradise',
+    images: [
+      { id: 10101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 250000,
@@ -1142,6 +1848,13 @@ const hotels = [
   {
     id: 102,
     title: 'Отель North Male Atoll',
+    images: [
+      { id: 10201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Северный Мале',
     price: 285000,
@@ -1153,6 +1866,13 @@ const hotels = [
   {
     id: 103,
     title: 'Отель South Ari',
+    images: [
+      { id: 10301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Южный Ари',
     price: 268000,
@@ -1164,6 +1884,13 @@ const hotels = [
   {
     id: 104,
     title: 'Отель Baa Atoll',
+    images: [
+      { id: 10401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Баа',
     price: 312000,
@@ -1175,6 +1902,13 @@ const hotels = [
   {
     id: 105,
     title: 'Отель Luxury Maldives',
+    images: [
+      { id: 10501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 398000,
@@ -1186,6 +1920,13 @@ const hotels = [
   {
     id: 106,
     title: 'Отель Honeymoon Island',
+    images: [
+      { id: 10601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 235000,
@@ -1197,6 +1938,13 @@ const hotels = [
   {
     id: 107,
     title: 'Отель Diving Paradise',
+    images: [
+      { id: 10701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Северный Мале',
     price: 195000,
@@ -1208,6 +1956,13 @@ const hotels = [
   {
     id: 108,
     title: 'Отель Surf Point',
+    images: [
+      { id: 10801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 178000,
@@ -1219,6 +1974,13 @@ const hotels = [
   {
     id: 109,
     title: 'Отель Family Maldives',
+    images: [
+      { id: 10901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 10902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 10903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 10904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 10905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Баа',
     price: 168000,
@@ -1230,6 +1992,13 @@ const hotels = [
   {
     id: 110,
     title: 'Отель Eco Maldives',
+    images: [
+      { id: 11001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Южный Ари',
     price: 145000,
@@ -1241,6 +2010,13 @@ const hotels = [
   {
     id: 111,
     title: 'Отель Private Island',
+    images: [
+      { id: 11101, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11102, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11103, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 485000,
@@ -1252,6 +2028,13 @@ const hotels = [
   {
     id: 112,
     title: 'Отель Sunset Villa',
+    images: [
+      { id: 11201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Северный Мале',
     price: 225000,
@@ -1263,6 +2046,13 @@ const hotels = [
   {
     id: 113,
     title: 'Отель Snorkeling Paradise',
+    images: [
+      { id: 11301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Баа',
     price: 185000,
@@ -1274,6 +2064,13 @@ const hotels = [
   {
     id: 114,
     title: 'Отель Wellness Maldives',
+    images: [
+      { id: 11401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Южный Ари',
     price: 198000,
@@ -1285,6 +2082,13 @@ const hotels = [
   {
     id: 115,
     title: 'Отель Budget Maldives',
+    images: [
+      { id: 11501, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11502, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11503, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11504, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11505, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 85000,
@@ -1296,6 +2100,13 @@ const hotels = [
   {
     id: 116,
     title: 'Отель Water Bungalow',
+    images: [
+      { id: 11601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Северный Мале',
     price: 278000,
@@ -1307,6 +2118,13 @@ const hotels = [
   {
     id: 117,
     title: 'Отель Beach Bungalow',
+    images: [
+      { id: 11701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Баа',
     price: 158000,
@@ -1318,6 +2136,13 @@ const hotels = [
   {
     id: 118,
     title: 'Отель Maldives Fishing',
+    images: [
+      { id: 11801, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11802, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11803, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11804, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11805, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Мале',
     price: 125000,
@@ -1329,6 +2154,13 @@ const hotels = [
   {
     id: 119,
     title: 'Отель Honeymoon Bungalow',
+    images: [
+      { id: 11901, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 11902, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 11903, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 11904, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 11905, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Южный Ари',
     price: 245000,
@@ -1340,6 +2172,13 @@ const hotels = [
   {
     id: 120,
     title: 'Отель Maldives Dive Resort',
+    images: [
+      { id: 12001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером"},
+      { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем"},
+      { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк"},
+      { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн"},
+      { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж"},
+    ],
     country: 'Мальдивы',
     city: 'Северный Мале',
     price: 205000,
