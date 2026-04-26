@@ -1,4 +1,5 @@
 .hotelcard {
+  position: relative;
   display: flex;
   margin: 1rem 0;
   width: 100%;
@@ -6,6 +7,35 @@
   border: 2px solid #b9bcbe;
   border-radius: 16px;
 }
+
+.hotelcard__like {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hotelcard__like:hover {
+  transform: scale(1.1);
+}
+
+.hotelcard__like svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: none;
+}
+
 
 .hotelcard__image {
   width: 300px;
