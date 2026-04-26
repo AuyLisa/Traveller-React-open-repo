@@ -1,8 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 
+//components
 import Layout from '@ui/layout/Layout';
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
+import HotelAmenities from '@hotels/hotel-amenities/HotelAmenities';
 
+//data
 import hotels from '@data/hotels/hotels';
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
@@ -71,6 +74,12 @@ function HotelDetail() {
         <section className="hotel-detail__section">
           <h2 className="hotel-detail__subtitle">Описание</h2>
           <p className="hotel-detail__description">{hotel.description}</p>
+        </section>
+
+         {/* ВСЕ иконки удобств отеля (без ограничений) */}
+        <section className="hotel-detail__section">
+          <h2 className="hotel-detail__subtitle">Удобства отеля</h2>
+          <HotelAmenities options={hotel.options} />
         </section>
 
         <div className="hotel-detail__actions">

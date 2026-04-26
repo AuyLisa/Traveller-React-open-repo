@@ -154,7 +154,7 @@ function HotelCard( { hotelId, hotel} ) {
           className="hotelcard__button"
           onClick={() => navigate(`/hotels/${hotelId}`)}
           >
-            Подробнее
+            Посмотреть номера
           </button>
           <CardCartControls
             type="hotel"
