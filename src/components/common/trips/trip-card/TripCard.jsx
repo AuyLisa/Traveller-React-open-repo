@@ -9,8 +9,6 @@ import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripCard.css';
 
 
-
-
 function TripCard( {tripId, trip} ) {
   const navigate = useNavigate();
 
@@ -65,6 +63,7 @@ function TripCard( {tripId, trip} ) {
         <p className="tripcard__description">{trip.description}</p>
         <p className="tripcard__stars">отель {'⭐'.repeat(trip.stars)}</p>
         <p className="tripcard__price">{trip.price} ₽</p>
+
         <div className="tripcard__actions">
           <button
             type="button"

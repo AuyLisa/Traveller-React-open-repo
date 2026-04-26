@@ -8,6 +8,39 @@ import ImageArrows from '@ui/image-arrows/ImageArrows';
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelCard.css';
 
+function getNightsText(duration) {
+  const lastDigit = duration % 10;
+  const lastTwoDigits = duration % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+    return 'ночей';
+  }
+  if (lastDigit === 1) {
+    return 'ночь';
+  }
+  if (lastDigit >= 2 && lastDigit <= 4) {
+    return 'ночи';
+  }
+  return 'ночей';
+}
+
+
+function getReviewsText(count) {
+  const lastDigit = count % 10;
+  const lastTwoDigits = count % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+    return 'отзывов';
+  }
+  if (lastDigit === 1) {
+    return 'отзыв';
+  }
+  if (lastDigit >= 2 && lastDigit <= 4) {
+    return 'отзыва';
+  }
+  return 'отзывов';
+}
+
 
 
 function HotelCard( { hotelId, hotel} ) {
@@ -63,13 +96,20 @@ function HotelCard( { hotelId, hotel} ) {
         <p className="hotelcard__description">{hotel.description}</p>
 
         <div className="hotelcard__rating">
-          <p className="hotelcard__reviews">{hotel.review} отзывов</p>
+          <p className="hotelcard__duration">{hotel.duration} {getNightsText(hotel.duration)}</p>
+          <p className="hotelcard__reviews">{hotel.review} {getReviewsText(hotel.review)}</p>
         </div>
 
 
         <p className="hotelcard__price"> от {hotel.price} ₽</p>
         <div className="hotelcard__actions">
-          <button type="button" className="hotelcard__button">Подробнее</button>
+          <button 
+          type="button" 
+          className="hotelcard__button"
+          onClick={() => navigate(`/hotels/${hotelId}`)}
+          >
+            Подробнее
+          </button>
           <CardCartControls
             type="hotel"
             itemId={hotelId}

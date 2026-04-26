@@ -7,6 +7,7 @@ import Home from '@pages/home/Home'
 import Trips from '@pages/trips/Trips'
 import TripDetail from '@pages/trips/TripDetail'
 import Hotels from '@pages/hotels/Hotels'
+import HotelDetail from '@pages/hotels/HotelDetail'
 import Avia from '@pages/avia/Avia'
 import Cart from '@pages/cart/Cart'
 import Checkout from '@pages/checkout/Checkout'
@@ -24,9 +25,13 @@ createRoot(document.getElementById('root')).render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+
             <Route path="/trips" element={<Trips />} />
             <Route path="/trips/:id" element={<TripDetail />} />
+
             <Route path="/hotels" element={<Hotels />} />
+            <Route path="/hotels/:id" element={<HotelDetail />} /
+            >
             <Route path="/avia" element={<Avia />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
