@@ -44,7 +44,7 @@ function TripCard( {tripId, trip} ) {
       <div className="tripcard__image">
         <div className="tripcard__photo">
         
-          {/* Кнопка сердечка крепится к tripcard_photo*/}
+          {/* Кнопка сердечка крепится к tripcard__photo*/}
           <HeartLike onToggle={(liked) => console.log('Лайк:', liked)} />
 
 
@@ -54,7 +54,7 @@ function TripCard( {tripId, trip} ) {
             alt={trip.title}
           />
           {/* стрелки появляются если 2+ фото*/}
-          {/* стрелки крепятся к tripcard_photo*/}
+          {/* стрелки крепятся к tripcard__photo*/}
           {images.length > 1 && (
             <ImageArrows
               onPrev={handlePrev1}

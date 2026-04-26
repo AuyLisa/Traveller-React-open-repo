@@ -6,6 +6,7 @@ import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
 import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg файл в react компонент*/}
 import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
+import HeartLike from '@ui/heart-like/HeartLike';
 
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
@@ -86,31 +87,28 @@ function HotelCard( { hotelId, hotel} ) {
 
   return (
     <div className="hotelcard">
-      {/* Кнопка сердечка */}
-      <button 
-        className={`hotelcard__like ${isLiked ? 'hotelcard__like--active' : ''}`}
-        onClick={handleLikeClick}
-        aria-label={isLiked ? 'Убрать из избранного' : 'Добавить в избранное'}
-      >
-        {isLiked ? <HeartLiked /> : <HeartNoAction />}
-      </button>
-
-
       <div className="hotelcard__image">
-        <img 
-          src={currentImage.src} 
-          alt={hotel.title}
-          className="hotelcard__photo"
-        />
-        {/* стрелки появляются если 2+ фото*/}
-        {images.length > 1 && (
-          <ImageArrows
-            onPrev={handlePrev1}
-            onNext={handleNext1}
-            isPrevDisabled={index === 0}
-            isNextDisabled={index === lastIndex}
+        <div className="hotelcard__photo">
+
+          {/* Кнопка сердечка крепится к hotelcard__photo*/}
+          <HeartLike onToggle={(liked) => console.log('Лайк:', liked)} />
+        
+          {/* Галерея фотографий */}
+          <img 
+            src={currentImage.src} 
+            alt={hotel.title}
           />
-        )}
+          {/* стрелки появляются если 2+ фото*/}
+          {/* стрелки крепятся к hotelcard__photo*/}
+          {images.length > 1 && (
+            <ImageArrows
+              onPrev={handlePrev1}
+              onNext={handleNext1}
+              isPrevDisabled={index === 0}
+              isNextDisabled={index === lastIndex}
+            />
+          )}
+        </div>
       </div>
 
       <div className="hotelcard__content">
