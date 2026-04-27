@@ -9,6 +9,8 @@ import CardTripCountry from '@home/card-trip-country/CardTripCountry';
 import CardTripFromMoscow from '@home/card-trip-frommoscow/CardTripFromMoscow';
 import CardTripToHotel from '@home/card-trip-tohotel/CardTripToHotel';
 import Arrows from '@ui/arrows/Arrows'; 
+import usePagination from '@hooks/usePagination';
+
 
 //data
 import fromMoscowData from '@data/recommend/home-trip-frommoscow';  
@@ -25,113 +27,24 @@ function Home() {
 
 
   //ДЛЯ СЕКЦИИ 1-ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ+ data=toptrips
-  //startIndex в границах [0, lastStartIndex]
-  const [startIndex1, setStartIndex1] = useState(0);
-  const totalCards1 = toptrips.length;
-  const lastStartIndex1 = Math.max(0, totalCards1 - cardsPerView);
-
-  //клик на ❯
-  function handleNext1() {
-    setStartIndex1(prev => Math.min(prev + 1, lastStartIndex1));
-  }
-
-  //клик на ❮
-  function handlePrev1() {
-    setStartIndex1(prev => Math.max(prev - 1, 0));
-  }
-
-  // Показываем только 5 карточек начиная с startIndex
-  const visibleCards1 = toptrips.slice(startIndex1, startIndex1 + cardsPerView);
-
-
-
-
   //ДЛЯ СЕКЦИИ 2-МАЙСКИЕ ПРАЗДНИКИ+ data=tripcardsdata
-  //startIndex в границах [0, lastStartIndex]
-  const [startIndex2, setStartIndex2] = useState(0);
-  const totalCards2 = tripcardsdata.length;
-  const lastStartIndex2 = Math.max(0, totalCards2 - cardsPerView);
-
-  //клик на ❯
-  function handleNext2() {
-    setStartIndex2(prev => Math.min(prev + 1, lastStartIndex2));
-  }
-
-  //клик на ❮
-  function handlePrev2() {
-    setStartIndex2(prev => Math.max(prev - 1, 0));
-  }
-
-  // Показываем только 5 карточек начиная с startIndex
-  const visibleCards2 = tripcardsdata.slice(startIndex2, startIndex2 + cardsPerView);
-
-
-
-
   //ДЛЯ СЕКЦИИ 3-ТУРЫ В ТУРЦИЮ data=homeTripCardTurkeyData
-  //startIndex в границах [0, lastStartIndex]
-  const [startIndex3, setStartIndex3] = useState(0);
-  const totalCards3 = homeTripCardTurkeyData.length;
-  const lastStartIndex3 = Math.max(0, totalCards3 - cardsPerView);
-
-  //клик на ❯
-  function handleNext3() {
-    setStartIndex3(prev => Math.min(prev + 1, lastStartIndex3));
-  }
-
-  //клик на ❮
-  function handlePrev3() {
-    setStartIndex3(prev => Math.max(prev - 1, 0));
-  }
-
-  // Показываем только 5 карточек начиная с startIndex
-  const visibleCards3 = homeTripCardTurkeyData.slice(startIndex3, startIndex3 + cardsPerView);
-
-
-
   //ДЛЯ СЕКЦИИ 4-УЛЕТЕТЬ ИЗ МОСКВЫ data=fromMoscowData
-  //startIndex в границах [0, lastStartIndex]
-  const [startIndex4, setStartIndex4] = useState(0);
-  const totalCards4 = fromMoscowData.length;
-  const lastStartIndex4 = Math.max(0, totalCards4 - cardsPerView);
+  //ДЛЯ СЕКЦИИ 5-ТУРЫ В ОТЕЛИ data=hotels
 
-  //клик на ❯
-  function handleNext4() {
-    setStartIndex4(prev => Math.min(prev + 1, lastStartIndex4));
-  }
+   // Используем хук для каждой секции
+  const pagination1 = usePagination(toptrips.length, cardsPerView);
+  const pagination2 = usePagination(tripcardsdata.length, cardsPerView);
+  const pagination3 = usePagination(homeTripCardTurkeyData.length, cardsPerView);
+  const pagination4 = usePagination(fromMoscowData.length, cardsPerView);
+  const pagination5 = usePagination(hotels.length, cardsPerView);
 
-  //клик на ❮
-  function handlePrev4() {
-    setStartIndex4(prev => Math.max(prev - 1, 0));
-  }
-
-  // Показываем только 5 карточек начиная с startIndex
-  const visibleCards4 = fromMoscowData.slice(startIndex4, startIndex4 + cardsPerView);
-
-
-
-//ДЛЯ СЕКЦИИ 5-ТУРЫ В ОТЕЛИ data=hotels
-  //startIndex в границах [0, lastStartIndex]
-  const [startIndex5, setStartIndex5] = useState(0);
-  const totalCards5 = hotels.length;
-  const lastStartIndex5 = Math.max(0, totalCards5 - cardsPerView);
-
-  //клик на ❯
-  function handleNext5() {
-    setStartIndex5(prev => Math.min(prev + 1, lastStartIndex5));
-  }
-
-  //клик на ❮
-  function handlePrev5() {
-    setStartIndex5(prev => Math.max(prev - 1, 0));
-  }
-
-  // Показываем только 5 карточек начиная с startIndex
-  const visibleCards5 = hotels.slice(startIndex5, startIndex5 + cardsPerView);
-
-
-
-
+  const visibleCards1 = pagination1.visibleItems(toptrips);
+  const visibleCards2 = pagination2.visibleItems(tripcardsdata);
+  const visibleCards3 = pagination3.visibleItems(homeTripCardTurkeyData);
+  const visibleCards4 = pagination4.visibleItems(fromMoscowData);
+  const visibleCards5 = pagination5.visibleItems(hotels);
+  
   return (
     <Layout>
       <div className="home">
@@ -147,10 +60,10 @@ function Home() {
         <div className="home__section-header">
           <h2 className="home__section-title">Популярные направления</h2>
           <Arrows 
-            onPrev={handlePrev1}
-            onNext={handleNext1}
-            isPrevDisabled={startIndex1 === 0}
-            isNextDisabled={startIndex1 >= lastStartIndex1}
+            onPrev={pagination1.handlePrev}
+            onNext={pagination1.handleNext}
+            isPrevDisabled={pagination1.isPrevDisabled}
+            isNextDisabled={pagination1.isNextDisabled}
           />
         </div>
         
@@ -170,10 +83,10 @@ function Home() {
         <div className="home__section-header">
           <h2 className="home__section-title">Лучшие цены на майские праздники</h2>
           <Arrows 
-            onPrev={handlePrev2}
-            onNext={handleNext2}
-            isPrevDisabled={startIndex2 === 0}
-            isNextDisabled={startIndex2 >= lastStartIndex2}
+            onPrev={pagination2.handlePrev}
+            onNext={pagination2.handleNext}
+            isPrevDisabled={pagination2.isPrevDisabled}
+            isNextDisabled={pagination2.isNextDisabled}
           />
          </div>
         
@@ -193,10 +106,10 @@ function Home() {
         <div className="home__section-header">
           <h2 className="home__section-title"> Раннее бронирование туров в Турцию </h2>
           <Arrows 
-            onPrev={handlePrev3}
-            onNext={handleNext3}
-            isPrevDisabled={startIndex3 === 0}
-            isNextDisabled={startIndex3 >= lastStartIndex3}
+            onPrev={pagination3.handlePrev}
+            onNext={pagination3.handleNext}
+            isPrevDisabled={pagination3.isPrevDisabled}
+            isNextDisabled={pagination3.isNextDisabled}
           />
          </div>
 
@@ -215,10 +128,10 @@ function Home() {
         <div className="home__section-header">
           <h2 className="home__section-title">Улететь прямо сейчас из Москвы</h2>
           <Arrows 
-            onPrev={handlePrev4}
-            onNext={handleNext4}
-            isPrevDisabled={startIndex4 === 0}
-            isNextDisabled={startIndex4 >= lastStartIndex4}
+            onPrev={pagination4.handlePrev}
+            onNext={pagination4.handleNext}
+            isPrevDisabled={pagination4.isPrevDisabled}
+            isNextDisabled={pagination4.isNextDisabled}
           />
          </div>
 
@@ -238,10 +151,10 @@ function Home() {
         <div className="home__section-header">
           <h2 className="home__section-title">Посмотрите туры в эти отели</h2>
           <Arrows 
-            onPrev={handlePrev5}
-            onNext={handleNext5}
-            isPrevDisabled={startIndex5 === 0}
-            isNextDisabled={startIndex5 >= lastStartIndex5}
+            onPrev={pagination5.handlePrev}
+            onNext={pagination5.handleNext}
+            isPrevDisabled={pagination5.isPrevDisabled}
+            isNextDisabled={pagination5.isNextDisabled}
           />
         </div>
 
