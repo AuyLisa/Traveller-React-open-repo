@@ -1,11 +1,12 @@
-.trips-toolbar {
+
+.hotels-toolbar {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
   margin: 0 0 1.25rem 0;
 }
 
-.trips-toolbar__search {
+.hotels-toolbar__search {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,7 +14,7 @@
   max-width: 32rem;
 }
 
-.trips-toolbar__filters {
+.hotels-toolbar__filters {
   display: flex;
   flex-wrap: wrap;
   /* flex-end смещал низкие колонки вниз — подписи полей оказывались на разной высоте */
@@ -21,7 +22,7 @@
   gap: 0.75rem 1rem;
 }
 
-.trips-toolbar__field {
+.hotels-toolbar__field {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -31,7 +32,7 @@
   max-width: 14rem;
 }
 
-.trips-toolbar__field--stars {
+.hotels-toolbar__field--stars {
   /* ширина по содержимому чекбоксов, без лишнего растягивания */
   flex: 0 1 auto;
   min-width: 0;
@@ -40,12 +41,12 @@
   gap: 0.65rem;
 }
 
-.trips-toolbar__field--range {
+.hotels-toolbar__field--range {
   min-width: 12.5rem;
   max-width: 16rem;
 }
 
-.trips-toolbar__checkbox-group {
+.hotels-toolbar__checkbox-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -54,7 +55,7 @@
   max-width: 100%;
 }
 
-.trips-toolbar__checkbox-label {
+.hotels-toolbar__checkbox-label {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -62,38 +63,38 @@
   user-select: none;
 }
 
-.trips-toolbar__checkbox {
+.hotels-toolbar__checkbox {
   margin: 0;
   width: 1rem;
   height: 1rem;
   accent-color: #3a6ea5;
 }
 
-.trips-toolbar__checkbox-text {
+.hotels-toolbar__checkbox-text {
   font-size: 1rem;
   line-height: 1;
   letter-spacing: 0.02em;
 }
 
-.trips-toolbar__range {
+.hotels-toolbar__range {
   display: flex;
   align-items: center;
   gap: 0.35rem;
   width: 100%;
 }
 
-.trips-toolbar__range .trips-toolbar__input {
+.hotels-toolbar__range .hotels-toolbar__input {
   flex: 1 1 0;
   min-width: 0;
 }
 
-.trips-toolbar__range-sep {
+.hotels-toolbar__range-sep {
   color: #888;
   flex: 0 0 auto;
   font-size: 0.9rem;
 }
 
-.trips-toolbar__label {
+.hotels-toolbar__label {
   display: inline-block;
   font-size: 0.8rem;
   color: #444;
@@ -102,7 +103,7 @@
   max-width: 100%;
 }
 
-.trips-toolbar__input {
+.hotels-toolbar__input {
   width: 100%;
   max-width: 100%;
   padding: 0.45rem 0.55rem;
@@ -114,12 +115,12 @@
   -webkit-appearance: none;
 }
 
-button.trips-toolbar__input {
+button.hotels-toolbar__input {
   font-family: inherit;
 }
 
-.trips-toolbar__input[list]::-webkit-calendar-picker-indicator,
-.trips-toolbar__input[list]::-webkit-list-button {
+.hotels-toolbar__input[list]::-webkit-calendar-picker-indicator,
+.hotels-toolbar__input[list]::-webkit-list-button {
   display: none;
   width: 0;
   height: 0;
@@ -129,26 +130,26 @@ button.trips-toolbar__input {
   pointer-events: none;
 }
 
-.trips-toolbar__input--wide {
+.hotels-toolbar__input--wide {
   max-width: 32rem;
 }
 
-.trips-toolbar__input::placeholder {
+.hotels-toolbar__input::placeholder {
   color: #a8a8a8;
   opacity: 1;
 }
 
-.trips-toolbar__input--numeric {
+.hotels-toolbar__input--numeric {
   -moz-appearance: textfield;
 }
 
-.trips-toolbar__input--numeric::-webkit-outer-spin-button,
-.trips-toolbar__input--numeric::-webkit-inner-spin-button {
+.hotels-toolbar__input--numeric::-webkit-outer-spin-button,
+.hotels-toolbar__input--numeric::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.trips-toolbar__actions {
+.hotels-toolbar__actions {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -157,12 +158,12 @@ button.trips-toolbar__input {
   min-width: 6.5rem;
 }
 
-.trips-toolbar__actions-spacer {
+.hotels-toolbar__actions-spacer {
   display: block;
   height: 1.16rem;
 }
 
-.trips-toolbar__reset {
+.hotels-toolbar__reset {
   padding: 0.45rem 0.85rem;
   font-size: 0.9rem;
   border: 1px solid #b9bcbe;
@@ -171,6 +172,6 @@ button.trips-toolbar__input {
   cursor: pointer;
 }
 
-.trips-toolbar__reset:hover {
+.hotels-toolbar__reset:hover {
   background: #f0f0f0;
 }
