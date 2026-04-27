@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 //components
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
-import HeartLiked from '@assets/icons/HeartLiked.svg?react'; {/*vite+svgr=svg файл в react компонент*/}
-import HeartNoAction from '@assets/icons/HeartNoAction.svg?react';
 import HeartLike from '@ui/heart-like/HeartLike';
 import ImageDots from '@ui/image-dots/ImageDots';
 import HotelAmenities from '@hotels/hotel-amenities/HotelAmenities';
@@ -62,16 +60,6 @@ function limitOptions(options, maxCount = 5) {
 function HotelCard( { hotelId, hotel} ) {
   const navigate = useNavigate();
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');
-
-  
-  // Состояние для сердечка
-  const [isLiked, setIsLiked] = useState(false);
-
-  // Функция для переключения лайка
-  const handleLikeClick = () => {
-    // TODO: позже добавим проверку на авторизацию
-    setIsLiked(!isLiked);
-  };
 
 
   //логика карусель фотографий

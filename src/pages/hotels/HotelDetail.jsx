@@ -6,11 +6,13 @@ import { Link, useParams } from 'react-router-dom';
 import Layout from '@ui/layout/Layout';
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import HotelAmenities from '@hotels/hotel-amenities/HotelAmenities';
-import HotelCard from '@hotels/hotel-card/HotelCard';
+import RoomCard from '@rooms/room-card/RoomCard';
 
 //data
 import hotels from '@data/hotels/hotels';
 import { MEAL_OPTIONS, ROOM_SIZE_OPTIONS } from '@constants/hotelRoomOptions';
+import rooms from '@data/hotels/rooms';
+
 
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelDetail.css';
@@ -90,14 +92,6 @@ function HotelDetail() {
           <HotelAmenities options={hotel.options} />
         </section>
 
-        <div className="hotel-detail__actions">
-          <CardCartControls
-            type="hotel"
-            itemId={hotel.id}
-            payload={hotelToCartPayload(hotel)}
-            variant="hotel-detail"
-          />
-        </div>
 
         <section className="hotel-detail__section">
           <h2 className="hotel-detail__subtitle">Цена за 2 взрослых, вылет на 10.05, на 7 ночей</h2>
@@ -143,8 +137,16 @@ function HotelDetail() {
                 ))}
               </select>
             </div>
+          </section>
 
-
+          <section className="hotel-detail__section"> 
+            <div className="rooms__results">
+            Найдено номеров:
+            <span className="hotels__count"> {rooms.length}</span>
+          </div>
+          {rooms.map((room) => (
+            <RoomCard key={room.id} roomId={room.id} room={room} />
+          ))}
           </section>
 
 

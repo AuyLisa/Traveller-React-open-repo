@@ -8,6 +8,7 @@ import Trips from '@pages/trips/Trips'
 import TripDetail from '@pages/trips/TripDetail'
 import Hotels from '@pages/hotels/Hotels'
 import HotelDetail from '@pages/hotels/HotelDetail'
+import RoomDetail from '@pages/hotels/RoomDetail';
 import Avia from '@pages/avia/Avia'
 import Cart from '@pages/cart/Cart'
 import Checkout from '@pages/checkout/Checkout'
@@ -18,6 +19,8 @@ import PersonalData from '@pages/profile/PersonalData';
 import Favorites from '@pages/profile/Favorites';
 import History from '@pages/profile/History';
 import About from '@pages/about/About';
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -30,8 +33,11 @@ createRoot(document.getElementById('root')).render(
             <Route path="/trips/:id" element={<TripDetail />} />
 
             <Route path="/hotels" element={<Hotels />} />
-            <Route path="/hotels/:id" element={<HotelDetail />} /
-            >
+            <Route path="/hotels/:id" element={<HotelDetail />} />
+
+            {/*Rooms как отдельной страницы нету тк они на HotelDetail */}
+            <Route path="/hotels/:hotelId/rooms/:roomId" element={<RoomDetail />} />
+
             <Route path="/avia" element={<Avia />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
