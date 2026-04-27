@@ -1,0 +1,152 @@
+.roomcard {
+  display: flex;
+  flex-direction: row;
+  max-width: 1300px;  
+  margin: 1rem 0;
+  background-color: #ffffff;
+  border: 2px solid #b9bcbe;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.roomcard__image {
+  width: 300px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.roomcard__photo {
+  display: block;
+  width: 300px; 
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 16px 0 0 16px;
+  position: relative;  
+  overflow: hidden;   
+  object-fit: cover;
+}
+
+.roomcard__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 0 0 16px;
+}
+
+.roomcard__like {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.roomcard__like:hover {
+  transform: scale(1.1);
+}
+
+.roomcard__like svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: none;
+}
+
+.roomcard__content {
+  flex: 1;
+  padding: 1.5rem;            
+  display: flex;
+  flex-direction: column;
+}
+
+.roomcard__title {
+  font-size: 1.5rem;         
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.roomcard__location {
+}
+
+.roomcard__description {
+  font-size: 0.9rem;         
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin: 0.7rem 0;          
+}
+
+.roomcard__rating {      
+}
+
+.roomcard__stars,
+.roomcard__reviews,
+.roomcard__duration {
+  font-size: 0.9rem;          
+}
+
+.roomcard__price {
+  color: #751AE4;
+  font-size: 1.2rem; 
+  margin: 0.25rem 0;
+  margin-bottom: 0.5rem;   
+}
+
+.roomcard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.roomcard__actions .card-cart-controls {
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.roomcard__actions .card-cart-controls .card-cart-controls__add {
+  width: auto;
+}
+
+.roomcard__actions .card-cart-controls .card-cart-controls__row {
+  width: 130px;
+}
+
+.roomcard__actions .card-cart-controls .card-cart-controls__qty {
+  flex: 0 0 auto;
+  min-width: 2.75rem;
+  padding: 0 0.35rem;
+}
+
+.roomcard__button {
+  background-color: #751AE4;
+  color: white;
+  border: none;
+  border-radius: 2rem;       
+  padding: 0.75rem 1.5rem; 
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.roomcard__button:hover {
+  background-color: #5a15b0;
+}
+
+.roomcard__button--cart {
+  background-color: #4c9839;
+}
+
+.roomcard__button--cart:hover {
+  background-color: #3d7a2e;
+}
