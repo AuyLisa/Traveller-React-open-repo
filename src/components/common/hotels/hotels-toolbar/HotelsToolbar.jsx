@@ -72,14 +72,14 @@ function HotelsToolbar({
   );
 
   return (
-    <div className="trips-toolbar">
-      <div className="trips-toolbar__search">
-        <label className="trips-toolbar__label" htmlFor="hotels-toolbar-search">
+    <div className="hotels-toolbar">
+      <div className="hotels-toolbar__search">
+        <label className="hotels-toolbar__label" htmlFor="hotels-toolbar-search">
           Поиск
         </label>
         <input
           id="hotels-toolbar-search"
-          className="trips-toolbar__input trips-toolbar__input--wide"
+          className="hotels-toolbar__input hotels-toolbar__input--wide"
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
@@ -88,51 +88,51 @@ function HotelsToolbar({
         />
       </div>
 
-      <div className="trips-toolbar__filters">
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="hotels-toolbar-country">
+      <div className="hotels-toolbar__filters">
+        <div className="hotels-toolbar__field">
+          <label className="hotels-toolbar__label" htmlFor="hotels-toolbar-country">
             Страна
           </label>
           <DownSelect
             id="hotels-toolbar-country"
-            className="trips-toolbar__input"
+            className="hotels-toolbar__input"
             value={country}
             onChange={onCountryChange}
             options={countrySelectOptions}
           />
         </div>
 
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="hotels-toolbar-city">
+        <div className="hotels-toolbar__field">
+          <label className="hotels-toolbar__label" htmlFor="hotels-toolbar-city">
             Город
           </label>
           <DownSelect
             id="hotels-toolbar-city"
-            className="trips-toolbar__input"
+            className="hotels-toolbar__input"
             value={city}
             onChange={onCityChange}
             options={citySelectOptions}
           />
         </div>
 
-        <div className="trips-toolbar__field trips-toolbar__field--stars">
-          <span className="trips-toolbar__label" id="hotels-toolbar-stars-legend">
+        <div className="hotels-toolbar__field hotels-toolbar__field--stars">
+          <span className="hotels-toolbar__label" id="hotels-toolbar-stars-legend">
             Звёзды
           </span>
           <div
-            className="trips-toolbar__checkbox-group"
+            className="hotels-toolbar__checkbox-group"
             role="group"
             aria-labelledby="hotels-toolbar-stars-legend"
           >
             {starOptions.map((n) => (
-              <label key={n} className="trips-toolbar__checkbox-label">
+              <label key={n} className="hotels-toolbar__checkbox-label">
                 <input
                   type="checkbox"
-                  className="trips-toolbar__checkbox"
+                  className="hotels-toolbar__checkbox"
                   checked={selectedStars.includes(n)}
                   onChange={() => onStarToggle(n)}
                 />
-                <span className="trips-toolbar__checkbox-text" title={`${n} звёзд`}>
+                <span className="hotels-toolbar__checkbox-text" title={`${n} звёзд`}>
                   {starsEmoji(n)}
                 </span>
               </label>
@@ -140,17 +140,17 @@ function HotelsToolbar({
           </div>
         </div>
 
-        <div className="trips-toolbar__field trips-toolbar__field--range">
-          <span className="trips-toolbar__label" id="hotels-toolbar-reviews-legend">
+        <div className="hotels-toolbar__field hotels-toolbar__field--range">
+          <span className="hotels-toolbar__label" id="hotels-toolbar-reviews-legend">
             Количество отзывов
           </span>
           <div
-            className="trips-toolbar__range"
+            className="hotels-toolbar__range"
             role="group"
             aria-labelledby="hotels-toolbar-reviews-legend"
           >
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="hotels-toolbar__input hotels-toolbar__input--numeric"
               type="number"
               min="0"
               inputMode="numeric"
@@ -160,11 +160,11 @@ function HotelsToolbar({
               autoComplete="off"
               aria-label="Количество отзывов от"
             />
-            <span className="trips-toolbar__range-sep" aria-hidden="true">
+            <span className="hotels-toolbar__range-sep" aria-hidden="true">
               —
             </span>
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="hotels-toolbar__input hotels-toolbar__input--numeric"
               type="number"
               min="0"
               inputMode="numeric"
@@ -177,17 +177,17 @@ function HotelsToolbar({
           </div>
         </div>
 
-        <div className="trips-toolbar__field trips-toolbar__field--range">
-          <span className="trips-toolbar__label" id="hotels-toolbar-price-legend">
+        <div className="hotels-toolbar__field hotels-toolbar__field--range">
+          <span className="hotels-toolbar__label" id="hotels-toolbar-price-legend">
             Цена, ₽
           </span>
           <div
-            className="trips-toolbar__range"
+            className="hotels-toolbar__range"
             role="group"
             aria-labelledby="hotels-toolbar-price-legend"
           >
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="hotels-toolbar__input hotels-toolbar__input--numeric"
               type="number"
               min="0"
               inputMode="numeric"
@@ -197,11 +197,11 @@ function HotelsToolbar({
               autoComplete="off"
               aria-label="Цена от, ₽"
             />
-            <span className="trips-toolbar__range-sep" aria-hidden="true">
+            <span className="hotels-toolbar__range-sep" aria-hidden="true">
               —
             </span>
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="hotels-toolbar__input hotels-toolbar__input--numeric"
               type="number"
               min="0"
               inputMode="numeric"
@@ -214,9 +214,9 @@ function HotelsToolbar({
           </div>
         </div>
 
-        <div className="trips-toolbar__actions">
-          <span className="trips-toolbar__actions-spacer" aria-hidden="true" />
-          <button type="button" className="trips-toolbar__reset" onClick={onReset}>
+        <div className="hotels-toolbar__actions">
+          <span className="hotels-toolbar__actions-spacer" aria-hidden="true" />
+          <button type="button" className="hotels-toolbar__reset" onClick={onReset}>
             Сбросить
           </button>
         </div>
