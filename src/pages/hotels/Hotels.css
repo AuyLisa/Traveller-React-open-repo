@@ -1,3 +1,25 @@
+
+.hotels__layout {
+  display: flex;
+  gap: 24px;      
+  align-items: flex-start;
+}
+
+
+.hotels__filters-sidebar {
+  flex: 1;            /* 1 часть из 4 */
+  min-width: 240px;   
+  position: sticky;  
+  top: 20px;
+}
+
+
+.hotels__content {
+  flex: 4;            /* 3 части из 4 */
+  min-width: 100px; 
+}
+
+
 .hotels__empty {
   margin: 1rem 0 1.5rem;
   padding: 0.75rem 0;

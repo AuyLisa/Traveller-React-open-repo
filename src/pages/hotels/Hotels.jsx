@@ -64,42 +64,55 @@ function Hotels() {
       <div className="search-switch-row">
         <SearchSectionSwitch />
       </div>
-      <HotelsToolbar
-        hotels={hotels}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        country={country}
-        onCountryChange={setCountry}
-        city={city}
-        onCityChange={setCity}
-        selectedStars={selectedStars}
-        onStarToggle={handleStarToggle}
-        minReviews={minReviews}
-        maxReviews={maxReviews}
-        onMinReviewsChange={setMinReviews}
-        onMaxReviewsChange={setMaxReviews}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        onMinPriceChange={setMinPrice}
-        onMaxPriceChange={setMaxPrice}
-        onReset={handleReset}
-      />
 
-      {filtered.length === 0 ? (
-        <p className="hotels__empty" role="status">
-          Ничего не найдено. Измените запрос или нажмите «Сбросить».
-        </p>
-      ) : (
-        <>
-          <div className="hotels__results">
-            Найдено отелей:
-            <span className="hotels__count"> {filtered.length}</span>
-          </div>
-          {filtered.map((hotel) => (
-            <HotelCard key={hotel.id} hotelId={hotel.id} hotel={hotel} />
-          ))}
-        </>
-      )}
+      {/* Новая структура: фильтры слева, карточки справа */}
+      <div className="hotels__layout">
+        {/* Левая колонка — фильтры (1/4 экрана) */}
+        <aside className="hotels__filters-sidebar">
+          <HotelsToolbar
+            hotels={hotels}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            country={country}
+            onCountryChange={setCountry}
+            city={city}
+            onCityChange={setCity}
+            selectedStars={selectedStars}
+            onStarToggle={handleStarToggle}
+            minReviews={minReviews}
+            maxReviews={maxReviews}
+            onMinReviewsChange={setMinReviews}
+            onMaxReviewsChange={setMaxReviews}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            onMinPriceChange={setMinPrice}
+            onMaxPriceChange={setMaxPrice}
+            onReset={handleReset}
+          />
+        </aside>
+
+        {/* Правая колонка — результаты и карточки (3/4 экрана) */}
+        <main className="hotels__content">
+          {filtered.length === 0 ? (
+            <p className="hotels__empty" role="status">
+              Ничего не найдено. Измените запрос или нажмите «Сбросить».
+            </p>
+          ) : (
+            <>
+              <div className="hotels__results">
+                Найдено отелей:
+                <span className="hotels__count"> {filtered.length}</span>
+              </div>
+              <div className="hotels__cards-grid">
+                {filtered.map((hotel) => (
+                  <HotelCard key={hotel.id} hotelId={hotel.id} hotel={hotel} />
+                ))}
+              </div>
+            </>
+          )}
+        </main>
+      </div>
+      
     </Layout>
   );
 }

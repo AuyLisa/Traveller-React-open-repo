@@ -47,12 +47,13 @@
 }
 
 .hotels-toolbar__checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
-  width: fit-content;
-  max-width: 100%;
+	display: flex;
+	/* flex-wrap: wrap; */
+	align-items: left;
+	gap: 0.5rem 0.75rem;
+	width: fit-content;
+	max-width: 100%;
+	flex-direction: column;
 }
 
 .hotels-toolbar__checkbox-label {
