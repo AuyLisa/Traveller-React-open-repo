@@ -1929,7 +1929,138 @@ const trips = [
     duration: 14,
     price: 495000,
     stars: 5
-  }
+  },
+
+  {
+  id: 121,
+  title: 'Тур в Сочи "Жемчужина Черного моря"',
+  images: [
+    { id: 12101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Олимпийский парк" },
+    { id: 12102, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Дендрарий" },
+    { id: 12103, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Морской вокзал" },
+    { id: 12104, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Парк Ривьера" }
+  ],
+  description: '7 ночей, завтраки, бассейн, рядом с морем',
+  country: 'Россия',
+  city: 'Сочи',
+  duration: 7,
+  price: 28900,
+  stars: 4
+},
+{
+  id: 122,
+  title: 'Тур в Калининград "Янтарный край"',
+  images: [
+    { id: 12201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Кафедральный собор" },
+    { id: 12202, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Куршская коса" },
+    { id: 12203, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Музей янтаря" },
+    { id: 12204, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Рыбная деревня" }
+  ],
+  description: '5 ночей, экскурсии включены, завтраки',
+  country: 'Россия',
+  city: 'Калининград',
+  duration: 5,
+  price: 22450,
+  stars: 3
+},
+{
+  id: 123,
+  title: 'Тур в Санкт-Петербург "Северная Венеция"',
+  images: [
+    { id: 12301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Эрмитаж" },
+    { id: 12302, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Петергоф" },
+    { id: 12303, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Невский проспект" },
+    { id: 12304, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Исаакиевский собор" }
+  ],
+  description: '4 ночи, завтраки, экскурсионная программа',
+  country: 'Россия',
+  city: 'Санкт-Петербург',
+  duration: 4,
+  price: 19800,
+  stars: 4
+},
+{
+  id: 124,
+  title: 'Тур в Геленджик "Бухта счастья"',
+  images: [
+    { id: 12401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Набережная Геленджика" },
+    { id: 12402, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Сафари-парк" },
+    { id: 12403, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Скала Парус" },
+    { id: 12404, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Водопад Нептун" }
+  ],
+  description: '6 ночей, завтраки и ужины, бассейн',
+  country: 'Россия',
+  city: 'Геленджик',
+  duration: 6,
+  price: 26500,
+  stars: 3
+},
+
+{
+  id: 125,
+  title: 'Тур на Шри-Ланку "Жемчужина Индийского океана"',
+  images: [
+    { id: 12501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Хиккадува, пляж" },
+    { id: 12502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бентота, река" },
+    { id: 12503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Негомбо, рыбацкие лодки" },
+    { id: 12504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Ваддува, храм" }
+  ],
+  description: '8 ночей, завтраки, трансфер, страховка',
+  country: 'Шри-Ланка',
+  city: 'Хиккадува',
+  duration: 8,
+  price: 125583,
+  stars: 4
+},
+{
+  id: 126,
+  title: 'Тур на Шри-Ланку "Чайные плантации"',
+  images: [
+    { id: 12601, src: "/images/trips/id126/trip-id1-p1.jpg", alt: "Чайные плантации Нувара-Элии" },
+    { id: 12602, src: "/images/trips/id126/trip-id1-p2.jpg", alt: "Гора Адамов пик" },
+    { id: 12603, src: "/images/trips/id126/trip-id1-p3.jpg", alt: "Ботанический сад" },
+    { id: 12604, src: "/images/trips/id126/trip-id1-p4.jpg", alt: "Водопад Бамбараканда" }
+  ],
+  description: '9 ночей, завтраки и ужины, экскурсии',
+  country: 'Шри-Ланка',
+  city: 'Нувара-Элия',
+  duration: 9,
+  price: 142800,
+  stars: 4
+},
+{
+  id: 127,
+  title: 'Тур на Шри-Ланку "Сёрфинг и океан"',
+  images: [
+    { id: 12701, src: "/images/trips/id127/trip-id1-p1.jpg", alt: "Пляж Унаватуна" },
+    { id: 12702, src: "/images/trips/id127/trip-id1-p2.jpg", alt: "Сёрфинг в Веллигама" },
+    { id: 12703, src: "/images/trips/id127/trip-id1-p3.jpg", alt: "Черепашья ферма" },
+    { id: 12704, src: "/images/trips/id127/trip-id1-p4.jpg", alt: "Коралловый риф" }
+  ],
+  description: '7 ночей, завтраки, обучение сёрфингу',
+  country: 'Шри-Ланка',
+  city: 'Унаватуна',
+  duration: 7,
+  price: 118900,
+  stars: 3
+},
+{
+  id: 128,
+  title: 'Тур на Шри-Ланку "Золотой треугольник"',
+  images: [
+    { id: 12801, src: "/images/trips/id128/trip-id1-p1.jpg", alt: "Сигирия, Львиная скала" },
+    { id: 12802, src: "/images/trips/id128/trip-id1-p2.jpg", alt: "Храм Зуба Будды в Канди" },
+    { id: 12803, src: "/images/trips/id128/trip-id1-p3.jpg", alt: "Полоннарува, древний город" },
+    { id: 12804, src: "/images/trips/id128/trip-id1-p4.jpg", alt: "Анурадхапура, ступа" }
+  ],
+  description: '11 ночей, полный пансион, все экскурсии',
+  country: 'Шри-Ланка',
+  city: 'Сигирия',
+  duration: 11,
+  price: 189500,
+  stars: 5
+}
+
 ];
 
 export default trips;
