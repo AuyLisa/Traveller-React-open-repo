@@ -63,44 +63,54 @@ function Trips() {
       <div className="search-switch-row">
         <SearchSectionSwitch />
       </div>
-      <TripsToolbar
-        trips={trips}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        country={country}
-        onCountryChange={setCountry}
-        city={city}
-        onCityChange={setCity}
-        selectedStars={selectedStars}
-        onStarToggle={handleStarToggle}
-        nights={nights}
-        onNightsChange={setNights}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        onMinPriceChange={setMinPrice}
-        onMaxPriceChange={setMaxPrice}
-        sort={sort}
-        onSortChange={setSort}
-        onReset={handleReset}
-      />
 
-      {filtered.length === 0 ? (
-        <p className="trips__empty" role="status">
-          Ничего не найдено. Измените запрос или нажмите «Сбросить».
-        </p>
-      ) : (
-        <>
-          <div className="trips__results">
-            Найдено туров:
-            <span className="trips__count"> {filtered.length}</span>
-          </div>
-          <div className="trips__grid">
-            {filtered.map((trip) => (
-              <TripCard key={trip.id} tripId={trip.id} trip={trip} />
-            ))}
-          </div>
-        </>
-      )}
+      {/* Новая структура: фильтры слева, карточки справа */}
+      <div className="trips__layout">
+        {/* Левая колонка — фильтры (1/4 экрана) */}
+        <aside className="trips__filters-sidebar">
+          <TripsToolbar
+          trips={trips}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          country={country}
+          onCountryChange={setCountry}
+          city={city}
+          onCityChange={setCity}
+          selectedStars={selectedStars}
+          onStarToggle={handleStarToggle}
+          nights={nights}
+          onNightsChange={setNights}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          onMinPriceChange={setMinPrice}
+          onMaxPriceChange={setMaxPrice}
+          sort={sort}
+          onSortChange={setSort}
+          onReset={handleReset}
+        />
+      </aside>
+
+      {/* Правая колонка — результаты и карточки (3/4 экрана) */}
+      <main className="trips__content">
+        {filtered.length === 0 ? (
+          <p className="trips__empty" role="status">
+            Ничего не найдено. Измените запрос или нажмите «Сбросить».
+          </p>
+        ) : (
+          <>
+            <div className="trips__results">
+              Найдено туров:
+              <span className="trips__count"> {filtered.length}</span>
+            </div>
+            <div className="trips__grid">
+              {filtered.map((trip) => (
+                <TripCard key={trip.id} tripId={trip.id} trip={trip} />
+              ))}
+            </div>
+          </>
+        )}
+        </main>
+      </div>
     </Layout>
   );
 }

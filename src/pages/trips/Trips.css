@@ -1,8 +1,30 @@
+
+.trips__layout {
+  display: flex;
+  gap: 24px;      
+  align-items: flex-start;
+}
+
+
+.trips__filters-sidebar {
+  flex: 1;            /* 1 часть из 4 */
+  min-width: 240px;   
+  position: sticky;  
+  top: 20px;
+}
+
+
+.trips__content {
+  flex: 4;            /* 3 части из 4 */
+  min-width: 100px; 
+}
+
+
 .trips__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin: 6rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
+	margin: 3rem;
 }
 
 .trips__empty {
