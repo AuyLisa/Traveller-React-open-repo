@@ -48,14 +48,14 @@ function AviaToolbar({
   );
 
   return (
-    <div className="trips-toolbar">
-      <div className="trips-toolbar__search">
-        <label className="trips-toolbar__label" htmlFor="avia-toolbar-search">
+    <div className="avias-toolbar">
+      <div className="avias-toolbar__search">
+        <label className="avias-toolbar__label" htmlFor="avia-toolbar-search">
           Поиск
         </label>
         <input
           id="avia-toolbar-search"
-          className="trips-toolbar__input trips-toolbar__input--wide"
+          className="avias-toolbar__input avias-toolbar__input--wide"
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
@@ -64,57 +64,57 @@ function AviaToolbar({
         />
       </div>
 
-      <div className="trips-toolbar__filters">
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="avia-toolbar-from">
+      <div className="avias-toolbar__filters">
+        <div className="avias-toolbar__field">
+          <label className="avias-toolbar__label" htmlFor="avia-toolbar-from">
             Откуда
           </label>
           <DownSelect
             id="avia-toolbar-from"
-            className="trips-toolbar__input"
+            className="avias-toolbar__input"
             value={from}
             onChange={onFromChange}
             options={fromOptions}
           />
         </div>
 
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="avia-toolbar-to">
+        <div className="avias-toolbar__field">
+          <label className="avias-toolbar__label" htmlFor="avia-toolbar-to">
             Куда
           </label>
           <DownSelect
             id="avia-toolbar-to"
-            className="trips-toolbar__input"
+            className="avias-toolbar__input"
             value={to}
             onChange={onToChange}
             options={toOptions}
           />
         </div>
 
-        <div className="trips-toolbar__field">
-          <label className="trips-toolbar__label" htmlFor="avia-toolbar-airline">
+        <div className="avias-toolbar__field">
+          <label className="avias-toolbar__label" htmlFor="avia-toolbar-airline">
             Авиакомпания
           </label>
           <DownSelect
             id="avia-toolbar-airline"
-            className="trips-toolbar__input"
+            className="avias-toolbar__input"
             value={airline}
             onChange={onAirlineChange}
             options={airlineOptions}
           />
         </div>
 
-        <div className="trips-toolbar__field trips-toolbar__field--range">
-          <span className="trips-toolbar__label" id="avia-toolbar-duration-legend">
+        <div className="avias-toolbar__field avias-toolbar__field--range">
+          <span className="avias-toolbar__label" id="avia-toolbar-duration-legend">
             Длительность, ч
           </span>
           <div
-            className="trips-toolbar__range"
+            className="avias-toolbar__range"
             role="group"
             aria-labelledby="avia-toolbar-duration-legend"
           >
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="avias-toolbar__input avias-toolbar__input--numeric"
               type="number"
               min="0"
               max="48"
@@ -126,11 +126,11 @@ function AviaToolbar({
               autoComplete="off"
               aria-label="Длительность от, часы"
             />
-            <span className="trips-toolbar__range-sep" aria-hidden="true">
+            <span className="avias-toolbar__range-sep" aria-hidden="true">
               —
             </span>
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="avias-toolbar__input avias-toolbar__input--numeric"
               type="number"
               min="0"
               max="48"
@@ -145,17 +145,17 @@ function AviaToolbar({
           </div>
         </div>
 
-        <div className="trips-toolbar__field trips-toolbar__field--range">
-          <span className="trips-toolbar__label" id="avia-toolbar-price-legend">
+        <div className="avias-toolbar__field avias-toolbar__field--range">
+          <span className="avias-toolbar__label" id="avia-toolbar-price-legend">
             Цена, ₽
           </span>
           <div
-            className="trips-toolbar__range"
+            className="avias-toolbar__range"
             role="group"
             aria-labelledby="avia-toolbar-price-legend"
           >
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="avias-toolbar__input avias-toolbar__input--numeric"
               type="number"
               min="0"
               inputMode="numeric"
@@ -165,11 +165,11 @@ function AviaToolbar({
               autoComplete="off"
               aria-label="Цена от, ₽"
             />
-            <span className="trips-toolbar__range-sep" aria-hidden="true">
+            <span className="avias-toolbar__range-sep" aria-hidden="true">
               —
             </span>
             <input
-              className="trips-toolbar__input trips-toolbar__input--numeric"
+              className="avias-toolbar__input avias-toolbar__input--numeric"
               type="number"
               min="0"
               inputMode="numeric"
@@ -182,9 +182,9 @@ function AviaToolbar({
           </div>
         </div>
 
-        <div className="trips-toolbar__actions">
-          <span className="trips-toolbar__actions-spacer" aria-hidden="true" />
-          <button type="button" className="trips-toolbar__reset" onClick={onReset}>
+        <div className="avias-toolbar__actions">
+          <span className="avias-toolbar__actions-spacer" aria-hidden="true" />
+          <button type="button" className="avias-toolbar__reset" onClick={onReset}>
             Сбросить
           </button>
         </div>
