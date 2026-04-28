@@ -1,3 +1,5 @@
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useMemo, useState, useCallback } from 'react';
 
 //components
@@ -15,6 +17,8 @@ import './Trips.css';
 
 
 function Trips() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [searchQuery, setSearchQuery] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
@@ -23,6 +27,18 @@ function Trips() {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [sort, setSort] = useState('');
+
+    // Читаем параметр country из URL при загрузке
+  useEffect(() => {
+    const countryFromUrl = searchParams.get('country');
+    if (countryFromUrl) {
+      setCountry(countryFromUrl);
+    }
+
+    const cityFromUrl = searchParams.get('city');
+    if (cityFromUrl) setCity(cityFromUrl);
+  }, [searchParams]); 
+
 
   const handleStarToggle = useCallback((n) => {
     setSelectedStars((prev) => {
@@ -55,7 +71,8 @@ function Trips() {
     setMinPrice('');
     setMaxPrice('');
     setSort('');
-  }, []);
+    setSearchParams({}); // Очищаем URL параметры
+  }, [setSearchParams]);
 
   return (
     <Layout>

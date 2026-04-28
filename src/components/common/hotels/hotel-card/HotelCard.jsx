@@ -144,12 +144,6 @@ function HotelCard( { hotelId, hotel} ) {
           >
             Посмотреть номера
           </button>
-          <CardCartControls
-            type="hotel"
-            itemId={hotelId}
-            payload={hotelToCartPayload(hotel)}
-            variant="hotel"
-          />
         </div>
       </div>
     </div>
