@@ -192,10 +192,10 @@ const hotels = [
   },
   {
     id: 14,
-    title: 'Отель Belek Golf',
+    title: 'Sherwood Exclusive Lara (Ex. Sherwood Breezes Resort)',
     images: [{ id: 1401, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 1402, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 1403, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 1404, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 1405, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Белек',
+    city: 'Анталья',
     price: 62500,
     star: 5,
     review: 187,
@@ -231,10 +231,10 @@ const hotels = [
   },
   {
     id: 17,
-    title: 'Отель Kusadasi Bay',
+    title: 'Spice Hotel & Spa',
     images: [{ id: 1701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 1702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 1703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 1704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 1705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Кушадасы',
+    city: 'Провинция Анталья',
     price: 31200,
     star: 4,
     review: 76,
@@ -755,10 +755,10 @@ const hotels = [
   },
   {
     id: 57,
-    title: 'Отель Aswan Nile',
+    title: 'Amwaj Beach Club Aqua Park & Spa',
     images: [{ id: 5701, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 5702, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 5703, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 5704, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 5705, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Египет',
-    city: 'Асуан',
+    city: 'Хургада',
     price: 28500,
     star: 4,
     review: 98,
@@ -835,10 +835,10 @@ const hotels = [
 },
 {
   id: 63,
-  title: 'Отель Koh Samui Paradise',
+  title: 'Palm Beach Resort & Spa',
   images: [{ id: 6301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 6302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 6303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 6304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 6305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
-  country: 'Таиланд',
-  city: 'Самуи',
+  country: 'Вьетнам',
+  city: 'Начанг',
   price: 98500,
   star: 5,
   review: 312,
@@ -1590,7 +1590,50 @@ const hotels = [
   duration: 5,
   description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
   options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
+},
+
+{
+  id: 121,
+  title: 'Vinpearl Nha Trang Resort',
+  images: [{ id: 12002, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  country: 'Вьетнам',
+  city: 'Нячанг, Вьетнам',
+  price: 205000,
+  star: 5,
+  review: 267,
+  duration: 5,
+  description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
+  options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
+},
+
+{
+  id: 122,
+  title: 'Nha Trang Marriott Resort & Spa, Hon Tre Island',
+  images: [{ id: 12003, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  country: 'Вьетнам',
+  city: 'Нячанг',
+  price: 205000,
+  star: 5,
+  review: 267,
+  duration: 5,
+  description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
+  options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
+},
+
+{
+  id: 123,
+  title: 'Yalong Bay Villas & Spa',
+  images: [{ id: 12004, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  country: 'Китай',
+  city: 'о. Хайнань',
+  price: 205000,
+  star: 5,
+  review: 267,
+  duration: 5,
+  description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
+  options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
 }
+
 ];
 
 export default hotels;
