@@ -9,7 +9,10 @@ import CardTripCountry from '@home/card-trip-country/CardTripCountry';
 import CardTripFromMoscow from '@home/card-trip-frommoscow/CardTripFromMoscow';
 import CardTripToHotel from '@home/card-trip-tohotel/CardTripToHotel';
 import Arrows from '@ui/arrows/Arrows'; 
+
+//hooks
 import usePagination from '@hooks/usePagination';
+import useCardsPerRow from '@hooks/useCardsPerRow';
 
 
 //data
@@ -23,8 +26,6 @@ import homeTripCardTurkeyData from '@data/recommend/home-trip-turkey';
 
 
 function Home() {
- const cardsPerView = 5;
-
 
   //ДЛЯ СЕКЦИИ 1-ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ+ data=toptrips
   //ДЛЯ СЕКЦИИ 2-МАЙСКИЕ ПРАЗДНИКИ+ data=tripcardsdata
@@ -32,12 +33,14 @@ function Home() {
   //ДЛЯ СЕКЦИИ 4-УЛЕТЕТЬ ИЗ МОСКВЫ data=fromMoscowData
   //ДЛЯ СЕКЦИИ 5-ТУРЫ В ОТЕЛИ data=hotels
 
+  const cardsPerRow = useCardsPerRow();  // ← будет 1,2,3 или 4
+
    // Используем хук для каждой секции
-  const pagination1 = usePagination(toptrips.length, cardsPerView);
-  const pagination2 = usePagination(tripcardsdata.length, cardsPerView);
-  const pagination3 = usePagination(homeTripCardTurkeyData.length, cardsPerView);
-  const pagination4 = usePagination(fromMoscowData.length, cardsPerView);
-  const pagination5 = usePagination(hotels.length, cardsPerView);
+  const pagination1 = usePagination(toptrips.length, cardsPerRow);
+  const pagination2 = usePagination(tripcardsdata.length, cardsPerRow);
+  const pagination3 = usePagination(homeTripCardTurkeyData.length, cardsPerRow);
+  const pagination4 = usePagination(fromMoscowData.length, cardsPerRow);
+  const pagination5 = usePagination(hotels.length, cardsPerRow);
 
   const visibleCards1 = pagination1.visibleItems(toptrips);
   const visibleCards2 = pagination2.visibleItems(tripcardsdata);
@@ -59,12 +62,14 @@ function Home() {
       <section className="home__section">
         <div className="home__section-header">
           <h2 className="home__section-title">Популярные направления</h2>
-          <Arrows 
-            onPrev={pagination1.handlePrev}
-            onNext={pagination1.handleNext}
-            isPrevDisabled={pagination1.isPrevDisabled}
-            isNextDisabled={pagination1.isNextDisabled}
-          />
+          <div className="arrows">
+            <Arrows 
+              onPrev={pagination1.handlePrev}
+              onNext={pagination1.handleNext}
+              isPrevDisabled={pagination1.isPrevDisabled}
+              isNextDisabled={pagination1.isNextDisabled}
+            />
+          </div>
         </div>
         
         <div className="home__grid">
