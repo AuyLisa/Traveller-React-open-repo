@@ -3,22 +3,23 @@ import CountryButton from '@home/country-button/CountryButton.jsx';
 
 function CardTripFromMoscow({ tripId, trip}) {
   return (
-    <div className="trip-card">
-      <div className="trip-card__image">
+    <div className="card-trip-frommoscow">
+      <div className="card-trip-frommoscow__image">
         <img 
           src={trip.image} 
           alt={trip.name}
-          className="trip-card__photo"
+          className="card-trip-frommoscow__photo"
         />
-        <span className="trip-card__country">{trip.name}</span>
+        <span className="card-trip-frommoscow__country">{trip.name}</span>
       </div>
 
-      <div className="trip-card__buttons">
+      <div className="card-trip-frommoscow__buttons">
         {trip?.countries?.map((country) => (
           <CountryButton
-           key={country.id}
-           countryId={country.id}
-           country={country} />
+            key={country.id}
+            countryId={country.id}
+            country={country} 
+          />
         ))}
       </div>
     </div>

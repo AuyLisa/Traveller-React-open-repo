@@ -6,6 +6,8 @@ import Layout from '@ui/layout/Layout';
 import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
 import TripTop from '@home/trip-top/TripTop';
 import CardTripCountry from '@home/card-trip-country/CardTripCountry';
+import CardTripMonth from '@home/card-trip-month/CardTripMonth';
+
 import CardTripFromMoscow from '@home/card-trip-frommoscow/CardTripFromMoscow';
 import CardTripToHotel from '@home/card-trip-tohotel/CardTripToHotel';
 import Arrows from '@ui/arrows/Arrows'; 
@@ -16,11 +18,14 @@ import useCardsPerRow from '@hooks/useCardsPerRow';
 
 
 //data
+import toptrips from '@data/recommend/toptrips';  
+import tripsСardsCountryData from '@data/recommend/home-trip-countries'; 
+import homeTripCardTurkeyData from '@data/recommend/home-trip-turkey';   
+
+
 import fromMoscowData from '@data/recommend/home-trip-frommoscow';  
 import hotels from '@data/recommend/home-trip-tohotels';  
-import toptrips from '@data/recommend/toptrips';  
-import tripcardsdata from '@data/recommend/home-trip-countries'; 
-import homeTripCardTurkeyData from '@data/recommend/home-trip-turkey';   
+
 
 
 
@@ -37,13 +42,14 @@ function Home() {
 
    // Используем хук для каждой секции
   const pagination1 = usePagination(toptrips.length, cardsPerRow);
-  const pagination2 = usePagination(tripcardsdata.length, cardsPerRow);
+  const pagination2 = usePagination(tripsСardsCountryData.length, cardsPerRow);
   const pagination3 = usePagination(homeTripCardTurkeyData.length, cardsPerRow);
+  
   const pagination4 = usePagination(fromMoscowData.length, cardsPerRow);
   const pagination5 = usePagination(hotels.length, cardsPerRow);
 
   const visibleCards1 = pagination1.visibleItems(toptrips);
-  const visibleCards2 = pagination2.visibleItems(tripcardsdata);
+  const visibleCards2 = pagination2.visibleItems(tripsСardsCountryData);
   const visibleCards3 = pagination3.visibleItems(homeTripCardTurkeyData);
   const visibleCards4 = pagination4.visibleItems(fromMoscowData);
   const visibleCards5 = pagination5.visibleItems(hotels);
@@ -120,7 +126,7 @@ function Home() {
 
         <div className="home__grid">
           {visibleCards3.map(trip => (
-            <CardTripCountry
+            <CardTripMonth
              key={trip.id}
              tripId={trip.id}
              trip={trip} />

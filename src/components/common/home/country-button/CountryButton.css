@@ -1,4 +1,4 @@
-.trip-card__button {
+.country-button {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -8,24 +8,76 @@
   color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
-  border-radius: 12px;   
+  border-radius: 12px;
   margin-top: auto;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.trip-card__button:hover {
+.country-button:hover {
   background: #a39f9f;
+  transform: translateY(-2px);
 }
 
-
-.trip-card-button__city {
-  font-size: 13px;
+.country-button__country {
+  font-size: clamp(0.65rem, 3vw, 0.8rem);
   font-weight: 400;
+  margin-bottom: 0.2rem;
   text-align: center;
 }
 
-.trip-card-button__price {
-  font-size: 13px;
-  font-weight: 800;
+.country-button__price {
+  font-size: clamp(0.65rem, 3vw, 0.8rem);
+  font-weight: 700;
   text-align: center;
+}
+
+/* ===== БАЗА: телефоны (0 - 768px) — стили уже выше ===== */
+
+/* ===== ПЛАНШЕТЫ (от 48rem = 768px) ===== */
+@media (min-width: 48rem) {
+  .country-button {
+    padding: 6px;
+    border-radius: 10px;
+  }
+
+  .country-button__country {
+    font-size: 0.7rem;
+  }
+
+  .country-button__price {
+    font-size: 0.7rem;
+  }
+}
+
+/* ===== ДЕСКТОПЫ (от 64rem = 1024px) ===== */
+@media (min-width: 64rem) {
+  .country-button {
+    padding: 7px;
+    border-radius: 12px;
+  }
+
+  .country-button__country {
+    font-size: 0.8rem;
+  }
+
+  .country-button__price {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== БОЛЬШИЕ ЭКРАНЫ (от 90rem = 1440px) ===== */
+@media (min-width: 90rem) {
+  .country-button {
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .country-button__country {
+    font-size: 0.85rem;
+  }
+
+  .country-button__price {
+    font-size: 0.85rem;
+  }
 }
