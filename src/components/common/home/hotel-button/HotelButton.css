@@ -14,6 +14,7 @@
   transition: all 0.2s ease;
 }
 
+
 .hotel-button:hover {
   background: #a39f9f;
   transform: translateY(-2px);

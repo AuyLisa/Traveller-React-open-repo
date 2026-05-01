@@ -20,6 +20,7 @@
 }
 
 .card-trip-tohotel__photo {
+  display: block; 
   width: 100%;
   height: 100%; 
   object-fit: cover;           
@@ -77,6 +78,11 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.card-trip-tohotel__button-wrapper {
+  margin-top: auto;  /* ← прижимает кнопку к низу */
+  width: 100%;
 }
 
 /* ===== БАЗА: телефоны (0 - 768px) — стили уже выше ===== */

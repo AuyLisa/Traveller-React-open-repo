@@ -18,11 +18,13 @@ function CardTripToHotel({ hotelId, hotel}) {
       <span className="card-trip-tohotel__name">{hotel.name}</span>
       <span className="card-trip-tohotel__place">{hotel.place}</span>
 
-      <HotelButton
+      <div className="card-trip-tohotel__button-wrapper">
+        <HotelButton
         key={hotelId}
         hotelId={hotelId}
         hotel={hotel} 
-      />
+        />
+      </div>
     </div>
   );
 }
