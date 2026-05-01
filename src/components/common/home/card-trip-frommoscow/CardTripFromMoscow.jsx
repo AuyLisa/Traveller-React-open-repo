@@ -1,7 +1,7 @@
 import './CardTripFromMoscow.css';
 import CountryButton from '@home/country-button/CountryButton.jsx';
 
-function CardTripFromMoscow({ tripId, trip}) {
+function CardTripFromMoscow({ tripId, trip }) {
   return (
     <div className="card-trip-frommoscow">
       <div className="card-trip-frommoscow__image">
@@ -14,14 +14,16 @@ function CardTripFromMoscow({ tripId, trip}) {
         <span className="card-trip-frommoscow__country">{trip.name}</span>
       </div>
 
-      <div className="card-trip-frommoscow__buttons">
-        {trip?.countries?.map((country) => (
-          <CountryButton
-            key={country.id}
-            countryId={country.id}
-            country={country} 
-          />
-        ))}
+      <div className="card-trip-frommoscow__content"> 
+        <div className="card-trip-frommoscow__buttons">
+          {trip?.countries?.map((country) => (
+            <CountryButton
+              key={country.id}
+              countryId={country.id}
+              country={country} 
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

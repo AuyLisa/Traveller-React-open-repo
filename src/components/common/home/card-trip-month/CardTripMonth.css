@@ -9,16 +9,15 @@
   border: 2px solid #b9bcbe;
   border-radius: 10px;         
   background: white;
-   margin-inline: auto;
+  margin-inline: auto;
 }
 
 .card-trip-month__image {
   position: relative;
   width: 100%; 
   padding: 0.1rem;  
-  aspect-ratio: 16 / 9;  /* Адаптивная высота: растёт с шириной карточки */
+  aspect-ratio: 16 / 9;
 }
-
 
 .card-trip-month__photo {
   display: block; 
@@ -41,6 +40,12 @@
   font-weight: 600;
 }
 
+.card-trip-month__content {
+  flex: 1;                  
+  display: flex;
+  flex-direction: column;
+}
+
 .card-trip-month__description {
   font-size: clamp(0.8rem, 4vw, 0.9rem);
   color: black;
@@ -49,7 +54,6 @@
   text-align: center;
   line-height: 1;
   margin: 0;
-  /* Ограничиваем количество строк */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -61,6 +65,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
+  margin-top: auto;
 }
 
 /* ===== БАЗА: телефоны (0 - 768px) — стили уже выше ===== */
@@ -111,7 +116,6 @@
   }
 }
 
-
 /* ===== БОЛЬШИЕ ЭКРАНЫ (от 90rem = 1440px) ===== */
 @media (min-width: 90rem) {
   .card-trip-month {
@@ -133,6 +137,5 @@
   
   .card-trip-month__buttons {
     gap: 0.75rem;
-    margin-top: 0.6rem;
   }
 }

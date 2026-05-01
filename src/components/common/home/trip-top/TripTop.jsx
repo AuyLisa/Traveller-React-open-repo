@@ -21,10 +21,13 @@ function TripTop({ tripId, trip }) {
         />
         <span className="triptop__country">{trip.tripName}</span>
       </div>
-      <span className="triptop__description">{trip.description.toLocaleString()}</span>
-      <button className="triptop__button"
-       onClick={handleClick}>
-        от {trip.price.toLocaleString()} ₽</button>
+
+      <div className="triptop__content"> 
+        <span className="triptop__description">{trip.description.toLocaleString()}</span>
+        <button className="triptop__button"
+         onClick={handleClick}>
+          от {trip.price.toLocaleString()} ₽</button>
+      </div>
     </div>
   );
 }
