@@ -3,7 +3,7 @@ import './HotelButton.css';
 
 function HotelButton({ hotelId, hotel }) {
   return (
-    <Link to={`/hotel/${hotelId}`} className="hotel__button">
+    <Link to={`/hotel/${hotelId}`} className="hotel-button">
       <span className="hotel-button__price">от {hotel.price.toLocaleString()} ₽</span>
       <span className="hotel-button__period">{hotel.period}</span>
     </Link>

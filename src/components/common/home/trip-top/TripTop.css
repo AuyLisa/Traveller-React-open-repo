@@ -16,14 +16,6 @@
   transform: translateY(-2px);
 }
 
-.triptop__photo {
-  display: block;
-  width: 100%; 
-  height: 14rem;              
-  background-color: #929292;
-  border-radius: 20px;
-}
-
 .triptop__image {
   position: relative;
   width: 100%;
@@ -33,11 +25,15 @@
 }
 
 .triptop__photo {
+  display: block; /*Нет базовой линии-картинка стабильна=одна высота у всех- неважно сколько кнопок в карточке*/
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
+  background-color: #929292;
+  border-radius: 20px;
 }
+
 
 .triptop__country {
 	position: absolute;
