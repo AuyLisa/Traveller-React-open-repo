@@ -14,16 +14,18 @@ function CardTripMonth({ tripId, trip }) {
         <span className="card-trip-month__country">{trip.name}</span>
       </div>
 
-      <span className="card-trip-month__description">{trip.description}</span>
+      <div className="card-trip-month__content">
+        <span className="card-trip-month__description">{trip.description}</span>
       
-      <div className="card-trip-month__buttons">
-        {trip?.cities?.map((city) => (
+        <div className="card-trip-month__buttons">
+          {trip?.cities?.map((city) => (
 
-          <CityButton
-            key={city.id}
-            cityId={city.id}
-            city={city} />
-        ))}
+            <CityButton
+              key={city.id}
+              cityId={city.id}
+              city={city} />
+          ))}
+        </div>
       </div>
     </div>
   );

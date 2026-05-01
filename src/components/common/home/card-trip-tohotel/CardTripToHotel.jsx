@@ -15,15 +15,17 @@ function CardTripToHotel({ hotelId, hotel}) {
         <span className="card-trip-tohotel__points">{hotel.points.toLocaleString()}</span>
       </div>
 
-      <span className="card-trip-tohotel__name">{hotel.name}</span>
-      <span className="card-trip-tohotel__place">{hotel.place}</span>
+      <div className="card-trip-tohotel__content"> 
+        <span className="card-trip-tohotel__name">{hotel.name}</span>
+        <span className="card-trip-tohotel__place">{hotel.place}</span>
 
-      <div className="card-trip-tohotel__button-wrapper">
-        <HotelButton
-        key={hotelId}
-        hotelId={hotelId}
-        hotel={hotel} 
-        />
+        <div className="card-trip-tohotel__button-wrapper">
+          <HotelButton
+          key={hotelId}
+          hotelId={hotelId}
+          hotel={hotel} 
+          />
+        </div>
       </div>
     </div>
   );
