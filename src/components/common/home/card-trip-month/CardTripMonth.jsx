@@ -9,6 +9,7 @@ function CardTripMonth({ tripId, trip }) {
           src={trip.image} 
           alt={trip.name}
           className="card-trip-month__photo"
+          loading="lazy"
         />
         <span className="card-trip-month__country">{trip.name}</span>
       </div>

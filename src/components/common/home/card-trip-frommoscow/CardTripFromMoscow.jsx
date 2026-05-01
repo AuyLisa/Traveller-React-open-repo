@@ -9,6 +9,7 @@ function CardTripFromMoscow({ tripId, trip}) {
           src={trip.image} 
           alt={trip.name}
           className="card-trip-frommoscow__photo"
+          loading="lazy"
         />
         <span className="card-trip-frommoscow__country">{trip.name}</span>
       </div>
