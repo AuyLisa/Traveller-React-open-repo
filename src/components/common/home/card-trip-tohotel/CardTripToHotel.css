@@ -1,4 +1,4 @@
-.trip-card {
+.card-trip-tohotel {
   width: 100%;
   height: 100%;
   max-width: 17rem;
@@ -12,23 +12,22 @@
    margin-inline: auto;
 }
 
-.trip-card__image {
+.card-trip-tohotel__image {
   position: relative;
   width: 100%; 
   padding: 0.1rem;  
   aspect-ratio: 16 / 9;  /* Адаптивная высота: растёт с шириной карточки */
 }
 
-.trip-card__photo {
+.card-trip-tohotel__photo {
   width: 100%;
-  height: 100%;
-  height: 8rem;  
+  height: 100%; 
   object-fit: cover;           
   border-radius: 10px;
   transition: transform 0.3s;
 }
 
-.trip-card__country {
+.card-trip-tohotel__country {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -40,107 +39,133 @@
   font-weight: 600;
 }
 
+.card-trip-tohotel__points {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: black;
+  background-color: rgb(193, 255, 35);
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: clamp(1rem, 5vw, 1.3rem);
+  font-weight: 600;
+}
 
-
-.trip-card__description {
-  font-size: clamp(0.8rem, 4vw, 0.9rem);
+.card-trip-tohotel__name {
+   font-size: clamp(0.8rem, 4vw, 0.9rem);
+  font-weight: 600;
   color: black;
   overflow-wrap: break-word;
   min-width: 0;
   text-align: center;
-  line-height: 1;
-  margin: 0;
-  /* Ограничиваем количество строк */
+  margin: 0.3rem 0 0.1rem;
+  padding: 0 0.25rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-
-.trip-card__buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+.card-trip-tohotel__place {
+  font-size: clamp(0.65rem, 3vw, 0.75rem);
+  color: grey;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 0 0 0.3rem;
+  padding: 0 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-
-/* ===== ТЕЛЕФОНЫ (до 480px) ===== */
-@media (max-width: 480px) {
-  .trip-card {
-    padding: 0.35rem;
-    border-radius: 8px;
-  }
-  
-  .trip-card__country {
-    top: 8px;
-    left: 8px;
-    padding: 0.2rem 0.4rem;
-    font-size: 0.65rem;
-  }
-  
-  
-  .trip-card__description {
-    font-size: 0.65rem;
-    padding: 0.35rem 0.2rem;
-  }
-  
-  .trip-card__buttons {
-    gap: 0.35rem;
-    margin-top: 0.35rem;
-  }
-}
+/* ===== БАЗА: телефоны (0 - 768px) — стили уже выше ===== */
 
 
-/* ===== МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 360px) ===== */
-@media (max-width: 360px) {
-  .trip-card__buttons {
-    grid-template-columns: 1fr;  /* ← одна колонка для кнопок */
-  }
-}
-
-/* ===== ПЛАНШЕТЫ (от 768px) ===== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .trip-card {
+/* ===== ПЛАНШЕТЫ (от 48rem = 768px) ===== */
+@media (min-width: 48rem) {
+  .card-trip-tohotel {
     padding: 0.6rem;
   }
-  
-  .trip-card__country {
+
+  .card-trip-tohotel__country {
+    top: 12px;
+    left: 12px;
     font-size: 0.8rem;
     padding: 0.3rem 0.6rem;
   }
-  
-  
-  .trip-card__description {
-    font-size: 0.8rem;
+
+  .card-trip-tohotel__points {
+    top: 12px;
+    right: 12px;
+    font-size: 0.7rem;
   }
-  
-  .trip-card__buttons {
-    gap: 0.6rem;
+
+  .card-trip-tohotel__name {
+    font-size: 0.85rem;
   }
+
+  .card-trip-tohotel__place {
+    font-size: 0.7rem;
+  }
+
 }
 
-/* ===== БОЛЬШИЕ ЭКРАНЫ (от 1400px) ===== */
-@media (min-width: 1400px) {
-  .trip-card {
+/* ===== ДЕСКТОПЫ (от 64rem = 1024px) ===== */
+@media (min-width: 64rem) {
+  .card-trip-tohotel {
+    padding: 0.7rem;
+  }
+
+  .card-trip-tohotel__country {
+    top: 12px;
+    left: 12px;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .card-trip-tohotel__points {
+    top: 12px;
+    right: 12px;
+    font-size: 0.75rem;
+  }
+
+  .card-trip-tohotel__name {
+    font-size: 0.9rem;
+  }
+
+  .card-trip-tohotel__place {
+    font-size: 0.75rem;
+  }
+
+}
+
+/* ===== БОЛЬШИЕ ЭКРАНЫ (от 90rem = 1440px) ===== */
+@media (min-width: 90rem) {
+  .card-trip-tohotel {
     padding: 0.75rem;
     border-radius: 12px;
   }
-  
-  .trip-card__country {
+
+  .card-trip-tohotel__country {
     top: 14px;
     left: 14px;
     font-size: 0.95rem;
     padding: 0.35rem 0.7rem;
   }
-  
-  .trip-card__description {
-    font-size: 0.95rem;
-    padding: 0.75rem 0.5rem;
+
+  .card-trip-tohotel__points {
+    top: 14px;
+    right: 14px;
+    font-size: 0.8rem;
   }
-  
-  .trip-card__buttons {
-    gap: 0.75rem;
-    margin-top: 0.75rem;
+
+  .card-trip-tohotel__name {
+    font-size: 1rem;
   }
+
+  .card-trip-tohotel__place {
+    font-size: 0.8rem;
+  }
+
 }
