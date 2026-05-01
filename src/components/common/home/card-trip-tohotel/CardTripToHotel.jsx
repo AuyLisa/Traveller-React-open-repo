@@ -9,6 +9,7 @@ function CardTripToHotel({ tripId, hotel}) {
           src={hotel.image} 
           alt={hotel.country}
           className="trip-card__photo"
+          loading="lazy"
         />
         <span className="trip-card__country">{hotel.country}</span>
         <span className="trip-card__points">{hotel.points.toLocaleString()}</span>

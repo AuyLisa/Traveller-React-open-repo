@@ -10,6 +10,7 @@ function CardTripCountry({ tripId, trip }) {
           src={trip.image} 
           alt={trip.name}
           className="card-trip-country__photo"
+          loading="lazy"
         />
         <span className="card-trip-country__country">{trip.name}</span>
       </div>
