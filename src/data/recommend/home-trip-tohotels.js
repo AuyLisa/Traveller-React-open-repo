@@ -2,7 +2,7 @@ export const hotels = [
   {
     id: 1,
     country: "Египет",
-    points: 9,
+    points: 4.9,
     image: "/images/home-hotels/amwaj.jpg",
     name: "Amwaj Beach Club Aqua Park & Spa",
     place: "Хургада, Египет",
@@ -13,7 +13,7 @@ export const hotels = [
   {
     id: 2,
     country: "Турция",
-    points: 8.5,
+    points: 4.7,
     image: "/images/home-hotels/spice-hotel.jpg",
     name: "Spice Hotel & Spa",
     place: "Провинция Анталья, Турция",
@@ -24,7 +24,7 @@ export const hotels = [
   {
     id: 3,
     country: "Вьетнам",
-    points: 9.1,
+    points: 4.2,
     image: "/images/home-hotels/vinpearl.jpg",
     name: "Vinpearl Nha Trang Resort",
     place: "Нячанг, Вьетнам",
@@ -34,7 +34,7 @@ export const hotels = [
   {
     id: 4,
     country: "Турция",
-    points: 9.3,
+    points: 4.8,
     image: "/images/home-hotels/shrewood.jpg",
     name: "Sherwood Exclusive Lara (Ex. Sherwood Breezes Resort)",
     place: "Анталья, Турция",
@@ -45,7 +45,7 @@ export const hotels = [
   {
     id: 5,
     country: "Китай",
-    points: 9.,
+    points: 4.6,
     image: "/images/home-hotels/palm-beach.jpg",
     name: "Palm Beach Resort & Spa",
     place: "Нячанг, Вьетнам",
@@ -56,7 +56,7 @@ export const hotels = [
   {
     id: 6,
     country: "Вьетнам",
-    points: 9.1,
+    points: 4.8,
     image: "/images/home-hotels/nha-tang.jpg",
     name: "Nha Trang Marriott Resort & Spa, Hon Tre Island",
     place: "Нячанг, Вьетнам",
@@ -67,7 +67,7 @@ export const hotels = [
   {
     id: 7,
     country: "Китай",
-    points: 9.5,
+    points: 3.9,
     image: "/images/home-hotels/sanya-yalong.jpg",
     name: "Yalong Bay Villas & Spa",
     place: "о. Хайнань, Китай",

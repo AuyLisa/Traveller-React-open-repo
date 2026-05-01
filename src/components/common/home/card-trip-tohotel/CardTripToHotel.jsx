@@ -1,29 +1,28 @@
 import './CardTripToHotel.css';
 import HotelButton from '@home/hotel-button/HotelButton.jsx';
 
-function CardTripToHotel({ tripId, hotel}) {
+function CardTripToHotel({ hotelId, hotel}) {
   return (
-    <div className="trip-card">
-      <div className="trip-card__image">
+    <div className="card-trip-tohotel">
+      <div className="card-trip-tohotel__image">
         <img 
           src={hotel.image} 
           alt={hotel.country}
-          className="trip-card__photo"
+          className="card-trip-tohotel__photo"
           loading="lazy"
         />
-        <span className="trip-card__country">{hotel.country}</span>
-        <span className="trip-card__points">{hotel.points.toLocaleString()}</span>
+        <span className="card-trip-tohotel__country">{hotel.country}</span>
+        <span className="card-trip-tohotel__points">{hotel.points.toLocaleString()}</span>
       </div>
 
-      <span className="trip-card__hotelname">{hotel.name}</span>
-      <span className="trip-card__hotelplace">{hotel.place}</span>
-
+      <span className="card-trip-tohotel__name">{hotel.name}</span>
+      <span className="card-trip-tohotel__place">{hotel.place}</span>
 
       <HotelButton
-        key={tripId}
-        hotelId={tripId}
-        hotel={hotel} />
-
+        key={hotelId}
+        hotelId={hotelId}
+        hotel={hotel} 
+      />
     </div>
   );
 }
