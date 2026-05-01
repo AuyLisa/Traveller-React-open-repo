@@ -1,4 +1,4 @@
-export const tripcardsdata = [
+export const tripsСardsCountryData = [
   {
     id: 1,
     name: "Турция",
@@ -147,4 +147,4 @@ export const tripcardsdata = [
 
 ];
 
-export default tripcardsdata;
+export default tripsСardsCountryData;

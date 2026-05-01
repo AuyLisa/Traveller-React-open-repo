@@ -4,25 +4,25 @@ import CityButton from '@home/city-button/CityButton.jsx';
 function CardTripCountry({ tripId, trip }) {
   
   return (
-    <div className="trip-card">
-      <div className="trip-card__image">
+    <div className="card-trip-country">
+      <div className="card-trip-country__image">
         <img 
           src={trip.image} 
           alt={trip.name}
-          className="trip-card__photo"
+          className="card-trip-country__photo"
         />
-        <span className="trip-card__country">{trip.name}</span>
-        <span className="trip-card__pricee">от {trip.price.toLocaleString()} ₽</span>
+        <span className="card-trip-country__country">{trip.name}</span>
       </div>
 
-      <span className="trip-card__description">{trip.description}</span>
+      <span className="card-trip-country__description">{trip.description}</span>
       
-      <div className="trip-card__buttons">
+      <div className="card-trip-country__buttons">
         {trip?.cities?.map((city) => (
           <CityButton 
-           key={city.id}
-           cityId={city.id}
-           city={city} />
+            key={city.id}
+            cityId={city.id}
+            city={city} 
+          />
         ))}
       </div>
     </div>
