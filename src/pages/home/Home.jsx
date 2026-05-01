@@ -173,7 +173,7 @@ function Home() {
           {visibleCards5.map(hotel => (
             <CardTripToHotel
              key={hotel.id}
-             tripId={hotel.id}
+             hotelId={hotel.id}
              hotel={hotel} />
           ))}
         </div>
