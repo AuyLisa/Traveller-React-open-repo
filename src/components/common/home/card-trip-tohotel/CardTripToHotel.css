@@ -9,7 +9,7 @@
   border: 2px solid #b9bcbe;
   border-radius: 10px;         
   background: white;
-   margin-inline: auto;
+  margin-inline: auto;
 }
 
 .card-trip-tohotel__image {
@@ -17,6 +17,7 @@
   width: 100%; 
   padding: 0.1rem;  
   aspect-ratio: 16 / 9;  /* Адаптивная высота: растёт с шириной карточки */
+  overflow: hidden;
 }
 
 .card-trip-tohotel__photo {
