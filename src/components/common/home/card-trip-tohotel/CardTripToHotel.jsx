@@ -21,8 +21,8 @@ function CardTripToHotel({ hotelId, hotel}) {
 
         <div className="card-trip-tohotel__button-wrapper">
           <HotelButton
-          key={hotelId}
-          hotelId={hotelId}
+          key={hotel.id}
+          hotelId={hotel.id}
           hotel={hotel} 
           />
         </div>

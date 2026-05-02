@@ -19,7 +19,6 @@ function CardTripMonth({ tripId, trip }) {
       
         <div className="card-trip-month__buttons">
           {trip?.cities?.map((city) => (
-
             <CityButton
               key={city.id}
               cityId={city.id}
