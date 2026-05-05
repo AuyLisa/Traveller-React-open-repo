@@ -1,6 +1,210 @@
+/* ===== МОБИЛЬНЫЕ (базовые стили) ===== */
+/* 1rem = 16px */
+
 .footer {
   margin-top: auto;
-  padding: 2rem;
+  background-color: #751AE4;
+  color: #ffffff;
+  padding: 2rem 1rem 1rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.footer__list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__list a,
+.footer__destinations-group a {
+  color: #eae5e5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer__list a:hover,
+.footer__destinations-group a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer__destinations-group {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.footer__destinations-group strong {
+  color: #fff;
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+.footer__destinations-group a {
+  margin: 0 0.1rem;
+}
+
+/* Блок "Будьте с нами" */
+.footer__social {
   text-align: center;
-  background-color: #b2b2b2;
+  padding: 1.5rem 0;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.footer__social-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.footer__social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.footer__social-link:hover {
+  background-color: #ff1cff;
+  transform: translateY(-3px);
+}
+
+.footer__social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer__bottom {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #ffffff;
+  padding-top: 0.5rem;
+}
+
+/* ===== ПЛАНШЕТЫ (768px = 48rem) ===== */
+@media (min-width: 48rem) {
+  .footer {
+    padding: 2.5rem 1.5rem 1rem;
+  }
+  
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .footer__social {
+    padding: 2rem 0;
+  }
+  
+  .footer__social-icons {
+    gap: 2rem;
+  }
+  
+  .footer__social-link {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .footer__social-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .footer__bottom {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== ДЕСКТОПЫ (1024px = 64rem) ===== */
+@media (min-width: 64rem) {
+  .footer {
+    padding: 3rem 2rem 1rem;
+  }
+  
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* 5-я колонка занимает 1fr как и остальные */
+  .footer__social {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer__bottom {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===== БОЛЬШИЕ ЭКРАНЫ (1440px = 90rem) ===== */
+@media (min-width: 90rem) {
+  .footer {
+    padding: 4rem 2rem 1.5rem;
+  }
+  
+  .footer__container {
+    gap: 2.5rem;
+    max-width: 1400px;
+  }
+  
+  .footer__social {
+    max-width: 1400px;
+  }
+  
+  .footer__bottom {
+    max-width: 1400px;
+  }
+  
+  .footer__title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer__list a,
+  .footer__destinations-group a,
+  .footer__destinations-group {
+    font-size: 0.9rem;
+  }
 }

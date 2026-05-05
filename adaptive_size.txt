@@ -1,8 +1,7 @@
 /* ===== СТАНДАРТНЫЕ БРЕЙКПОИНТЫ В REM ===== */
 /* 1rem = 16px */
 
-/* ТЕЛЕФОНЫ (до 480px = 30rem) */
-@media (max-width: 30rem) { }
+mobile First
 
 /* ПЛАНШЕТЫ (768px = 48rem) */
 @media (min-width: 48rem) { }
