@@ -11,14 +11,23 @@
 .footer__container {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer__column{
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .footer__title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -28,7 +37,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-weight: bold;
+  text-align: left;
 }
 
 .footer__list li {
@@ -39,7 +48,7 @@
 .footer__destinations-group a {
   color: #eae5e5;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 1rem;
   transition: color 0.2s ease;
 }
 
@@ -50,10 +59,10 @@
 }
 
 .footer__destinations-group {
-  margin-bottom: 0.75rem;
-  font-size: 0.85rem;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
   line-height: 1.4;
-  font-weight: bold;
 }
 
 .footer__destinations-group strong {
@@ -63,7 +72,7 @@
 }
 
 .footer__destinations-group a {
-  margin: 0 0.1rem;
+  margin: 0;
 }
 
 /* Блок "Будьте с нами" */
