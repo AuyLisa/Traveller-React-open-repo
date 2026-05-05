@@ -67,7 +67,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
-  margin-top: auto;
+  margin-top: 0;
 }
 
 /* ===== БАЗА: телефоны (0 - 768px) — стили уже выше ===== */
