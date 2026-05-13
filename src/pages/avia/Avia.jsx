@@ -1,13 +1,13 @@
 import { useMemo, useState, useCallback } from 'react';
 
-//components
+// components
 import Layout from '@ui/layout/Layout';
 import SearchSectionSwitch from '@ui/search-section-switch/SearchSectionSwitch';
 import AviaCard from '@avias/avia-card/AviaCard';
 import AviaToolbar from '@avias/avia-toolbar/AviaToolbar';
 import AviaClasses from '@avias/avia-classes/AviaClasses';
 
-//data
+// data
 import avias from '@data/avias/avia';
 
 import { filterAvias } from '@utils/filterAvias';
@@ -52,52 +52,66 @@ function Avia() {
   return (
     <Layout>
       <h1 className="avia__title">Авиабилеты</h1>
+      
       <div className="search-switch-row">
         <SearchSectionSwitch />
       </div>
-      <AviaToolbar
-        avias={avias}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        from={from}
-        onFromChange={setFrom}
-        to={to}
-        onToChange={setTo}
-        airline={airline}
-        onAirlineChange={setAirline}
-        durationMinHours={durationMinHours}
-        durationMaxHours={durationMaxHours}
-        onDurationMinChange={setDurationMinHours}
-        onDurationMaxChange={setDurationMaxHours}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        onMinPriceChange={setMinPrice}
-        onMaxPriceChange={setMaxPrice}
-        onReset={handleReset}
-      />
 
-      {filtered.length === 0 ? (
-        <p className="avia__empty" role="status">
-          Ничего не найдено. Измените запрос или нажмите «Сбросить».
-        </p>
-      ) : (
-        <>
-          <div className="avia__results">
-            Найдено авиаперелетов:
-            <span className="avia__count"> {filtered.length}</span>
-          </div>
+      {/* Основной контейнер с фильтрами и билетами */}
+      <div className="avia__layout">
+        {/* Фильтры - слева */}
+        <aside className="avia__filters-sidebar">
+          <AviaToolbar
+            avias={avias}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            from={from}
+            onFromChange={setFrom}
+            to={to}
+            onToChange={setTo}
+            airline={airline}
+            onAirlineChange={setAirline}
+            durationMinHours={durationMinHours}
+            durationMaxHours={durationMaxHours}
+            onDurationMinChange={setDurationMinHours}
+            onDurationMaxChange={setDurationMaxHours}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            onMinPriceChange={setMinPrice}
+            onMaxPriceChange={setMaxPrice}
+            onReset={handleReset}
+          />
+        </aside>
 
-          <div className="avia__flights">
-            {filtered.map((avia) => (
-              <div className="avia__row" key={avia.id}>
-                <AviaCard aviaCardId={avia.id} avia={avia} />
-
-                <AviaClasses aviaClassesId={avia.id} price={avia.price} duration={avia.duration} />
+        {/* Билеты - справа */}
+        <div className="avia__content">
+          {filtered.length === 0 ? (
+            <p className="avia__empty" role="status">
+              Ничего не найдено. Измените запрос или нажмите «Сбросить».
+            </p>
+          ) : (
+            <>
+              <div className="avia__results">
+                Найдено авиаперелетов:
+                <span className="avia__count"> {filtered.length}</span>
               </div>
-            ))}
-          </div>
-        </>
-      )}
+
+              <div className="avia__flights">
+                {filtered.map((avia) => (
+                  <div className="avia__row" key={avia.id}>
+                    <AviaCard aviaCardId={avia.id} avia={avia} />
+                    <AviaClasses 
+                      aviaClassesId={avia.id} 
+                      price={avia.price} 
+                      duration={avia.duration} 
+                    />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
     </Layout>
   );
 }
