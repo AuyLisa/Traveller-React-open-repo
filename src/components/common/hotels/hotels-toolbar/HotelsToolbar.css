@@ -1,59 +1,48 @@
-
 .hotels-toolbar {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin: 0 0 1.25rem 0;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .hotels-toolbar__search {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.35rem;
-  max-width: 32rem;
+  gap: 0.25rem;
+  width: 100%;
 }
 
 .hotels-toolbar__filters {
   display: flex;
-  flex-wrap: wrap;
-  /* flex-end смещал низкие колонки вниз — подписи полей оказывались на разной высоте */
-  align-items: flex-start;
-  gap: 0.75rem 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .hotels-toolbar__field {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.35rem;
-  min-width: 10.5rem;
-  flex: 1 1 10.5rem;
-  max-width: 14rem;
+  gap: 0.25rem;
+  width: 100%;
 }
 
 .hotels-toolbar__field--stars {
-  /* ширина по содержимому чекбоксов, без лишнего растягивания */
-  flex: 0 1 auto;
-  min-width: 0;
-  max-width: 100%;
-  /* больше воздуха между подписью и чекбоксами */
-  gap: 0.65rem;
+  width: 100%;
+  gap: 0.25rem;
 }
 
 .hotels-toolbar__field--range {
-  min-width: 12.5rem;
-  max-width: 16rem;
+  width: 100%;
 }
 
 .hotels-toolbar__checkbox-group {
-	display: flex;
-	/* flex-wrap: wrap; */
-	align-items: left;
-	gap: 0.5rem 0.75rem;
-	width: fit-content;
-	max-width: 100%;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  width: 100%;
 }
 
 .hotels-toolbar__checkbox-label {
@@ -62,6 +51,7 @@
   gap: 0.35rem;
   cursor: pointer;
   user-select: none;
+  padding: 0.1rem 0;
 }
 
 .hotels-toolbar__checkbox {
@@ -72,9 +62,10 @@
 }
 
 .hotels-toolbar__checkbox-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1;
   letter-spacing: 0.02em;
+  color: #333;
 }
 
 .hotels-toolbar__range {
@@ -85,7 +76,7 @@
 }
 
 .hotels-toolbar__range .hotels-toolbar__input {
-  flex: 1 1 0;
+  flex: 1;
   min-width: 0;
 }
 
@@ -98,22 +89,25 @@
 .hotels-toolbar__label {
   display: inline-block;
   font-size: 0.8rem;
+  font-weight: 500;
   color: #444;
   line-height: 1.2;
-  width: auto;
-  max-width: 100%;
 }
 
 .hotels-toolbar__input {
   width: 100%;
-  max-width: 100%;
-  padding: 0.45rem 0.55rem;
+  padding: 0.4rem 0.5rem;
   border: 1px solid #b9bcbe;
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   background: #fff;
-  appearance: none;
-  -webkit-appearance: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.hotels-toolbar__input:focus {
+  outline: none;
+  border-color: #3a6ea5;
 }
 
 button.hotels-toolbar__input {
@@ -132,7 +126,7 @@ button.hotels-toolbar__input {
 }
 
 .hotels-toolbar__input--wide {
-  max-width: 32rem;
+  width: 100%;
 }
 
 .hotels-toolbar__input::placeholder {
@@ -153,26 +147,32 @@ button.hotels-toolbar__input {
 .hotels-toolbar__actions {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
-  flex: 0 0 auto;
-  min-width: 6.5rem;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 0.25rem;
 }
 
 .hotels-toolbar__actions-spacer {
-  display: block;
-  height: 1.16rem;
+  display: none;
 }
 
 .hotels-toolbar__reset {
-  padding: 0.45rem 0.85rem;
+  padding: 0.4rem 0.85rem;
   font-size: 0.9rem;
+  font-weight: 500;
   border: 1px solid #b9bcbe;
   border-radius: 8px;
   background: #fff;
   cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
 }
 
 .hotels-toolbar__reset:hover {
   background: #f0f0f0;
+  border-color: #3a6ea5;
+}
+
+.hotels-toolbar__reset:active {
+  transform: translateY(1px);
 }

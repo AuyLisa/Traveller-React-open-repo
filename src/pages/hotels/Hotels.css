@@ -1,3 +1,12 @@
+.hotels__title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.search-switch-row {
+  margin-bottom: 24px;
+}
 
 .hotels__layout {
   display: flex;
@@ -20,9 +29,43 @@
 }
 
 
+.hotels__results {
+  font-size: 16px;
+  color: #666;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+
+.hotels__count {
+  font-weight: 700;
+  color: #3a6ea5;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+
 .hotels__empty {
   margin: 1rem 0 1.5rem;
   padding: 0.75rem 0;
   color: #555;
   font-size: 0.95rem;
+}
+
+
+@media (max-width: 768px) {
+  .hotels__layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .hotels__filters-sidebar {
+    position: static;
+    width: 100%;
+  }
+  
+  .hotels__content {
+    width: 100%;
+  }
 }
