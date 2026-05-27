@@ -89,3 +89,43 @@
 .profile__back-link:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+.profile__stats-details {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.profile__stats-details span {
+  background: #f0f4f8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.profile__empty-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.profile__browse-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #3a6ea5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.profile__browse-link:hover {
+  background: #2c5282;
+}
