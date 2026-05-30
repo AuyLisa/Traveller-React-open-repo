@@ -10,6 +10,7 @@
   border-radius: 10px;         
   background: white;
   margin-inline: auto;
+  min-height: 21rem;
 }
 
 .card-trip-month__image {

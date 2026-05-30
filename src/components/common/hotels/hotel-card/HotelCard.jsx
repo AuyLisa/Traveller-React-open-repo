@@ -12,6 +12,8 @@ import { useFavorites } from '@hooks/useFavorites';
 import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelCard.css';
 
+
+
 function getNightsText(duration) {
   const lastDigit = duration % 10;
   const lastTwoDigits = duration % 100;

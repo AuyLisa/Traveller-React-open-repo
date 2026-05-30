@@ -38,7 +38,7 @@ function Header() {
             <>
               <li>
                 <Link className="header__link" to="/profile">
-                  👤 {currentUser.name}
+                  {currentUser.name}
                 </Link>
               </li>
               <li>

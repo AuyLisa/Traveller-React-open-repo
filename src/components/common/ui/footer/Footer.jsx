@@ -1,5 +1,6 @@
 import './Footer.css';
 
+
 function Footer() {
   return (
     <footer className="footer">
@@ -43,44 +44,46 @@ function Footer() {
         <div className="footer__column">
           <h3 className="footer__title">Популярные направления</h3>
           
-          <div className="footer__destinations-group">
-            <strong>Россия:</strong>
-            <a href="/sochi">Сочи</a>, <a href="/adler">Адлер</a>, <a href="/spb">СПб</a>, <a href="/moscow">Москва</a>
-          </div>
+          <div className="footer__column_to-left">
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Россия: </span>
+              <a href="/sochi">Сочи</a>, <a href="/adler">Адлер</a>, <a href="/spb">СПб</a>, <a href="/moscow">Москва</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>Турция:</strong>
-            <a href="/istanbul">Стамбул</a>, <a href="/antalya">Анталья</a>, <a href="/alanya">Алания</a>
-          </div>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Турция: </span>
+              <a href="/istanbul">Стамбул</a>, <a href="/antalya">Анталья</a>, <a href="/alanya">Алания</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>Таиланд:</strong>
-            <a href="/phuket">Пхукет</a>, <a href="/pattaya">Паттайя</a>
-          </div>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Таиланд: </span>
+              <a href="/phuket">Пхукет</a>, <a href="/pattaya">Паттайя</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>Египет:</strong>
-            <a href="/hurghada">Хургада</a>, <a href="/sharm">Шарм-Эль-Шейх</a>
-          </div>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Египет: </span>
+              <a href="/hurghada">Хургада</a>, <a href="/sharm">Шарм-Эль-Шейх</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>ОАЭ:</strong>
-            <a href="/dubai">Дубай</a>, <a href="/sharjah">Шарджа</a>
-          </div>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">ОАЭ: </span>
+              <a href="/dubai">Дубай</a>, <a href="/sharjah">Шарджа</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>Мальдивы:</strong>
-            <a href="/male">Мале</a>, <a href="/maafushi">Маафуши</a>
-          </div>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Мальдивы: </span>
+              <a href="/male">Мале</a>, <a href="/maafushi">Маафуши</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>Шри-Ланка:</strong>
-            <a href="/hikkaduwa">Хиккадува</a>
-          </div>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Шри-Ланка: </span>
+              <a href="/hikkaduwa">Хиккадува</a>
+            </div>
           
-          <div className="footer__destinations-group">
-            <strong>Индия:</strong>
-            <a href="/goa">Гоа</a>
+            <div className="footer__destinations-group">
+              <span className="footer__country-name">Индия: </span>
+              <a href="/goa">Гоа</a>
+            </div>
           </div>
         </div>
 
