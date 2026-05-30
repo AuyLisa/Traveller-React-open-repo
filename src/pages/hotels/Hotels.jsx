@@ -60,9 +60,12 @@ function Hotels() {
 
   return (
     <Layout>
-      <h1 className="hotels__title">Отели</h1>
-      <div className="search-switch-row">
-        <SearchSectionSwitch />
+
+      <div className="top__part"> 
+        <h1 className="hotels__title">Отели</h1>
+        <div className="search-switch-row">
+          <SearchSectionSwitch />
+        </div>
       </div>
 
       {/* Новая структура: фильтры слева, карточки справа */}

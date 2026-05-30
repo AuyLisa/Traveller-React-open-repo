@@ -10,6 +10,7 @@
   min-width: 0;
   max-width: 17rem;
   margin-inline: auto;
+  min-height: 20rem;
 }
 
 .triptop:hover {

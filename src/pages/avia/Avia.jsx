@@ -51,10 +51,12 @@ function Avia() {
 
   return (
     <Layout>
-      <h1 className="avia__title">Авиабилеты</h1>
-      
-      <div className="search-switch-row">
-        <SearchSectionSwitch />
+
+      <div className="top__part"> 
+        <h1 className="avia__title">Авиабилеты</h1>
+        <div className="search-switch-row">
+          <SearchSectionSwitch />
+        </div>
       </div>
 
       {/* Основной контейнер с фильтрами и билетами */}

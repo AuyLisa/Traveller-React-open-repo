@@ -72,10 +72,12 @@ function Trips() {
 
   return (
     <Layout>
-      <h1 className="trips__title">Туры</h1>
-      
-      <div className="search-switch-row">
-        <SearchSectionSwitch />
+
+      <div className="top__part"> 
+        <h1 className="trips__title">Туры</h1>
+        <div className="search-switch-row">
+          <SearchSectionSwitch />
+        </div>
       </div>
 
       {/* Основной контейнер с фильтрами и карточками */}

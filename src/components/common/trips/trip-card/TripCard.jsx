@@ -1,82 +1,67 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-//components
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import ImageArrows from '@ui/image-arrows/ImageArrows';
 import HeartLike from '@ui/heart-like/HeartLike';
 import ImageDots from '@ui/image-dots/ImageDots';
-
+import { useFavorites } from '@hooks/useFavorites'; // импортируем хук
 import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripCard.css';
 
-
-function TripCard( {tripId, trip} ) {
+function TripCard({ tripId, trip }) {
   const navigate = useNavigate();
+  
+  //хук для управления лайками
+  const { isLiked, toggleLike, loading } = useFavorites('trip', tripId);
 
-
-
-  //логика карусель фотографий
+  // Логика карусели фотографий
   const images = trip.images;
   const [index, setIndex] = useState(0);
   const lastIndex = images.length - 1;
   
-  //клик на ❯
-  function handleNext1() {
+  function handleNext() {
     setIndex(prev => Math.min(prev + 1, lastIndex));
   }
   
-  //клик на ❮
-  function handlePrev1() {
+  function handlePrev() {
     setIndex(prev => Math.max(prev - 1, 0));
   }
   
-  // Текущее фото для показа
   const currentImage = images[index];
-  // index=0
-  //currentImage = images[0] = { id: 101, src: "фото1.jpg", alt: "..." }
-  //index=1 
-  //currentImage = images[1] = { id: 102, src: "фото2.jpg", alt: "..." }
-
-
 
   return (
-   <div className="tripcard">
+    <div className="tripcard">
       <div className="tripcard__image">
         <div className="tripcard__photo">
-        
-          {/* Кнопка сердечка крепится к tripcard__photo*/}
-          <HeartLike onToggle={(liked) => console.log('Лайк:', liked)} />
+          {/* Передаём состояние в HeartLike */}
+          <HeartLike 
+            liked={isLiked}
+            onToggle={toggleLike}
+            disabled={loading}
+          />
 
-
-          {/* Галерея фотографий */}
           <img 
             src={currentImage.src} 
             alt={trip.title}
           />
-          {/* стрелки появляются если 2+ фото*/}
-          {/* стрелки крепятся к tripcard__photo*/}
+          
           {images.length > 1 && (
-           <>
-            <ImageArrows
-              onPrev={handlePrev1}
-              onNext={handleNext1}
-              isPrevDisabled={index === 0}
-              isNextDisabled={index === lastIndex}
-            />
-
-           <ImageDots
-              total={images.length}
-              current={index}
-              onDotClick={(dotIndex) => setIndex(dotIndex)}
-            />
-          </>
+            <>
+              <ImageArrows
+                onPrev={handleNext}
+                onNext={handlePrev}
+                isPrevDisabled={index === 0}
+                isNextDisabled={index === lastIndex}
+              />
+              <ImageDots
+                total={images.length}
+                current={index}
+                onDotClick={(dotIndex) => setIndex(dotIndex)}
+              />
+            </>
           )}
         </div>
       </div>
-   
-
-
 
       <div className="tripcard__content">
         <h3 className="tripcard__title">{trip.title}</h3>
@@ -99,8 +84,8 @@ function TripCard( {tripId, trip} ) {
             variant="trip"
           />
         </div>
+      </div>
     </div>
-  </div>
   );
 }
 

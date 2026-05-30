@@ -2,41 +2,13 @@
   --columns: 12;    
   --gap: 1rem;  
   --container-padding: 1rem;  /* Отступы по краям */
-  --cards-per-row: 1;
+  --cards-per-row: 1;  /*на телефоне 1 карточка тура*/
 }
 
 html {
   font-size: 16px;
 }
 
-
-/* На планшетах (768px = 48rem) */
-@media (min-width: 48rem) {
-  html {
-    font-size: 17px;
-  }
-  :root {
-    --gap: 1.25rem;
-      --cards-per-row: 2;
-  }
-}
-
-@media (min-width: 62rem) { 
-  :root {
-    --cards-per-row: 3;
-  }
-}
-
-/* На десктопах (1280px = 80rem) */
-@media (min-width: 80rem) {
-  html {
-    font-size: 18px;
-  }
-  :root {
-    --gap: 1.5rem;  
-    --cards-per-row: 4;
-  }
-}
 
 /* Контейнер для центрирования контента */
 .container {
@@ -53,58 +25,13 @@ html {
   gap: var(--gap);
 }
 
-/* Классы для колонок (сколько занимать) */
-.col-1 { grid-column: span 1; }
-.col-2 { grid-column: span 2; }
-.col-3 { grid-column: span 3; }
-.col-4 { grid-column: span 4; }
-.col-5 { grid-column: span 5; }
-.col-6 { grid-column: span 6; }
-.col-7 { grid-column: span 7; }
-.col-8 { grid-column: span 8; }
-.col-9 { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }  /* вся ширина */
-
-/* Телефон  всё в колонку */
-.mobile-col-12 { grid-column: span 12; }
-
-/* Планшет */
-@media (min-width: 48rem) {
-  .tablet-col-1 { grid-column: span 1; }
-  .tablet-col-2 { grid-column: span 2; }
-  .tablet-col-3 { grid-column: span 3; }
-  .tablet-col-4 { grid-column: span 4; }
-  .tablet-col-5 { grid-column: span 5; }
-  .tablet-col-6 { grid-column: span 6; }
-  .tablet-col-7 { grid-column: span 7; }
-  .tablet-col-8 { grid-column: span 8; }
-  .tablet-col-9 { grid-column: span 9; }
-  .tablet-col-10 { grid-column: span 10; }
-  .tablet-col-11 { grid-column: span 11; }
-  .tablet-col-12 { grid-column: span 12; }
-}
-
-/* Десктоп */
-@media (min-width: 80rem) {
-  .desktop-col-1 { grid-column: span 1; }
-  .desktop-col-2 { grid-column: span 2; }
-  .desktop-col-3 { grid-column: span 3; }
-  .desktop-col-4 { grid-column: span 4; }
-  .desktop-col-5 { grid-column: span 5; }
-  .desktop-col-6 { grid-column: span 6; }
-  .desktop-col-7 { grid-column: span 7; }
-  .desktop-col-8 { grid-column: span 8; }
-  .desktop-col-9 { grid-column: span 9; }
-  .desktop-col-10 { grid-column: span 10; }
-  .desktop-col-11 { grid-column: span 11; }
-  .desktop-col-12 { grid-column: span 12; }
-}
-
 
 
 .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 clamp(1rem, 8vw, 8rem);
@@ -112,48 +39,56 @@ html {
 
 .home__title {
 	font-size: clamp(1.5rem, 5vw, 2rem);
-  /* min preffered% max*/
+  /* clamp(min, preffered%, max)*/
 	margin-bottom: 1rem;
-	margin-top: 8rem;
+	margin-top: 3rem;
 	text-align: center;
 }
 
 .home__slogan {
-	font-size: clamp(0.7rem, 2vw, 1.2rem);
+	font-size: clamp(0.9rem, 2vw, 1.2rem);
 	text-align: center;
 	color: #687777;
 	margin-bottom: 2rem;
 }
 
 .home__search-switch {
-  margin: 1.25rem auto 0;
-  width: fit-content;
-  max-width: 100%;
+  margin: 0;
+  width: auto; 
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 .home__section {
-  margin: 3.75rem 0; 
-
+  margin: 3rem 0; 
 }
 
 .home__section-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .home__section-title {
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-size: clamp(1rem, 2.6vw, 1.3125rem);
   font-weight: 600;
   margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .home__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--gap, 1rem);
+  align-items: stretch;
 }
 
 .home__grid > * {
@@ -164,3 +99,52 @@ html {
   На десктопе: 12 / 4 = span 3  12/3=4карточки в ряд*
   */
 }
+
+
+/* На планшетах (768px = 48rem) */
+@media (min-width: 48rem) {
+  html {
+    font-size: 17px;
+  }
+  :root {
+    --gap: 1.25rem;
+    --cards-per-row: 2;
+  }
+
+  .home__section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+
+
+/* ДЕСКТОПЫ (1024px = 64rem) */
+@media (min-width: 64rem) { 
+  :root {
+    --cards-per-row: 3;
+  }
+}
+
+
+
+
+
+/* БОЛЬШИЕ ЭКРАНЫ (1440px = 90rem) */
+@media (min-width: 90rem) { 
+  html {
+    font-size: 18px;
+  }
+  :root {
+    --gap: 1.5rem;  
+    --cards-per-row: 4;
+  }
+}
+
+
+
