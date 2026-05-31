@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 
@@ -10,11 +11,11 @@ function Footer() {
         <div className="footer__column">
           <h3 className="footer__title">Разделы</h3>
           <ul className="footer__list">
-            <li><a href="/">Рекомендации</a></li>
-            <li><a href="/trips">Туры</a></li>
-            <li><a href="/avia">Авиабилеты</a></li>
-            <li><a href="/hotels">Отели</a></li>
-            <li><a href="/about">О нас</a></li>
+            <li><Link to="/">Рекомендации</Link></li>
+            <li><Link to="/trips">Туры</Link></li>
+            <li><Link to="/avia">Авиабилеты</Link></li>
+            <li><Link to="/hotels">Отели</Link></li>
+            <li><Link to="/about">О нас</Link></li>
           </ul>
         </div>
 
@@ -22,8 +23,8 @@ function Footer() {
         <div className="footer__column">
           <h3 className="footer__title">Оплата</h3>
           <ul className="footer__list">
-            <li><a href="/cart">Корзина</a></li>
-            <li><a href="/login">Личный кабинет</a></li>
+            <li><Link to="/cart">Корзина</Link></li>
+            <li><Link to="/login">Личный кабинет</Link></li>
           </ul>
         </div>
 
@@ -35,42 +36,69 @@ function Footer() {
           
             <div className="footer__destinations-group">
               <span className="footer__country-name">Россия: </span>
-              <a href="/trips?city=Сочи">Сочи</a>, <a href="/trips?city=Санкт-Петербург">СПб</a>, <a href="/trips?city=Москва">Москва</a>, <a href="/trips?city=Казань">Казань</a>, <a href="/trips?city=Геленджик">Геленджик</a>
+              <Link to="/trips?city=Сочи">Сочи</Link>,{' '}
+              <Link to="/trips?city=Санкт-Петербург">СПб</Link>,{' '}
+              <Link to="/trips?city=Москва">Москва</Link>,{' '}
+              <Link to="/trips?city=Казань">Казань</Link>,{' '}
+              <Link to="/trips?city=Геленджик">Геленджик</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">Турция: </span>
-              <a href="/trips?city=Стамбул">Стамбул</a>, <a href="/trips?city=Анталия">Анталия</a>, <a href="/trips?city=Аланья">Аланья</a>, <a href="/trips?city=Каппадокия">Каппадокия</a>, <a href="/trips?city=Кемер">Кемер</a>, <a href="/trips?city=Бодрум">Бодрум</a>
+              <Link to="/trips?city=Стамбул">Стамбул</Link>,{' '}
+              <Link to="/trips?city=Анталья">Анталья</Link>,{' '}
+              <Link to="/trips?city=Аланья">Аланья</Link>,{' '}
+              <Link to="/trips?city=Каппадокия">Каппадокия</Link>,{' '}
+              <Link to="/trips?city=Кемер">Кемер</Link>,{' '}
+              <Link to="/trips?city=Бодрум">Бодрум</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">Таиланд: </span>
-              <a href="/trips?city=Пхукет">Пхукет</a>, <a href="/trips?city=Паттайя">Паттайя</a>, <a href="/trips?city=Краби">Краби</a>, <a href="/trips?city=Самуи">Самуи</a>, <a href="/trips?city=Бангкок">Бангкок</a>
+              <Link to="/trips?city=Пхукет">Пхукет</Link>,{' '}
+              <Link to="/trips?city=Паттайя">Паттайя</Link>,{' '}
+              <Link to="/trips?city=Краби">Краби</Link>,{' '}
+              <Link to="/trips?city=Самуи">Самуи</Link>,{' '}
+              <Link to="/trips?city=Бангкок">Бангкок</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">Египет: </span>
-              <a href="/trips?city=Хургада">Хургада</a>, <a href="/trips?city=Шарм-эль-Шейх">Шарм-Эль-Шейх</a>, <a href="/trips?city=Каир">Каир</a>, <a href="/trips?city=Марса-Алам">Марса-Алам</a>
+              <Link to="/trips?city=Хургада">Хургада</Link>,{' '}
+              <Link to="/trips?city=Шарм-эль-Шейх">Шарм-Эль-Шейх</Link>,{' '}
+              <Link to="/trips?city=Каир">Каир</Link>,{' '}
+              <Link to="/trips?city=Марса-Алам">Марса-Алам</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">ОАЭ: </span>
-              <a href="/trips?city=Дубай">Дубай</a>, <a href="/trips?city=Абу-Даби">Абу-Даби</a>, <a href="/trips?city=Шарджа">Шарджа</a>, <a href="/trips?city=Рас-эль-Хайма">Рас-эль-Хайма</a>
+              <Link to="/trips?city=Дубай">Дубай</Link>,{' '}
+              <Link to="/trips?city=Абу-Даби">Абу-Даби</Link>,{' '}
+              <Link to="/trips?city=Шарджа">Шарджа</Link>,{' '}
+              <Link to="/trips?city=Рас-эль-Хайма">Рас-эль-Хайма</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">Мальдивы: </span>
-              <a href="/trips?city=Мале">Мале</a>, <a href="/trips?city=Маафуши">Маафуши</a>, <a href="/trips?city=Баа">Баа</a>
+              <Link to="/trips?city=Мале">Мале</Link>,{' '}
+              <Link to="/trips?city=Маафуши">Маафуши</Link>,{' '}
+              <Link to="/trips?city=Баа">Баа</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">Шри-Ланка: </span>
-              <a href="/trips?city=Коломбо">Коломбо</a>, <a href="/trips?city=Хиккадува">Хиккадува</a>, <a href="/trips?city=Унаватуна">Унаватуна</a>
+              <Link to="/trips?city=Коломбо">Коломбо</Link>,{' '}
+              <Link to="/trips?city=Хиккадува">Хиккадува</Link>,{' '}
+              <Link to="/trips?city=Унаватуна">Унаватуна</Link>
             </div>
 
             <div className="footer__destinations-group">
               <span className="footer__country-name">Грузия: </span>
-              <a href="/trips?city=Тбилиси">Тбилиси</a>, <a href="/trips?city=Батуми">Батуми</a>, <a href="/trips?city=Казбеги">Казбеги</a>, <a href="/trips?city=Кахетия">Кахетия</a>, <a href="/trips?city=Боржоми">Боржоми</a>
+              <Link to="/trips?city=Тбилиси">Тбилиси</Link>,{' '}
+              <Link to="/trips?city=Батуми">Батуми</Link>,{' '}
+              <Link to="/trips?city=Казбеги">Казбеги</Link>,{' '}
+              <Link to="/trips?city=Кахетия">Кахетия</Link>,{' '}
+              <Link to="/trips?city=Боржоми">Боржоми</Link>
             </div>
 
         
