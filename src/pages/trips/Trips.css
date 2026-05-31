@@ -1,10 +1,10 @@
-
 .top__part {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 
 .trips__title {
   font-size: clamp(1.5rem, 5vw, 2rem);
@@ -20,19 +20,18 @@
 
 .trips__layout {
   display: grid;
-  grid-template-columns: 360px 1fr; /* Фильтры 360px, карточки занимают остальное */
+  grid-template-columns: 1fr;
   gap: 28px;
   align-items: start;
+  margin-top: 1rem;
 }
-
 
 .trips__filters-sidebar {
   position: sticky;
-  top: 20px;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
+  position: static;
 }
-
 
 .trips__content {
   display: flex;
@@ -45,19 +44,20 @@
   color: #666;
   padding: 12px 0;
   border-bottom: 1px solid #e0e0e0;
+  text-align: center;
 }
 
 .trips__count {
   font-weight: 700;
-  color: #3a6ea5;
+  color: #000000;
   font-size: 18px;
   margin-left: 5px;
 }
 
-.trips__grid {
+.trips__all{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 
@@ -69,14 +69,14 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .trips__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .trips__layout {
     grid-template-columns: 1fr; /* На мобилках в колонку */
     gap: 20px;
@@ -94,19 +94,9 @@
 }
 
 
-@media (max-width: 480px) {
-  .trips__title {
-    font-size: 24px;
-  }
+@media (min-width: 480px) {
 
-  .trips__layout {
-    gap: 16px;
-  }
 
-  .trips__grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 
   .trips__results {
     font-size: 14px;

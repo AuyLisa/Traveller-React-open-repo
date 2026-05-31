@@ -59,6 +59,7 @@ function Avia() {
         </div>
       </div>
 
+
       {/* Основной контейнер с фильтрами и билетами */}
       <div className="avia__layout">
         {/* Фильтры - слева */}
@@ -98,9 +99,9 @@ function Avia() {
                 <span className="avia__count"> {filtered.length}</span>
               </div>
 
-              <div className="avia__flights">
+              <div className="avia__all">
                 {filtered.map((avia) => (
-                  <div className="avia__row" key={avia.id}>
+                  <div className="avia__ticket" key={avia.id}>
                     <AviaCard aviaCardId={avia.id} avia={avia} />
                     <AviaClasses 
                       aviaClassesId={avia.id} 

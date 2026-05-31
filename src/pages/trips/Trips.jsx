@@ -70,6 +70,7 @@ function Trips() {
     setSearchParams({}); // Очищаем URL параметры
   }, [setSearchParams]);
 
+
   return (
     <Layout>
 
@@ -119,7 +120,7 @@ function Trips() {
                 <span className="trips__count"> {filtered.length}</span>
               </div>
               
-              <div className="trips__grid">
+              <div className="trips__all">
                 {filtered.map((trip) => (
                   <TripCard key={trip.id} tripId={trip.id} trip={trip} />
                 ))}
