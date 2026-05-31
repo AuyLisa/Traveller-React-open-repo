@@ -78,6 +78,7 @@
 @media (min-width: 64rem) {
   .card-trip-frommoscow {
     padding: 0.7rem;
+    height: 22.5rem;
   }
 
   .card-trip-frommoscow__country {
@@ -88,7 +89,7 @@
   }
 
   .card-trip-frommoscow__buttons {
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 }
 

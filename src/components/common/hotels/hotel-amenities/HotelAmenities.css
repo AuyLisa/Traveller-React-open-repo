@@ -1,13 +1,15 @@
 .hotel-amenities {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: stretch;
   flex-wrap: wrap;
   gap: 0.75rem;
   padding: 0.5rem 0;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
   margin: 0.5rem;
+  width: fit-content;
+  align-self: center;
 }
 
 .hotel-amenities__item {
@@ -33,4 +35,21 @@
 }
 
 
+@media (min-width: 64rem) {
+  .hotel-amenities {
+    gap: 0.2rem;
+  }
 
+  .hotel-amenities__item {
+    gap: 0.25rem;
+    min-width: 2.5rem;
+  }
+
+  .hotel-amenities__icon {
+    width: 1rem;
+    height: 1rem;
+  } 
+
+
+
+}

@@ -1,5 +1,5 @@
 .header {
-  background: white;
+  background: rgb(193, 255, 35);
   padding: 0.625rem;   
   display: flex;
   justify-content: space-between;
@@ -8,8 +8,8 @@
 
 .header__logo {
   font-size: 1.5rem;   
-  font-weight: bold;
-  color: #751AE4;
+  font-weight: 550;
+  color: #000000;
   text-decoration: none;
 }
 

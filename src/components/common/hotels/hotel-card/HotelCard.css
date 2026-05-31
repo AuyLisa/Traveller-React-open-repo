@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;              
   height: 100%;  
-  width: 100%;
+  width: 70%;
   border: 2px solid #b9bcbe;
   border-radius: 20px;         
   background: white;
@@ -205,4 +205,77 @@
   .hotelcard__photo img {
     border-radius: 20px 0 0 20px;
 }
+}
+
+
+
+@media (min-width: 64rem) {
+  .hotelcard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    max-width: 95%;
+    height: 100%;
+  } 
+
+  .hotelcard__image {
+    width: 300px;
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+
+  .hotelcard__photo {  
+    width: 300px; 
+    height: 100%;
+  }
+
+  .hotelcard__content {
+    margin: 0.5rem 0;    
+    font-size: 0.1rem;   
+    justify-content: flex-start;  
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .hotelcard__title {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hotelcard__stars {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hotelcard__location {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hotelcard__description {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.2rem;
+  }
+
+  .hotelcard__actions {
+    justify-content: right;
+  }
+
+  .hotelcard__button {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .hotelcard__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
 }

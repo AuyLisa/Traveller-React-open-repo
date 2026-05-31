@@ -88,16 +88,24 @@
 }
 
 
-@media (min-width: 480px) {
+@media (min-width: 64rem) {
+  .avia__layout {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 0.3rem;
+    align-items: start;
+    margin-top: 1rem;
+  }
+
+  .avia__filters-sidebar {
+    position: sticky;
+    top: 1rem;           /* ← отступ от верха при скролле */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
   .avia__title {
     font-size: 24px;
   }
 
-  .avia__layout {
-    gap: 16px;
-  }
-
-  .avia__flights {
-    gap: 16px;
-  }
 }

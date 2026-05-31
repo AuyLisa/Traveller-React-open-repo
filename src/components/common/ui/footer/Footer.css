@@ -3,8 +3,8 @@
 
 .footer {
   margin-top: auto;
-  background-color: #751AE4;
-  color: #ffffff;
+  background-color: rgb(193, 255, 35);
+  color: #000000;
   padding: 2rem 1rem 1rem;
 }
 
@@ -32,7 +32,7 @@
   font-size: clamp(0.9rem, 2.2vw, 1.1rem);
   font-weight: 600;
   margin-bottom: 0;
-  color: #ffffff;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -50,7 +50,7 @@
 
 .footer__list a,
 .footer__destinations-group a {
-  color: #eae5e5;
+  color: #000000;
   text-decoration: none;
   font-size: clamp(0.8rem, 2vw, 1rem);
   transition: color 0.2s ease;
@@ -58,7 +58,7 @@
 
 .footer__list a:hover,
 .footer__destinations-group a:hover {
-  color: #fff;
+  color: #c27171;
   text-decoration: underline;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .footer__country-name {
-  color: #fff;
+  color: #000000;
   font-weight: normal;
   margin-right: 0.25rem;
 }
@@ -83,15 +83,15 @@
 .footer__social {
   text-align: center;
   padding: 1.5rem 0;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   margin-bottom: 1.5rem;
 }
 
 .footer__social-title {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #000000;
 }
 
 .footer__social-icons {
@@ -125,7 +125,7 @@
 .footer__bottom {
   text-align: center;
   font-size: 0.75rem;
-  color: #ffffff;
+  color: #000000;
   padding-top: 0.5rem;
 }
 
@@ -170,14 +170,12 @@
   }
   
   .footer__container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
   
-  /* 5-я колонка занимает 1fr как и остальные */
   .footer__social {
     max-width: 1200px;
     margin-left: auto;

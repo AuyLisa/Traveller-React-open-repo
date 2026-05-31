@@ -126,11 +126,14 @@ html {
 }
 
 
-
 /* ДЕСКТОПЫ (1024px = 64rem) */
 @media (min-width: 64rem) { 
   :root {
     --cards-per-row: 3;
+  }
+
+  .home__slogan {
+    font-size: 1.3rem;
   }
 }
 
