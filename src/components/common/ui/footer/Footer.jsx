@@ -5,110 +5,85 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        {/* Колонка 1 - Компания */}
+
+        {/* Колонка 1 - Разделы+ */}
         <div className="footer__column">
-          <h3 className="footer__title">Компания</h3>
+          <h3 className="footer__title">Разделы</h3>
           <ul className="footer__list">
+            <li><a href="/">Рекомендации</a></li>
+            <li><a href="/trips">Туры</a></li>
+            <li><a href="/avia">Авиабилеты</a></li>
+            <li><a href="/hotels">Отели</a></li>
             <li><a href="/about">О нас</a></li>
-            <li><a href="/career">Карьера в Traveler</a></li>
-            <li><a href="/reviews">Отзывы о нас</a></li>
-            <li><a href="/contacts">Контакты</a></li>
           </ul>
         </div>
 
-        {/* Колонка 2 - Инструменты */}
+        {/* Колонка 2 - Оплата+*/}
         <div className="footer__column">
-          <h3 className="footer__title">Инструменты</h3>
+          <h3 className="footer__title">Оплата</h3>
           <ul className="footer__list">
-            <li><a href="/price-calendar">Календарь низких цен</a></li>
-            <li><a href="/gift-certificates">Подарочные сертификаты</a></li>
-            <li><a href="/installment">Оформить тур в рассрочку</a></li>
-            <li><a href="/partners">Партнерская программа</a></li>
-            <li><a href="/travel-journal">Журнал о путешествиях</a></li>
+            <li><a href="/cart">Корзина</a></li>
+            <li><a href="/login">Личный кабинет</a></li>
           </ul>
         </div>
 
-        {/* Колонка 3 - Помощь */}
-        <div className="footer__column">
-          <h3 className="footer__title">Помощь</h3>
-          <ul className="footer__list">
-            <li><a href="/how-to-book">Как забронировать тур?</a></li>
-            <li><a href="/visa-rules">Правила въезда и визы</a></li>
-            <li><a href="/faq">Ответы на вопросы</a></li>
-            <li><a href="/promotions">Акции</a></li>
-            <li><a href="/hotels-only">Отели без перелета</a></li>
-          </ul>
-        </div>
-
-        {/* Колонка 4 - Направления */}
+        {/* Колонка 3 - Направления туров*/}
         <div className="footer__column">
           <h3 className="footer__title">Популярные направления</h3>
           
           <div className="footer__column_to-left">
+          
             <div className="footer__destinations-group">
               <span className="footer__country-name">Россия: </span>
-              <a href="/sochi">Сочи</a>, <a href="/adler">Адлер</a>, <a href="/spb">СПб</a>, <a href="/moscow">Москва</a>
+              <a href="/trips?city=Сочи">Сочи</a>, <a href="/trips?city=Санкт-Петербург">СПб</a>, <a href="/trips?city=Москва">Москва</a>, <a href="/trips?city=Казань">Казань</a>, <a href="/trips?city=Геленджик">Геленджик</a>
             </div>
-          
+
             <div className="footer__destinations-group">
               <span className="footer__country-name">Турция: </span>
-              <a href="/istanbul">Стамбул</a>, <a href="/antalya">Анталья</a>, <a href="/alanya">Алания</a>
+              <a href="/trips?city=Стамбул">Стамбул</a>, <a href="/trips?city=Анталия">Анталия</a>, <a href="/trips?city=Аланья">Аланья</a>, <a href="/trips?city=Каппадокия">Каппадокия</a>, <a href="/trips?city=Кемер">Кемер</a>, <a href="/trips?city=Бодрум">Бодрум</a>
             </div>
-          
+
             <div className="footer__destinations-group">
               <span className="footer__country-name">Таиланд: </span>
-              <a href="/phuket">Пхукет</a>, <a href="/pattaya">Паттайя</a>
+              <a href="/trips?city=Пхукет">Пхукет</a>, <a href="/trips?city=Паттайя">Паттайя</a>, <a href="/trips?city=Краби">Краби</a>, <a href="/trips?city=Самуи">Самуи</a>, <a href="/trips?city=Бангкок">Бангкок</a>
             </div>
-          
+
             <div className="footer__destinations-group">
               <span className="footer__country-name">Египет: </span>
-              <a href="/hurghada">Хургада</a>, <a href="/sharm">Шарм-Эль-Шейх</a>
+              <a href="/trips?city=Хургада">Хургада</a>, <a href="/trips?city=Шарм-эль-Шейх">Шарм-Эль-Шейх</a>, <a href="/trips?city=Каир">Каир</a>, <a href="/trips?city=Марса-Алам">Марса-Алам</a>
             </div>
-          
+
             <div className="footer__destinations-group">
               <span className="footer__country-name">ОАЭ: </span>
-              <a href="/dubai">Дубай</a>, <a href="/sharjah">Шарджа</a>
+              <a href="/trips?city=Дубай">Дубай</a>, <a href="/trips?city=Абу-Даби">Абу-Даби</a>, <a href="/trips?city=Шарджа">Шарджа</a>, <a href="/trips?city=Рас-эль-Хайма">Рас-эль-Хайма</a>
             </div>
-          
+
             <div className="footer__destinations-group">
               <span className="footer__country-name">Мальдивы: </span>
-              <a href="/male">Мале</a>, <a href="/maafushi">Маафуши</a>
+              <a href="/trips?city=Мале">Мале</a>, <a href="/trips?city=Маафуши">Маафуши</a>, <a href="/trips?city=Баа">Баа</a>
             </div>
-          
+
             <div className="footer__destinations-group">
               <span className="footer__country-name">Шри-Ланка: </span>
-              <a href="/hikkaduwa">Хиккадува</a>
+              <a href="/trips?city=Коломбо">Коломбо</a>, <a href="/trips?city=Хиккадува">Хиккадува</a>, <a href="/trips?city=Унаватуна">Унаватуна</a>
             </div>
-          
+
             <div className="footer__destinations-group">
-              <span className="footer__country-name">Индия: </span>
-              <a href="/goa">Гоа</a>
+              <span className="footer__country-name">Грузия: </span>
+              <a href="/trips?city=Тбилиси">Тбилиси</a>, <a href="/trips?city=Батуми">Батуми</a>, <a href="/trips?city=Казбеги">Казбеги</a>, <a href="/trips?city=Кахетия">Кахетия</a>, <a href="/trips?city=Боржоми">Боржоми</a>
             </div>
+
+        
           </div>
         </div>
 
-        {/* Колонка 5 - Туроператоры */}
-        <div className="footer__column">
-          <h3 className="footer__title">Туры от туроператоров</h3>
-          <ul className="footer__list">
-            <li><a href="/anex">Anex</a></li>
-            <li><a href="/biblio-globus">Biblio Globus</a></li>
-            <li><a href="/coral-travel">Coral Travel</a></li>
-            <li><a href="/level-travel">Level.Travel</a></li>
-            <li><a href="/pegas">Pegas Touristik</a></li>
-            <li><a href="/fun-sun">Fun&Sun</a></li>
-            <li><a href="/sunmar">Sunmar</a></li>
-            <li><a href="/tez-tour">Tez Tour</a></li>
-            <li><a href="/alean">Алеан</a></li>
-          </ul>
-        </div>
       </div>
 
       {/* Блок "Будьте с нами" и соцсети */}
       <div className="footer__social">
         <h3 className="footer__social-title">Будьте с нами</h3>
         <div className="footer__social-icons">
-          <a href="https://vk.com" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="ВКонтакте">
+          <a href="https://vk.ru/" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="ВКонтакте">
             <svg className="footer__social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
               <path d="M21.303 6.754c.128-.418 0-.724-.625-.724h-2.064c-.525 0-.767.278-.896.583 0 0-1.061 2.582-2.563 4.258-.482.482-.701.634-.963.634-.131 0-.321-.152-.321-.57V6.754c0-.524-.158-.724-.621-.724H8.716c-.348 0-.558.258-.558.505 0 .53.79.652.871 2.141v3.232c0 .708-.133.836-.425.836-.701 0-2.406-2.574-3.418-5.522-.199-.57-.398-.778-.925-.778H1.646c-.6 0-.718.278-.718.583 0 .546.74 3.257 3.451 6.84 1.806 2.58 4.351 3.976 6.667 3.976 1.391 0 1.562-.312 1.562-.85v-1.959c0-.624.133-.748.578-.748.327 0 .889.163 2.201 1.417 1.5 1.5 1.746 2.17 2.59 2.17h2.064c.6 0 .9-.312.727-.927-.189-.589-.87-1.443-1.772-2.456-.489-.57-1.222-1.183-1.445-1.49-.31-.365-.222-.526 0-.852 0 0 2.556-3.603 2.822-4.828z"/>
             </svg>
