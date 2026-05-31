@@ -67,7 +67,7 @@ function TripCard({ tripId, trip }) {
         <h3 className="tripcard__title">{trip.title}</h3>
         <p className="tripcard__description">{trip.description}</p>
         <p className="tripcard__stars">отель {'⭐'.repeat(trip.stars)}</p>
-        <p className="tripcard__price">{trip.price} ₽</p>
+        {/* <p className="tripcard__price">{trip.price} ₽</p> */}
 
         <div className="tripcard__actions">
           <button
@@ -75,7 +75,7 @@ function TripCard({ tripId, trip }) {
             className="tripcard__button"
             onClick={() => navigate(`/trips/${tripId}`)}
           >
-            Подробнее
+            {trip.price} ₽
           </button>
           <CardCartControls
             type="trip"
