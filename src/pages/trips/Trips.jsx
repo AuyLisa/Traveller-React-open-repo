@@ -70,6 +70,7 @@ function Trips() {
     setSearchParams({}); // Очищаем URL параметры
   }, [setSearchParams]);
 
+  
 
   return (
     <Layout>

@@ -25,6 +25,7 @@ function Hotels() {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
 
+
   const handleStarToggle = useCallback((n) => {
     setSelectedStars((prev) => {
       if (prev.includes(n)) return prev.filter((x) => x !== n);
@@ -106,7 +107,7 @@ function Hotels() {
                 Найдено отелей:
                 <span className="hotels__count"> {filtered.length}</span>
               </div>
-              <div className="hotels__cards-grid">
+              <div className="hotels__all">
                 {filtered.map((hotel) => (
                   <HotelCard key={hotel.id} hotelId={hotel.id} hotel={hotel} />
                 ))}
