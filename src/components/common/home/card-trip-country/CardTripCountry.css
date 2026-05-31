@@ -103,6 +103,7 @@
 @media (min-width: 64rem) {
   .card-trip-country {
     padding: 0.7rem;
+    height: 22.5rem;
   }
   
   .card-trip-country__country {
@@ -115,7 +116,7 @@
   }
   
   .card-trip-country__buttons {
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 }
 

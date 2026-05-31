@@ -98,3 +98,9 @@
 .tripcard__button--cart:hover {
   background-color: #5a15b0;
 }
+
+
+
+@media (min-width: 64rem) {
+
+  }

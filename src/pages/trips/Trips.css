@@ -26,7 +26,7 @@
 }
 
 .trips__filters-sidebar {
-  position: sticky;
+  position: static;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
   position: static;
@@ -67,6 +67,7 @@
   font-size: 0.95rem;
 }
 
+
 @media (min-width: 48rem) {
 
   .trips__filters-sidebar {
@@ -81,10 +82,24 @@
 }
 
 
+@media (min-width: 64rem) {
+  .trips__layout {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 0.3rem;
+    align-items: start;
+    margin-top: 1rem;
+  }
 
-@media (min-width: 1024px) {
-  .trips__grid {
-    grid-template-columns: repeat(3, 1fr);
+  .trips__filters-sidebar {
+    position: sticky;
+    top: 1rem;           /* ← отступ от верха при скролле */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
+  .trips__all {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
 }

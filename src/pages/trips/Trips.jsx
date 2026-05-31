@@ -82,6 +82,7 @@ function Trips() {
         </div>
       </div>
 
+
       {/* Основной контейнер с фильтрами и карточками */}
       <div className="trips__layout">
         {/* Фильтры - слева */}

@@ -1,3 +1,4 @@
+
 .top__part {
   display: flex;
   flex-direction: column;
@@ -86,4 +87,25 @@
   .hotels__content {
     width: 100%;
   }
+}
+
+
+
+
+@media (min-width: 64rem) {
+  .hotels__layout {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 0.3rem;
+    align-items: start;
+    margin-top: 1rem;
+  }
+
+  .hotels__filters-sidebar {
+    position: sticky;
+    top: 1rem;           /* ← отступ от верха при скролле */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
 }

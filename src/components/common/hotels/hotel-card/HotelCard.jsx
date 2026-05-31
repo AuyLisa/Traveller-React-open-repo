@@ -13,7 +13,6 @@ import { hotelToCartPayload } from '@utils/cartItemBuilders';
 import './HotelCard.css';
 
 
-
 function getNightsText(duration) {
   const lastDigit = duration % 10;
   const lastTwoDigits = duration % 100;
@@ -122,26 +121,26 @@ function HotelCard({ hotelId, hotel }) {
         
         <HotelAmenities options={limitedOptions} />
      
-        <div className="hotelcard__rating">
-          <p className="hotelcard__duration">{hotel.duration} {getNightsText(hotel.duration)}</p>
-          <p className="hotelcard__reviews">{hotel.review} {getReviewsText(hotel.review)}</p>
-        </div>
+          <div className="hotelcard__rating">
+            <p className="hotelcard__duration">{hotel.duration} {getNightsText(hotel.duration)}</p>
+            <p className="hotelcard__reviews">{hotel.review} {getReviewsText(hotel.review)}</p>
+          </div>
 
-        <div className="hotelcard__actions">
-          <button 
-            type="button" 
-            className="hotelcard__button"
-            onClick={() => navigate(`/hotels/${hotelId}`)}
-          >
-            от {hotel.price} ₽
-          </button>
-          {/* <CardCartControls
-            type="hotel"
-            itemId={hotelId}
-            payload={hotelToCartPayload(hotel)}
-            variant="hotel"
-          /> */}
-        </div>
+          <div className="hotelcard__actions">
+            <button 
+              type="button" 
+              className="hotelcard__button"
+              onClick={() => navigate(`/hotels/${hotelId}`)}
+            >
+              от {hotel.price} ₽
+            </button>
+            {/* <CardCartControls
+              type="hotel"
+              itemId={hotelId}
+              payload={hotelToCartPayload(hotel)}
+              variant="hotel"
+            /> */}
+          </div>
       </div>
     </div>
   );
