@@ -9,7 +9,7 @@
 }
 
 .footer__container {
-  display: flex;  /* mobile first */
+  display: grid;  /* mobile first */
   flex-direction: column;
   grid-template-columns: 1fr;
   justify-items: center;

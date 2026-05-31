@@ -56,9 +56,6 @@
   margin-top: 0;
 }
 
-/* ===== БАЗА: телефоны (0 - 768px) — стили уже выше ===== */
-
-
 /* ===== ПЛАНШЕТЫ (от 48rem = 768px) ===== */
 @media (min-width: 48rem) {
   .card-trip-frommoscow {
@@ -73,7 +70,7 @@
   }
 
   .card-trip-frommoscow__buttons {
-    gap: 0.4rem;
+    gap: 0.6rem;
   }
 }
 
