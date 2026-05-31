@@ -687,7 +687,7 @@ const trips = [
     ],
     description: '5 ночей в Каире + 7 ночей в Хургаде, пирамиды',
     country: 'Египет',
-    city: 'Каир/Хургада',
+    city: 'Каир',
     duration: 12,
     price: 68500,
     stars: 4
@@ -1701,7 +1701,7 @@ const trips = [
     ],
     description: '7 ночей, серф-лагерь, обучение, лучшие волны',
     country: 'Мальдивы',
-    city: 'Мале',
+    city: 'Маафуши',
     duration: 7,
     price: 128000,
     stars: 4
@@ -2016,14 +2016,14 @@ const trips = [
   id: 126,
   title: 'Тур на Шри-Ланку "Чайные плантации"',
   images: [
-    { id: 12601, src: "/images/trips/id126/trip-id1-p1.jpg", alt: "Чайные плантации Нувара-Элии" },
-    { id: 12602, src: "/images/trips/id126/trip-id1-p2.jpg", alt: "Гора Адамов пик" },
-    { id: 12603, src: "/images/trips/id126/trip-id1-p3.jpg", alt: "Ботанический сад" },
-    { id: 12604, src: "/images/trips/id126/trip-id1-p4.jpg", alt: "Водопад Бамбараканда" }
+    { id: 12601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Чайные плантации Нувара-Элии" },
+    { id: 12602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Гора Адамов пик" },
+    { id: 12603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Ботанический сад" },
+    { id: 12604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Водопад Бамбараканда" }
   ],
   description: '9 ночей, завтраки и ужины, экскурсии',
   country: 'Шри-Ланка',
-  city: 'Нувара-Элия',
+  city: 'Коломбо',
   duration: 9,
   price: 142800,
   stars: 4
@@ -2032,10 +2032,10 @@ const trips = [
   id: 127,
   title: 'Тур на Шри-Ланку "Сёрфинг и океан"',
   images: [
-    { id: 12701, src: "/images/trips/id127/trip-id1-p1.jpg", alt: "Пляж Унаватуна" },
-    { id: 12702, src: "/images/trips/id127/trip-id1-p2.jpg", alt: "Сёрфинг в Веллигама" },
-    { id: 12703, src: "/images/trips/id127/trip-id1-p3.jpg", alt: "Черепашья ферма" },
-    { id: 12704, src: "/images/trips/id127/trip-id1-p4.jpg", alt: "Коралловый риф" }
+    { id: 12701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Унаватуна" },
+    { id: 12702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Сёрфинг в Веллигама" },
+    { id: 12703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Черепашья ферма" },
+    { id: 12704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Коралловый риф" }
   ],
   description: '7 ночей, завтраки, обучение сёрфингу',
   country: 'Шри-Ланка',
@@ -2048,10 +2048,10 @@ const trips = [
   id: 128,
   title: 'Тур на Шри-Ланку "Золотой треугольник"',
   images: [
-    { id: 12801, src: "/images/trips/id128/trip-id1-p1.jpg", alt: "Сигирия, Львиная скала" },
-    { id: 12802, src: "/images/trips/id128/trip-id1-p2.jpg", alt: "Храм Зуба Будды в Канди" },
-    { id: 12803, src: "/images/trips/id128/trip-id1-p3.jpg", alt: "Полоннарува, древний город" },
-    { id: 12804, src: "/images/trips/id128/trip-id1-p4.jpg", alt: "Анурадхапура, ступа" }
+    { id: 12801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Сигирия, Львиная скала" },
+    { id: 12802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Храм Зуба Будды в Канди" },
+    { id: 12803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Полоннарува, древний город" },
+    { id: 12804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Анурадхапура, ступа" }
   ],
   description: '11 ночей, полный пансион, все экскурсии',
   country: 'Шри-Ланка',
@@ -2059,8 +2059,55 @@ const trips = [
   duration: 11,
   price: 189500,
   stars: 5
-}
-
+},
+{
+  id: 129,
+  title: 'Москва "Золотые купола столицы"',
+  images: [
+    { id: 12901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Красная площадь, Храм Василия Блаженного" },
+    { id: 12902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Московский Кремль, Спасская башня" },
+    { id: 12903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Большой театр" },
+    { id: 12904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "ВДНХ, фонтан Дружба народов" }
+  ],
+  description: '5 ночей, завтраки, обзорные экскурсии, входные билеты в Кремль',
+  country: 'Россия',
+  city: 'Москва',
+  duration: 5,
+  price: 42500,
+  stars: 4
+},
+{
+  id: 130,
+  title: 'Москва новогодняя "Сказка в огнях"',
+  images: [
+    { id: 13001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Новогодняя Красная площадь" },
+    { id: 13002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "ГУМ, праздничная иллюминация" },
+    { id: 13003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Каток на ВДНХ" },
+    { id: 13004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Царицыно, зимний парк" }
+  ],
+  description: '6 ночей, завтраки, новогодняя программа, экскурсии',
+  country: 'Россия',
+  city: 'Москва',
+  duration: 6,
+  price: 68900,
+  stars: 4
+},
+{
+  id: 131,
+  title: 'Казань "Сердце Татарстана"',
+  images: [
+    { id: 13101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Казанский Кремль, башня Сююмбике" },
+    { id: 13202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Мечеть Кул-Шариф" },
+    { id: 13303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Улица Баумана" },
+    { id: 13404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Дворец земледельцев" }
+  ],
+  description: '4 ночи, завтраки, экскурсии по городу, входные билеты в Кремль',
+  country: 'Россия',
+  city: 'Казань',
+  duration: 4,
+  price: 32500,
+  stars: 4
+},
 ];
 
 export default trips;
