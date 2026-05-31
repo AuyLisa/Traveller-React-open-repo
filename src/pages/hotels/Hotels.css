@@ -1,3 +1,10 @@
+.top__part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .hotels__title {
   font-size: clamp(1.5rem, 5vw, 2rem);
 	margin-bottom: 1rem;
@@ -6,46 +13,56 @@
 }
 
 .search-switch-row {
-  margin-bottom: 24px;
+  margin: 0;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 .hotels__layout {
-  display: flex;
-  gap: 24px;      
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 1rem;
 }
 
 
 .hotels__filters-sidebar {
-  flex: 1;            /* 1 часть из 4 */
-  min-width: 240px;   
-  position: sticky;  
-  top: 20px;
+  position: sticky;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  position: static;
 }
 
 
 .hotels__content {
-  flex: 4;            /* 3 части из 4 */
-  min-width: 100px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
 }
 
 
 .hotels__results {
   font-size: 16px;
   color: #666;
-  padding: 12px 0;
+  padding: 0;
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 
 .hotels__count {
   font-weight: 700;
-  color: #3a6ea5;
+  color: #000000;
   font-size: 18px;
   margin-left: 5px;
 }
 
+.hotels__all{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
 
 .hotels__empty {
   margin: 1rem 0 1.5rem;
@@ -55,7 +72,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .hotels__layout {
     flex-direction: column;
     gap: 20px;

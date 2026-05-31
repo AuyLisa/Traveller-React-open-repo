@@ -25,14 +25,10 @@ function AviaClasses({ aviaClassesId, price, duration }) {
   return (
     <div className="avia-classes">
       {classes.map(cls => (
-        <div key={cls.id} className="avia-class-card">
-          <div className="avia-class-card__header">
-            <h4 className="avia-class-card__name">{cls.name}</h4>
-          </div>
-          <div className="avia-class-card__details">
-            <p className="avia-class-card__seats">{cls.seats}</p>
-            <p className="avia-class-card__price">{cls.priceFrom.toLocaleString()} руб</p>
-          </div>
+        <div key={cls.id} className={`avia-class-card ${cls.name === 'Эконом' ? 'avia-class-card-econom' : ''} ${cls.name === 'Комфорт' ? 'avia-class-card-comfort' : ''} ${cls.name === 'Бизнес' ? 'avia-class-card-business' : ''}`}>
+          <h4 className="avia-class-card__name">{cls.name}</h4>
+          <p className="avia-class-card__seats">{cls.seats}</p>
+          <p className="avia-class-card__price">{cls.priceFrom.toLocaleString()} руб</p>
         </div>
       ))}
     </div>

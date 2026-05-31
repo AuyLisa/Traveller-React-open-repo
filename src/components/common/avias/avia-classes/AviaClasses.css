@@ -1,52 +1,79 @@
-.avia-classes {
-  flex: 1; 
-  display: flex;
-  gap: 12px;
+
+
+.avia-classes { /*обертка для 3х классов*/
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.3rem;
+    background-color: transparent;               
+    height: 100%;    
+    overflow: hidden;
+    min-width: 95%;
+    margin-inline: auto;
+    min-height: 10rem;
+    padding: 0;
+    min-height: 6rem;
 }
 
+
 .avia-class-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
   flex: 1;
   background: #fff;
   border: 2px solid #e0e0e0;
-  border-top: 4px solid #4CAF50;
   border-radius: 8px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 33%;
+
 }
+
+.avia-class-card-econom {
+  border-top: 4px solid #78bbdc;
+}
+
+.avia-class-card-comfort {
+  border-top: 4px solid #5182eb;
+}
+
+.avia-class-card-business {
+  border-top: 4px solid #260ce7;
+}
+
 
 .avia-class-card:hover {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
   transform: translateY(-0.125rem);
 }
 
-.avia-class-card__header {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;       
-  margin-bottom: 0.75rem; 
+.avia-class-card__header {      
+  margin: 0.55rem 0; 
 }
 
 .avia-class-card__name {
-  font-weight: 600;
+  margin-top: 0.3rem;
+  font-weight: 400;
   color: #333;
-  margin: 0;
-  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-size: clamp(0.8rem, 0.95rem + 0.18vw, 1.1rem);
 }
 
-.avia-class-card__details {
+.avia-class-card__details { 
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;         
-  font-size: 1rem;    
+  gap: 1rem;
 }
 
-.class-card__seats {
-}
+.avia-class-card__seats {
+  font-weight: 400;
+  font-size: clamp(0.65rem, 0.75rem + 0.2vw, 0.9rem);}
 
 .avia-class-card__price {
-  font-size: 1.2rem;    
+  font-size: clamp(0.8rem, 0.95rem + 0.18vw, 1.1rem);
   font-weight: 700;    
-
   margin-bottom: 0;
 }

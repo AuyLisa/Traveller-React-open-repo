@@ -4,6 +4,7 @@ import DownSelect from '@down-select/DownSelect';
 import './TripsToolbar.css';
 
 
+
 function starsEmoji(n) {
   return '⭐'.repeat(Math.min(5, Math.max(1, Number(n))));
 }

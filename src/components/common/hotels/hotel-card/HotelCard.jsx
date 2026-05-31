@@ -115,7 +115,8 @@ function HotelCard({ hotelId, hotel }) {
       </div>
 
       <div className="hotelcard__content">
-        <h3 className="hotelcard__title">{hotel.title} {'⭐'.repeat(hotel.star)}</h3>
+        <h3 className="hotelcard__title">{hotel.title}</h3>
+        <p className="hotelcard__stars">{'⭐'.repeat(hotel.star)}</p>
         <p className="hotelcard__location">{locationLabel}</p>
         <p className="hotelcard__description">{hotel.description}</p>
         
@@ -126,21 +127,20 @@ function HotelCard({ hotelId, hotel }) {
           <p className="hotelcard__reviews">{hotel.review} {getReviewsText(hotel.review)}</p>
         </div>
 
-        <p className="hotelcard__price"> от {hotel.price} ₽</p>
         <div className="hotelcard__actions">
           <button 
             type="button" 
             className="hotelcard__button"
             onClick={() => navigate(`/hotels/${hotelId}`)}
           >
-            Посмотреть номера
+            от {hotel.price} ₽
           </button>
-          <CardCartControls
+          {/* <CardCartControls
             type="hotel"
             itemId={hotelId}
             payload={hotelToCartPayload(hotel)}
             variant="hotel"
-          />
+          /> */}
         </div>
       </div>
     </div>
