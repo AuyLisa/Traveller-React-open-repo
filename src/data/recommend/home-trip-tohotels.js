@@ -1,6 +1,7 @@
 export const hotels = [
   {
-    id: 1,
+    //id=42 in hotels
+    id: 42,
     country: "Египет",
     points: 4.9,
     image: "/images/home-hotels/amwaj.jpg",
@@ -11,7 +12,8 @@ export const hotels = [
   },
 
   {
-    id: 2,
+    //id=3 in hotels.js
+    id: 3,
     country: "Турция",
     points: 4.7,
     image: "/images/home-hotels/spice-hotel.jpg",
@@ -22,7 +24,8 @@ export const hotels = [
   },
 
   {
-    id: 3,
+    //id=122 in hotels.js
+    id: 122,
     country: "Вьетнам",
     points: 4.2,
     image: "/images/home-hotels/vinpearl.jpg",
@@ -32,7 +35,8 @@ export const hotels = [
     period: "28 апр - 5 мая, 7 ночей на 2-х"
   },
   {
-    id: 4,
+    //id=2 in hotels.js
+    id: 2,
     country: "Турция",
     points: 4.8,
     image: "/images/home-hotels/shrewood.jpg",
@@ -43,18 +47,20 @@ export const hotels = [
   },
 
   {
-    id: 5,
+    //id=123 in hotels.js
+    id: 123,
     country: "Китай",
     points: 4.6,
     image: "/images/home-hotels/palm-beach.jpg",
     name: "Palm Beach Resort & Spa",
-    place: "Нячанг, Вьетнам",
+    place: "о. Хайнань, Китай",
     price: 224677,
     period: "28 апр - 5 мая, 7 ночей на 2-х"
   },
 
   {
-    id: 6,
+    //id=121 in hotels.js
+    id: 121,
     country: "Вьетнам",
     points: 4.8,
     image: "/images/home-hotels/nha-tang.jpg",
@@ -65,9 +71,10 @@ export const hotels = [
   },
 
   {
-    id: 7,
+    //id=124 in hotels
+    id: 124,
     country: "Китай",
-    points: 3.9,
+    points: 4.9,
     image: "/images/home-hotels/sanya-yalong.jpg",
     name: "Yalong Bay Villas & Spa",
     place: "о. Хайнань, Китай",

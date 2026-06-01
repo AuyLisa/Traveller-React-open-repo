@@ -1,5 +1,6 @@
 export const fromMoscowData = [
   
+  
   {
     id: 1,
     name: "Тропические курорты",

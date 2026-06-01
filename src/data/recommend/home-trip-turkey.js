@@ -14,6 +14,7 @@ export const homeTripCardTurkeyData = [
     ]
   },
 
+  
   {
     id: 2,
     name: "Май",

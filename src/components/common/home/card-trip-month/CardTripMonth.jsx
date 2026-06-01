@@ -1,6 +1,7 @@
 import './CardTripMonth.css';
 import CityButton from '@home/city-button/CityButton.jsx';
 
+
 function CardTripMonth({ tripId, trip }) {
   return (
     <div className="card-trip-month">

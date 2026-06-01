@@ -33,10 +33,10 @@ export const tripsСardsCountryData = [
     image: "/images/home-trips/thailand.jpg",
     description: "7-8 ночей, 2 взрослых",
     cities: [
-      { id: 301, name: "о. Пхукет", price: 147407 },
+      { id: 301, name: "Пхукет", price: 147407 },
       { id: 302, name: "Паттайя", price: 119899 },
       { id: 303, name: "Краби", price: 155209 },
-      { id: 304, name: "Као Лак", price:  134972 },
+      { id: 304, name: "Самуи", price:  134972 },
     ]
   },
 
@@ -66,7 +66,7 @@ export const tripsСardsCountryData = [
       { id: 501, name: "Сочи", price: 26269 },
       { id: 502, name: "Геленджик", price: 52164 },
       { id: 503, name: "Санкт-Петербург", price: 23370 },
-      { id: 504, name: "Калининградская область", price: 35932 },
+      { id: 504, name: "Калининград", price: 35932 },
     ]
   },
 
@@ -80,7 +80,7 @@ export const tripsСardsCountryData = [
       { id: 601, name: "Северный Мале Атолл", price: 193711 },
       { id: 602, name: "Южный Мале Атолл", price: 197064 },
       { id: 603, name: "Ари Атолл", price: 204916 },
-      { id: 604, name: "Баа Атолл", price:  206532 },
+      { id: 604, name: "Баа", price:  206532 },
     ]
   },
 
@@ -125,7 +125,7 @@ export const tripsСardsCountryData = [
       { id: 901, name: "Пекин", price: 124280 },
       { id: 902, name: "Шанхай", price: 135690 },
       { id: 903, name: "Санья", price: 132710 },
-      { id: 904, name: "о. Хайнань", price: 130689 }
+      { id: 904, name: "Хайнань", price: 130689 }
   ]
   },
 

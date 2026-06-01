@@ -2,7 +2,7 @@ const trips = [
   // ТУРЦИЯ 
   {
     id: 1,
-    title: 'Тур в Анталию "Солнечный берег"',
+    title: 'Тур в Анталью "Солнечный берег"',
     images: [
       { id: 101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
       { id: 102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
@@ -11,14 +11,14 @@ const trips = [
     ],
     description: '7 ночей, завтраки, пляж рядом',
     country: 'Турция',
-    city: 'Анталия',
+    city: 'Анталья',
     duration: 7,
     price: 48500,
     stars: 4
   },
   {
     id: 2,
-    title: 'Тур в Анталию "Все включено"',
+    title: 'Тур в Анталью "Все включено"',
     images: [
       { id: 201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
       { id: 202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
@@ -27,7 +27,7 @@ const trips = [
     ],
     description: '10 ночей, ультра все включено, спа',
     country: 'Турция',
-    city: 'Анталия',
+    city: 'Анталья',
     duration: 10,
     price: 78500,
     stars: 5
@@ -82,7 +82,7 @@ const trips = [
   },
   {
     id: 6,
-    title: 'Тур в Аланью "Клеопатра"',
+    title: 'Тур в Аланию "Клеопатра"',
     images: [
       { id: 601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
       { id: 602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
@@ -91,7 +91,7 @@ const trips = [
     ],
     description: '10 ночей, завтрак+ужин, пляж рядом',
     country: 'Турция',
-    city: 'Аланья',
+    city: 'Алания',
     duration: 10,
     price: 42500,
     stars: 3
@@ -242,7 +242,7 @@ const trips = [
   },
   {
     id: 16,
-    title: 'Тур в Стамбул + Анталия "Два берега"',
+    title: 'Тур в Стамбул + Анталья "Два берега"',
     images: [
       { id: 1601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
       { id: 1602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
@@ -251,7 +251,7 @@ const trips = [
     ],
     description: '3 ночи в Стамбуле + 10 ночей в Анталии, перелет включен',
     country: 'Турция',
-    city: 'Стамбул/Анталия',
+    city: 'Стамбул/Анталья',
     duration: 13,
     price: 92500,
     stars: 4
@@ -274,7 +274,7 @@ const trips = [
   },
   {
     id: 18,
-    title: 'Тур в Анталию "Молодежный"',
+    title: 'Тур в Анталью "Молодежный"',
     images: [
       { id: 1801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
       { id: 1802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
@@ -283,7 +283,7 @@ const trips = [
     ],
     description: '5 ночей, завтраки, клубы рядом',
     country: 'Турция',
-    city: 'Анталия',
+    city: 'Анталья',
     duration: 5,
     price: 22500,
     stars: 3
@@ -1717,7 +1717,7 @@ const trips = [
     ],
     description: '8 ночей, вилла на воде, риф в 20 метрах, черепахи',
     country: 'Мальдивы',
-    city: 'Баа',
+    city: 'Северный Мале Атолл',
     duration: 8,
     price: 145000,
     stars: 5
@@ -1765,7 +1765,7 @@ const trips = [
     ],
     description: '7 ночей, снорклинг с китовыми акулами, мантами',
     country: 'Мальдивы',
-    city: 'Южный Ари',
+    city: 'Южный Мале Атолл',
     duration: 7,
     price: 168000,
     stars: 5
@@ -1829,7 +1829,7 @@ const trips = [
     ],
     description: '6 ночей, трофейная рыбалка, барбекю на пляже',
     country: 'Мальдивы',
-    city: 'Мале',
+    city: 'Ари Атолл',
     duration: 6,
     price: 98500,
     stars: 4
@@ -2108,6 +2108,1211 @@ const trips = [
   price: 32500,
   stars: 4
 },
+
+{
+  id: 150,
+  title: 'Бентота "Речная жемчужина Шри-Ланки"',
+  images: [
+    { id: 15001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Река Бентота, мангровые заросли" },
+    { id: 15002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бентота, золотой песок" },
+    { id: 15003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Черепашья ферма" },
+    { id: 15004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Водные виды спорта, бананы" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на реку Бентота',
+  country: 'Шри-Ланка',
+  city: 'Бентота',
+  duration: 7,
+  price: 89500,
+  stars: 4
+},
+{
+  id: 151,
+  title: 'Бентота Luxury "Аюрведа и спа"',
+  images: [
+    { id: 15101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Спа-центр, аюрведические процедуры" },
+    { id: 15102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Отель на первой линии" },
+    { id: 15103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Бассейн с видом на океан" },
+    { id: 15104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат на пляже" }
+  ],
+  description: '10 ночей, полный пансион, аюрведа-программа',
+  country: 'Шри-Ланка',
+  city: 'Бентота',
+  duration: 10,
+  price: 124500,
+  stars: 5
+},
+
+// Галле (Galle)
+{
+  id: 152,
+  title: 'Галле "Голландское наследие"',
+  images: [
+    { id: 15201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Голландский форт Галле" },
+    { id: 15202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Маяк Галле, океан" },
+    { id: 15203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Узкие улочки, магазинчики" },
+    { id: 15204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Пляж Унаватуна" }
+  ],
+  description: '6 ночей, завтраки, экскурсия по форту Галле',
+  country: 'Шри-Ланка',
+  city: 'Галле',
+  duration: 6,
+  price: 76500,
+  stars: 4
+},
+{
+  id: 153,
+  title: 'Галле "Сёрфинг и крокодилы"',
+  images: [
+    { id: 15301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Сёрфинг в Галле" },
+    { id: 15302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Река Маду, крокодилы" },
+    { id: 15303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Хиккадува" },
+    { id: 15304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рыбный рынок" }
+  ],
+  description: '8 ночей, завтраки, уроки сёрфинга, экскурсия на реку Маду',
+  country: 'Шри-Ланка',
+  city: 'Галле',
+  duration: 8,
+  price: 98500,
+  stars: 4
+},
+
+// Велигама (Weligama)
+{
+  id: 154,
+  title: 'Велигама "Рай для сёрферов"',
+  images: [
+    { id: 15401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Залив Велигама, волны" },
+    { id: 15402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Сёрфинг-школа" },
+    { id: 15403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Рыбацкие лодки-катамараны" },
+    { id: 15404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат над океаном" }
+  ],
+  description: '7 ночей, завтраки, 5 уроков сёрфинга',
+  country: 'Шри-Ланка',
+  city: 'Велигама',
+  duration: 7,
+  price: 82900,
+  stars: 4
+},
+{
+  id: 155,
+  title: 'Велигама Extreme "Прокачка сёрфинга"',
+  images: [
+    { id: 15501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Большая волна, профессиональный сёрфинг" },
+    { id: 15502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Сёрф-лагерь" },
+    { id: 15503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляжная вечеринка" },
+    { id: 15504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Йога на пляже" }
+  ],
+  description: '12 ночей, полный пансион, ежедневные уроки сёрфинга, йога',
+  country: 'Шри-Ланка',
+  city: 'Велигама',
+  duration: 12,
+  price: 145600,
+  stars: 5
+},
+
+// Берувела (Beruwela)
+{
+  id: 156,
+  title: 'Берувела "Кокосовая бухта"',
+  images: [
+    { id: 15601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Берувела, пальмы" },
+    { id: 15602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Мечеть Маспела" },
+    { id: 15603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Парк бабочек" },
+    { id: 15604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Пикник на пляже" }
+  ],
+  description: '6 ночей, завтраки, экскурсия к Китовой скале',
+  country: 'Шри-Ланка',
+  city: 'Берувела',
+  duration: 6,
+  price: 69500,
+  stars: 4
+},
+{
+  id: 157,
+  title: 'Берувела Premium "Spice Garden"',
+  images: [
+    { id: 15701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Плантация специй" },
+    { id: 15702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Эко-отель в джунглях" },
+    { id: 15703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Ботанический сад" },
+    { id: 15704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Спа на открытом воздухе" }
+  ],
+  description: '9 ночей, всё включено, экскурсия на плантации, спа',
+  country: 'Шри-Ланка',
+  city: 'Берувела',
+  duration: 9,
+  price: 118900,
+  stars: 5
+},
+
+{
+  id: 158,
+  title: 'Нячанг "Жемчужина Южно-Китайского моря"',
+  images: [
+    { id: 15801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Нячанга, бирюзовая вода" },
+    { id: 15802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бамбуковый остров, парк развлечений" },
+    { id: 15803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Горячие источники Тхап Ба" },
+    { id: 15804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Пагода Лонг Шон, белый Будда" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на острова',
+  country: 'Вьетнам',
+  city: 'Нячанг',
+  duration: 7,
+  price: 132518,
+  stars: 4
+},
+
+// Муйне (Mui Ne)
+{
+  id: 159,
+  title: 'Муйне "Дюны и кайт-сёрфинг"',
+  images: [
+    { id: 15901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Белые дюны Муйне" },
+    { id: 15902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Кайт-сёрфинг, ветер" },
+    { id: 15903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Рыбацкая деревня" },
+    { id: 15904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Красные дюны, закат" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на дюны',
+  country: 'Вьетнам',
+  city: 'Муйне',
+  duration: 7,
+  price: 139765,
+  stars: 4
+},
+
+{
+  id: 160,
+  title: 'Фантьет "Рыбацкий рай"',
+  images: [
+    { id: 16001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Фантьет" },
+    { id: 16002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Рынок морепродуктов" },
+    { id: 16003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Храм Лонг Хыонг" },
+    { id: 16004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат на побережье" }
+  ],
+  description: '7 ночей, завтраки, морская прогулка',
+  country: 'Вьетнам',
+  city: 'Фантьет',
+  duration: 7,
+  price: 144707,
+  stars: 4
+},
+// Фукуок (Phu Quoc)
+{
+  id: 161,
+  title: 'Фукуок "Изумрудный рай"',
+  images: [
+    { id: 16101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Sao Beach, белый песок" },
+    { id: 16102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Национальный парк Фукуок" },
+    { id: 16103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Закат на рыбном рынке" },
+    { id: 16104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Островная природа" }
+  ],
+  description: '7 ночей, завтраки, экскурсия по острову',
+  country: 'Вьетнам',
+  city: 'Фукуок',
+  duration: 7,
+  price: 150669,
+  stars: 4
+},
+
+// Камрань (Cam Ranh)
+{
+  id: 162,
+  title: 'Камрань "Бухта дракона"',
+  images: [
+    { id: 16201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Бухта Камрань" },
+    { id: 16202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бай Дай" },
+    { id: 16203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Остров Бинь Ба" },
+    { id: 16204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рыболовные деревни" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на острова',
+  country: 'Вьетнам',
+  city: 'Камрань',
+  duration: 7,
+  price: 153799,
+  stars: 4
+},
+
+{
+  id: 163,
+  title: 'Пекин "Бухта дракона"',
+  images: [
+    { id: 16301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Бухта Камрань" },
+    { id: 16302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бай Дай" },
+    { id: 16303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Остров Бинь Ба" },
+    { id: 16304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рыболовные деревни" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на острова',
+  country: 'Китай',
+  city: 'Пекин',
+  duration: 7,
+  price: 153399,
+  stars: 4
+},
+
+{
+  id: 164,
+  title: 'Шанхай "Бухта дракона"',
+  images: [
+    { id: 16401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Бухта Камрань" },
+    { id: 16402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бай Дай" },
+    { id: 16403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Остров Бинь Ба" },
+    { id: 16404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рыболовные деревни" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на острова',
+  country: 'Китай',
+  city: 'Шанхай',
+  duration: 4,
+  price: 163799,
+  stars: 5
+},
+
+{
+  id: 165,
+  title: 'Санья "Бухта дракона"',
+  images: [
+    { id: 16501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Бухта Камрань" },
+    { id: 16502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бай Дай" },
+    { id: 16503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Остров Бинь Ба" },
+    { id: 16504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рыболовные деревни" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на острова',
+  country: 'Китай',
+  city: 'Санья',
+  duration: 7,
+  price: 113799,
+  stars: 4
+},
+
+{
+  id: 166,
+  title: 'Хайнань "Бухта дракона"',
+  images: [
+    { id: 16601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Бухта Камрань" },
+    { id: 16602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бай Дай" },
+    { id: 16603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Остров Бинь Ба" },
+    { id: 16604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рыболовные деревни" }
+  ],
+  description: '7 ночей, завтраки, экскурсия на острова',
+  country: 'Китай',
+  city: 'Хайнань',
+  duration: 7,
+  price: 123799,
+  stars: 5
+},
+
+// Гагра (Gagra)
+{
+  id: 167,
+  title: 'Гагра "Жемчужина абхазского побережья"',
+  images: [
+    { id: 16701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Набережная Гагры, колоннада" },
+    { id: 16702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Гагры, галька" },
+    { id: 16703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Замок принца Ольденбургского" },
+    { id: 16704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Парк Гагры, пальмы" }
+  ],
+  description: '7 ночей, завтраки, экскурсия по парку и замку',
+  country: 'Абхазия',
+  city: 'Гагра',
+  duration: 7,
+  price: 27308,
+  stars: 3
+},
+{
+  id: 168,
+  title: 'Гагра Premium "Отдых у моря"',
+  images: [
+    { id: 16801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Отель на первой линии" },
+    { id: 16802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бассейн с видом на море" },
+    { id: 16803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Ресторан на набережной" },
+    { id: 16804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат в Гагре" }
+  ],
+  description: '8 ночей, завтраки и ужины, бассейн',
+  country: 'Абхазия',
+  city: 'Гагра',
+  duration: 8,
+  price: 45800,
+  stars: 4
+},
+
+// Новый Афон (New Athos)
+{
+  id: 169,
+  title: 'Новый Афон "Духовный центр Абхазии"',
+  images: [
+    { id: 16901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Новоафонский монастырь" },
+    { id: 16902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пещера Нового Афона" },
+    { id: 16903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Набережная Нового Афона" },
+    { id: 16904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Анакопийская крепость" }
+  ],
+  description: '7 ночей, завтраки, экскурсия в монастырь и пещеру',
+  country: 'Абхазия',
+  city: 'Новый Афон',
+  duration: 7,
+  price: 30097,
+  stars: 3
+},
+{
+  id: 170,
+  title: 'Новый Афон "Подземные тайны"',
+  images: [
+    { id: 17001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Подземные залы пещеры" },
+    { id: 17002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Озеро в пещере" },
+    { id: 17003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Водопад в горах" },
+    { id: 17004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Ущелье, природа" }
+  ],
+  description: '8 ночей, завтраки, 2 экскурсии в пещеру',
+  country: 'Абхазия',
+  city: 'Новый Афон',
+  duration: 8,
+  price: 47600,
+  stars: 4
+},
+
+// Пицунда (Pitsunda)
+{
+  id: 171,
+  title: 'Пицунда "Хвойный рай"',
+  images: [
+    { id: 17101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Пицунды, сосны" },
+    { id: 17102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пицундский храм" },
+    { id: 17103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Реликтовая сосновая роща" },
+    { id: 17104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Набережная Пицунды" }
+  ],
+  description: '7 ночей, завтраки, прогулка по роще',
+  country: 'Абхазия',
+  city: 'Пицунда',
+  duration: 7,
+  price: 32663,
+  stars: 3
+},
+{
+  id: 172,
+  title: 'Пицунда Luxury "Санаторный отдых"',
+  images: [
+    { id: 17201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Санаторий на берегу" },
+    { id: 17202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бассейн с морской водой" },
+    { id: 17203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Лечебные процедуры" },
+    { id: 17204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Парк санатория" }
+  ],
+  description: '10 ночей, полный пансион, лечение, бассейн',
+  country: 'Абхазия',
+  city: 'Пицунда',
+  duration: 10,
+  price: 78900,
+  stars: 4
+},
+
+// Сухум (Sukhum)
+{
+  id: 173,
+  title: 'Сухум "Столичный шик"',
+  images: [
+    { id: 17301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Набережная Сухума" },
+    { id: 17302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Беслетский мост" },
+    { id: 17303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Ботанический сад Сухума" },
+    { id: 17304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Сухумский маяк" }
+  ],
+  description: '7 ночей, завтраки, обзорная экскурсия по городу',
+  country: 'Абхазия',
+  city: 'Сухум',
+  duration: 7,
+  price: 32623,
+  stars: 3
+},
+//TROPICAL
+ {
+    id: 174,
+    title: 'Египет',
+    images: [
+      { id: 17401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Хургады, бирюзовая вода" },
+      { id: 17402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Коралловый риф Шарм-эль-Шейха" },
+      { id: 17403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Храмы Луксора" },
+      { id: 17404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Пирамиды Гизы" }
+    ],
+    description: '7 ночей, всё включено, дайвинг',
+    country: 'Египет',
+    city: 'Хургада',
+    duration: 7,
+    price: 45000,
+    stars: 4,
+    category: 'tropical'
+  },
+  {
+    id: 175,
+    title: 'Таиланд',
+    images: [
+      { id: 17501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Патонг на Пхукете" },
+      { id: 17502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Храм Изумрудного Будды в Бангкоке" },
+      { id: 17503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Майя на острове Пхи-Пхи" },
+      { id: 17504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Экзотические фрукты на рынке" }
+    ],
+    description: '9 ночей, завтраки, экскурсии',
+    country: 'Таиланд',
+    city: 'Пхукет',
+    duration: 9,
+    price: 75000,
+    stars: 4,
+    category: 'tropical'
+  },
+  {
+    id: 176,
+    title: 'Вьетнам',
+    images: [
+      { id: 17601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Нячанга, тропический рай" },
+      { id: 17602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бухта Халонг, вид с джонки" },
+      { id: 17603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Фукуока, белый песок" },
+      { id: 17604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рисовые террасы во Вьетнаме" }
+    ],
+    description: '8 ночей, завтраки, экскурсия на острова',
+    country: 'Вьетнам',
+    city: 'Нячанг',
+    duration: 8,
+    price: 68000,
+    stars: 4,
+    category: 'tropical'
+  },
+  {
+    id: 177,
+    title: 'Танзания (с пересадкой)',
+    images: [
+      { id: 17701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Сафари в Серенгети, жирафы" },
+      { id: 17702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Гора Килиманджаро" },
+      { id: 17703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Занзибара" },
+      { id: 17704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Остров рабов, история" }
+    ],
+    description: '11 ночей, полупансион, сафари, пересадка',
+    country: 'Танзания',
+    city: 'Занзибар',
+    duration: 11,
+    price: 125000,
+    stars: 5,
+    category: 'tropical'
+  },
+
+  // ==================== ТРОПИЧЕСКИЕ ОСТРОВА ====================
+  {
+    id: 178,
+    title: 'Пхукет',
+    images: [
+      { id: 17801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Ката на Пхукете" },
+      { id: 17802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Майя, бирюзовая лагуна" },
+      { id: 17803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Большой Будда на Пхукете" },
+      { id: 17804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Вечерний рынок Пхукета" }
+    ],
+    description: '7 ночей, завтраки, экскурсия на Пхи-Пхи',
+    country: 'Таиланд',
+    city: 'Пхукет',
+    duration: 7,
+    price: 78000,
+    stars: 4,
+    category: 'island'
+  },
+  {
+    id: 179,
+    title: 'Мальдивы',
+    images: [
+      { id: 17901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Вилла на воде над океаном" },
+      { id: 17902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Белый песок, бирюзовая лагуна" },
+      { id: 17903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Закат на Мальдивах" },
+      { id: 17904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Подводный мир, манта" }
+    ],
+    description: '8 ночей, всё включено, перелет',
+    country: 'Мальдивы',
+    city: 'Мале',
+    duration: 8,
+    price: 165000,
+    stars: 5,
+    category: 'island'
+  },
+  {
+    id: 180,
+    title: 'Сейшелы',
+    images: [
+      { id: 18001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Анс Лацио на Сейшелах" },
+      { id: 18002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Гранитные валуны у океана" },
+      { id: 18003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Гигантские черепахи" },
+      { id: 18004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат на Сейшелах" }
+    ],
+    description: '9 ночей, завтраки, экскурсии',
+    country: 'Сейшелы',
+    city: 'Маэ',
+    duration: 9,
+    price: 158000,
+    stars: 5,
+    category: 'island'
+  },
+  {
+    id: 181,
+    title: 'Шри-Ланка',
+    images: [
+      { id: 18101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Сигирия, Львиная скала" },
+      { id: 18102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Чайные плантации Нувара-Элии" },
+      { id: 18103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Хиккадува" },
+      { id: 18104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Храм Зуба Будды" }
+    ],
+    description: '10 ночей, завтраки, экскурсии',
+    country: 'Шри-Ланка',
+    city: 'Коломбо',
+    duration: 10,
+    price: 95000,
+    stars: 4,
+    category: 'island'
+  },
+  {
+    id: 182,
+    title: 'Бали',
+    images: [
+      { id: 18201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Храм Улувату на скале" },
+      { id: 18202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Рисовые террасы Тегаллаланг" },
+      { id: 18203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Кута, закат" },
+      { id: 18204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Вулкан Агунг" }
+    ],
+    description: '9 ночей, завтраки, экскурсии',
+    country: 'Индонезия',
+    city: 'Бали',
+    duration: 9,
+    price: 110000,
+    stars: 4,
+    category: 'island'
+  },
+  {
+    id: 183,
+    title: 'Хайнань',
+    images: [
+      { id: 18301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Ялунгуань на Хайнане" },
+      { id: 18302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Буддийская статуя Гуаньинь" },
+      { id: 18303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Тропический парк Хайнаня" },
+      { id: 18304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат на Хайнане" }
+    ],
+    description: '7 ночей, завтраки, отель 4*',
+    country: 'Китай',
+    city: 'Санья',
+    duration: 7,
+    price: 88000,
+    stars: 4,
+    category: 'island'
+  },
+  {
+    id: 184,
+    title: 'Маврикий (с пересадкой)',
+    images: [
+      { id: 18401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Флик-ан-Флак" },
+      { id: 18402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Подводный водопад" },
+      { id: 18403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Семьцветные земли" },
+      { id: 18404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Долина додо" }
+    ],
+    description: '10 ночей, всё включено, пересадка',
+    country: 'Маврикий',
+    city: 'Порт-Луи',
+    duration: 10,
+    price: 145000,
+    stars: 5,
+    category: 'island'
+  },
+
+  // ==================== ГОРНОЛЫЖНЫЕ КУРОРТЫ ====================
+  {
+    id: 185,
+    title: 'Красная поляна',
+    images: [
+      { id: 18501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Горнолыжные трассы Красной Поляны" },
+      { id: 18502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Олимпийская деревня, Сочи" },
+      { id: 18503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Кавказские горы зимой" },
+      { id: 18504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат в горах" }
+    ],
+    description: '5 ночей, завтраки, ски-пасс',
+    country: 'Россия',
+    city: 'Красная Поляна',
+    duration: 5,
+    price: 55000,
+    stars: 4,
+    category: 'ski'
+  },
+  {
+    id: 186,
+    title: 'Шерегеш',
+    images: [
+      { id: 18601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Гора Зелёная, Шерегеш" },
+      { id: 18602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Лесные спуски" },
+      { id: 18603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Ночной Шерегеш" },
+      { id: 18604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Подъёмник на гору" }
+    ],
+    description: '6 ночей, завтраки, прокат снаряжения',
+    country: 'Россия',
+    city: 'Шерегеш',
+    duration: 6,
+    price: 42000,
+    stars: 3,
+    category: 'ski'
+  },
+  {
+    id: 187,
+    title: 'Домбай',
+    images: [
+      { id: 18701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Гора Чегет, Домбай" },
+      { id: 18702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Домбайская поляна" },
+      { id: 18703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Канатная дорога" },
+      { id: 18704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Горные вершины" }
+    ],
+    description: '5 ночей, завтраки, экскурсии',
+    country: 'Россия',
+    city: 'Домбай',
+    duration: 5,
+    price: 38000,
+    stars: 3,
+    category: 'ski'
+  },
+  {
+    id: 188,
+    title: 'Архыз',
+    images: [
+      { id: 18801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Архызские озёра" },
+      { id: 18802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Софийский водопад" },
+      { id: 18803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Горы и хребты" },
+      { id: 18804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Эко-тропы Архыза" }
+    ],
+    description: '5 ночей, завтраки, термальные источники',
+    country: 'Россия',
+    city: 'Архыз',
+    duration: 5,
+    price: 35000,
+    stars: 3,
+    category: 'ski'
+  },
+  {
+    id: 189,
+    title: 'Приэльбрусье',
+    images: [
+      { id: 18901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Гора Эльбрус" },
+      { id: 18902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Поляна Азау" },
+      { id: 18903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Канатная дорога" },
+      { id: 18904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Чегетские водопады" }
+    ],
+    description: '6 ночей, завтраки, ски-пасс',
+    country: 'Россия',
+    city: 'Приэльбрусье',
+    duration: 6,
+    price: 45000,
+    stars: 4,
+    category: 'ski'
+  },
+  {
+    id: 190,
+    title: 'Гудаури (Грузия)',
+    images: [
+      { id: 19001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Горнолыжные трассы Гудаури" },
+      { id: 19002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Вид на Кавказские горы" },
+      { id: 19003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Монастырь Казбеги" },
+      { id: 19004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Грузинские Альпы" }
+    ],
+    description: '6 ночей, завтраки, ски-пасс',
+    country: 'Грузия',
+    city: 'Гудаури',
+    duration: 6,
+    price: 48000,
+    stars: 4,
+    category: 'ski'
+  },
+
+  // ==================== ЮГО-ВОСТОЧНАЯ АЗИЯ ====================
+  {
+    id: 191,
+    title: 'Таиланд',
+    images: [
+      { id: 19101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Храм Дракона в Таиланде" },
+      { id: 19102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Плавучий рынок" },
+      { id: 19103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Рейли" },
+      { id: 19104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Экзотические фрукты" }
+    ],
+    description: '10 ночей, завтраки, 3 экскурсии',
+    country: 'Таиланд',
+    city: 'Бангкок',
+    duration: 10,
+    price: 82000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 192,
+    title: 'Шри-Ланка',
+    images: [
+      { id: 19201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Коломбо, столица Шри-Ланки" },
+      { id: 19202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Сигирия, Львиная скала" },
+      { id: 19203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пляж Бентота" },
+      { id: 19204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Слоновий питомник" }
+    ],
+    description: '9 ночей, завтраки, экскурсия в Коломбо',
+    country: 'Шри-Ланка',
+    city: 'Коломбо',
+    duration: 9,
+    price: 89000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 193,
+    title: 'Индия',
+    images: [
+      { id: 19301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Гоа" },
+      { id: 19302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Тадж-Махал" },
+      { id: 19303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Ворота Индии в Дели" },
+      { id: 19304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Йога и медитация" }
+    ],
+    description: '8 ночей, завтраки, экскурсии',
+    country: 'Индия',
+    city: 'Гоа',
+    duration: 8,
+    price: 68000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 194,
+    title: 'Китай',
+    images: [
+      { id: 19401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Великая Китайская стена" },
+      { id: 19402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Запретный город" },
+      { id: 19403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Терракотовая армия" },
+      { id: 19404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Шанхай, башни" }
+    ],
+    description: '9 ночей, завтраки, экскурсии',
+    country: 'Китай',
+    city: 'Пекин',
+    duration: 9,
+    price: 85000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 195,
+    title: 'Гонконг',
+    images: [
+      { id: 19501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Гонконг, ночной вид" },
+      { id: 19502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Виктория, пик" },
+      { id: 19503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Диснейленд в Гонконге" },
+      { id: 19504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Плавучий ресторан" }
+    ],
+    description: '6 ночей, завтраки, Disneyland',
+    country: 'Гонконг',
+    city: 'Гонконг',
+    duration: 6,
+    price: 85000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 196,
+    title: 'Индонезия',
+    images: [
+      { id: 19601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Храм Боробудур" },
+      { id: 19602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пляж Бали" },
+      { id: 19603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Вулканы Индонезии" },
+      { id: 19604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Чайные плантации" }
+    ],
+    description: '10 ночей, завтраки, перелёты',
+    country: 'Индонезия',
+    city: 'Джакарта',
+    duration: 10,
+    price: 98000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 197,
+    title: 'Малайзия (с пересадкой)',
+    images: [
+      { id: 19701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Куала-Лумпур, башни Петронас" },
+      { id: 19702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Остров Лангкави" },
+      { id: 19703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пещеры Бату" },
+      { id: 19704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Джунгли Малайзии" }
+    ],
+    description: '8 ночей, завтраки, пересадка',
+    country: 'Малайзия',
+    city: 'Куала-Лумпур',
+    duration: 8,
+    price: 78000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 198,
+    title: 'Вьетнам',
+    images: [
+      { id: 19801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Бухта Халонг" },
+      { id: 19802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ханой, старый квартал" },
+      { id: 19803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Меконг, плавучие рынки" },
+      { id: 19804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Хошимин, собор" }
+    ],
+    description: '12 ночей, завтраки, перелёты между городами',
+    country: 'Вьетнам',
+    city: 'Ханой',
+    duration: 12,
+    price: 95000,
+    stars: 4,
+    category: 'asia'
+  },
+  {
+    id: 199,
+    title: 'Япония',
+    images: [
+      { id: 19901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Токио, башни" },
+      { id: 19902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Киото, храмы" },
+      { id: 19903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Гора Фудзи" },
+      { id: 19904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Цветение сакуры" }
+    ],
+    description: '9 ночей, завтраки, экскурсии',
+    country: 'Япония',
+    city: 'Токио',
+    duration: 9,
+    price: 145000,
+    stars: 5,
+    category: 'asia'
+  },
+
+  // ==================== СРЕДИЗЕМНОЕ МОРЕ ====================
+  {
+    id: 200,
+    title: 'Турция',
+    images: [
+      { id: 20001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Пляж Антальи" },
+      { id: 20002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Каппадокия, воздушные шары" },
+      { id: 20003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Стамбул, мечеть" },
+      { id: 20004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Памуккале" }
+    ],
+    description: '8 ночей, всё включено, экскурсии',
+    country: 'Турция',
+    city: 'Анталья',
+    duration: 8,
+    price: 65000,
+    stars: 5,
+    category: 'mediterranean'
+  },
+  {
+    id: 201,
+    title: 'Греция (с пересадкой)',
+    images: [
+      { id: 20101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Афины, Акрополь" },
+      { id: 20102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Санторини, вид" },
+      { id: 20103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Крит, пляж" },
+      { id: 20104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Закат на Санторини" }
+    ],
+    description: '8 ночей, завтраки, пересадка',
+    country: 'Греция',
+    city: 'Афины',
+    duration: 8,
+    price: 92000,
+    stars: 4,
+    category: 'mediterranean'
+  },
+  {
+    id: 202,
+    title: 'Кипр (с пересадкой)',
+    images: [
+      { id: 20201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Айя-Напа, пляж" },
+      { id: 20202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пафос, гробницы" },
+      { id: 20203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Голубая лагуна" },
+      { id: 20204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Никосия, стены" }
+    ],
+    description: '7 ночей, завтраки, пересадка',
+    country: 'Кипр',
+    city: 'Айя-Напа',
+    duration: 7,
+    price: 72000,
+    stars: 4,
+    category: 'mediterranean'
+  },
+  {
+    id: 203,
+    title: 'Тунис (с пересадкой)',
+    images: [
+      { id: 20301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Карфаген, руины" },
+      { id: 20302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пустыня Сахара" },
+      { id: 20303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Хаммамет, пляж" },
+      { id: 20304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Белая медина" }
+    ],
+    description: '8 ночей, всё включено, пересадка',
+    country: 'Тунис',
+    city: 'Хаммамет',
+    duration: 8,
+    price: 62000,
+    stars: 4,
+    category: 'mediterranean'
+  },
+  {
+    id: 204,
+    title: 'Черногория (с пересадкой)',
+    images: [
+      { id: 20401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Котор, старый город" },
+      { id: 20402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Будва, набережная" },
+      { id: 20403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Скадарское озеро" },
+      { id: 20404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Остров Стефан" }
+    ],
+    description: '7 ночей, завтраки, пересадка',
+    country: 'Черногория',
+    city: 'Будва',
+    duration: 7,
+    price: 56000,
+    stars: 4,
+    category: 'mediterranean'
+  },
+
+  // ==================== БЛИЖНЕЕ ЗАРУБЕЖЬЕ ====================
+  {
+    id: 205,
+    title: 'Абхазия',
+    images: [
+      { id: 20501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Гагра, колоннада" },
+      { id: 20502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Новый Афон, монастырь" },
+      { id: 20503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Рицинский реликтовый парк" },
+      { id: 20504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Сухум, набережная" }
+    ],
+    description: '6 ночей, завтраки, экскурсия в Рицу',
+    country: 'Абхазия',
+    city: 'Гагра',
+    duration: 6,
+    price: 27308,
+    stars: 3,
+    category: 'near_abroad'
+  },
+  {
+    id: 206,
+    title: 'Беларусь',
+    images: [
+      { id: 20601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Минск, проспект Независимости" },
+      { id: 20602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Несвижский замок" },
+      { id: 20603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Мирский замок" },
+      { id: 20604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Беловежская пуща" }
+    ],
+    description: '5 ночей, завтраки, экскурсии',
+    country: 'Беларусь',
+    city: 'Минск',
+    duration: 5,
+    price: 25000,
+    stars: 3,
+    category: 'near_abroad'
+  },
+  {
+    id: 207,
+    title: 'Казахстан',
+    images: [
+      { id: 20701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Алматы, горы" },
+      { id: 20702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Нур-Султан, башня" },
+      { id: 20703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Озеро Кольсай" },
+      { id: 20704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Чарынский каньон" }
+    ],
+    description: '6 ночей, завтраки, экскурсии',
+    country: 'Казахстан',
+    city: 'Алматы',
+    duration: 6,
+    price: 35000,
+    stars: 3,
+    category: 'near_abroad'
+  },
+  {
+    id: 208,
+    title: 'Армения',
+    images: [
+      { id: 20801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Ереван, столица" },
+      { id: 20802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Севанаванк, монастырь" },
+      { id: 20803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Озеро Севан" },
+      { id: 20804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Гарни, храм" }
+    ],
+    description: '5 ночей, завтраки, экскурсии',
+    country: 'Армения',
+    city: 'Ереван',
+    duration: 5,
+    price: 32000,
+    stars: 3,
+    category: 'near_abroad'
+  },
+  {
+    id: 209,
+    title: 'Грузия',
+    images: [
+      { id: 20901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Тбилиси, старый город" },
+      { id: 20902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Батуми, набережная" },
+      { id: 20903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Казбеги, горы" },
+      { id: 20904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Грузинское застолье" }
+    ],
+    description: '6 ночей, завтраки, винный тур',
+    country: 'Грузия',
+    city: 'Тбилиси',
+    duration: 6,
+    price: 45000,
+    stars: 4,
+    category: 'near_abroad'
+  },
+  {
+    id: 210,
+    title: 'Узбекистан',
+    images: [
+      { id: 21001, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Самарканд, площадь Регистан" },
+      { id: 21002, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бухара, мечеть" },
+      { id: 21003, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Хива, крепость" },
+      { id: 21004, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Узбекский плов" }
+    ],
+    description: '7 ночей, завтраки, экскурсии',
+    country: 'Узбекистан',
+    city: 'Самарканд',
+    duration: 7,
+    price: 48000,
+    stars: 4,
+    category: 'near_abroad'
+  },
+  {
+    id: 211,
+    title: 'Азербайджан',
+    images: [
+      { id: 21101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Баку, башни Пламя" },
+      { id: 21102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Девичья башня" },
+      { id: 21103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Гобустан, петроглифы" },
+      { id: 21104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Огни Янардаг" }
+    ],
+    description: '5 ночей, завтраки, экскурсии',
+    country: 'Азербайджан',
+    city: 'Баку',
+    duration: 5,
+    price: 38000,
+    stars: 4,
+    category: 'near_abroad'
+  },
+  {
+    id: 212,
+    title: 'Киргизия',
+    images: [
+      { id: 21201, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Озеро Иссык-Куль" },
+      { id: 21202, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Бишкек, столица" },
+      { id: 21203, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Каньон Сказка" },
+      { id: 21204, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Горы Тянь-Шань" }
+    ],
+    description: '6 ночей, завтраки, отдых на озере',
+    country: 'Киргизия',
+    city: 'Иссык-Куль',
+    duration: 6,
+    price: 35000,
+    stars: 3,
+    category: 'near_abroad'
+  },
+  {
+    id: 213,
+    title: 'Таджикистан',
+    images: [
+      { id: 21301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Душанбе, площадь" },
+      { id: 21302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Памирское шоссе" },
+      { id: 21303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Озеро Искандеркуль" },
+      { id: 21304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Горы Памира" }
+    ],
+    description: '7 ночей, завтраки, экскурсии',
+    country: 'Таджикистан',
+    city: 'Душанбе',
+    duration: 7,
+    price: 40000,
+    stars: 3,
+    category: 'near_abroad'
+  },
+
+  // ==================== БЛИЖНИЙ ВОСТОК ====================
+  {
+    id: 214,
+    title: 'ОАЭ',
+    images: [
+      { id: 21401, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Дубай, Бурдж-Халифа" },
+      { id: 21402, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пальма Джумейра" },
+      { id: 21403, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Абу-Даби, мечеть" },
+      { id: 21404, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Пустынное сафари" }
+    ],
+    description: '7 ночей, завтраки, экскурсия в пустыню',
+    country: 'ОАЭ',
+    city: 'Дубай',
+    duration: 7,
+    price: 85000,
+    stars: 5,
+    category: 'middle_east'
+  },
+  {
+    id: 215,
+    title: 'Бахрейн',
+    images: [
+      { id: 21501, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Манама, столица" },
+      { id: 21502, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Формула-1 трасса" },
+      { id: 21503, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Дерево жизни" },
+      { id: 21504, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Жемчужная тропа" }
+    ],
+    description: '5 ночей, завтраки, трансферы',
+    country: 'Бахрейн',
+    city: 'Манама',
+    duration: 5,
+    price: 68000,
+    stars: 4,
+    category: 'middle_east'
+  },
+  {
+    id: 216,
+    title: 'Катар',
+    images: [
+      { id: 21601, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Доха, набережная" },
+      { id: 21602, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Музей исламского искусства" },
+      { id: 21603, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пустыня Катара" },
+      { id: 21604, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Пляж Катара" }
+    ],
+    description: '6 ночей, завтраки, экскурсия в пустыню',
+    country: 'Катар',
+    city: 'Доха',
+    duration: 6,
+    price: 72000,
+    stars: 4,
+    category: 'middle_east'
+  },
+  {
+    id: 217,
+    title: 'Оман',
+    images: [
+      { id: 21701, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Маскат, мечеть" },
+      { id: 21702, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Вади Шаб" },
+      { id: 21703, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Пустыня Омана" },
+      { id: 21704, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рынок Маската" }
+    ],
+    description: '7 ночей, завтраки, экскурсии',
+    country: 'Оман',
+    city: 'Маскат',
+    duration: 7,
+    price: 78000,
+    stars: 4,
+    category: 'middle_east'
+  },
+  {
+    id: 218,
+    title: 'Саудовская Аравия',
+    images: [
+      { id: 21801, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Эр-Рияд, башни" },
+      { id: 21802, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Пустыня Руб-эль-Хали" },
+      { id: 21803, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Красное море" },
+      { id: 21804, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Рынок Джедды" }
+    ],
+    description: '6 ночей, завтраки, виза включена',
+    country: 'Саудовская Аравия',
+    city: 'Эр-Рияд',
+    duration: 6,
+    price: 85000,
+    stars: 4,
+    category: 'middle_east'
+  },
+  {
+    id: 219,
+    title: 'Иордания',
+    images: [
+      { id: 21901, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Петра, древний город" },
+      { id: 21902, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Мёртвое море" },
+      { id: 21903, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Вади-Рам" },
+      { id: 21904, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Акаба, пляж" }
+    ],
+    description: '7 ночей, завтраки, экскурсия в Петру',
+    country: 'Иордания',
+    city: 'Амман',
+    duration: 7,
+    price: 72000,
+    stars: 4,
+    category: 'middle_east'
+  }
 ];
 
 export default trips;
