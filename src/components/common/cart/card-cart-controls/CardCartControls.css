@@ -12,15 +12,16 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: #000000;
+    border-radius: 10px;
     transition: background-color 0.15s ease;
-    border-radius: 0 0 10px 10px;
     background-color: rgb(193, 255, 35);
   }
+
 
 .card-cart-controls__row {
   display: flex;
   align-items: stretch;
-  width: 100%;
+  width: fit-content;
   min-height: 2.75rem;
   border-radius: inherit;
   overflow: hidden;
@@ -72,7 +73,7 @@
   border-radius: 16px;
 }
 .card-cart-controls--trip .card-cart-controls__step {
-  color: rgb(193, 255, 35);
+  color: rgb(0, 0, 0);
 }
 
 
@@ -108,25 +109,10 @@
   border-radius: 10px;
 }
 .card-cart-controls--trip-detail .card-cart-controls__step {
-  color: rgb(193, 255, 35)0;
-}
-
-
-
-.card-cart-controls--hotel-detail .card-cart-controls__add {
-  padding: 0.85rem 1.5rem;
-  border-radius: 10px;
-  background: rgb(193, 255, 35);
-}
-.card-cart-controls--hotel-detail .card-cart-controls__add:hover {
-  background: rgb(193, 255, 35);
-}
-.card-cart-controls--hotel-detail .card-cart-controls__row {
-  border-radius: 10px;
-}
-.card-cart-controls--hotel-detail .card-cart-controls__step {
   color: rgb(193, 255, 35);
 }
+
+
 
 
 

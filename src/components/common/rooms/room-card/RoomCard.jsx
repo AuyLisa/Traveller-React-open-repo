@@ -8,7 +8,7 @@ import HeartLike from '@ui/heart-like/HeartLike';
 import ImageDots from '@ui/image-dots/ImageDots';
 import RoomAmenities from '@rooms/room-amenities/RoomAmenities';
 
-//import { roomsToCartPayload } from '@utils/cartItemBuilders';
+import { roomToCartPayload } from '@utils/cartItemBuilders'; 
 import './RoomCard.css';
 
 // Функция для ограничения количества опций (максимум 5)
@@ -21,7 +21,7 @@ function limitOptions(options, maxCount = 5) {
   return Object.fromEntries(limitedEntries);
 }
 
-function RoomCard({ roomId, room }) {
+function RoomCard({ roomId, room, hotel }) {
   const navigate = useNavigate();
 
   // Логика карусели фотографий
@@ -84,17 +84,20 @@ function RoomCard({ roomId, room }) {
         <p className="roomcard__price">Цена за 1 ночь: {room.pricePerNight.toLocaleString('ru-RU')} ₽</p>
 
         <div className="roomcard__actions">
+          
+          {/*
           <button 
-          type="button" 
-          className="roomcard__button">
-            Забронировать номер
-          </button>
-          {/*<CardCartControls
+            type="button" 
+            className="roomcard__button">
+              Забронировать номер
+            </button>
+          /> */}
+           <CardCartControls
             type="room"
             itemId={roomId}
-            payload={room}
-            variant="room"
-          /> */}
+            payload={roomToCartPayload(room, hotel)}
+            variant="room-card"
+          />
         </div>
       </div>
     </div>
