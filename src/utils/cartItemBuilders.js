@@ -26,18 +26,32 @@ export function hotelToCartPayload(hotel) {
   };
 }
 
-export function flightToCartPayload(avia) {
+
+export function flightClassToCartPayload(avia, flightClass) {
   return {
     type: 'flight',
-    itemId: avia.id,
-    title: `${avia.from} → ${avia.to}`,
-    price: avia.price,
+    itemId: `${avia.id}-${flightClass.id}`,   // "1-economy"
+    title: `${avia.from} → ${avia.to}, ${flightClass.name} класс`,
+    price: flightClass.priceFrom,
     meta: {
+      // Эти поля использует formatCartItemMeta
       from: avia.from,
       to: avia.to,
       airline: avia.airline,
       departure: avia.departure,
       arrival: avia.arrival,
+      
+      // Дополнительные поля для корзины
+      duration: avia.duration,
+      planeName: avia.planeName,
+      classType: flightClass.name,
+      seats: flightClass.seats,
+      originalPrice: avia.price,
+      flightId: avia.id,
     },
   };
 }
+
+
+
+
