@@ -72,7 +72,7 @@
   border-radius: 16px;
 }
 .card-cart-controls--trip .card-cart-controls__step {
-  color: rgb(193, 255, 35);
+  color: rgb(0, 0, 0);
 }
 
 
@@ -108,7 +108,7 @@
   border-radius: 10px;
 }
 .card-cart-controls--trip-detail .card-cart-controls__step {
-  color: rgb(193, 255, 35)0;
+  color: rgb(193, 255, 35);
 }
 
 
