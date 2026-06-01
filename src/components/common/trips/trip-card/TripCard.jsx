@@ -29,6 +29,7 @@ function TripCard({ tripId, trip }) {
   
   const currentImage = images[index];
 
+
   return (
     <div className="tripcard">
       <div className="tripcard__image">
@@ -65,8 +66,10 @@ function TripCard({ tripId, trip }) {
 
       <div className="tripcard__content">
         <h3 className="tripcard__title">{trip.title}</h3>
-        <p className="tripcard__description">{trip.description}</p>
-        <p className="tripcard__stars">отель {'⭐'.repeat(trip.stars)}</p>
+        <div className="tripcard__description">
+          <p>{trip.description} <br></br> {trip.country}, {trip.city}</p>
+          <p>отель {'⭐'.repeat(trip.stars)}</p>
+        </div>
         {/* <p className="tripcard__price">{trip.price} ₽</p> */}
 
         <div className="tripcard__actions">

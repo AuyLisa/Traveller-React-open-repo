@@ -102,5 +102,76 @@
 
 
 @media (min-width: 64rem) {
+  .tripcard {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    max-width: 1000px;
+    height: 100%;
+  } 
+
+  .tripcard__image {
+    width: 300px;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 100%;
+  }
+
+  .tripcard__photo {  
+    width: 300px; 
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .tripcard__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0;    
+    font-size: 0.1rem;   
+    justify-content: flex-start;  
+    width: 100%;
+    height: 100%;
+    justify-self: end;
+  }
+
+
+  .tripcard__title {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tripcard__stars {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tripcard__description {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+
+  .tripcard__button {
+    padding: 0.55rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .tripcard__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
+  .tripcard__actions {
+    max-width: 13rem;
+    margin-bottom: 1.5rem;
 
   }
+}
