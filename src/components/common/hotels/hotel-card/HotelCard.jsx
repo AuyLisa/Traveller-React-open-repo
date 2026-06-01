@@ -56,6 +56,8 @@ function limitOptions(options, maxCount = 5) {
   return Object.fromEntries(limitedEntries);
 }
 
+
+
 function HotelCard({ hotelId, hotel }) {
   const navigate = useNavigate();
   const locationLabel = [hotel.city, hotel.country].filter(Boolean).join(', ');

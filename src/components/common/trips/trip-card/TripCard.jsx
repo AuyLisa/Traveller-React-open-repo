@@ -8,6 +8,8 @@ import { useFavorites } from '@hooks/useFavorites'; // импортируем х
 import { tripToCartPayload } from '@utils/cartItemBuilders';
 import './TripCard.css';
 
+
+
 function TripCard({ tripId, trip }) {
   const navigate = useNavigate();
   
@@ -49,8 +51,8 @@ function TripCard({ tripId, trip }) {
           {images.length > 1 && (
             <>
               <ImageArrows
-                onPrev={handleNext}
-                onNext={handlePrev}
+                onPrev={handlePrev}
+                onNext={handleNext}
                 isPrevDisabled={index === 0}
                 isNextDisabled={index === lastIndex}
               />

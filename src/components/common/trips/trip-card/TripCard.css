@@ -12,8 +12,11 @@
   min-height: 20rem;
 }
 
+
 .tripcard__image {
   width: 100%;
+  align-self: stretch;
+  flex-shrink: 0;
 }
 
 .tripcard__photo {
@@ -25,6 +28,7 @@
   border-radius: 16px 16px 0 0;   
   position: relative;  
   overflow: hidden;   
+  object-fit: cover;
 }
 
 .tripcard__photo img {
@@ -32,10 +36,38 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s;
 }
 
 
+.tripcard__like {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+
+.tripcard__like:hover {
+  transform: scale(1.1);
+}
+
+.tripcard__like svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: none;
+}
 
 .tripcard__content {
   padding: 0.9rem;        
