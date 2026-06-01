@@ -1,0 +1,167 @@
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* ===== ГЛАВНАЯ БОЛЬШАЯ КАРТИНКА ===== */
+.image-gallery__main {
+  width: 100%;
+  height: 200px;  /* базово для мобилок */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-gallery__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery__main-img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== СЕТКА МАЛЕНЬКИХ КАРТИНОК (мобилка) ===== */
+.image-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 колонки на мобилке */
+  gap: 0.75rem;
+}
+
+.image-gallery__item {
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image-gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery__img:hover {
+  transform: scale(1.05);
+}
+
+/* Особые случаи: если картинок 3 — первая на всю ширину */
+.image-gallery__grid:has(:nth-child(3):last-child) .image-gallery__item:first-child {
+  grid-column: span 2;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+.image-gallery__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.image-gallery__modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.image-gallery__modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: default;
+}
+
+.image-gallery__modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.image-gallery__modal-close:hover {
+  opacity: 0.7;
+}
+
+/* ===== ПЛАНШЕТЫ (48rem = 768px) ===== */
+@media (min-width: 48rem) {
+  .image-gallery__main {
+    height: 300px;
+  }
+  
+  .image-gallery__grid {
+    gap: 1rem;
+  }
+  
+  .image-gallery__item {
+    height: 130px;
+  }
+  
+  /* Если картинок 4 — делаем 4 колонки */
+  .image-gallery__grid:has(:nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Если картинок 3 — красивая сетка */
+  .image-gallery__grid:has(:nth-child(3):last-child) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  
+  /* Убираем специальное поведение для первой картинки на планшетах */
+  .image-gallery__grid:has(:nth-child(3):last-child) .image-gallery__item:first-child {
+    grid-column: auto;
+  }
+}
+
+/* ===== ДЕСКТОПЫ (64rem = 1024px) ===== */
+@media (min-width: 64rem) {
+  .image-gallery__main {
+    height: 400px;
+  }
+  
+  .image-gallery__grid {
+    gap: 1.25rem;
+  }
+  
+  .image-gallery__item {
+    height: 150px;
+  }
+  
+  /* Всегда 4 колонки если их 4 или больше */
+  .image-gallery__grid:has(:nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Если картинок 5 или 6 — тоже 4 колонки */
+  .image-gallery__grid:has(:nth-child(5)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== БОЛЬШИЕ ЭКРАНЫ (90rem = 1440px) ===== */
+@media (min-width: 90rem) {
+  .image-gallery__main {
+    height: 500px;
+  }
+  
+  .image-gallery__item {
+    height: 170px;
+  }
+}
