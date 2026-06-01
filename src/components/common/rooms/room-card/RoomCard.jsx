@@ -7,6 +7,7 @@ import ImageArrows from '@ui/image-arrows/ImageArrows';
 import HeartLike from '@ui/heart-like/HeartLike';
 import ImageDots from '@ui/image-dots/ImageDots';
 import RoomAmenities from '@rooms/room-amenities/RoomAmenities';
+import { useFavorites } from '@hooks/useFavorites'; // ← импорт хука для лайков
 
 import { roomToCartPayload } from '@utils/cartItemBuilders'; 
 import './RoomCard.css';
@@ -23,6 +24,9 @@ function limitOptions(options, maxCount = 5) {
 
 function RoomCard({ roomId, room, hotel }) {
   const navigate = useNavigate();
+  
+  // хук для управления лайками номеров
+  const { isLiked, toggleLike, loading } = useFavorites('room', roomId);
 
   // Логика карусели фотографий
   const images = room.images;
@@ -44,16 +48,18 @@ function RoomCard({ roomId, room, hotel }) {
     <div className="roomcard">
       <div className="roomcard__image">
         <div className="roomcard__photo">
-          {/* Кнопка сердечка крепится к roomcard__photo*/}
-          <HeartLike onToggle={(liked) => console.log('Лайк номера:', liked)} />
+          {/* ✅ Передаём состояние в HeartLike */}
+          <HeartLike 
+            liked={isLiked}
+            onToggle={toggleLike}
+            disabled={loading}
+          />
         
-          {/* Галерея фотографий крепится к roomcard__photo*/}
           <img 
             src={currentImage.src} 
             alt={room.title}
           />
           
-          {/* Стрелки и точки, если 2+ фото */}
           {images.length > 1 && (
             <>
               <ImageArrows
@@ -77,22 +83,13 @@ function RoomCard({ roomId, room, hotel }) {
         <p className="roomcard__size">Площадь: {room.size} м² | Вместимость: до {room.capacity} чел.</p>
         <p className="roomcard__description">{room.description}</p>
 
-        {/* Удобства номера (ограниченные 5) */}
         <RoomAmenities options={limitedOptions} />
         <p className="roomcard__description">Подробнее о номере</p>
 
         <p className="roomcard__price">Цена за 1 ночь: {room.pricePerNight.toLocaleString('ru-RU')} ₽</p>
 
         <div className="roomcard__actions">
-          
-          {/*
-          <button 
-            type="button" 
-            className="roomcard__button">
-              Забронировать номер
-            </button>
-          /> */}
-           <CardCartControls
+          <CardCartControls
             type="room"
             itemId={roomId}
             payload={roomToCartPayload(room, hotel)}

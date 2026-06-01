@@ -4,12 +4,16 @@ import Layout from '@ui/layout/Layout';
 import { useUser } from '@context/UserContext';
 import TripCard from '@trips/trip-card/TripCard';
 import HotelCard from '@hotels/hotel-card/HotelCard'; 
+
 import AviaCard from '@avias/avia-card/AviaCard'; 
-import RoomCard from '@rooms/room-card/RoomCard'; // ← добавить импорт для номеров
+import RoomCard from '@rooms/room-card/RoomCard';
+
 import trips from '@data/trips/trips';
 import hotels from '@data/hotels/hotels';
+
 import avias from '@data/avias/avia';
-import rooms from '@data/hotels/rooms'; // ← добавить импорт номеров
+import rooms from '@data/hotels/rooms';
+
 import './Profile.css';
 
 function Favorites() {
