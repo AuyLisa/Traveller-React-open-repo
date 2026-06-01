@@ -26,7 +26,7 @@ const hotels = [
      { id: 104, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" },
      { id: 105, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Анталия',
+    city: 'Анталья',
     price: 55000,
     star: 5,
     review: 128,
@@ -34,29 +34,31 @@ const hotels = [
     description: 'Роскошный курортный отель с собственной лагуной. 7 бассейнов, аквапарк, спа-центр, 6 ресторанов. Пляж в 100 метрах.',
     options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: true, spa: true, beach: true }
   },
+
   {
+    //id=4 in home-trip-tohotels.js
     id: 2,
-    title: 'Отель Mediterranean Pearl',
-    images: [{ id: 201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+    title: "Sherwood Exclusive Lara (Ex. Sherwood Breezes Resort)",
+    images: [{ id: 201, src: "/images/home-hotels/shrewood.jpg", alt: "Отель вечером" }, { id: 202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Анталия',
-    price: 42000,
-    star: 4,
+    city: 'Анталья',
+    price: 131208,
+    star: 4.8,
     review: 89,
     duration: 7,
     description: 'Уютный отель для семейного отдыха. Детский клуб, зелёный парк, спа-салон. Вкусный шведский стол.',
     options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: true, spa: true, beach: true }
   },
-  {
+  {//id=2 in home-trip-hotels.js
     id: 3,
-    title: 'Отель Blue Lagoon',
-    images: [{ id: 301, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+    title: "Spice Hotel & Spa",
+    images: [{ id: 301, src: "/images/home-hotels/spice-hotel.jpg", alt: "Отель вечером" }, { id: 302, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 303, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 304, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 305, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Анталия',
-    price: 38000,
-    star: 4,
+    city: 'Анталья',
+    price: 171613,
+    star: 4.7,
     review: 56,
-    duration: 9,
+    duration: 6,
     description: 'Отель на первой линии с видом на море. Идеально для пар, уютные номера, отличная кухня.',
     options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
   },
@@ -91,7 +93,7 @@ const hotels = [
     title: 'Отель Alanya Beach',
     images: [{ id: 601, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 602, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 603, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 604, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 605, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Аланья',
+    city: 'Алания',
     price: 34500,
     star: 4,
     review: 67,
@@ -273,7 +275,7 @@ const hotels = [
     title: 'Отель Green Canyon',
     images: [{ id: 2001, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 2002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 2003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 2004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 2005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Турция',
-    city: 'Анталия',
+    city: 'Анталья',
     price: 35200,
     star: 4,
     review: 67,
@@ -558,16 +560,18 @@ const hotels = [
     description: 'Отель на первой береговой линии с собственным коралловым рифом. Отличное место для дайвинга и снорклинга.',
     options: { wifi: true, parking: false, pool: true, breakfast: true, restaurant: true, playground: true, spa: true, beach: true }
   },
+
+  //id=1 in home-trip-hotels.js
   {
     id: 42,
-    title: 'Отель Red Sea Paradise',
-    images: [{ id: 4201, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 4202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 4203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 4204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 4205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+    title: "Amwaj Beach Club Aqua Park & Spa",
+    images: [{ id: 4201, src: "/images/home-hotels/amwaj.jpg", alt: "Отель вечером" }, { id: 4202, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 4203, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 4204, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 4205, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
     country: 'Египет',
     city: 'Хургада',
-    price: 48500,
-    star: 5,
+    price: 96932,
+    star: 4.9,
     review: 312,
-    duration: 7,
+    duration: 6,
     description: 'Роскошный курорт с аквапарком. Большая зеленая территория, отличная анимация.',
     options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: true, spa: true, beach: true }
   },
@@ -1593,43 +1597,62 @@ const hotels = [
 },
 
 {
+  //id=6 in home-trip-tohotels.js
   id: 121,
-  title: 'Vinpearl Nha Trang Resort',
-  images: [{ id: 12002, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  title: "Nha Trang Marriott Resort & Spa, Hon Tre Island",
+  images: [{ id: 12002, src: "/images/home-hotels/nha-tang.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
   country: 'Вьетнам',
   city: 'Нячанг, Вьетнам',
-  price: 205000,
-  star: 5,
+  price: 205677,
+  star: 4.8,
   review: 267,
-  duration: 5,
+  duration: 6,
   description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
   options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
 },
 
 {
+  //id=3 in home-trip-tohotels.js
   id: 122,
-  title: 'Nha Trang Marriott Resort & Spa, Hon Tre Island',
-  images: [{ id: 12003, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  title: "Vinpearl Nha Trang Resort",
+  images: [{ id: 12003, src: "/images/home-hotels/vinpearl.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
   country: 'Вьетнам',
   city: 'Нячанг',
-  price: 205000,
-  star: 5,
+  price: 224677,
+  star: 4.2,
   review: 267,
-  duration: 5,
+  duration: 7,
   description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
   options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
 },
 
 {
+  //id=5 in home-trip-tohotels.js
   id: 123,
-  title: 'Yalong Bay Villas & Spa',
-  images: [{ id: 12004, src: "/images/hotels/id1/id1-p1.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  title: "Palm Beach Resort & Spa",
+  images: [{ id: 12004, src: "/images/home-hotels/palm-beach.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
   country: 'Китай',
   city: 'о. Хайнань',
-  price: 205000,
-  star: 5,
+  price: 224677,
+  star: 4.6,
   review: 267,
-  duration: 5,
+  duration: 7,
+  description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
+  options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
+},
+
+
+{
+  //id=7 in home-trip-tohotels.js
+  id: 124,
+  title: "Yalong Bay Villas & Spa",
+  images: [{ id: 12004, src: "/images/home-hotels/sanya-yalong.jpg", alt: "Отель вечером" }, { id: 12002, src: "/images/hotels/id1/id1-p2.jpg", alt: "Отель днем" }, { id: 12003, src: "/images/hotels/id1/id1-p3.jpg", alt: "Аквапарк" }, { id: 12004, src: "/images/hotels/id1/id1-p4.jpg", alt: "Бассейн" }, { id: 12005, src: "/images/hotels/id1/id1-p5.jpg", alt: "Пляж" }],
+  country: 'Китай',
+  city: 'о. Хайнань',
+  price: 167978,
+  star: 4.9,
+  review: 267,
+  duration: 7,
   description: 'Дайв-курорт с сертифицированными инструкторами. Погружения к китовым акулам.',
   options: { wifi: true, parking: true, pool: true, breakfast: true, restaurant: true, playground: false, spa: true, beach: true }
 }

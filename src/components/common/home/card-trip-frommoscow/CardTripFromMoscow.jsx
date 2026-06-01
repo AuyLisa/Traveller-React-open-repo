@@ -2,16 +2,17 @@ import './CardTripFromMoscow.css';
 import CountryButton from '@home/country-button/CountryButton.jsx';
 
 function CardTripFromMoscow({ tripId, trip }) {
+   const encodedCountry = encodeURIComponent(trip.title);
   return (
     <div className="card-trip-frommoscow">
       <div className="card-trip-frommoscow__image">
         <img 
           src={trip.image} 
-          alt={trip.name}
+          alt={trip.title}
           className="card-trip-frommoscow__photo"
           loading="lazy"
         />
-        <span className="card-trip-frommoscow__country">{trip.name}</span>
+        <span className="card-trip-frommoscow__country">{trip.title}</span>
       </div>
 
       <div className="card-trip-frommoscow__content"> 

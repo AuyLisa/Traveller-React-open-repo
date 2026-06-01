@@ -47,7 +47,7 @@ function Footer() {
               <span className="footer__country-name">Турция: </span>
               <Link to="/trips?city=Стамбул">Стамбул</Link>,{' '}
               <Link to="/trips?city=Анталья">Анталья</Link>,{' '}
-              <Link to="/trips?city=Аланья">Аланья</Link>,{' '}
+              <Link to="/trips?city=Алания">Алания</Link>,{' '}
               <Link to="/trips?city=Каппадокия">Каппадокия</Link>,{' '}
               <Link to="/trips?city=Кемер">Кемер</Link>,{' '}
               <Link to="/trips?city=Бодрум">Бодрум</Link>

@@ -112,7 +112,7 @@ function Home() {
       </section>
 
 
-
+      {/* }
       <section className="home__section">
         <div className="home__section-header">
           <h2 className="home__section-title"> Раннее бронирование туров в Турцию </h2>
@@ -133,8 +133,10 @@ function Home() {
           ))}
         </div>
       </section>
+      */}
 
 
+      {/* ДОДЕЛАТЬ
       <section className="home__section">
         <div className="home__section-header">
           <h2 className="home__section-title">Улететь прямо сейчас из Москвы</h2>
@@ -155,6 +157,7 @@ function Home() {
           ))}
         </div>
       </section>
+      */}
 
 
 
