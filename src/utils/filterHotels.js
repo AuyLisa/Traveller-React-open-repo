@@ -76,6 +76,7 @@ export function buildHotelFilterOptions(hotels) {
   );
   const starOptions = [...new Set(hotels.map((h) => h.star).filter((n) => Number.isFinite(n)))].sort(
     (a, b) => a - b
+
   );
   return { countries, cities, starOptions };
 }
