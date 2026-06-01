@@ -21,5 +21,10 @@ export function formatCartItemMeta(item) {
   if (type === 'flight') {
     return `${meta.from} → ${meta.to} · ${meta.airline} · ${meta.departure}–${meta.arrival}`;
   }
+
+  if (type === 'room') {
+    return `${meta.hotelTitle} · ${meta.size} м² · до ${meta.capacity} чел.`;
+  }
+  
   return '';
 }

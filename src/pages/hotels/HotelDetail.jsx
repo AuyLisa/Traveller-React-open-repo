@@ -153,7 +153,7 @@ function HotelDetail() {
             <span className="hotels__count"> {rooms.length}</span>
           </div>
           {rooms.map((room) => (
-            <RoomCard key={room.id} roomId={room.id} room={room} />
+            <RoomCard key={room.id} roomId={room.id} room={room} hotel={hotel}/>
           ))}
           </section>
 

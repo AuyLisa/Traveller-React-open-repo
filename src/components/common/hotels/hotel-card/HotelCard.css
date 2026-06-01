@@ -116,7 +116,7 @@
 
 
 .hotelcard__price {
-  color: #751AE4;
+  color: rgb(193, 255, 35);
   font-size: 1.2rem; 
   margin: 0.25rem 0;   
 }
@@ -152,25 +152,26 @@
 }
 
 .hotelcard__button {
-  background-color: #751AE4;
-  color: white;
+  background-color: rgb(193, 255, 35);
+  color: rgb(0, 0, 0);
   border: none;
-  border-radius: 2rem;       
+  border-radius: 2rem;   
+  font-weight: 600;    
   padding: 0.55rem 1.2rem; 
   font-size: 1rem;
   cursor: pointer;
 }
 
 .hotelcard__button:hover {
-  background-color: #5a15b0;
+  background-color: rgb(193, 255, 35);
 }
 
 .hotelcard__button--cart {
-  background-color: #4c9839;
+  background-color: rgb(193, 255, 35)
 }
 
 .hotelcard__button--cart:hover {
-  background-color: #3d7a2e;
+  background-color: rgb(193, 255, 35);
 }
 
 

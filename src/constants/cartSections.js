@@ -2,4 +2,5 @@ export const CART_SECTIONS = [
   { type: 'trip', sectionId: 'trips', title: 'Туры' },
   { type: 'hotel', sectionId: 'hotels', title: 'Отели' },
   { type: 'flight', sectionId: 'flights', title: 'Авиабилеты' },
+  { type: 'room', sectionId: 'rooms', title: 'Номера' },
 ];

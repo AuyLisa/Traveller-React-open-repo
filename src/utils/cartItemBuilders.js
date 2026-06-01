@@ -51,7 +51,21 @@ export function flightClassToCartPayload(avia, flightClass) {
     },
   };
 }
-
-
-
-
+  
+export function roomToCartPayload(room, hotel) {
+  return {
+    type: 'room',
+    itemId: room.id,
+    title: room.title,
+    price: room.pricePerNight,
+    meta: {
+      hotelId: hotel?.id,
+      hotelTitle: hotel?.title,
+      hotelCountry: hotel?.country,
+      hotelCity: hotel?.city,
+      size: room.size,
+      capacity: room.capacity,
+      nights: 1,
+    },
+  }
+}
