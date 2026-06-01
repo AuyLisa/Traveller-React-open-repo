@@ -1,12 +1,10 @@
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
-import { flightToCartPayload } from '@utils/cartItemBuilders';
 import './AviaCard.css';
 
 
 function AviaCard( { aviaCardId, avia} ) {
   return (
     <div className="aviacard">
-
 
       <div className="aviacard__title">
         <p className="aviacard__from">{avia.from}</p>

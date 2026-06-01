@@ -59,7 +59,6 @@ function Avia() {
         </div>
       </div>
 
-
       {/* Основной контейнер с фильтрами и билетами */}
       <div className="avia__layout">
         {/* Фильтры - слева */}
@@ -104,9 +103,7 @@ function Avia() {
                   <div className="avia__ticket" key={avia.id}>
                     <AviaCard aviaCardId={avia.id} avia={avia} />
                     <AviaClasses 
-                      aviaClassesId={avia.id} 
-                      price={avia.price} 
-                      duration={avia.duration} 
+                      avia={avia} 
                     />
                   </div>
                 ))}

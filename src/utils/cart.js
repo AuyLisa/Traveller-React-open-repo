@@ -14,6 +14,7 @@ function loadFromStorage() {
   }
 }
 
+
 function initCache() {
   if (cartCache === null) {
     cartCache = loadFromStorage();
