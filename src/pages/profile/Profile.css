@@ -129,3 +129,9 @@
 .profile__browse-link:hover {
   background: #2c5282;
 }
+
+/* в нем 3 раздела 1туры 2 отели 3номера */
+.favorites__flex {  
+  display: flex;
+  flex-direction: column;
+}

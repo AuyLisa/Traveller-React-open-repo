@@ -5,9 +5,11 @@ import { useUser } from '@context/UserContext';
 import TripCard from '@trips/trip-card/TripCard';
 import HotelCard from '@hotels/hotel-card/HotelCard'; 
 import AviaCard from '@avias/avia-card/AviaCard'; 
+import RoomCard from '@rooms/room-card/RoomCard'; // ← добавить импорт для номеров
 import trips from '@data/trips/trips';
 import hotels from '@data/hotels/hotels';
 import avias from '@data/avias/avia';
+import rooms from '@data/hotels/rooms'; // ← добавить импорт номеров
 import './Profile.css';
 
 function Favorites() {
@@ -19,12 +21,21 @@ function Favorites() {
     return <Navigate to="/login" />;
   }
 
+  // Порядок сортировки: туры → отели → авиабилеты → номера
+  const typeOrder = {
+    trip: 1,
+    hotel: 2,
+    avia: 3,
+    room: 4
+  };
+
   // Функция для получения элемента по типу и ID
   const getItemById = (type, id) => {
     switch(type) {
       case 'trip': return trips.find(item => item.id === id);
       case 'hotel': return hotels.find(item => item.id === id);
       case 'avia': return avias.find(item => item.id === id);
+      case 'room': return rooms.find(item => item.id === id);
       default: return null;
     }
   };
@@ -38,6 +49,8 @@ function Favorites() {
         return <HotelCard hotelId={id} hotel={item} />;
       case 'avia':
         return <AviaCard aviaCardId={id} avia={item} />;
+      case 'room':
+        return <RoomCard roomId={id} room={item} />;
       default:
         return null;
     }
@@ -55,7 +68,7 @@ function Favorites() {
         if (saved) {
           const favorites = JSON.parse(saved);
           
-          // Загружаем все типы избранного
+          // Загружаем все типы избранного с сортировкой
           const loadedItems = favorites
             .map(key => {
               const [type, id] = key.split('_');
@@ -67,7 +80,8 @@ function Favorites() {
               }
               return null;
             })
-            .filter(item => item !== null);
+            .filter(item => item !== null)
+            .sort((a, b) => (typeOrder[a.type] || 999) - (typeOrder[b.type] || 999)); // ← сортировка
           
           setFavoriteItems(loadedItems);
           console.log('Загружено избранных элементов:', loadedItems.length);
@@ -105,6 +119,7 @@ function Favorites() {
     trips: favoriteItems.filter(item => item.type === 'trip').length,
     hotels: favoriteItems.filter(item => item.type === 'hotel').length,
     avias: favoriteItems.filter(item => item.type === 'avia').length,
+    rooms: favoriteItems.filter(item => item.type === 'room').length,
     total: favoriteItems.length
   };
 
@@ -122,6 +137,7 @@ function Favorites() {
               <Link to="/trips" className="profile__browse-link">Посмотреть туры</Link>
               <Link to="/hotels" className="profile__browse-link">Посмотреть отели</Link>
               <Link to="/avia" className="profile__browse-link">Посмотреть авиабилеты</Link>
+              <Link to="/rooms" className="profile__browse-link">Посмотреть номера</Link>
             </div>
           </div>
         ) : (
@@ -131,11 +147,12 @@ function Favorites() {
               <div className="profile__stats-details">
                 {stats.trips > 0 && <span>Туры: {stats.trips}</span>}
                 {stats.hotels > 0 && <span>Отели: {stats.hotels}</span>}
-                {stats.avias > 0 && <span>Авиа: {stats.avias}</span>}
+                {stats.avias > 0 && <span>Авиабилеты: {stats.avias}</span>}
+                {stats.rooms > 0 && <span>Номера: {stats.rooms}</span>}
               </div>
             </div>
             
-            <div className="favorites__grid">
+            <div className="favorites__flex">
               {favoriteItems.map(({ type, id, data }) => (
                 <div key={`${type}_${id}`} className="favorites__item">
                   {renderCard(data, type, id)}
