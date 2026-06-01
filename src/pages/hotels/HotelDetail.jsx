@@ -7,6 +7,7 @@ import Layout from '@ui/layout/Layout';
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
 import HotelAmenities from '@hotels/hotel-amenities/HotelAmenities';
 import RoomCard from '@rooms/room-card/RoomCard';
+import ImageGallery from '@ui/image-gallery/ImageGallery';
 
 //data
 import hotels from '@data/hotels/hotels';
@@ -48,7 +49,14 @@ function HotelDetail() {
 
         <h1 className="hotel-detail__mainparts">{hotel.title}</h1>
 
-        <div className="hotel-detail__photo" aria-hidden="true" />
+        {/*<div className="hotel-detail__photo" aria-hidden="true" /> */}
+
+        {/* ГАЛЕРЕЯ */}
+        <ImageGallery 
+          images={hotel.images} 
+          mainImage={hotel.images?.[0]?.src}
+          title={hotel.title}
+        />
 
         <dl className="hotel-detail__list">
           <div className="hotel-detail__row">

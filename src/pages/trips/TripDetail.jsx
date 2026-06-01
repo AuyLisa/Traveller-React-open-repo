@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 //components
 import Layout from '@ui/layout/Layout';
 import CardCartControls from '@cart/card-cart-controls/CardCartControls';
+import ImageGallery from '@ui/image-gallery/ImageGallery';
 
 //data
 import trips from '@data/trips/trips';
@@ -37,7 +38,13 @@ function TripDetail() {
 
         <h1 className="trip-detail__title">{trip.title}</h1>
 
-        <div className="trip-detail__photo" aria-hidden="true" />
+        <ImageGallery 
+          images={trip.images} 
+          mainImage={trip.images?.[0]?.src}
+          title={trip.title}
+        />
+
+        {/*<div className="trip-detail__photo" aria-hidden="true" /> */}
 
         <dl className="trip-detail__list">
           <div className="trip-detail__row">
