@@ -326,10 +326,10 @@ const trips = [
     id: 21,
     title: 'Тур в Дубай "Город будущего"',
     images: [
-      { id: 2101, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
-      { id: 2102, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
-      { id: 2103, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Башня Хыдырлык" },
-      { id: 2104, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Водопад Дюден (верхний)" }
+      { id: 2101, src: "/images/trips/id21/trip-id21-p1.jpg", alt: "Бурдж-Халифа" },
+      { id: 2102, src: "/images/trips/id21/trip-id21-p2.jpg", alt: "Бурдж-Халифа" },
+      { id: 2103, src: "/images/trips/id21/trip-id21-p3.jpg", alt: "Бурдж-Халифа" },
+      { id: 2104, src: "/images/trips/id21/trip-id21-p4.jpg", alt: "Бурдж-Халифа" }
     ],
     description: '7 ночей, завтраки, экскурсия на Бурдж-Халифа',
     country: 'ОАЭ',
@@ -358,10 +358,10 @@ const trips = [
     id: 23,
     title: 'Тур в Абу-Даби "Люкс"',
     images: [
-      { id: 2301, src: "/images/trips/id1/trip-id1-p1.jpg", alt: "Старый город (Калеичи)" },
-      { id: 2302, src: "/images/trips/id1/trip-id1-p2.jpg", alt: "Ворота Адриана" },
-      { id: 2303, src: "/images/trips/id1/trip-id1-p3.jpg", alt: "Башня Хыдырлык" },
-      { id: 2304, src: "/images/trips/id1/trip-id1-p4.jpg", alt: "Водопад Дюден (верхний)" }
+      { id: 2301, src: "/images/trips/id23/trip-id23-p1.jpg", alt: "oae" },
+      { id: 2302, src: "/images/trips/id23/trip-id23-p2.jpg", alt: "oae" },
+      { id: 2303, src: "/images/trips/id23/trip-id23-p3.jpg", alt: "oae" },
+      { id: 2304, src: "/images/trips/id23/trip-id23-p4.jpg", alt: "oae" }
     ],
     description: '14 ночей, люкс, частный пляж',
     country: 'ОАЭ',
